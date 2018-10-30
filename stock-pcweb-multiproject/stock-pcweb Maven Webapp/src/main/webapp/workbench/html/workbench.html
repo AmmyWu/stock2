@@ -1,0 +1,347 @@
+<!--<div id="tab_1" class="workbench basedata  tab-page" role="tabpanel">-->
+    <!--<section class="content">-->
+        <!--<div class="row">-->
+            <!--<div class="col-xs-12">-->
+                <!--<div class="nav-tabs-custom nav-tabs-workbench">-->
+                    <!--<ul class="nav nav-tabs" id="workbench-tabs">-->
+                        <!--<li class="active notices"><a href="#workbench_notice" data-toggle="tab" aria-expanded="true">系统公告</a></li>-->
+                        <!--<li class="tasks"><a href="#workbench_tasks" data-toggle="tab" aria-expanded="false">我的任务</a></li>-->
+                        <!--<li class="messages"><a href="#workbench_messages" data-toggle="tab" aria-expanded="false">我的消息</a></li>-->
+                    <!--</ul>-->
+                    <!--<div class="tab-content">-->
+                        <!--<div class="tab-pane active" id="workbench_notice">-->
+                            <!--<section class="content">-->
+                                <!--<div class="row">-->
+                                    <!--<div class="col-md-3">-->
+                                        <!--<a style="margin-bottom: 10px" id = "noticeAction" onclick="workBench.Changnotice()" class="btn btn-primary btn-block margin-bottom">发布公告</a>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                                <!--<div class="row">-->
+                                    <!--<div class="col-md-12">-->
+                                        <!--<div class="box box-primary notice-box active">-->
+                                            <!--<div class="box-header with-border">-->
+                                                <!--<h3 class="box-title">公告栏</h3>-->
+                                                <!--<div class="box-tools pull-right">-->
+                                                    <!--<div class="has-feedback">-->
+                                                        <!--<input type="text" name="searchNotice" class="form-control input-sm searchNotice" placeholder="查找公告">-->
+                                                        <!--<span class="glyphicon glyphicon-search form-control-feedback"-->
+                                                              <!--onclick="workBench.searchNotice()"></span>-->
+                                                    <!--</div>-->
+                                                <!--</div>-->
+                                                <!--&lt;!&ndash; /.box-tools &ndash;&gt;-->
+                                            <!--</div>-->
+                                            <!--<div class="box-body with-border">-->
+
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                        <!--<div class="box box-primary edit-notice-box">-->
+                                            <!--<div class="box-header with-border">-->
+                                                <!--<h3 class="box-title">发布公告</h3>-->
+                                            <!--</div>-->
+                                            <!--&lt;!&ndash; /.box-header &ndash;&gt;-->
+                                            <!--<div class="box-body">-->
+                                                <!--<form id="editNotice">-->
+                                                    <!--<div class="form-group">-->
+                                                        <!--<input name="to" class="form-control" placeholder="To:">-->
+                                                    <!--</div>-->
+                                                    <!--<div class="form-group">-->
+                                                        <!--<input name="subject" class="form-control" placeholder="Subject:">-->
+                                                    <!--</div>-->
+                                                    <!--<div class="form-group">-->
+                                                        <!--<textarea name="maintext" class="compose-textarea form-control" style="height: 200px">-->
+
+                                                        <!--</textarea>-->
+                                                    <!--</div>-->
+                                                <!--</form>-->
+                                            <!--</div>-->
+                                            <!--&lt;!&ndash; /.box-body &ndash;&gt;-->
+                                            <!--<div class="box-footer">-->
+                                                <!--<div class="pull-right">-->
+                                                    <!--<button type="button" class="btn btn-default" onclick="workBench.canceleditNotice()"><i class="fa fa-trash-o"></i> 取消</button>-->
+                                                    <!--<button type="submit" class="btn btn-primary" onclick="workBench.sendeditedNotice()"><i class="fa fa-envelope-o" ></i> 发送</button>-->
+                                                <!--</div>-->
+                                            <!--</div>-->
+                                            <!--&lt;!&ndash; /.box-footer &ndash;&gt;-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</section>-->
+                            <!--&lt;!&ndash;<div class="notice">&ndash;&gt;-->
+                                <!--&lt;!&ndash;<img src="workbench/image/smallBell.png" alt="图片"><img src="workbench/image/new.png" alt="图片">&ndash;&gt;-->
+                                <!--&lt;!&ndash;<span>这是一条新消息</span>&ndash;&gt;-->
+                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                        <!--</div>-->
+                        <!--&lt;!&ndash; /.tab-pane &ndash;&gt;-->
+                        <!--<div class="tab-pane" id="workbench_tasks">-->
+                            <!--<div class="box">-->
+                                <!--<div class="box-header">-->
+                                    <!--<h3 class="box-title" style="color:#2c60ff;">海运出口</h3>-->
+                                <!--</div>-->
+                                <!--&lt;!&ndash; /.box-header &ndash;&gt;-->
+                                <!--<div class="box-body no-padding">-->
+                                    <!--<table class="table table-condensed" border="1" cellspacing="0" cellpadding="0" style="border:1px solid #d2d6de;">-->
+                                        <!--<tbody>-->
+                                            <!--<tr>-->
+                                                <!--<th>状态</th>-->
+                                                <!--<th>输单</th>-->
+                                                <!--<th>配载</th>-->
+                                                <!--<th>审核</th>-->
+                                                <!--<th>订舱</th>-->
+                                                <!--<th>调度</th>-->
+                                                <!--<th>做箱</th>-->
+                                                <!--<th>报关</th>-->
+                                                <!--<th>核单</th>-->
+                                                <!--<th>放单</th>-->
+                                            <!--</tr>-->
+                                            <!--<tr>-->
+                                                <!--<td>紧急未作</td>-->
+                                                <!--<td></td>-->
+                                                <!--<td></td>-->
+                                                <!--<td></td>-->
+                                                <!--<td></td>-->
+                                                <!--<td></td>-->
+                                                <!--<td></td>-->
+                                                <!--<td></td>-->
+                                                <!--<td></td>-->
+                                                <!--<td></td>-->
+                                            <!--</tr>-->
+                                            <!--<tr>-->
+                                                <!--<td>紧急正作</td>-->
+                                                <!--<td></td>-->
+                                                <!--<td></td>-->
+                                                <!--<td></td>-->
+                                                <!--<td></td>-->
+                                                <!--<td></td>-->
+                                                <!--<td></td>-->
+                                                <!--<td></td>-->
+                                                <!--<td></td>-->
+                                                <!--<td></td>-->
+                                            <!--</tr>-->
+                                            <!--<tr>-->
+                                                <!--<td>一般未作</td>-->
+                                                <!--<td></td>-->
+                                                <!--<td></td>-->
+                                                <!--<td></td>-->
+                                                <!--<td></td>-->
+                                                <!--<td></td>-->
+                                                <!--<td></td>-->
+                                                <!--<td></td>-->
+                                                <!--<td></td>-->
+                                                <!--<td></td>-->
+                                            <!--</tr>-->
+                                            <!--<tr>-->
+                                                <!--<td>一般正作</td>-->
+                                                <!--<td></td>-->
+                                                <!--<td></td>-->
+                                                <!--<td></td>-->
+                                                <!--<td></td>-->
+                                                <!--<td></td>-->
+                                                <!--<td></td>-->
+                                                <!--<td></td>-->
+                                                <!--<td></td>-->
+                                                <!--<td></td>-->
+                                            <!--</tr>-->
+                                        <!--</tbody>-->
+                                    <!--</table>-->
+                                <!--</div>-->
+                                <!--&lt;!&ndash; /.box-body &ndash;&gt;-->
+                            <!--</div>-->
+                            <!--<div class="box">-->
+                                <!--<div class="box-header">-->
+                                    <!--<h3 class="box-title" style="color:#2c60ff;">海运进口</h3>-->
+                                <!--</div>-->
+                                <!--&lt;!&ndash; /.box-header &ndash;&gt;-->
+                                <!--<div class="box-body no-padding">-->
+                                    <!--<table class="table table-condensed" border="1" cellspacing="0" cellpadding="0" style="border:1px solid #d2d6de;">-->
+                                        <!--<tbody>-->
+                                        <!--<tr>-->
+                                            <!--<th>状态</th>-->
+                                            <!--<th>输单</th>-->
+                                            <!--<th>配载</th>-->
+                                            <!--<th>审核</th>-->
+                                            <!--<th>订舱</th>-->
+                                            <!--<th>调度</th>-->
+                                            <!--<th>做箱</th>-->
+                                            <!--<th>报关</th>-->
+                                            <!--<th>核单</th>-->
+                                            <!--<th>放单</th>-->
+                                        <!--</tr>-->
+                                        <!--<tr>-->
+                                            <!--<td>紧急未作</td>-->
+                                            <!--<td></td>-->
+                                            <!--<td></td>-->
+                                            <!--<td></td>-->
+                                            <!--<td></td>-->
+                                            <!--<td></td>-->
+                                            <!--<td></td>-->
+                                            <!--<td></td>-->
+                                            <!--<td></td>-->
+                                            <!--<td></td>-->
+                                        <!--</tr>-->
+                                        <!--<tr>-->
+                                            <!--<td>紧急正作</td>-->
+                                            <!--<td></td>-->
+                                            <!--<td></td>-->
+                                            <!--<td></td>-->
+                                            <!--<td></td>-->
+                                            <!--<td></td>-->
+                                            <!--<td></td>-->
+                                            <!--<td></td>-->
+                                            <!--<td></td>-->
+                                            <!--<td></td>-->
+                                        <!--</tr>-->
+                                        <!--<tr>-->
+                                            <!--<td>一般未作</td>-->
+                                            <!--<td></td>-->
+                                            <!--<td></td>-->
+                                            <!--<td></td>-->
+                                            <!--<td></td>-->
+                                            <!--<td></td>-->
+                                            <!--<td></td>-->
+                                            <!--<td></td>-->
+                                            <!--<td></td>-->
+                                            <!--<td></td>-->
+                                        <!--</tr>-->
+                                        <!--<tr>-->
+                                            <!--<td>一般正作</td>-->
+                                            <!--<td></td>-->
+                                            <!--<td></td>-->
+                                            <!--<td></td>-->
+                                            <!--<td></td>-->
+                                            <!--<td></td>-->
+                                            <!--<td></td>-->
+                                            <!--<td></td>-->
+                                            <!--<td></td>-->
+                                            <!--<td></td>-->
+                                        <!--</tr>-->
+                                        <!--</tbody>-->
+                                    <!--</table>-->
+                                <!--</div>-->
+                                <!--&lt;!&ndash; /.box-body &ndash;&gt;-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--&lt;!&ndash; /.tab-pane &ndash;&gt;-->
+                        <!--<div class="tab-pane" id="workbench_messages">-->
+                            <!--<section class="content">-->
+                                <!--<div class="row">-->
+                                    <!--<div class="col-md-3">-->
+                                        <!--<a id = "messageAction" onclick="workBench.Changmessage()" class="btn btn-primary btn-block margin-bottom">写信</a>-->
+                                    <!--</div>-->
+                                    <!--&lt;!&ndash; /.col &ndash;&gt;-->
+                                    <!--<div class="col-md-9">-->
+                                        <!--<div class="box box-primary message-box active">-->
+                                            <!--<div class="box-header with-border">-->
+                                                <!--<h3 class="box-title">收件箱</h3>-->
+
+                                                <!--<div class="box-tools pull-right">-->
+                                                    <!--<div class="has-feedback">-->
+                                                        <!--<input type="text" class="form-control input-sm" placeholder="Search Mail">-->
+                                                        <!--<span class="glyphicon glyphicon-search form-control-feedback"></span>-->
+                                                    <!--</div>-->
+                                                <!--</div>-->
+                                                <!--&lt;!&ndash; /.box-tools &ndash;&gt;-->
+                                            <!--</div>-->
+                                            <!--&lt;!&ndash; /.box-header &ndash;&gt;-->
+                                            <!--<div class="box-body no-padding ">-->
+                                                <!--<div class="mailbox-controls">-->
+                                                    <!--&lt;!&ndash; Check all button &ndash;&gt;-->
+                                                    <!--<button type="button" class="btn btn-default btn-sm checkbox-toggle"><i class="fa fa-square-o"></i>-->
+                                                    <!--</button>-->
+                                                    <!--<div class="btn-group">-->
+                                                        <!--<button type="button" class="btn btn-default btn-sm"><i class="fa fa-trash-o"></i></button>-->
+                                                        <!--<button type="button" class="btn btn-default btn-sm"><i class="fa fa-reply"></i></button>-->
+                                                        <!--<button type="button" class="btn btn-default btn-sm"><i class="fa fa-share"></i></button>-->
+                                                    <!--</div>-->
+                                                    <!--&lt;!&ndash; /.btn-group &ndash;&gt;-->
+                                                    <!--<button type="button" class="btn btn-default btn-sm"><i class="fa fa-refresh"></i></button>-->
+
+                                                    <!--&lt;!&ndash; /.pull-right &ndash;&gt;-->
+                                                <!--</div>-->
+                                                <!--<div class="table-responsive mailbox-messages">-->
+                                                    <!--<table class="table table-hover table-striped" id="workbench_messageTable">-->
+
+                                                    <!--</table>-->
+                                                    <!--&lt;!&ndash; /.table &ndash;&gt;-->
+                                                <!--</div>-->
+                                                <!--&lt;!&ndash; /.mail-box-messages &ndash;&gt;-->
+                                            <!--</div>-->
+                                            <!--&lt;!&ndash; /.box-body &ndash;&gt;-->
+                                        <!--</div>-->
+                                        <!--&lt;!&ndash; /. box &ndash;&gt;-->
+                                        <!--<div class="box box-primary edit-message-box">-->
+                                            <!--<div class="box-header with-border">-->
+                                                <!--<h3 class="box-title">发布消息</h3>-->
+                                            <!--</div>-->
+                                            <!--&lt;!&ndash; /.box-header &ndash;&gt;-->
+                                            <!--<div class="box-body">-->
+                                                <!--<form id="editMessage">-->
+                                                    <!--<div class="form-group">-->
+                                                        <!--<input name="to" class="form-control" placeholder="To:">-->
+                                                    <!--</div>-->
+                                                    <!--<div class="form-group">-->
+                                                        <!--<input name="subject" class="form-control" placeholder="Subject:">-->
+                                                    <!--</div>-->
+                                                    <!--<div class="form-group">-->
+                                                        <!--<textarea name="maintext" class="compose-textarea form-control" style="height: 200px">-->
+
+                                                        <!--</textarea>-->
+                                                    <!--</div>-->
+                                                <!--</form>-->
+                                            <!--</div>-->
+                                            <!--&lt;!&ndash; /.box-body &ndash;&gt;-->
+                                            <!--<div class="box-footer">-->
+                                                <!--<div class="pull-right">-->
+                                                    <!--<button type="button" class="btn btn-default" onclick="workBench.canceleditNotice()"><i class="fa fa-trash-o"></i> 取消</button>-->
+                                                    <!--<button type="submit" class="btn btn-primary" onclick="workBench.sendeditedNotice()"><i class="fa fa-envelope-o" ></i> 发送</button>-->
+                                                <!--</div>-->
+                                            <!--</div>-->
+                                            <!--&lt;!&ndash; /.box-footer &ndash;&gt;-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                    <!--&lt;!&ndash; /.col &ndash;&gt;-->
+                                <!--</div>-->
+                                <!--&lt;!&ndash; /.row &ndash;&gt;-->
+                            <!--</section>-->
+
+
+                        <!--</div>-->
+                        <!--&lt;!&ndash; /.tab-pane &ndash;&gt;-->
+                    <!--</div>-->
+                    <!--&lt;!&ndash; /.tab-content &ndash;&gt;-->
+                <!--</div>-->
+
+            <!--</div>-->
+        <!--</div>-->
+
+            <!--&lt;!&ndash; /.col &ndash;&gt;-->
+        <!--&lt;!&ndash; /.row &ndash;&gt;-->
+
+    <!--</section>-->
+
+    <!--<div class="modal fade" id="showItemModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">-->
+        <!--<div class="modal-dialog">-->
+            <!--<div class="modal-content">-->
+                <!--<div class="modal-header">-->
+                    <!--<button type="button" class="close modal_close" data-dismiss="modal" aria-hidden="true">&times;</button>-->
+                    <!--<h4 class="modal-title" id="showItem_modal_title" style="color: white">详情</h4>-->
+                <!--</div>-->
+                <!--<div class="modal-body" style="padding: 20px" id="showItem_modal_body">-->
+                <!--</div>-->
+                <!--&lt;!&ndash;<div class="modal-footer">&ndash;&gt;-->
+                    <!--&lt;!&ndash;<button type="button" class="btn btn-default pull-left" data-dismiss="modal">取消</button>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<button type="button" class="btn btn-danger" data-dismiss="modal" id="alertModal_Submit">确定</button>&ndash;&gt;-->
+                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+            <!--</div>&lt;!&ndash; /.modal-content &ndash;&gt;-->
+        <!--</div>&lt;!&ndash; /.modal &ndash;&gt;-->
+    <!--</div>-->
+    <!--&lt;!&ndash; DataTables &ndash;&gt;-->
+
+    <!--<script>-->
+        <!--$(function () {-->
+            <!--//Add text editor-->
+            <!--$(".compose-textarea").wysihtml5();-->
+        <!--});-->
+    <!--</script>-->
+
+<!--</div>-->
+

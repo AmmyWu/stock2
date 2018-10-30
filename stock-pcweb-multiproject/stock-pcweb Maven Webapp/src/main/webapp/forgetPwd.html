@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>宏观经济知识数据管理平台</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.6 -->
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+  <!-- iCheck -->
+  <link rel="stylesheet" href="plugins/iCheck/square/blue.css">
+  <link rel="stylesheet" href="css/firstPage.css">
+  <link rel="stylesheet" href="css/register.css">
+  <link rel="stylesheet" href="css/login.css">
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+<!--  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>-->
+  <![endif]-->
+  <style>
+    html,body{
+      overflow:auto;
+      margin:0;
+      min-width:1200px;
+      width:100%;
+    }
+  </style>
+</head>
+<body id="body">
+<div class="header">
+	<div class="header-right">
+		<img src="images/logo@1x.png" alt="stock-logo" />
+	</div>
+	<div class="header-left">
+		<span>&nbsp&nbsp宏观经济知识数据管理平台</span>
+		<div>&nbsp&nbsp&nbsp便捷您的工作</div>
+	</div>
+	<div class="header-choose">
+		<span onclick="backHome()" id="header-page">首页</span>
+		<span class="header-login" id="header-login">登录</span>
+	</div>
+</div>
+<div class="line">
+	<div class="line-block"></div>
+	<div class="line-blue" id="line-blue"></div>
+	<div style="clear:both"></div>
+</div>
+
+<!-- 注册 -->
+<div class="home" id="mainContent">
+	<div onclick="back()" class="register-backHome">
+		返回首页
+	</div>
+	<div class="register-main">
+		<div class="register-input">
+			<span class="register-title">密码重置</span>
+			<div class="register-tel">
+				<div class="tel-input">
+					<img id="first" src="./images/1@1x.png" alt="第一步">
+					<div>手机号验证</div>
+				</div>
+				<div class="yz-input">
+					<div></div>
+				</div>
+				<div class="msg-input">
+					<img id="second" src="./images/icon_2@1x.png" alt="第二步">
+					<div>重置密码</div>
+				</div>
+				<div class="yz-input">
+					<div></div>
+				</div>
+				<div class="register-finish">
+					<img id="third" src="./images/icon_3@1x.png" alt="第三步">
+					<div>重置成功</div>
+				</div>
+			</div>
+			<div class="register-msgInput" id="register-main">
+				<input style="width:36rem;display:inline-block;margin-left:2rem" onblur="check(this)" placeholder="手机号" onkeyup="value=value.replace(/[^\d]/g,'')" class="pwd-zh" type="text"/>
+				<div class="error-tips">
+					<img src="./images/amazing@1x.png" alt="success">
+					<div style="height:24px;line-height:24px;font-family: MicrosoftYaHei;font-size: 12px;color: #EF5657;word-break:keep-all;white-space:nowrap;margin-top:-24px;margin-left:4rem">请输入正确的手机号</div>
+				</div>
+				<input class="other" placeholder="验证码" onkeyup="value=value.replace(/[^\d]/g,'')"  type="text"/>
+				<div style="width:11rem;margin-top:4rem;" class="login-yzm" id="register-yzm">发送验证码</div>
+				<div class="another-tips">
+					<img src="./images/amazing@1x.png" alt="error">
+					<div style="height:24px;line-height:24px;font-family: MicrosoftYaHei;font-size: 12px;color: #EF5657;word-break:keep-all;white-space:nowrap;margin-top:-24px;margin-left:3.5rem">请输入正确的验证码</div>
+				</div>
+				<div class="nextStep-btn" id="nextStep-btn">下一步</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- 登录 -->
+<div class="login" id="login">
+	<div class="login-input">
+		<div class="login-ewm">
+			<p>扫一扫关联微信小程序</p>
+			<img src="./images/ewm.png" alt="微信二维码">
+			<div class="login-title">打开微信APP扫一扫，关联小程序</div>
+			<div class="login-title">方便、快捷、手机零负担</div>
+		</div>
+		<div class="login-midline">
+			<div></div>
+		</div>
+		<div class="login-zh">
+			<div class="login-zhdl">账号登录</div>
+			<div class="login-main">
+			    <div class="num-error" id="num-Rerror"></div>
+				<div>
+					<input onblur="check(this,'num-Rerror')" placeholder="手机号" onkeyup="value=value.replace(/[^\d]/g,'')" class="pwd-zh" type="text"/>
+				</div>
+				<div class="login-block">
+					<input class="pwd-zh" placeholder="密码"  type="password"/>
+				</div>
+				<div class="login-block">
+					<input class="yzm-input" placeholder="验证码" onkeyup="value=value.replace(/[^\d]/g,'')"  type="text"/>
+					<div class="login-yzm">发送验证码</div>
+				</div>
+				<div style="clear:both"></div>
+				<div class="login-button">登录</div>
+				<div style="margin-top:15px">
+					<div class="forget-pwd">
+						<span ><a href="./forgetPwd.html">忘记密码</a></span>
+					</div>
+					<div class="zc">
+						<span class="zc-pro">还没有账号？</span>
+						<span class="zc-dj"><a href="./register.html">注册</a></span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div style="clear:both"></div>
+<div class="footer">
+	<img src="images/slrjpng@1x.png" alt="logo" />
+	<p>咨询热线：0574-27880887 | 邮箱：marketsales@stocksoft.com | 公司总部：浙江省宁波市高新区扬帆路999号</p>
+</div>
+<!-- /.login-box -->
+
+<!-- jQuery 2.2.3 -->
+<script src="plugins/jQuery/jquery-2.2.3.min.js"></script>
+<script type="text/javascript" src="plugins/jQuery/jquery.cookie.js"></script>
+<script src="plugins/jQuery/jquery.jdirk.js" type="text/javascript" charset="utf-8"></script>
+<!-- Bootstrap 3.3.6 -->
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<!-- iCheck -->
+<script src="plugins/iCheck/icheck.min.js"></script>
+<script src="js/common.js"></script>
+<script type="text/javascript" src="js/firstPage.js" charset="utf-8"></script>
+<script type="text/javascript" src="js/forgetPwd.js" charset="utf-8"></script>
+</body>
+</html>

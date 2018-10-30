@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<root>
+    <!-- 模板配置
+            模板文件路径和modelVO、controller、service对应需要的模板名-->
+    <ftl path="\\stock-framework\src\\ftl">
+        <!--<param name="modelVO">/modelVO.ftl</param>-->
+        <param name="controller">/controller.ftl</param>
+        <!--<param name="service">/service.ftl</param>-->
+    </ftl>
+<!--
+     service.ftl需要的信息
+            path service包路径
+            packageName service中的java文件需要指定包名
+    <service path="\\stock-framework\\stock-service-multiproject\\stock-service-base\\src\\main\\java\\com\\stock\\service\\sys">
+        <servicePackageName>com.stock.service.sys</servicePackageName>
+        <modelPackageName>com.stock.dao.model.sys</modelPackageName>
+        <parentPackageName>com.stock</parentPackageName>
+        <class name="SysAttachment" id ="attachmentId"/>
+        <class name="SysAuthentication" id ="authenticationId"/>
+        <class name="SysBasicDataSet" id ="basicDataSetId"/>
+        <class name="SysLog" id ="logId"/>
+        <class name="SysLoginLog" id ="null"/>
+        <class name="SysLogWithBLOBS" id ="null"/>
+        <class name="SysMessage" id ="messageId"/>
+        <class name="SysOrganizationStructure" id ="organizationStructureId"/>
+        <class name="SysResource" id ="resourceId"/>
+        <class name="SysRole" id ="roleId"/>
+        <class name="SysRoleResource" id ="roleResourceId"/>
+        <class name="SysUser" id ="userId"/>
+        <class name="SysUserRole" id ="userRoleId"/>
+    </service>
+
+
+    <modelVO path="\\stock-framework\\stock-base-multiproject\\stock-pojo\\src\\main\\java\\com\\stock\\pojo\\vo\\sys">
+        <modelVOPackageName>com.stock.pojo.vo.sys</modelVOPackageName>
+        <modelPackageName>com.stock.dao.model.sys</modelPackageName>
+        <class name="SysAttachment"/>
+        <class name="SysAuthentication"/>
+        <class name="SysBasicDataSet"/>
+        <class name="SysLog"/>
+        <class name="SysLoginLog"/>
+        <class name="SysLogWithBLOBS"/>
+        <class name="SysMessage"/>
+        <class name="SysOrganizationStructure"/>
+        <class name="SysResource"/>
+        <class name="SysRole"/>
+        <class name="SysRoleResource"/>
+        <class name="SysUser"/>
+        <class name="SysUserRole"/>
+
+    </modelVO>
+    -->
+    <!-- controller.ftl需要的信息
+            path controller包路径
+            packageName controller中的java文件需要指定包名 -->
+    <controller path="\\stock-framework\\stock-pcweb-multiproject\\stock-webapp-base\\src\\main\\java\\com\\stock\\webapp\\base\\controller\\sys">
+        <controllerPackageName>com.stock.webapp.base.controller.sys</controllerPackageName>
+        <modelPackageName>com.stock.dao.model.sys</modelPackageName>
+        <parentPackageName>com.stock</parentPackageName>
+        <class name="SysAttachment" id ="attachmentId"/>
+        <class name="SysAuthentication" id ="authenticationId"/>
+        <class name="SysBasicDataSet" id ="basicDataSetId"/>
+        <class name="SysLog" id ="logId"/>
+        <class name="SysLoginLog" id ="LoginLogId"/>
+        <class name="SysMessage" id ="messageId"/>
+        <class name="SysOrganizationStructure" id ="organizationStructureId"/>
+        <class name="SysResource" id ="resourceId"/>
+        <class name="SysRole" id ="roleId"/>
+        <class name="SysRoleResource" id ="roleResourceId"/>
+        <class name="SysUser" id ="userId"/>
+        <class name="SysUserRole" id ="userRoleId"/>
+    </controller>
+
+    <!-- model.ftl需要的信息
+            path model包路径
+            packageName model中的java文件需要指定包名
+            class 实体类名
+            field 实体类中的字段
+                fieldName 字段名
+                fieldType 字段类型
+                fieldComment 注释
+    <model path="\\stock-framework\\stock-base-multiproject\\stock-dao\\src\\main\\java\\com\\stock\\dao\\model\\sys">
+        <packageName>com.stock.dao.model.sys</packageName>
+        <class>SysAttachment</class>
+        <class>SysAuthentication</class>
+        <class>SysLog</class>
+        <class>SysLogWithBLOBS</class>
+        <class>SysMessage</class>
+        <class>SysOrganizationStructure</class>
+        <class>SysResource</class>
+        <class>SysRole</class>
+        <class>SysRoleResource</class>
+        <class>SysUser</class>
+        <class>SysUserRole</class>
+        <class>SysBasicDataSet</class>
+        <class>SysLoginLog</class>
+    </model>
+    -->
+</root>

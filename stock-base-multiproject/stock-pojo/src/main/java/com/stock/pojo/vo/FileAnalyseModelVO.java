@@ -1,0 +1,23 @@
+package com.stock.pojo.vo;
+
+import java.io.Serializable;
+
+public class FileAnalyseModelVO implements Serializable {
+
+	private String title;
+	private String summary;
+	public String getTitle() {
+		return title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	public String getSummary() {
+		return summary;
+	}
+	public void setSummary(String summary) {
+		this.summary = summary;
+	}
+	
+	
+}

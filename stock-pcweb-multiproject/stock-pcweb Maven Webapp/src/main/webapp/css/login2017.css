@@ -1,0 +1,97 @@
+*{
+  	margin:0;
+  	padding: 0;
+  	font-family: "Microsoft YaHei";
+  }
+  body{
+  	background: url(../images/bg.png) round 0 0;
+  }
+  .all{
+  	width: 1440px;
+  	margin: 0 auto;
+  	height: 750px;
+  }
+  .main{
+  	margin-left:212px;
+  	margin-right: 212px;
+  	padding-top: 66px; 
+  }
+  .main>p{
+  	font-size: 42px;
+  	color: rgb(255,255,255);
+  	font-family: "PingFangSC-medium";
+  	 margin-bottom: 5px;
+  }
+  .login{
+  	width: 100%;
+  	height: 452px;
+  }
+  .img{
+  	
+  }
+  .login-left{
+  	float: left;
+  }
+  .head-img>img{
+  	float: right;
+  }
+  .login-right{
+  	width: 332px;
+  	height: 452px;
+  	float: right;
+  	background: #fff;
+  	margin-right: 34px;
+  }
+  .one{
+  	margin-top: 64px;
+  	text-align: center;
+  	color: rgb(0,0,0);
+  	font-size: 24px;
+  	letter-spacing: 3px;
+  }
+  .inputs{
+  	width: 296px;
+  	text-align: center;
+    margin: 0 auto;
+    border: 1px solid #a9a9a9;
+    border-radius: 3px;
+  }
+  .inputs>.input-name{
+  	height: 48px;
+  	width: 100%;
+  	text-indent: 16px;
+  	font-size: 18px;
+  	font-family: "PingFangSC-medium";
+  	/*color: rgb(214,214,214);*/
+    border:0;
+    outline: 0;
+  }
+  .input-code{
+  	margin-top: 18px;
+  	margin-bottom: 24px;
+  }
+  .input-code .input{
+  	height: 48px;
+  	text-indent: 16px;
+  	 margin-left: 16px;
+  	 font-family: "PingFangSC-medium";
+  	color: rgb(214,214,214);
+  	font-size: 18px;
+  	width: 165px;
+    outline: 0;
+    border:1px solid #a9a9a9;
+    border-radius: 3px;
+  }
+  .login-submit{
+  	width: 296px;
+  	height: 48px;
+  	color: #F996FE;
+  	background: #7552F5;
+  	font-size: 18px;
+  	border:0;
+  	outline: 0;
+  	margin: 0 auto;
+    display: block;
+    border-radius: 3px;
+    margin-top:30px;
+  }

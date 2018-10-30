@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  	<modelVersion>4.0.0</modelVersion>
+ 	<parent>
+		<artifactId>stock-service-multiproject</artifactId>
+		<groupId>com.stock</groupId>
+		<version>0.0.1-SNAPSHOT</version>
+		<relativePath>../stock-service-multiproject/pom.xml</relativePath>
+	</parent>
+    <artifactId>stock-pcweb-multiproject</artifactId>
+    <packaging>pom</packaging>
+	<modules>
+		<module>stock-webapp-base</module>
+    	<module>stock-pcweb Maven Webapp</module>
+    	<module>stock-uploadfile</module>
+	</modules>
+    <dependencies>
+    </dependencies>
+</project>

@@ -1,0 +1,42 @@
+{
+    "recordsFiltered": 2,
+    "aaData": [
+        {
+            "authenticationId": 38,
+            "userId": 1,
+            "account": "admin",
+            "password": "123456",
+            "type": "账号",
+            "status": "",
+            "lastTime": null,
+            "lastIp": null,
+            "description": null,
+            "creator": null,
+            "createTime": null,
+            "accessGroup": null,
+            "amender": null,
+            "amendTime": null,
+            "recordVersion": null,
+            "isDeleted": null
+        },
+        {
+            "authenticationId": 39,
+            "userId": 1,
+            "account": "11@qq.com",
+            "password": "123456",
+            "type": null,
+            "status": "",
+            "lastTime": null,
+            "lastIp": null,
+            "description": null,
+            "creator": null,
+            "createTime": null,
+            "accessGroup": null,
+            "amender": null,
+            "amendTime": null,
+            "recordVersion": null,
+            "isDeleted": null
+        }
+    ],
+    "recordsTotal": 2
+}

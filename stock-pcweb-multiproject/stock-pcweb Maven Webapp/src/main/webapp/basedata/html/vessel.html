@@ -1,0 +1,210 @@
+<div id="tab_9006" class="vessel Vessel basedata tab-page" role="tabpanel">
+    <!--<div class="content-header">-->
+        <!--<h1>-->
+            <!--基础资料-->
+            <!--<small>船舶</small>-->
+        <!--</h1>-->
+        <!--<ol class="breadcrumb">-->
+            <!--<li><a href="#"><i class="fa fa-dashboard"></i>基础资料</a></li>-->
+            <!--<li><a href="#">船舶</a></li>-->
+            <!--<li class="active">数据表格</li>-->
+        <!--</ol>-->
+        <!---->
+    <!--</div>-->
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <!--begin search box-->
+                <div class="box search-box">
+                    <!--<div class="box-header">-->
+                        <!--<h4 class="box-title">查询</h4>-->
+                        <!--<div class="pull-right box-tools">-->
+                            <!--<button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">-->
+                                <!--<i class="fa fa-plus"></i></button>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <div class="box-body">
+                        <form class="search-table form-inline" id="searchVesselForm" role="form">
+                                <div class="form-group" style="width: 250px">
+
+                                    <label>船公司</label>
+
+                                    <select  name="vesselParameterId" class="form-control select2 select2-hidden-accessible" style="width: 68%;" tabindex="-1" aria-hidden="true">
+                                        <option value=""></option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>船舶代码</label>
+                                    <input type="text" class="form-control" name="vesselCode">
+                                </div>
+                                <div class="form-group">
+                                    <label>英文名称</label>
+                                    <input type="text" class="form-control" name="vesselName">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>中文名称</label>
+                                    <input type="text" class="form-control" name="vesselNameCn">
+                                </div>
+                        </form>
+                        <!--<div class="form-item">-->
+                        <!--<label>港口3代码</label>-->
+                        <!--<input type="text" name="Vessel3code" class="form-control"  placeholder="港口3代码">-->
+                        <!--</div>-->
+                        <div class="sm-wrqapper">
+                            <input type="button" id="BTN_90060100" class="btn btn-info btn-size" onclick="Vessel.doSearch()" value="查找"/>
+
+                            <button class="btn btn-info search_reset" id="resetSeachVesselForm">
+                                重置
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+                <!--end search box-->
+                <div class="modal fade" id="editVesselModal" tabindex="-1" role="dialog"
+                     aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close modal_close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title" id="editVesselModalTitle">增加</h4>
+                            </div>
+                            <div class="modal-body" style="padding: 5px" id="editVesselModalBody">
+                                <form id="editVesselForm" class="form-inline">
+                                    <table class="edit-table">
+                                        <tr>
+                                            <td>船公司</td>
+                                            <td>
+                                                <select  style="width:90%;" name="vesselParameterId"
+                                                         class="form-control select2 select2-hidden-accessible"  tabindex="-1" aria-hidden="true">
+                                                    <option value=""></option>
+                                                </select>
+                                            </td>
+                                            <td>中文名称</td>
+                                            <td><input type="text" class="form-control" name="vesselNameCn"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td>船舶代码</td>
+                                            <td><input type="text" class="form-control" name="vesselCode"/></td>
+                                            <td>英文名称</td>
+                                            <td><input type="text" class="form-control" name="vesselName"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td>最后修改人</td>
+                                            <td><input type="text" class="form-control" name="amenderName" readonly/></td>
+                                            <td>最后修改时间</td>
+                                            <td><input type="text" class="form-control" name="amendTime" readonly/></td>
+                                        </tr>
+                                    </table>
+                                        <!--<div class="form-inline-item">-->
+                                            <!--<div class="form-group">-->
+                                                <!--<label style="width: 86px;">船公司</label>-->
+                                                <!--<select  name="vesselParameterId"-->
+                                                         <!--class="form-control select2 select2-hidden-accessible" style="width: 193px;" tabindex="-1" aria-hidden="true">-->
+                                                    <!--<option value=""></option>-->
+                                                <!--</select>&lt;!&ndash;-->
+                                                <!--<input type="text" class="form-control form-control-line" name="vesselParameterId"/>-->
+                                                   <!--&ndash;&gt;-->
+                                            <!--</div>-->
+                                            <!--<div class="form-group"><label>中文名称</label><input type="text" class="form-control" name="vesselNameCn"/></div>-->
+                                        <!--</div>-->
+                                        <!--<div class="form-inline-item">-->
+                                            <!--<div class="form-group">-->
+                                                <!--<label>船舶代码</label>-->
+                                                <!--<input type="text" class="form-control" name="vesselCode"/>-->
+                                            <!--</div>-->
+                                            <!--<div class="form-group"><label>英文名称</label><input type="text" class="form-control" name="vesselName"/></div>-->
+                                        <!--</div>-->
+                                        <!--<div class="form-inline-item">-->
+                                            <!--<div class="form-group"><label>最后修改人</label><input type="text" class="form-control" name="amenderName" value="1" readonly/></div>-->
+                                            <!--<div class="form-group"><label>最后修改时间</label><input type="text" class="form-control" name="amendTime" readonly/></div>-->
+                                        <!--</div>-->
+                                    <!--end row-->
+
+                                    <div hidden="true"><label>新增或保存</label><input type="text"  name="amender" value="1"/>
+                                        <input type="text" name="saveType" id="saveType"><input type="text"  name="vesselId"/></div>
+                                    <div class="modal-footer">
+                                        <div class="sm-wrapper">
+                                            <button type="button" class="btn btn-primary" data-dismiss="modal">取消</button></button>
+                                            <!--<button type="button" class="btn btn-primary" id="editVesselModalSubmit">确定</button>-->
+                                            <input type="submit" class="btn btn-primary" id="editVesselModalSubmit" value="确定"/>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div><!-- /.modal-content -->
+                    </div><!-- /.modal -->
+                </div>
+                <div class="btn_group">
+                    <button id="BTN_90060200" onclick="Vessel.addVessel()" class="btn btn-info">
+                        增加
+                    </button>
+                    <button id="BTN_90060300" onclick="Vessel.editVessel()" class="btn btn-info">
+                        修改
+                    </button>
+                    <button id="BTN_90060400" onclick="Vessel.deleteVessel()" class="btn btn-info">
+                        删除
+                    </button>
+                    <div class="btn-group export-excel dataTable-dropdown-menu">
+                        <button type="button" class="btn btn-info">导出Excel</button>
+                        <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                            <span class="caret"></span>
+                            <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                        <ul class="dropdown-menu export-excel-menu" role="menu">
+                            <li id="Vessel_export-excel-selected"></li>
+                            <li id="Vessel_export-excel-current"></li>
+                            <li id="Vessel_export-excel-all"></li>
+                        </ul>
+                    </div>
+                    <!--<button id="Vessel_import-excel" onclick="customsDocumentAttachment.importExcel()" class="btn btn-info">-->
+                    <!--导出Excel-->
+                    <!--</button>-->
+                    <div class="btn-group export-print dataTable-dropdown-menu">
+                        <button type="button" class="btn btn-info">打印</button>
+                        <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                            <span class="caret"></span>
+                            <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                        <ul class="dropdown-menu export-print-menu" role="menu">
+                            <li id="Vessel_export-print-selected"></li>
+                            <li id="Vessel_export-print-all"></li>
+                        </ul>
+                    </div>
+                    <div class="btn-height btn-group" style="vertical-align: top;" id="Vessel_export-copy"></div>
+                    <div class="btn-height btn-group" style="vertical-align: top;"  id="Vessel_export-columnVisibility" ></div>
+
+                    <!--<button id="refreshVessel" onclick="Vessel.doSearch()" class="btn btn-info">-->
+                        <!--刷新-->
+                    <!--</button>-->
+                    <!--<button id="showVesselDetail" class="btn btn-info">-->
+                        <!--详情-->
+                    <!--</button>-->
+                </div>
+
+                <div class="box datable-box">
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <table id="Vessel_table" class="table table-bordered table-striped">
+                        </table>
+                    </div>
+                    <!-- /.box-body -->
+
+                    <!--modify button-->
+
+                </div>
+                <!-- /.box -->
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </section>
+    <!-- DataTables -->
+    <script src="basedata/js/vessel.js"></script>
+    <script src="basedata/js/public.js"></script>
+    <script>
+
+    </script>
+</div>

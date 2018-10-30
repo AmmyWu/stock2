@@ -1,0 +1,324 @@
+<div id="tab_9104" class="user sys tab-page active" role="tabpanel">
+	<!-- Content Header (Page header) -->
+	<!--<div class="content-header">-->
+		<!--<h1>-->
+			<!--系统管理-->
+			<!--<small>用户</small>-->
+		<!--</h1>-->
+		<!--<ol class="breadcrumb">-->
+			<!--<li><a href="#"><i class="fa fa-dashboard"></i>系统管理</a></li>-->
+			<!--<li><a href="#">用户</a></li>-->
+			<!--<li class="active">数据表格</li>-->
+		<!--</ol>-->
+		<!---->
+	<!--</div>-->
+	<!--角色分配弹出框-->
+	<div class="modal fade" id="user_roleModal" tabindex="-1"
+		 role="dialog" aria-labelledby="authenticationModalLabel"
+		 aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close modal_close" data-dismiss="modal" aria-hidden="true">&times;
+					</button>
+					<h4 class="modal-title" id="roleModalLabel">角色分配</h4>
+				</div>
+				<div class="modal-body">
+					<form id="roleModal_AllocateForm">
+						<table id="role_tb" class="table table-bordered table-striped table-condensed" tyle="width: 100%;">
+						</table>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<div class="sm-wrapper">
+						<button class="btn btn-info close_roleModal_btn" data-dismiss="modal">取消
+						</button>
+						<button class="btn btn-info save_roleModal_btn" data-dismiss="modal">保存
+						</button>
+					</div>
+				</div>
+			</div>
+			<!-- /.modal-content -->
+		</div>
+		<!-- /.modal -->
+	</div>
+	<!-- 授权账号弹出框 -->
+	<div class="modal fade in" id="user_authenticationModal" tabindex="-1"
+		 role="dialog" aria-labelledby="authenticationModalLabel"
+		 aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close modal_close"
+							data-dismiss="modal" aria-hidden="true">&times;
+					</button>
+					<h4 class="modal-title" id="authenticationModalLabel">授权账号</h4>
+				</div>
+				<div class="modal-body">
+					<div class="sm-wrapper">
+						<button class="btn btn-info add_authenticationModal_btn"
+								data-toggle="modal" >新增
+						</button>
+						<button class="btn btn-info edit_authenticationModal_btn" >修改
+						</button>
+					</div>
+					<form id="authenticationModal_Form">
+						<div class="box">
+							<div class="box-body no-padding">
+								<table id="authenticationModal_Table" class="table"></table>
+							</div>
+							<!-- /.box-body -->
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer"></div>
+			</div>
+			<!-- /.modal-content -->
+		</div>
+		<!-- /.modal -->
+	</div>
+
+	<!-- 授权账号新增/修改弹出框 -->
+	<div class="modal fade in" id="user_authenticationAddModal" tabindex="-1"
+		 role="dialog" aria-labelledby="authenticationAddModalLabel"
+		 aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close modal_close"
+							data-dismiss="modal" aria-hidden="true">&times;
+					</button>
+					<h4 class="modal-title" id="authenticationAddModalLabel">编辑授权账号</h4>
+				</div>
+				<div class="modal-body">
+					<div class="sm-wrapper">
+
+						<button class="btn btn-info close_authenticationModal_btn"
+								data-dismiss="modal">取消
+						</button>
+						<button class="btn btn-info save_authenticationModal_btn">保存
+						</button>
+					</div>
+					<form id="authenticationForm">
+						<!--<table>  id="addModal_addTable"
+                            class="table table-bordered table-striped table-condensed"
+                            <tbody>-->
+						<div class="form-group">
+							<label>账号</label>
+							<div><input type="text" name="account"
+										class="form-control"> <input
+									type="text" name="userId" hidden="true">
+								<input
+										type="text" name="authenticationId" hidden="true">
+								<input type="text" name="saveType" hidden="true" value="insert">
+							</div>
+
+						</div>
+						<div class="form-group">
+							<label>密码</label>
+							<div><input type="password" name="password"
+										class="form-control"></div>
+						</div>
+						<div class="form-group">
+							<label>确认密码</label>
+							<div><input type="password" name="confirmPassword"
+										class="form-control"></div>
+						</div>
+						<div class="form-group">
+							<label>类型</label>
+							<div><select class="form-control" name="type">
+								<option value="账号">账号</option>
+								<option value="邮箱">邮箱</option>
+								<option value="手机">手机</option>
+							</select></div>
+						</div>
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group"><label>最后修改人</label><input type="text" class="form-control form-control-line" name="amenderName" readonly/></div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group"><label>最后修改时间</label><input type="text" class="form-control form-control-line" name="amendTime" readonly/></div>
+							</div>
+						</div>
+						<div  hidden="true"><input type="text" class="form-control" name="authenticationId"/><input type="text" class="form-control" name="amender" value="1" readonly/><input type="text" name="saveType" hidden="true"></div>
+
+					</form>
+				</div>
+				<div class="modal-footer"></div>
+			</div>
+			<!-- /.modal-content -->
+		</div>
+		<!-- /.modal -->
+	</div>
+
+	<!-- 新增/修改弹出框 -->
+	<div class="modal fade" id="editUserModal" tabindex="-1"
+		 role="dialog" aria-labelledby="roleModalLabel"
+		 aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close modal_close"
+							data-dismiss="modal" aria-hidden="true">&times;
+					</button>
+					<h4 class="modal-title" id="addModalLabel">新增</h4>
+				</div>
+				<div class="modal-body" style="padding: 5px">
+					<form id="userForm" class="form-inline">
+						<table class="edit-table">
+							<tr>
+								<td>用户名称</td>
+								<td><input type="text" class="form-control" name="username"/></td>
+								<td>类型</td>
+								<td>
+									<select class="form-control" name="type" onchange="User.changeUserType(this,this.value)" style="width: 84%">
+										<option value="员工">员工</option>
+										<option value="客户">客户</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td>姓名</td>
+								<td>
+									<select  name="userDetailId" class="form-control select2 select2-hidden-accessible" style="width:84%" tabindex="-1" aria-hidden="true">
+										<option value=""></option>
+									</select>
+								</td>
+								<td>用户角色</td>
+								<td><input type="text" class="form-control" name="roleNames" placeholder="创建后可分配角色"/></td>
+							</tr>
+							<tr>
+								<td>状态</td>
+								<td>
+									<select  name="status" class="form-control select2 select2-hidden-accessible" style="width:84%" tabindex="-1" aria-hidden="true">
+										<option value="启用">启用</option>
+										<option value="禁用">禁用</option>
+									</select>
+								</td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>最后修改人</td>
+								<td><input type="text" class="form-control" name="amenderName" readonly/></td>
+								<td>最后修改时间</td>
+								<td><input type="text" class="form-control" name="amendTime" readonly/></td>
+							</tr>
+
+						</table>
+						<div  hidden="true">
+							<input type="text" class="form-control" name="userId"/>
+							<!--<input type="text" class="form-control" name="amender" value="1" readonly/>-->
+							<input type="text" name="saveType" hidden="true">
+						</div>
+
+						<div class="modal-footer ">
+							<div class="sm-wrapper">
+								<button type="button" class="btn btn-primary" data-dismiss="modal">取消</button>
+								<!--<button type="button" class="btn btn-primary" id="editBankModalSubmit">确定</button>-->
+								<input type="submit" class="user_save btn btn-primary" id="saveUser" value="确定"/>
+
+							</div>
+						</div>
+					</form>
+				</div>
+
+			</div>
+			<!-- /.modal-content -->
+		</div>
+		<!-- /.modal -->
+	</div>
+
+	<section class="content">
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="box search-box">
+					<!--<div class="box-header">-->
+					<!--<h3 class="box-title">查询</h3>-->
+					<!--&lt;!&ndash; /.box-tools &ndash;&gt;-->
+					<!--</div>-->
+					<div class="box-body">
+						<form class="search-table form-inline" id="searchUserForm">
+								<div class="form-group">
+								    <label>用户名称</label>
+								    <input type="text" name="username" class="form-control" placeholder="用户名称">
+								</div>
+								<div class="form-group" style="width: 400px">
+									<select  name="type" class="form-control">
+										<option value="">全部</option>
+										<option value="客户">客户</option>
+										<option  value="员工">员工</option>
+									</select>
+									<select  name="status" class="form-control">
+										<option value="">全部</option>
+										<option value="启用">启用</option>
+										<option value="禁用">禁用</option>
+									</select>
+								</div>
+						</form>
+						<div class="sm-wrqapper">
+							<input type="button" class="btn btn-info btn-size" id="searchUser" style="width:58px;" onclick="User.doSearch()" value="查找"/>
+
+							<!--   <label onclick="doSearch()">adasdfasdf</label> -->
+							<button class="btn btn-info btn-size search_reset"
+									id="resetSearchUserForm" style="width:58px;">重置
+							</button>
+						</div>
+					</div>
+					<!-- /.box-body -->
+				</div>
+				<div class="btn_group">
+					<button id="BTN_91040200" onclick="User.addUser()" class="btn btn-info">新增</button>
+					<button id="BTN_91040400" onclick="User.deleteUser()" class="btn btn-info">删除</button>
+					<button id="BTN_91040300" onclick="User.editUser()" class="btn btn-info">修改</button>
+					<button id="refreshUser" onclick="User.doSearch()" class="btn btn-info">刷新</button>
+					<button id="BTN_91040500" onclick="User.setUserRole()" class="btn btn-info">分配角色</button>
+					<button id="BTN_91040600" onclick="User.setUserAuthenticationAccount()" class="btn btn-info">创建授权账号</button>
+					<button id="showUserDetail" onclick="User.showUserDetail()" class="btn btn-info">详情</button>
+					<div class="btn-group export-excel dataTable-dropdown-menu">
+						<button type="button" class="btn btn-info">导出Excel</button>
+						<button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+							<span class="caret"></span>
+							<span class="sr-only">Toggle Dropdown</span>
+						</button>
+						<ul class="dropdown-menu export-excel-menu" role="menu">
+							<li id="User_export-excel-selected"></li>
+							<li id="User_export-excel-current"></li>
+							<li id="User_export-excel-all"></li>
+						</ul>
+					</div>
+					<!--<button id="User_import-excel" onclick="customsDocumentAttachment.importExcel()" class="btn btn-info">-->
+					<!--导出Excel-->
+					<!--</button>-->
+					<div class="btn-group export-print dataTable-dropdown-menu">
+						<button type="button" class="btn btn-info">打印</button>
+						<button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+							<span class="caret"></span>
+							<span class="sr-only">Toggle Dropdown</span>
+						</button>
+						<ul class="dropdown-menu export-print-menu" role="menu">
+							<li id="User_export-print-selected"></li>
+							<li id="User_export-print-all"></li>
+						</ul>
+					</div>
+					<div class="btn-height btn-group" style="vertical-align: top;" id="User_export-copy"></div>
+					<div class="btn-height btn-group" style="vertical-align: top;"  id="User_export-columnVisibility" ></div>
+
+				</div>
+				<div class="box datable-box">
+					<!-- /.box-header -->
+					<div class="box-body">
+						<table id="user_tb" class="table table-bordered table-striped"></table>
+					</div>
+				</div>
+				<!--主要表单内容-->
+			</div>
+		</div>
+	</section>
+	<script src="sys/js/user.js"></script>
+	<script src="sys/js/public.js"></script>
+	<script src="js/setToolbar.js"></script>
+
+</div>
+
+

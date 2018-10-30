@@ -1,0 +1,172 @@
+<div id="tab_14_11" class="port-group-port basedata tab-page" role="tabpanel">
+    <div class="content-header">
+        <!--<h1>-->
+            <!--基础资料-->
+            <!--<small>港口组港口</small>-->
+        <!--</h1>-->
+        <!--<ol class="breadcrumb">-->
+            <!--<li><a href="#"><i class="fa fa-dashboard"></i>基础资料</a></li>-->
+            <!--<li><a href="#">港口组港口</a></li>-->
+            <!--<li class="active">数据表格</li>-->
+        <!--</ol>-->
+        <div class="btn_group" style="margin-bottom: 10px">
+            <button id="addPortgroupport" class="btn btn-info">
+                增加
+            </button>
+            <button id="editPortgroupport" class="btn btn-info">
+                修改
+            </button>
+            <button id="deletePortgroupport" class="btn btn-info">
+                删除
+            </button>
+            <!--<button id="refreshPortgroupport" class="btn btn-info">-->
+                <!--刷新-->
+            <!--</button>-->
+            <!--<button id="showPortgroupportDetail" class="btn btn-info">-->
+                <!--详情-->
+            <!--</button>-->
+        </div>
+    </div>
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <!--begin search box-->
+                <div class="box box-primary">
+                    <div class="box-header">
+                        <h3 class="box-title">查询</h3>
+                        <div class="pull-right box-tools">
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
+                                <i class="fa fa-plus"></i></button>
+                            <!--<button type="button" class="btn btn-info btn-sm" data-widget="remove" data-toggle="tooltip" title="Remove">-->
+                            <!--<i class="fa fa-times"></i></button>-->
+                        </div>
+                    </div>
+                    <div class="box-body">
+                        <form class="search-table form-inline" id="searchPortGroupPortForm" role="form">
+                            <div class="row">
+                                <!--  <div class="col-md-3">
+                                      <label>港口组港口ID</label>
+                                      <input type="text" class="form-control" name="portGroupPortsId" placeholder="港口组港口ID">
+                                  </div>-->
+                                <div class="col-md-4">
+                                    <label>港口组ID</label>
+                                    <div class="form-item-select">
+                                        <select  name="portGroupId" class="form-control select2 select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true">
+                                            <option value=""></option>
+                                        </select>
+                                    </div>
+                                    <!--  <input type="text" class="form-control" name="portGroupName" placeholder="港口组ID">-->
+                                </div>
+                                <div class="col-md-4">
+                                    <label>港口组港口名称(EN)</label>
+                                    <input type="text" class="form-control" name="portName" style="width:128px;">
+                                </div>
+                                <div class="col-md-4">
+                                    <label>港口组港口名称(CN)</label>
+                                    <input type="text" class="form-control" name="portNameCn" style="width:128px;">
+                                </div>
+                            </div>
+                        </form>
+                        <div class="sm-wrqapper">
+                            <!--  <lable class="check-1">生效&nbsp&nbsp&nbsp&nbsp<input class="check-size" type="checkbox" name="生效"/>
+                             </lable> -->
+                            <input type="button" class="btn btn-info btn-size" onclick="doSearch(portGroupPort_table)" value="查找"/>
+
+                            <button class="btn btn-info search_reset" id="resetSearchPortGroupPortForm">
+                                重置
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!--end search box-->
+
+                <div class="modal fade" id="editPortgroupportModal" tabindex="-1" role="dialog"
+                     aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close modal_close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title" id="editPortgroupportModalTitle">增加</h4>
+                            </div>
+                            <div class="modal-body" style="padding: 20px" id="editPortgroupportModalBody">
+                                <form id="editPortgroupportForm">
+                                    <!-- <div class="form-group"><label>港口组港口ID</label><input type="text" class="form-control" name="portGroupPortsId"/></div>
+                                    -->
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group"><label>港口组</label>
+                                                <select  name="portGroupId" class="form-control select2 select2-hidden-accessible" style="width:100%;" tabindex="-1" aria-hidden="true">
+                                                    <option value=""></option>
+                                                </select>
+                                                <!-- <input type="text" class="form-control form-control-line" name="portGroupId"/>-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group"><label title="港口组港口名称（EN）" class="small-font">港口组港口名称(EN)</label><input
+                                                    type="text" class="form-control form-control-line" name="portName"/></div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <!--   <div class="form-group"><label>港口组代码</label><input type="text" class="form-control form-control-line" name="portCode"/></div>-->
+                                            <div class="form-group"><label  title="港口组港口名称（CN）" class="small-font">港口组港口名称(CN)</label><input
+                                                    type="text" class="form-control form-control-line" name="portNameCn"/></div>
+                                        </div>
+                                    </div>
+                                    <div class="row single-row">
+                                        <div class="col-md-12">
+                                            <div class="form-group"><label>描述</label><input type="text" class="form-control form-control-line" name="description"/></div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group"><label>最后修改人</label><input type="text" class="form-control form-control-line" name="amenderName" value="admin" readonly/></div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group"><label>最后修改时间</label><input type="text" class="form-control form-control-line" name="amendTime" readonly/></div>
+                                        </div>
+                                    </div>
+                                    <div hidden="true"><label>新增或保存</label><input type="text" name="saveType" id="saveType">
+                                        <input type="text" class="form-control" name="amender" value="1" readonly/><input type="text" class="form-control" name="portGroupPortsId"/></div>
+                                    <div class="modal-footer">
+                                        <div class="sm-wrapper">
+                                            <button type="button" class="btn btn-primary" data-dismiss="modal">取消</button></button>
+                                            <!--<button type="button" class="btn btn-primary" data-dismiss="modal" id="editPortgroupportModalSubmit">确定</button>-->
+                                            <input type="submit" class="btn btn-primary" id="editPortgroupportModalSubmit" value="确定"/>
+
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div><!-- /.modal-content -->
+                    </div><!-- /.modal -->
+                </div>
+
+
+                <div class="box datable-box">
+
+                    <!-- /.box-header -->
+                    <div class="box-body">
+
+                        <table id="portgroupportTable" class="table table-bordered table-striped">
+                        </table>
+                    </div>
+                    <!-- /.box-body -->
+
+                    <!--modify button-->
+
+                </div>
+                <!-- /.box -->
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </section>
+    <!-- DataTables -->
+    <script src="basedata/js/port-group-port.js"></script>
+    <script src="basedata/js/public.js"></script>
+    <script>
+
+    </script>
+</div>

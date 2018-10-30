@@ -1,0 +1,252 @@
+@charset "utf-8";
+/*@font-face
+{
+	font-family: 站酷高端黑;
+	src: url(font/font/zkgdh.ttf);
+}*/
+.content-header ,.content{
+	font-family:'微软雅黑';
+	font-size:14px;
+
+}
+
+#example1 {
+	/*height:22px; */
+	overflow:scroll;
+	white-space:nowrap;
+
+}
+
+.container-1{	
+	height:120px;
+	width:100%;	
+	margin:0 auto;
+	margin-bottom: 20px;
+	white-space:nowrap;
+}
+.table-1{
+	padding:0;
+	margin:0 auto;	
+	width:100%;
+}
+.tableRow-1 td{
+	width:16.666%;
+	padding:8px;
+}
+.tableRow-2 td{
+	width:16.666%;
+	padding:8px;
+}
+
+.tableRow-3 td{
+	width:16.666%;
+	padding:8px;
+}
+
+.tableRow-3 .btn-1{
+	background-color: #3c8dbc;
+	color: white;
+}
+
+.tableRow-3 .btn-2{
+	background-color: #3c8dbc;
+	color: white;
+}
+
+.sm-container{
+	padding-right:5px;
+	margin:20px auto;
+	white-space:nowrap;
+
+}
+.sm-wrqapper{
+	float: right;
+}
+.btn-1,.btn-2,.check-1{
+	float:left;
+	margin-left: 10px;
+	width: 80px;
+    height: 34px;
+}
+.check-1{	
+	line-height:50px;
+}
+.btn-1,.btn-2{
+    border-radius: 5px;
+}
+
+.container-2{
+	height:40px;
+	width:100%;	
+	margin-top:30px;
+	padding:10px;
+	display: -webkit-flex;
+    display: flex;
+    font-size:14px;
+    font-weight:bold;
+    white-space:nowrap;
+}
+
+
+
+.btn-s {
+	margin:0 auto;
+	padding:10px auto;
+	height:40px;
+	width:100%;
+	border:3px solid #f4f4f4;
+	color:grey;
+	background-color: #f9f9f9;
+	border-radius: 5px;
+	font-size: 16px;
+	/*opacity:0.75;   透明处理,数值越低，越透明	
+	filter:alpha (opacity=75);*/
+}
+.btn-s:hover{
+	background-color: #337ab7;
+	color:white;
+	font-size: 16px;
+
+}
+.btn-sp{
+	border:3px solid #f4f4f4;
+	margin:0 auto;
+	padding:10px auto;
+	height:40px;
+	width:100%;		
+	border-radius: 5px;
+	background-color: #337ab7;
+	color:white;
+	font-size: 16px;
+}
+
+.container-3{
+	width:100%;
+	height:400px;
+	margin:0 auto;
+	padding:10px;	
+	clear:both;
+	white-space:nowrap;	
+	font-family:'微软雅黑';
+}
+
+.red-font{
+	color:red;
+}
+#table{
+	padding:0px 6px;
+	margin-top:25px;
+	border:2px solid #f4f4f4;
+}
+#table tr td {
+	padding:5px 3px;
+	height:55px;
+	font-size:14px;
+	color:#333333;
+	font-weight: normal;
+}
+
+.span{
+	width:100%;
+}
+
+.container-3 .select{
+	width:100%;
+	text-align: center;
+
+}
+.textarea{
+	width:100%;
+	height:80px;
+}
+
+.table-2 tr{
+	margin:10px auto;
+	height: 40px;
+}
+.table-2 tr td{
+	padding:5px auto;
+	margin:5px auto;
+}
+
+
+@media only screen and (min-width:150px) and (max-width:600px)
+{
+
+	#example1 {
+		overflow:auto;
+		display: block;
+		/*white-space:nowrap;*/
+	}	
+	
+	.container-2{
+		height:380px;
+		width:100%;
+		display:block;
+	}
+	.container-2 button{
+		font-size:14px;
+		clear:both;
+		width:100%;
+	}
+
+
+	.container-1{
+		height:390px;
+		width:100%;
+		font-family:'微软雅黑';	
+	}
+
+	.container-1 .table-1 td{
+		display:block;
+		width:100%;
+		height:25px;
+	}
+	.tableRow-1 td{
+		padding:0px;
+		width:55%;
+		margin:2px auto;
+	}
+	.tableRow-2 td{
+		padding:0px;
+		width:55%;
+		margin:2px auto;
+	}
+
+	.tableRow-3 td{
+		padding:0px;
+		width:55%;	
+		margin:2px auto;	
+	}
+	
+
+	.btn-s,.btn-sp{
+		display:block;
+		width:33.3%;
+		float:left;
+	}
+
+	}
+	.container-1 .table-1 .span{
+		width:100%;
+		height: 100%;
+	}
+
+	.container-3{
+		height:550px;
+		width:100%;
+	}
+
+
+/*.search-table label{*/
+	/*width:30%;*/
+/*}*/
+
+	/*系统管理  服务器信息模块*/
+.menu-open li a[href*="javascript:addTabs({id:'15_1',content:'server_info',title: '服务器信息',close: true,url: 'sys/html/server_info'});"]{
+	display:none;
+}
+/*基础资料  常用词汇*/
+.menu-open li a[href*="javascript:addTabs({id:'14_17',content:'employee',title: '常用词汇',close: true,url: 'basedata/html/common_used_words'});"]{
+	display:none;
+}

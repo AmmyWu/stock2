@@ -1,0 +1,1347 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>海盟物流管理系统 | 基础数据</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta
+            content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+            name="viewport">
+    <!--<link rel="stylesheet" href="plugins/easy-ui/easyui.css">-->
+    <!--<link rel="stylesheet" href="plugins/easy-ui/datagrid.css">-->
+    <!-- Bootstrap 3.3.6 -->
+    <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">-->
+    <!-- Ionicons -->
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">-->
+    <!-- DataTables -->
+    <link rel="stylesheet"
+          href="../../plugins/datatables/dataTables.bootstrap.css">
+    <link rel="stylesheet"
+          href="https://cdn.datatables.net/buttons/1.2.4/css/buttons.dataTables.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="../../dist/css/AdminLTE.min.css">
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+             folder instead of downloading all of them to reduce the load. -->
+    <link rel="stylesheet" href="../../dist/css/style.css">
+    <link rel="stylesheet" href="../../dist/css/style2.css">
+    <link rel="stylesheet" href="../../dist/css/skins/_all-skins.min.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--树状图css-->
+    <!--<link href="dist/css/treeview/jquery.tree.css" rel="stylesheet" type="text/css" />-->
+    <!-- bootstrap datepicker -->
+    <link rel="stylesheet" href="../../plugins/datepicker/datepicker3.css">
+    <!--treetable -->
+    <link rel="stylesheet"
+          href="../../dist/css/treetable/jquery.treetable.css">
+    <link rel="stylesheet"
+          href="../../dist/css/treetable/jquery.treetable.theme.default.css">
+    <link rel="stylesheet" href="../../basedata/css/basedate_common.css">
+    <!--sys-->
+    <link rel="stylesheet" href="../../sys/css/sys.css"/>
+    <link rel="stylesheet" href="../../sys/css/sys_common.css"/>
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <script src="../../js/index.js"></script>
+    <![endif]-->
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+
+    <header class="main-header">
+        <!-- Logo -->
+        <a href="../../index2.html" class="logo"> <!-- mini logo for sidebar mini 50x50 pixels -->
+            <span class="logo-mini"><b>海</b>盟</span> <!-- logo for regular state and mobile devices -->
+            <span class="logo-lg"><b>海盟控股供应链</b>管理系统</span>
+        </a>
+        <!-- Header Navbar: style can be found in header.less -->
+        <nav class="navbar navbar-static-top">
+            <!-- Sidebar toggle button-->
+            <a href="#" class="sidebar-toggle" data-toggle="offcanvas"
+               role="button"> <span class="sr-only">Toggle navigation</span> <span
+                    class="icon-bar"></span> <span class="icon-bar"></span> <span
+                    class="icon-bar"></span>
+            </a>
+            <div class="navbar-custom-menu">
+                <ul class="nav navbar-nav">
+                    <!-- Messages: style can be found in dropdown.less-->
+                    <li class="dropdown messages-menu"><a href="#"
+                                                          class="dropdown-toggle" data-toggle="dropdown"> <i
+                            class="fa fa-envelope-o"></i> <span class="label label-success">4</span>
+                    </a>
+                        <ul class="dropdown-menu">
+                            <li class="header">You have 4 messages</li>
+                            <li>
+                                <!-- inner menu: contains the actual data -->
+                                <ul class="menu">
+                                    <li>
+                                        <!-- start message --> <a href="#">
+                                        <div class="pull-left">
+                                            <img src="../../dist/img/admin.jpg" class="img-circle"
+                                                 alt="User Image">
+                                        </div>
+                                        <h4>
+                                            Support Team
+                                            <small><i class="fa fa-clock-o"></i> 5
+                                                mins
+                                            </small>
+                                        </h4>
+                                        <p>Why not buy a new awesome theme?</p>
+                                    </a>
+                                    </li>
+                                    <!-- end message -->
+                                    <li><a href="#">
+                                        <div class="pull-left">
+                                            <img src="../../dist/img/user3-128x128.jpg"
+                                                 class="img-circle" alt="User Image">
+                                        </div>
+                                        <h4>
+                                            AdminLTE Design Team
+                                            <small><i
+                                                    class="fa fa-clock-o"></i> 2 hours
+                                            </small>
+                                        </h4>
+                                        <p>Why not buy a new awesome theme?</p>
+                                    </a></li>
+                                    <li><a href="#">
+                                        <div class="pull-left">
+                                            <img src="../../dist/img/user4-128x128.jpg"
+                                                 class="img-circle" alt="User Image">
+                                        </div>
+                                        <h4>
+                                            Developers
+                                            <small><i class="fa fa-clock-o"></i>
+                                                Today
+                                            </small>
+                                        </h4>
+                                        <p>Why not buy a new awesome theme?</p>
+                                    </a></li>
+                                    <li><a href="#">
+                                        <div class="pull-left">
+                                            <img src="../../dist/img/user3-128x128.jpg"
+                                                 class="img-circle" alt="User Image">
+                                        </div>
+                                        <h4>
+                                            Sales Department
+                                            <small><i class="fa fa-clock-o"></i>
+                                                Yesterday
+                                            </small>
+                                        </h4>
+                                        <p>Why not buy a new awesome theme?</p>
+                                    </a></li>
+                                    <li><a href="#">
+                                        <div class="pull-left">
+                                            <img src="../../dist/img/user4-128x128.jpg"
+                                                 class="img-circle" alt="User Image">
+                                        </div>
+                                        <h4>
+                                            Reviewers
+                                            <small><i class="fa fa-clock-o"></i> 2
+                                                days
+                                            </small>
+                                        </h4>
+                                        <p>Why not buy a new awesome theme?</p>
+                                    </a></li>
+                                </ul>
+                            </li>
+                            <li class="footer"><a href="#">See All Messages</a></li>
+                        </ul>
+                    </li>
+                    <!-- Notifications: style can be found in dropdown.less -->
+                    <li class="dropdown notifications-menu"><a href="#"
+                                                               class="dropdown-toggle" data-toggle="dropdown"> <i
+                            class="fa fa-bell-o"></i> <span class="label label-warning">10</span>
+                    </a>
+                        <ul class="dropdown-menu">
+                            <li class="header">You have 10 notifications</li>
+                            <li>
+                                <!-- inner menu: contains the actual data -->
+                                <ul class="menu">
+                                    <li><a href="#"> <i class="fa fa-users text-aqua"></i>
+                                        5 new members joined today
+                                    </a></li>
+                                    <li><a href="#"> <i class="fa fa-warning text-yellow"></i>
+                                        Very long description here that may not fit into the page
+                                        and may cause design problems
+                                    </a></li>
+                                    <li><a href="#"> <i class="fa fa-users text-red"></i>
+                                        5 new members joined
+                                    </a></li>
+                                    <li><a href="#"> <i
+                                            class="fa fa-shopping-cart text-green"></i> 25 sales made
+                                    </a></li>
+                                    <li><a href="#"> <i class="fa fa-user text-red"></i>
+                                        You changed your username
+                                    </a></li>
+                                </ul>
+                            </li>
+                            <li class="footer"><a href="#">View all</a></li>
+                        </ul>
+                    </li>
+                    <!-- Tasks: style can be found in dropdown.less -->
+                    <li class="dropdown tasks-menu"><a href="#"
+                                                       class="dropdown-toggle" data-toggle="dropdown"> <i
+                            class="fa fa-flag-o"></i> <span class="label label-danger">9</span>
+                    </a>
+                        <ul class="dropdown-menu">
+                            <li class="header">You have 9 tasks</li>
+                            <li>
+                                <!-- inner menu: contains the actual data -->
+                                <ul class="menu">
+                                    <li>
+                                        <!-- Task item --> <a href="#">
+                                        <h3>
+                                            Design some buttons
+                                            <small class="pull-right">20%</small>
+                                        </h3>
+                                        <div class="progress xs">
+                                            <div class="progress-bar progress-bar-aqua"
+                                                 style="width: 20%" role="progressbar" aria-valuenow="20"
+                                                 aria-valuemin="0" aria-valuemax="100">
+                                                <span class="sr-only">20% Complete</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    </li>
+                                    <!-- end task item -->
+                                    <li>
+                                        <!-- Task item --> <a href="#">
+                                        <h3>
+                                            Create a nice theme
+                                            <small class="pull-right">40%</small>
+                                        </h3>
+                                        <div class="progress xs">
+                                            <div class="progress-bar progress-bar-green"
+                                                 style="width: 40%" role="progressbar" aria-valuenow="20"
+                                                 aria-valuemin="0" aria-valuemax="100">
+                                                <span class="sr-only">40% Complete</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    </li>
+                                    <!-- end task item -->
+                                    <li>
+                                        <!-- Task item --> <a href="#">
+                                        <h3>
+                                            Some task I need to do
+                                            <small class="pull-right">60%</small>
+                                        </h3>
+                                        <div class="progress xs">
+                                            <div class="progress-bar progress-bar-red"
+                                                 style="width: 60%" role="progressbar" aria-valuenow="20"
+                                                 aria-valuemin="0" aria-valuemax="100">
+                                                <span class="sr-only">60% Complete</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    </li>
+                                    <!-- end task item -->
+                                    <li>
+                                        <!-- Task item --> <a href="#">
+                                        <h3>
+                                            Make beautiful transitions
+                                            <small class="pull-right">80%</small>
+                                        </h3>
+                                        <div class="progress xs">
+                                            <div class="progress-bar progress-bar-yellow"
+                                                 style="width: 80%" role="progressbar" aria-valuenow="20"
+                                                 aria-valuemin="0" aria-valuemax="100">
+                                                <span class="sr-only">80% Complete</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    </li>
+                                    <!-- end task item -->
+                                </ul>
+                            </li>
+                            <li class="footer"><a href="#">View all tasks</a></li>
+                        </ul>
+                    </li>
+                    <!-- User Account: style can be found in dropdown.less -->
+                    <li class="dropdown user user-menu"><a href="#"
+                                                           class="dropdown-toggle" data-toggle="dropdown"> <img
+                            src="../../dist/img/admin.jpg" class="user-image"
+                            alt="User Image"> <span class="hidden-xs">Admin</span>
+                    </a>
+                        <ul class="dropdown-menu">
+                            <!-- User image -->
+                            <li class="user-header"><img src="../../dist/img/admin.jpg"
+                                                         class="img-circle" alt="User Image">
+
+                                <p>
+                                    Alexander Pierce - Web Developer
+                                    <small>Member since
+                                        Nov. 2012
+                                    </small>
+                                </p>
+                            </li>
+                            <!-- Menu Body -->
+                            <li class="user-body">
+                                <div class="row">
+                                    <div class="col-xs-4 text-center">
+                                        <a href="#">Followers</a>
+                                    </div>
+                                    <div class="col-xs-4 text-center">
+                                        <a href="#">Sales</a>
+                                    </div>
+                                    <div class="col-xs-4 text-center">
+                                        <a href="#">Friends</a>
+                                    </div>
+                                </div> <!-- /.row -->
+                            </li>
+                            <!-- Menu Footer-->
+                            <li class="user-footer">
+                                <div class="pull-left">
+                                    <a href="#" class="btn btn-default btn-flat">Profile</a>
+                                </div>
+                                <div class="pull-right">
+                                    <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- Control Sidebar Toggle Button -->
+                    <li><a href="#" data-toggle="control-sidebar"><i
+                            class="fa fa-gears"></i></a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!-- Left side column. contains the logo and sidebar -->
+    <aside class="main-sidebar">
+        <!-- sidebar: style can be found in sidebar.less -->
+        <section class="sidebar">
+            <!-- Sidebar user panel -->
+            <div class="user-panel">
+                <div class="pull-left image">
+                    <img src="../../dist/img/admin.jpg" class="img-circle"
+                         alt="User Image">
+                </div>
+                <div class="pull-left info">
+                    <p>Admin</p>
+                    <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+                </div>
+            </div>
+            <!-- search form -->
+            <!--<form action="#" method="get" class="sidebar-form">-->
+            <!--<div class="input-group">-->
+            <!--<input type="text" name="q" class="form-control" placeholder="Search...">-->
+            <!--<span class="input-group-btn">-->
+            <!--<button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>-->
+            <!--</button>-->
+            <!--</span>-->
+            <!--</div>-->
+            <!--</form>-->
+            <div class="sidebar" id="sidebar">
+                <ul class="nav nav-list sidebar-menu" id="menu">
+                    <li class="header">导航</li>
+                </ul>
+                <div class="sidebar-collapse" id="sidebar-collapse">
+                    <i class="icon-double-angle-left"
+                       data-icon1="icon-double-angle-left"
+                       data-icon2="icon-double-angle-right"></i>
+                </div>
+                <!--<ul class="sidebar-menu">-->
+                <!--<li class="header">导航</li>-->
+                <!--<li>-->
+                <!--<a href="#">-->
+                <!--<i class="fa fa-dashboard"></i> <span>运价</span>-->
+                <!--<span class="pull-right-container">-->
+                <!--<i class="fa fa-angle-left pull-right"></i>-->
+                <!--</span>-->
+                <!--</a>-->
+                <!--<ul class="treeview-menu">-->
+                <!--<li class="active dj"  data-name="tlb">-->
+                <!--<a href="javascript:void(0)"><i class="fa fa-circle-o"></i>海运报价</a>-->
+                <!--</li>-->
+                <!--<li class="dj" data-path="freight/html/RMB_fee" data-name="RMB_fee">-->
+                <!--<a href="javascript:void(0)"><i class="fa fa-circle-o"></i>人民币费用</a>-->
+                <!--</li>-->
+                <!--<li>-->
+                <!--<a href="javascript:void(0)"><i class="fa fa-circle-o"></i>内托报价</a>-->
+                <!--</li>-->
+                <!--</ul>-->
+                <!--</li>-->
+                <!--<li>-->
+                <!--<a  href="javascript:void(0)">-->
+                <!--<i class="fa fa-files-o"></i>-->
+                <!--<span>销售</span>-->
+                <!--<span class="pull-right-container">-->
+                <!--<i class="fa fa-angle-left pull-right"></i>-->
+                <!--</span>-->
+                <!--</a>-->
+                <!--<ul class="treeview-menu">-->
+                <!--<li class="dj" data-name="tlb2"><a href="javascript:void(0)"><i class="fa fa-circle-o"></i> 客户管理</a></li>-->
+                <!--<li class="dj" data-name="tlb3"><a href="javascript:void(0)"><i class="fa fa-circle-o"></i> 市场管理</a></li>-->
+                <!--<li><a href="pages/layout/fixed.html"><i class="fa fa-circle-o"></i> 服务管理</a></li>-->
+                <!--<li><a href="pages/layout/collapsed-sidebar.html"><i class="fa fa-circle-o"></i>销售管理</a></li>-->
+                <!--<li><a href="#"><i class="fa fa-circle-o"></i>信用控制</a></li>-->
+                <!--</ul>-->
+                <!--</li>-->
+                <!--<li>-->
+                <!--<a href="pages/widgets.html">-->
+                <!--<i class="fa fa-th"></i> <span>海运</span>-->
+                <!--<span class="pull-right-container">-->
+                <!--<i class="fa fa-angle-left pull-right"></i>-->
+                <!--</span>-->
+                <!--</a>-->
+                <!--<ul class="treeview-menu">-->
+                <!--<li><a href="#"><i class="fa fa-circle-o"></i>基础数据</a></li>-->
+                <!--<li><a href="#"><i class="fa fa-circle-o"></i> 系统接口</a></li>-->
+                <!--<li><a href="#"><i class="fa fa-circle-o"></i>出口网上服务</a></li>-->
+                <!--<li><a href="#"><i class="fa fa-circle-o"></i>出口业务</a></li>-->
+                <!--<li><a href="#"><i class="fa fa-circle-o"></i>进口业务</a></li>-->
+                <!--<li><a href="#"><i class="fa fa-circle-o"></i>进口网上服务</a></li>-->
+                <!--<li><a href="#"><i class="fa fa-circle-o"></i>价格管理</a></li>-->
+                <!--<li><a href="#"><i class="fa fa-circle-o"></i>海运计费</a></li>-->
+                <!--<li><a href="#"><i class="fa fa-circle-o"></i>统计分析</a></li>-->
+                <!--</ul>-->
+                <!--</li>-->
+                <!--<li>-->
+                <!--<a href="#">-->
+                <!--<i class="fa fa-pie-chart"></i>-->
+                <!--<span>空运</span>-->
+                <!--<span class="pull-right-container">-->
+                <!--<i class="fa fa-angle-left pull-right"></i>-->
+                <!--</span>-->
+                <!--</a>-->
+                <!--<ul class="treeview-menu">-->
+                <!--<li><a href="#"><i class="fa fa-circle-o"></i>基础数据</a></li>-->
+                <!--<li><a href="#"><i class="fa fa-circle-o"></i>出口网上服务</a></li>-->
+                <!--<li><a href="#"><i class="fa fa-circle-o"></i>出口业务</a></li>-->
+                <!--<li><a href="#"><i class="fa fa-circle-o"></i>进口业务</a></li>-->
+                <!--<li><a href="#"><i class="fa fa-circle-o"></i>进口网上服务</a></li>-->
+                <!--<li><a href="#"><i class="fa fa-circle-o"></i>价格管理</a></li>-->
+                <!--<li><a href="#"><i class="fa fa-circle-o"></i>空运计费</a></li>-->
+                <!--<li><a href="#"><i class="fa fa-circle-o"></i>统计分析</a></li>-->
+                <!--</ul>-->
+                <!--</li>-->
+                <!--<li class="treeview">-->
+                <!--<a href="#">-->
+                <!--<i class="fa fa-laptop"></i>-->
+                <!--<span>车队</span>-->
+                <!--</a>-->
+                <!--</li>-->
+                <!--<li>-->
+                <!--<a href="#">-->
+                <!--<i class="fa fa-edit"></i> <span>报关</span>-->
+                <!--<span class="pull-right-container">-->
+                <!--<i class="fa fa-angle-left pull-right"></i>-->
+                <!--</span>-->
+                <!--</a>-->
+                <!--<ul class="treeview-menu">-->
+                <!--<li><a href="pages/forms/general.html"><i class="fa fa-circle-o"></i>出口信用证</a></li>-->
+                <!--<li><a href="pages/forms/advanced.html"><i class="fa fa-circle-o"></i>出口单证管理</a></li>-->
+                <!--<li><a href="pages/forms/editors.html"><i class="fa fa-circle-o"></i>交单议付</a></li>-->
+                <!--<li><a href="#"><i class="fa fa-circle-o"></i>进口信用证</a></li>-->
+                <!--<li><a href="#"><i class="fa fa-circle-o"></i>开证申请</a></li>-->
+                <!--<li><a href="#"><i class="fa fa-circle-o"></i>进口改证</a></li>-->
+                <!--</ul>-->
+                <!--</li>-->
+                <!--<li>-->
+                <!--<a href="#">-->
+                <!--<i class="fa fa-table"></i> <span>跟踪</span>-->
+                <!--</a>-->
+                <!--</li>-->
+                <!--<li>-->
+                <!--<a href="pages/calendar.html">-->
+                <!--<i class="fa fa-calendar"></i> <span>结算</span>-->
+                <!--<span class="pull-right-container">-->
+                <!--<i class="fa fa-angle-left pull-right"></i>-->
+                <!--</span>-->
+                <!--</a>-->
+                <!--<ul class="treeview-menu">-->
+                <!--<li><a href="#"><i class="fa fa-circle-o"></i>基础资料</a></li>-->
+                <!--<li><a href="#"><i class="fa fa-circle-o"></i>凭证接口配置</a></li>-->
+                <!--<li><a href="#"><i class="fa fa-circle-o"></i>对账管理</a></li>-->
+                <!--<li><a href="#"><i class="fa fa-circle-o"></i>发票管理</a></li>-->
+                <!--<li><a href="#"><i class="fa fa-circle-o"></i>结算管理</a></li>-->
+                <!--<li><a href="#"><i class="fa fa-circle-o"></i>凭证管理</a></li>-->
+                <!--<li><a href="#"><i class="fa fa-circle-o"></i>统计分析</a></li>-->
+                <!--</ul>-->
+                <!--</li>-->
+                <!--<li>-->
+                <!--<a href="pages/mailbox/mailbox.html">-->
+                <!--<i class="fa fa-envelope"></i> <span>我的工作台</span>-->
+                <!--</a>-->
+                <!--</li>-->
+                <!--<li>-->
+                <!--<a href="#">-->
+                <!--<i class="fa fa-folder"></i> <span>接单中心</span>-->
+                <!--</a>-->
+                <!--</li>-->
+                <!--<li class="treeview">-->
+                <!--<a href="#">-->
+                <!--<i class="fa fa-share"></i> <span>网上服务</span>-->
+                <!--</a>-->
+                <!--</li>-->
+                <!--<li class="treeview">-->
+                <!--<a href="documentation/index.html">-->
+                <!--<i class="fa fa-book"></i>-->
+                <!--<span>结算中心</span>-->
+                <!--</a>-->
+                <!--</li>-->
+                <!--<li>-->
+                <!--<a href="#">-->
+                <!--<i class="fa fa-dashboard"></i> <span>基础资料</span>-->
+                <!--<span class="pull-right-container">-->
+                <!--<i class="fa fa-angle-left pull-right"></i>-->
+                <!--</span>-->
+                <!--</a>-->
+                <!--<ul class="treeview-menu">-->
+                <!--<li class="active dj"  data-path="basedata/html/common-set" data-name="common-set">-->
+                <!--<a href="javascript:void(0)"><i class="fa fa-circle-o"></i>基础数据集</a>-->
+                <!--</li>-->
+                <!--<li class="dj"  data-path="basedata/html/bank" data-name="bank">-->
+                <!--<a href="javascript:void(0)"><i class="fa fa-circle-o"></i>银行</a>-->
+                <!--</li>-->
+                <!--<li class="dj"  data-path="basedata/html/bank-account" data-name="bank-account">-->
+                <!--<a href="javascript:void(0)"><i class="fa fa-circle-o"></i>银行账号</a>-->
+                <!--</li>-->
+                <!--<li class="dj"  data-path="basedata/html/charge-unit" data-name="charge-unit">-->
+                <!--<a href="javascript:void(0)"><i class="fa fa-circle-o"></i>计费单位</a>-->
+                <!--</li>-->
+                <!--<li class="dj"  data-path="basedata/html/charge" data-name="charge">-->
+                <!--<a href="javascript:void(0)"><i class="fa fa-circle-o"></i>费用</a>-->
+                <!--</li>-->
+                <!--<li class="dj"  data-path="basedata/html/box-type" data-name="box-type">-->
+                <!--<a href="javascript:void(0)"><i class="fa fa-circle-o"></i>箱型</a>-->
+                <!--</li>-->
+                <!--<li class="dj"  data-path="basedata/html/shipping-company" data-name="shipping-company">-->
+                <!--<a href="javascript:void(0)"><i class="fa fa-circle-o"></i>船公司</a>-->
+                <!--</li>-->
+                <!--<li class="dj"  data-path="basedata/html/port" data-name="port">-->
+                <!--<a href="javascript:void(0)"><i class="fa fa-circle-o"></i>港口</a>-->
+                <!--</li>-->
+                <!--<li class="dj"  data-path="basedata/html/port-equipment" data-name="port-equipment">-->
+                <!--<a href="javascript:void(0)"><i class="fa fa-circle-o"></i>港口设备</a>-->
+                <!--</li>-->
+                <!--<li class="dj"  data-path="basedata/html/port-group" data-name="port-group">-->
+                <!--<a href="javascript:void(0)"><i class="fa fa-circle-o"></i>港口组</a>-->
+                <!--</li>-->
+                <!--<li class="dj"  data-path="basedata/html/port-group-port" data-name="port-group-port">-->
+                <!--<a href="javascript:void(0)"><i class="fa fa-circle-o"></i>港口组港口</a>-->
+                <!--</li>-->
+                <!--</ul>-->
+                <!--</li>-->
+                <!--<li>-->
+                <!--<a href="pages/calendar.html">-->
+                <!--<i class="fa fa-calendar"></i> <span>系统管理</span>-->
+                <!--<span class="pull-right-container">-->
+                <!--<i class="fa fa-angle-left pull-right"></i>-->
+                <!--</span>-->
+                <!--</a>-->
+                <!--<ul class="treeview-menu">-->
+                <!--<li class="dj" data-path="sys/html/organizational" data-name="organizational">-->
+                <!--<a href="javascript:void(0)"><i class="fa fa-circle-o"></i>组织架构</a>-->
+                <!--</li>-->
+                <!--<li  class="dj" data-path="sys/html/employee" data-name="employee">-->
+                <!--<a href="javascript:void(0)"><i class="fa fa-circle-o"></i>员工</a>-->
+                <!--</li>-->
+                <!--<li class="dj" data-path="sys/html/server_info" data-name="server_info">-->
+                <!--<a href="javascript:void(0)"><i class="fa fa-circle-o"></i>服务器信息</a>-->
+                <!--</li>-->
+                <!--<li class="dj" data-path="sys/html/systemSetting" data-name="systemSetting">-->
+                <!--<a href="javascript:void(0)"><i class="fa fa-circle-o"></i>系统设置</a>-->
+                <!--</li>-->
+                <!--<li class="dj" data-path="sys/html/resource" data-name="resource">-->
+                <!--<a href="javascript:void(0)"><i class="fa fa-circle-o"></i>资源</a>-->
+                <!--</li>-->
+                <!--<li class="dj" data-path="sys/html/role" data-name="role">-->
+                <!--<a href="javascript:void(0)"><i class="fa fa-circle-o"></i>角色</a>-->
+                <!--</li>-->
+                <!--<li class="dj" data-path="sys/html/user"data-name="user">-->
+                <!--<a href="javascript:void(0)"><i class="fa fa-circle-o"></i>用户</a>-->
+                <!--</li>-->
+                <!--<li class="dj" data-path="sys/html/log" data-name="log">-->
+                <!--<a href="javascript:void(0)"><i class="fa fa-circle-o"></i>日志</a>-->
+                <!--</li>-->
+                <!--</ul>-->
+                <!--</li>-->
+                <!--</ul>-->
+            </div>
+
+        </section>
+        <!-- /.sidebar -->
+    </aside>
+
+    <!-- Content Wrapper. Contains page content -->
+    <!--<div class="content-wrapper" id="contentWrapper">-->
+    <!--&lt;!&ndash; /.content &ndash;&gt;-->
+    <!--</div>-->
+    <!--<div class="main-content content-wrapper page-content" id="contentWrapper">-->
+    <div class="main-content content-wrapper" id="contentWrapper">
+        <!--失败提示-->
+        <div class="alert alert-danger alert-dismissible">
+            <h4>
+                <i class="icon fa fa-ban"></i>提示
+            </h4>
+            <div class="alert-danger-content"></div>
+        </div>
+
+        <!--成功提示-->
+        <div class="alert alert-success alert-dismissible">
+            <h4>
+                <i class="icon fa fa-check"></i> 提示
+            </h4>
+            <div class="alert-success-content"></div>
+        </div>
+
+        <!--带button的提示-->
+        <div class="modal fade" id="alertModal" tabindex="-1" role="dialog"
+             aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header" style="background-color: #dd4b39">
+                        <button type="button" class="close modal_close"
+                                data-dismiss="modal" aria-hidden="true">&times;
+                        </button>
+                        <h4 class="modal-title" id="alert_modal_title"
+                            style="color: white">删除</h4>
+                    </div>
+                    <div class="modal-body" style="padding: 20px"
+                         id="alert_modal_body"></div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default pull-left"
+                                data-dismiss="modal">取消
+                        </button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal"
+                                id="alertModal_Submit">确定
+                        </button>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal -->
+        </div>
+
+        <!--display basedata modul table item detail info-->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+             aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close modal_close"
+                                data-dismiss="modal" aria-hidden="true">&times;
+                        </button>
+                        <h4 class="modal-title" id="myModalLabel">详情</h4>
+                    </div>
+                    <div class="modal-body">
+                        <!--<table id="detail_table"></table>-->
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal -->
+        </div>
+        <div class="row">
+            <div class="col-xs-12" style="padding-left:5px;">
+                <ul class="nav nav-tabs index-nav-tabs" role="tablist">
+                    <!--<li class="active"><a href="#Index" role="tab" data-toggle="tab">首页</a>-->
+                    <!--</li>-->
+                    <li class="active"><a href="#Index" role="tab" data-toggle="tab"> 用户</a></li>
+                </ul>
+                <div class="page-content">
+                    <!--<div role="tabpanel" class="tab-page active" id="Index">-->
+                    <!--</div>-->
+                    <!--设计者：金天-->
+                    <!--截至时间：2017/5/2-->
+                    <!--项目名称：海盟物流管理系统、用户管理-->
+
+                    <!-- Content Wrapper. Contains page content -->
+                    <div id="tab_15_5" class="user sys tab-page active"
+                         role="tabpanel">
+                        <!-- Content Header (Page header) -->
+                        <section class="content-header">
+                            <h1>
+                                系统管理
+                                <small>用户</small>
+                            </h1>
+                            <ol class="breadcrumb">
+                                <li><a href="#"><i class="fa fa-dashboard"></i>系统管理</a></li>
+                                <li><a href="#">用户</a></li>
+                                <li class="active">数据表格</li>
+                            </ol>
+                        </section>
+                        <!--角色分配弹出框-->
+                        <div class="modal fade" id="user_roleModal" tabindex="-1"
+                             role="dialog" aria-labelledby="authenticationModalLabel"
+                             aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close modal_close"
+                                                data-dismiss="modal" aria-hidden="true">&times;
+                                        </button>
+                                        <h4 class="modal-title" id="roleModalLabel">角色分配</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form id="roleModal_AllocateForm">
+                                            <table id="role_tb"
+                                                   class="table table-bordered table-striped table-condensed"
+                                                   style="width: 100%;">
+
+                                            </table>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <div class="sm-wrapper">
+                                            <button class="btn btn-info save_roleModal_btn"
+                                                    data-dismiss="modal">保存
+                                            </button>
+                                            <button class="btn btn-info close_roleModal_btn"
+                                                    data-dismiss="modal">取消
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /.modal-content -->
+                            </div>
+                            <!-- /.modal -->
+                        </div>
+                        <!-- 授权账号弹出框 -->
+                        <div class="modal fade in" id="user_authenticationModal" tabindex="-1"
+                             role="dialog" aria-labelledby="authenticationModalLabel"
+                             aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close modal_close"
+                                                data-dismiss="modal" aria-hidden="true">&times;
+                                        </button>
+                                        <h4 class="modal-title" id="authenticationModalLabel">授权账号</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="sm-wrapper">
+                                            <button class="btn btn-info add_authenticationModal_btn"
+                                                    data-toggle="modal" >新增
+                                            </button>
+                                            <button class="btn btn-info edit_authenticationModal_btn" >修改
+                                            </button>
+                                        </div>
+                                        <form id="authenticationModal_Form">
+                                            <div class="box">
+                                                <div class="box-body no-padding">
+                                                    <table id="authenticationModal_Table" class="table">
+                                                       <!--  <tbody>
+                                                        <tr>
+                                                            <th style="width: 10px"><input type="checkbox" class="checkall"></th>
+                                                            <th>账号</th>
+                                                            <th>类型</th>
+                                                            <th>最近认证时间</th>
+                                                            <th>最近认证IP</th>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width: 10px"><input type="checkbox" class="checkchild"></td>
+                                                            <td>1800000000</td>
+                                                            <td>邮箱</td>
+                                                            <td>2017-5-20</td>
+                                                            <td>2017-5-1</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width: 10px"><input type="checkbox" class="checkchild"></td>
+                                                            <td>1800000000</td>
+                                                            <td>邮箱</td>
+                                                            <td>2017-5-20</td>
+                                                            <td>2017-5-1</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width: 10px">
+                                                                <input type="checkbox" class="checkchild">
+                                                            </td>
+                                                            <td>666666</td>
+                                                            <td>微信</td>
+                                                            <td>2017-1-20</td>
+                                                            <td>2017-2-1</td>
+                                                        </tr>
+                                                        </tbody> -->
+                                                    </table>
+                                                </div>
+                                                <!-- /.box-body -->
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer"></div>
+                                </div>
+                                <!-- /.modal-content -->
+                            </div>
+                            <!-- /.modal -->
+                        </div>
+
+                        <!-- 授权账号新增/修改弹出框 -->
+                        <div class="modal fade in" id="user_authenticationAddModal" tabindex="-1"
+                             role="dialog" aria-labelledby="authenticationAddModalLabel"
+                             aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close modal_close"
+                                                data-dismiss="modal" aria-hidden="true">&times;
+                                        </button>
+                                        <h4 class="modal-title" id="authenticationAddModalLabel">编辑授权账号</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="sm-wrapper">
+                                            <button class="btn btn-info save_authenticationModal_btn">保存
+                                            </button>
+                                            <button class="btn btn-info close_authenticationModal_btn"
+                                                    data-dismiss="modal">取消
+                                            </button>
+                                        </div>
+                                        <form id="authenticationForm">
+                                            <!--<table>  id="addModal_addTable"
+                                                class="table table-bordered table-striped table-condensed"
+                                                <tbody>-->
+                                            <div class="form-group">
+                                                <label>账号</label>
+                                                <div><input type="text" name="account"
+                                                            class="form-control"> <input
+                                                        type="text" name="userId" hidden="true">
+                                                        <input
+                                                        type="text" name="authenticationId" hidden="true">
+                                                    <input type="text" name="saveType" hidden="true" value="insert">
+                                                </div>
+
+                                            </div>
+                                            <div class="form-group">
+                                                <label>密码</label>
+                                                <div><input type="password" name="password"
+                                                            class="form-control"></div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>确认密码</label>
+                                                <div><input type="password" name="confirmPassword"
+                                                            class="form-control"></div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>类型</label>
+                                                <div><select class="form-control" name="type">
+                                                    <option value="账号">账号</option>
+                                                    <option value="邮箱">邮箱</option>
+                                                    <option value="手机">手机</option>
+                                                </select></div>
+                                            </div>
+                                             <div class="form-group">
+                                                <label>创建时间</label>
+                                                <div><input disabled name = "sCreateTime"  type="text"
+                                                            class="form-control "></div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>创建人</label>
+                                                <div><input disabled name = "creatorName"  type="text"
+                                                            class="form-control "></div>
+                                            </div>
+                                            
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer"></div>
+                                </div>
+                                <!-- /.modal-content -->
+                            </div>
+                            <!-- /.modal -->
+                        </div>
+
+                        <!-- 新增/修改弹出框 -->
+                        <div class="modal fade" id="editUserModal" tabindex="-1"
+                             role="dialog" aria-labelledby="roleModalLabel"
+                             aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close modal_close"
+                                                data-dismiss="modal" aria-hidden="true">&times;
+                                        </button>
+                                        <h4 class="modal-title" id="addModalLabel">新增</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form id="userForm">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label>用户名称</label>
+                                                        <input type="text" name="username"
+                                                                    class="form-control form-control-line"> <input
+                                                                type="text" name="userId" hidden="true">
+                                                            <input type="text" name="saveType" hidden="true" value="insert">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>用户角色</label>
+                                                        <input disabled="" type="text" name="roleNames"
+                                                                    class="form-control form-control-line">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label>客户或员工姓名</label>
+                                                        <input type="text" name="userDetailName"
+                                                                    class="form-control form-control-line">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>客户或员工ID</label>
+                                                     <input type="text" name="userDetailId"
+                                                                    class="form-control form-control-line">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row single-row">
+                                                <div class="col-md-12">
+                                                    <div class="form-group">
+                                                        <label>类型</label>
+                                                        <select class="form-control form-control-line"
+                                                                     name="type">
+                                                            <option value="员工">员工</option>
+                                                            <option value="客户">客户</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label>创建时间</label>
+                                                        <input disabled name = "sCreateTime"  type="text"
+                                                                    class="form-control form-control-line">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label>创建人</label>
+                                                        <input disabled name = "creatorName"  type="text"
+                                                                    class="form-control form-control-line">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- 		</tbody>
+                                                </table> -->
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <div class="sm-wrapper">
+                                            <input type="submit" class="btn btn-primary" id="submitUserAddModal" value="确定"/>
+                                            <button id="saveUserCancel" type="button"
+                                                    data-dismiss="modal" class="user_cancel btn btn-primary">
+                                                取消
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /.modal-content -->
+                            </div>
+                            <!-- /.modal -->
+                        </div>
+
+                        <section class="content">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <div class="box">
+                                        <!--<div class="box-header">-->
+                                        <!--<h3 class="box-title">查询</h3>-->
+                                        <!--&lt;!&ndash; /.box-tools &ndash;&gt;-->
+                                        <!--</div>-->
+                                        <!-- /.box-header -->
+                                        <div class="box-body">
+                                            <form class="search-table" id="searchForm">
+                                                <div class="form-item">
+                                                    <label>用户名称：</label>
+                                                    <input type="text" name="username" class="form-control" placeholder="用户名称">
+                                                </div>
+                                                <div class="form-item">
+                                                    <select  name="type" class="form-control">
+                                                      	<option value="">全部</option>
+                                                        <option value="客户">客户</option>
+                                                        <option  value="员工">员工</option>
+                                                    </select>
+                                                </div>
+                                                <div class="sm-wrapper"
+                                                     style="display: inline-block; margin-left: 384px">
+                                                    <input type="button" class="btn btn-info btn-size" id="searchUser" style="width: 97px;"  onclick="doSearch()" value="查找"/>
+                                                       
+                                                 
+                                                  <!--   <label onclick="doSearch()">adasdfasdf</label> -->
+                                                    <button class="btn btn-info btn-size search_reset"
+                                                            id="_reset">重置
+                                                    </button>
+                                                </div>
+                                            </form>
+
+                                        </div>
+                                        <!-- /.box-body -->
+                                    </div>
+                                    <!--查询栏-->
+                                    <!--<div class="box collapsed-box add-box2 box-primary">-->
+                                    <!--<div class="box-header">-->
+                                    <!--<h3 class="box-title">授权信息</h3>-->
+                                    <!--<div class="pull-right box-tools">-->
+                                    <!--<button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">-->
+                                    <!--<i id="add_fa_btn2" class="fa fa-plus"></i></button>-->
+                                    <!--</div>-->
+                                    <!--</div>-->
+                                    <!--<div class="box-body add-box-body2">-->
+                                    <!--<form id="saveUser-authenticationTable" role="form" class="hidden-xs hidden-sm visible-md visible-lg add-table">-->
+                                    <!--</form>-->
+                                    <!--<div class="btn_group">-->
+                                    <!--<button id="user_edit2" class="btn btn-info" data-toggle="modal" data-target="#authenticationModal">-->
+                                    <!--修改-->
+                                    <!--</button>-->
+                                    <!--<button id="user_cancel2" class="btn btn-info add_cancel2">-->
+                                    <!--取消-->
+                                    <!--</button>-->
+
+                                    <!--</div>-->
+                                    <!--</div>-->
+                                    <!--</div>-->
+                                    <!--&lt;!&ndash; /授权信息栏 &ndash;&gt;-->
+                                    <div class="box">
+                                        <!-- /.box-header -->
+                                        <div class="box-body">
+                                            <div class="btn_group" style="margin-bottom: 10px">
+                                                <button id="addUser" class="btn btn-info"
+                                                        data-toggle="modal" data-target="#editUserModal">
+                                                    新增
+                                                </button>
+                                                <button id="deleteUser" class="btn btn-info">
+                                                    删除
+                                                </button>
+                                                <button id="refreshUser" class="btn btn-info">刷新
+                                                </button>
+                                                <button id="editUser" class="btn btn-info">修改</button>
+                                                <button id="setUserRole" class="btn btn-info">
+                                                    分配角色
+                                                </button>
+                                                <button id="setUserAuthenticationAccount" class="btn btn-info">
+                                                    创建授权账号
+                                                </button>
+                                            </div>
+                                            <table id="user_tb"
+                                                   class="table table-bordered table-striped">
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <!--主要表单内容-->
+                                </div>
+                            </div>
+                        </section>
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.content-wrapper -->
+    <footer class="main-footer">
+        <!--<div class="pull-right hidden-xs">-->
+        <!--<b>Version</b> 2.3.8-->
+        <!--</div>-->
+        <strong>Copyright @海盟控股集团有限公司 </strong>
+    </footer>
+
+    <!-- Control Sidebar -->
+    <aside class="control-sidebar control-sidebar-dark">
+        <!-- Create the tabs -->
+        <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
+            <li><a href="#control-sidebar-home-tab" data-toggle="tab"><i
+                    class="fa fa-home"></i></a></li>
+            <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i
+                    class="fa fa-gears"></i></a></li>
+        </ul>
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <!-- Home tab content -->
+            <div class="tab-pane" id="control-sidebar-home-tab">
+                <h3 class="control-sidebar-heading">Recent Activity</h3>
+                <ul class="sidebar-menu">
+                    <li class="header">MAIN NAVIGATION</li>
+                    <li class="treeview"><a href="#"> <i
+                            class="fa fa-dashboard"></i> <span>运价</span>
+                    </a></li>
+                    <li><a href="#"> <i class="fa fa-files-o"></i> <span></span>
+                        <span class="pull-right-container"> <i
+                                class="fa fa-angle-left pull-right"></i>
+							</span>
+                    </a>
+                        <ul class="treeview-menu">
+                            <li><a href="pages/layout/top-nav.html"><i
+                                    class="fa fa-circle-o"></i> 客户管理</a></li>
+                            <li><a href="pages/layout/boxed.html"><i
+                                    class="fa fa-circle-o"></i> 市场管理</a></li>
+                            <li><a href="pages/layout/fixed.html"><i
+                                    class="fa fa-circle-o"></i> 服务管理</a></li>
+                            <li><a href="pages/layout/collapsed-sidebar.html"><i
+                                    class="fa fa-circle-o"></i>销售管理</a></li>
+                            <li><a href="#"><i class="fa fa-circle-o"></i>信用控制</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="pages/widgets.html"> <i class="fa fa-th"></i>
+                        <span>海运</span> <span class="pull-right-container"> <i
+                                class="fa fa-angle-left pull-right"></i>
+							</span>
+                    </a>
+                        <ul class="treeview-menu">
+                            <li><a href="#"><i class="fa fa-circle-o"></i>基础数据</a></li>
+                            <li><a href="#"><i class="fa fa-circle-o"></i> 系统接口</a></li>
+                            <li><a href="#"><i class="fa fa-circle-o"></i>出口网上服务</a></li>
+                            <li><a href="#"><i class="fa fa-circle-o"></i>出口业务</a></li>
+                            <li><a href="#"><i class="fa fa-circle-o"></i>进口业务</a></li>
+                            <li><a href="#"><i class="fa fa-circle-o"></i>进口网上服务</a></li>
+                            <li><a href="#"><i class="fa fa-circle-o"></i>价格管理</a></li>
+                            <li><a href="#"><i class="fa fa-circle-o"></i>海运计费</a></li>
+                            <li><a href="#"><i class="fa fa-circle-o"></i>统计分析</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#"> <i class="fa fa-pie-chart"></i> <span>空运</span>
+                        <span class="pull-right-container"> <i
+                                class="fa fa-angle-left pull-right"></i>
+							</span>
+                    </a>
+                        <ul class="treeview-menu">
+                            <li><a href="#"><i class="fa fa-circle-o"></i>基础数据</a></li>
+                            <li><a href="#"><i class="fa fa-circle-o"></i>出口网上服务</a></li>
+                            <li><a href="#"><i class="fa fa-circle-o"></i>出口业务</a></li>
+                            <li><a href="#"><i class="fa fa-circle-o"></i>进口业务</a></li>
+                            <li><a href="#"><i class="fa fa-circle-o"></i>进口网上服务</a></li>
+                            <li><a href="#"><i class="fa fa-circle-o"></i>价格管理</a></li>
+                            <li><a href="#"><i class="fa fa-circle-o"></i>空运计费</a></li>
+                            <li><a href="#"><i class="fa fa-circle-o"></i>统计分析</a></li>
+                        </ul>
+                    </li>
+                    <li class="treeview"><a href="#"> <i class="fa fa-laptop"></i>
+                        <span>车队</span>
+                    </a></li>
+                    <li><a href="#"> <i class="fa fa-edit"></i> <span>报关</span>
+                        <span class="pull-right-container"> <i
+                                class="fa fa-angle-left pull-right"></i>
+							</span>
+                    </a>
+                        <ul class="treeview-menu">
+                            <li><a href="pages/forms/general.html"><i
+                                    class="fa fa-circle-o"></i>出口信用证</a></li>
+                            <li><a href="pages/forms/advanced.html"><i
+                                    class="fa fa-circle-o"></i>出口单证管理</a></li>
+                            <li><a href="pages/forms/editors.html"><i
+                                    class="fa fa-circle-o"></i>交单议付</a></li>
+                            <li><a href="#"><i class="fa fa-circle-o"></i>进口信用证</a></li>
+                            <li><a href="#"><i class="fa fa-circle-o"></i>开证申请</a></li>
+                            <li><a href="#"><i class="fa fa-circle-o"></i>进口改证</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#"> <i class="fa fa-table"></i> <span>跟踪</span>
+                    </a></li>
+                    <li><a href="pages/calendar.html"> <i
+                            class="fa fa-calendar"></i> <span>结算</span> <span
+                            class="pull-right-container"> <i
+                            class="fa fa-angle-left pull-right"></i>
+							</span>
+                    </a>
+                        <ul class="treeview-menu">
+                            <li><a href="#"><i class="fa fa-circle-o"></i>基础资料</a></li>
+                            <li><a href="#"><i class="fa fa-circle-o"></i>凭证接口配置</a></li>
+                            <li><a href="#"><i class="fa fa-circle-o"></i>对账管理</a></li>
+                            <li><a href="#"><i class="fa fa-circle-o"></i>发票管理</a></li>
+                            <li><a href="#"><i class="fa fa-circle-o"></i>结算管理</a></li>
+                            <li><a href="#"><i class="fa fa-circle-o"></i>凭证管理</a></li>
+                            <li><a href="#"><i class="fa fa-circle-o"></i>统计分析</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="pages/mailbox/mailbox.html"> <i
+                            class="fa fa-envelope"></i> <span>我的工作台</span>
+                    </a></li>
+                    <li class="treeview"><a href="#"> <i class="fa fa-folder"></i>
+                        <span>接单中心</span>
+                    </a></li>
+                    <li><a href="#"> <i class="fa fa-share"></i> <span>网上服务</span>
+                    </a></li>
+                    <li><a href="documentation/index.html"> <i
+                            class="fa fa-book"></i> <span>结算中心</span>
+                    </a></li>
+                </ul>
+                <!-- /.control-sidebar-menu -->
+
+                <h3 class="control-sidebar-heading">Tasks Progress</h3>
+                <ul class="control-sidebar-menu">
+                    <li><a href="javascript:void(0)">
+                        <h4 class="control-sidebar-subheading">
+                            Custom Template Design <span
+                                class="label label-danger pull-right">70%</span>
+                        </h4>
+
+                        <div class="progress progress-xxs">
+                            <div class="progress-bar progress-bar-danger"
+                                 style="width: 70%"></div>
+                        </div>
+                    </a></li>
+                    <li><a href="javascript:void(0)">
+                        <h4 class="control-sidebar-subheading">
+                            Update Resume <span class="label label-success pull-right">95%</span>
+                        </h4>
+
+                        <div class="progress progress-xxs">
+                            <div class="progress-bar progress-bar-success"
+                                 style="width: 95%"></div>
+                        </div>
+                    </a></li>
+                    <li><a href="javascript:void(0)">
+                        <h4 class="control-sidebar-subheading">
+                            Laravel Integration <span
+                                class="label label-warning pull-right">50%</span>
+                        </h4>
+
+                        <div class="progress progress-xxs">
+                            <div class="progress-bar progress-bar-warning"
+                                 style="width: 50%"></div>
+                        </div>
+                    </a></li>
+                    <li><a href="javascript:void(0)">
+                        <h4 class="control-sidebar-subheading">
+                            Back End Framework <span class="label label-primary pull-right">68%</span>
+                        </h4>
+
+                        <div class="progress progress-xxs">
+                            <div class="progress-bar progress-bar-primary"
+                                 style="width: 68%"></div>
+                        </div>
+                    </a></li>
+                </ul>
+                <!-- /.control-sidebar-menu -->
+
+            </div>
+            <!-- /.tab-pane -->
+            <!-- Stats tab content -->
+            <div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab
+                Content
+            </div>
+            <!-- /.tab-pane -->
+            <!-- Settings tab content -->
+            <div class="tab-pane" id="control-sidebar-settings-tab">
+                <form method="post">
+                    <h3 class="control-sidebar-heading">General Settings</h3>
+
+                    <div class="form-group">
+                        <label class="control-sidebar-subheading"> Report panel
+                            usage <input type="checkbox" class="pull-right" checked>
+                        </label>
+
+                        <p>Some information about this general settings option</p>
+                    </div>
+                    <!-- /.form-group -->
+
+                    <div class="form-group">
+                        <label class="control-sidebar-subheading"> Allow mail
+                            redirect <input type="checkbox" class="pull-right" checked>
+                        </label>
+
+                        <p>Other sets of options are available</p>
+                    </div>
+                    <!-- /.form-group -->
+
+                    <div class="form-group">
+                        <label class="control-sidebar-subheading"> Expose author
+                            name in posts <input type="checkbox" class="pull-right" checked>
+                        </label>
+
+                        <p>Allow the user to show his name in blog posts</p>
+                    </div>
+                    <!-- /.form-group -->
+
+                    <h3 class="control-sidebar-heading">Chat Settings</h3>
+
+                    <div class="form-group">
+                        <label class="control-sidebar-subheading"> Show me as
+                            online <input type="checkbox" class="pull-right" checked>
+                        </label>
+                    </div>
+                    <!-- /.form-group -->
+
+                    <div class="form-group">
+                        <label class="control-sidebar-subheading"> Turn off
+                            notifications <input type="checkbox" class="pull-right">
+                        </label>
+                    </div>
+                    <!-- /.form-group -->
+
+                    <div class="form-group">
+                        <label class="control-sidebar-subheading"> Delete chat
+                            history <a href="javascript:void(0)" class="text-red pull-right"><i
+                                    class="fa fa-trash-o"></i></a>
+                        </label>
+                    </div>
+                    <!-- /.form-group -->
+                </form>
+            </div>
+            <!-- /.tab-pane -->
+        </div>
+    </aside>
+    <!-- /.control-sidebar -->
+    <!-- Add the sidebar's background. This div must be placed
+     immediately after the control sidebar -->
+    <div class="control-sidebar-bg"></div>
+</div>
+</body>
+<!-- ./wrapper -->
+<!-- jQuery 2.2.3 -->
+<script src="../../plugins/jQuery/jquery-2.2.3.min.js"></script>
+<!-- jQuery serialize-object 2.3.4 -->
+<script src="../../plugins/jQuery/jquery.serialize-object.min.js"></script>
+<script src="../../plugins/jQuery/jquery.jdirk.js"></script>
+<!-- Bootstrap 3.3.6 -->
+<script src="../../bootstrap/js/bootstrap.min.js"></script>
+<!-- SlimScroll -->
+<script src="../../plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<!-- FastClick -->
+<script src="../../plugins/fastclick/fastclick.js"></script>
+<!-- AdminLTE App -->
+<script src="../../dist/js/app.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="../../dist/js/demo.js"></script>
+<!-- DataTables -->
+<script src="../../plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="../../plugins/datatables/dataTables.bootstrap.min.js"></script>
+<script src="../../plugins/datepicker/bootstrap-datepicker.js"></script>
+<!--树状表格-->
+<script src="../../plugins/ztree/jquery.ztree.core-3.5.js"></script>
+<script src="../../dist/js/treetable/jquery.treetable.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.3.1/js/dataTables.buttons.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.3.1/js/buttons.html5.min.js"></script>
+<script src="../../plugins/validate/jquery.validate.js"></script>
+<script src="../../plugins/validate/localization/messages_zh.min.js"></script>
+<!--datepicker-->
+<script src="../../plugins/datepicker/bootstrap-datepicker.js"></script>
+<!--<script src="basedata/js/common-set.js"></script>-->
+<!--<script src="basedata/js/port.js"></script>-->
+<script src="../../js/index.js"></script>
+<script src="../../js/common.js"></script>
+<script src="../../sys/js/user.js"></script>
+<script src="../../sys/js/public.js"></script>
+<!--<script src="basedata/js/bank.js"></script>-->
+
+<!--<script>-->
+<!--//加载页面-->
+<!--function switchPage() {-->
+<!--//默认载入第一个子页-->
+<!--$.get('basedata/html/port.html', function (data) {-->
+<!--$('#contentWrapper').append(data).find('#' + 'port').show();-->
+<!--});-->
+<!--}-->
+<!--switchPage();-->
+<!--</script>-->
+<!--<script>-->
+<!--$(".dj").click(function(event){-->
+<!--var $this = $(event.currentTarget);-->
+<!--var path = $this.attr('data-path');-->
+<!--var name = $this.attr('data-name');-->
+<!--$.get(path+'.html',function (data) {-->
+<!--$('#contentWrapper').append(data).find('#'+name).show().siblings().remove();-->
+<!--});-->
+<!--})-->
+<!--</script>-->
+
+</html>

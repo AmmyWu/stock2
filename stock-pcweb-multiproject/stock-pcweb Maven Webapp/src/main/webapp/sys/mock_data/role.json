@@ -1,0 +1,126 @@
+{
+  "recordsFiltered": 12,
+  "aaData": [
+    {
+      "roleId": 16,
+      "name": "ccc点啊啊啊",
+      "description": "查重",
+      "creator": null,
+      "createTime": null,
+      "accessGroup": null,
+      "amender": null,
+      "amendTime": null,
+      "recordVersion": null,
+      "isDeleted": null
+    },
+    {
+      "roleId": 13,
+      "name": "aaa",
+      "description": "aa",
+      "creator": null,
+      "createTime": null,
+      "accessGroup": null,
+      "amender": null,
+      "amendTime": null,
+      "recordVersion": null,
+      "isDeleted": null
+    },
+    {
+      "roleId": 10,
+      "name": "test",
+      "description": "aaabbb",
+      "creator": null,
+      "createTime": null,
+      "accessGroup": null,
+      "amender": null,
+      "amendTime": 1495150200000,
+      "recordVersion": null,
+      "isDeleted": null
+    },
+    {
+      "roleId": 9,
+      "name": "排班",
+      "description": "排班负责人",
+      "creator": null,
+      "createTime": null,
+      "accessGroup": null,
+      "amender": null,
+      "amendTime": null,
+      "recordVersion": null,
+      "isDeleted": null
+    },
+    {
+      "roleId": 8,
+      "name": "设备维护",
+      "description": "设备维护负责人12",
+      "creator": null,
+      "createTime": null,
+      "accessGroup": null,
+      "amender": null,
+      "amendTime": 1495149069000,
+      "recordVersion": null,
+      "isDeleted": null
+    },
+    {
+      "roleId": 7,
+      "name": "护士负责人",
+      "description": "排班负责人",
+      "creator": null,
+      "createTime": null,
+      "accessGroup": null,
+      "amender": null,
+      "amendTime": null,
+      "recordVersion": null,
+      "isDeleted": null
+    },
+    {
+      "roleId": 6,
+      "name": "testRole",
+      "description": "测试",
+      "creator": null,
+      "createTime": null,
+      "accessGroup": null,
+      "amender": null,
+      "amendTime": null,
+      "recordVersion": null,
+      "isDeleted": null
+    },
+    {
+      "roleId": 5,
+      "name": "newAdmin",
+      "description": "活动门禁的负责人",
+      "creator": null,
+      "createTime": null,
+      "accessGroup": null,
+      "amender": null,
+      "amendTime": null,
+      "recordVersion": null,
+      "isDeleted": null
+    },
+    {
+      "roleId": 4,
+      "name": "科室负责人",
+      "description": "科室负责人",
+      "creator": null,
+      "createTime": null,
+      "accessGroup": null,
+      "amender": null,
+      "amendTime": null,
+      "recordVersion": null,
+      "isDeleted": null
+    },
+    {
+      "roleId": 3,
+      "name": "巡检员",
+      "description": "巡检员",
+      "creator": null,
+      "createTime": null,
+      "accessGroup": null,
+      "amender": null,
+      "amendTime": null,
+      "recordVersion": null,
+      "isDeleted": null
+    }
+  ],
+  "recordsTotal": 12
+}

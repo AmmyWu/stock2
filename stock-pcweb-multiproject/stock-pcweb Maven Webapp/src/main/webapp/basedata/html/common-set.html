@@ -1,0 +1,235 @@
+<!--<div id="common-set" class="basedata">-->
+<div id="tab_9001" class="common-set basedata tab-page" role="tabpanel">
+    <!--<div class="content-header">-->
+        <!--<h1>-->
+            <!--基础资料-->
+            <!--<small>基础数据集</small>-->
+        <!--</h1>-->
+        <!--<ol class="breadcrumb">-->
+            <!--<li><a href="#"><i class="fa fa-dashboard"></i> 基础资料</a></li>-->
+            <!--<li><a href="#">基础数据集</a></li>-->
+            <!--<li class="active">数据表格</li>-->
+        <!--</ol>-->
+        <!---->
+    <!--</div>-->
+    <!--<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">开始演示模态框</button>--
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <!--begin search box-->
+                <div class="box search-box">
+                    <!--<div class="box-header">-->
+                        <!--<h4 class="box-title">查询</h4>-->
+                        <!--<div class="pull-right box-tools">-->
+                            <!--<button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">-->
+                                <!--<i class="fa fa-plus"></i></button>-->
+                            <!--<button type="button" class="btn btn-info btn-sm" data-widget="remove" data-toggle="tooltip" title="Remove">-->
+                            <!--<i class="fa fa-times"></i></button>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <div class="box-body">
+                        <form class="search-table form-inline" id="searchCommonSetForm" role="form">
+                            <div class="form-group">
+                                    <label>类型(父节点)</label>
+                                    <select style=" width: 150px;"  name="superiorId"
+                                            class="form-control select2 select2-hidden-accessible"
+                                            tabindex="-1" aria-hidden="true">
+                                        <option value=""></option>
+                                    </select>
+                                    <!--
+                                    <input type="text" class="form-control" name="superiorId" placeholder="">-->
+                                </div>
+                                <div class="form-group">
+                                    <label>代码</label>
+                                    <input type="text" class="form-control" name="code" placeholder="基础数据集代码">
+                               </div>
+                                <div class="form-group">
+                                    <label>英文名称</label>
+                                    <input type="text" class="form-control" name="enName" placeholder="基础数据集名称（EN）">
+                                </div>
+                                <div class="form-group">
+                                    <label>中文名称</label>
+                                    <input type="text" class="form-control"name="cnName" placeholder="基础数据集名称（CN）">
+                               </div>
+                        </form>
+                            <div class="sm-wrqapper">
+                                <!--  <lable class="check-1">生效&nbsp&nbsp&nbsp&nbsp<input class="check-size" type="checkbox" name="生效"/>
+                                 </lable> -->
+                                <input type="button" class="btn btn-info btn-size" onclick="commonSet.searchCommonSet()"
+                                       value="查找" id="90010100"/>
+
+                                <button class="btn btn-info search_reset" id="resetSearchCommonSetForm">
+                                    重置
+                                </button>
+                            </div>
+
+
+
+                    </div>
+                </div>
+                <!--end search box-->
+
+                <div class="modal fade" id="editCommonsetModal" tabindex="-1" role="dialog"
+                     aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close modal_close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title" id="editCommonsetModalTitle">增加</h4>
+                            </div>
+                            <div class="modal-body" style="padding:5px" id="editCommonsetModalBody">
+                                <form id="editCommonsetForm" class="form-inline">
+                                    <table class="edit-table">
+                                        <tr>
+                                            <td>类型（父节点）</td>
+                                            <td>
+                                                <select style="width:90%;" name="superiorId" class="form-group select2 select2-hidden-accessible" tabindex="-1" aria-hidden="true">
+                                                    <option value="0">父节点</option>
+                                                </select>
+                                            </td>
+                                            <td>英文名称</td>
+                                            <td>
+                                                <input type="text" class="form-control" name="enName"/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>英文描述</td>
+                                            <td>
+                                                <input type="text" class="form-control" name="description"/>
+                                            </td>
+                                            <td>中文名称</td>
+                                            <td>
+                                                <input type="text" class="form-control" name="cnName"/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>中文描述</td>
+                                            <td>
+                                                <input type="text" class="form-control" name="descriptionChinese"/>
+                                            </td>
+                                            <td>代码</td>
+                                            <td>
+                                                <input type="text" class="form-control" name="code"/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>代码3</td>
+                                            <td>
+                                                <input type="text" class="form-control" name="descriptionChinese"/>
+                                            </td>
+                                            <td></td>
+                                            <td>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>最后修改人</td>
+                                            <td>
+                                                <input readonly type="text" class="form-control" name="amenderName"/>
+                                            </td>
+                                            <td>最后修改时间</td>
+                                            <td>
+                                                <input readonly type="text" class="form-control" name="amendTime"/>
+                                            </td>
+
+                                        </tr>
+                                    </table>
+                                        <!--<div class="form-inline-item single-item" style="margin-left: 17px;">-->
+                                            <!--<div class="form-group" style="width:657px;">-->
+                                                <!--<label style="padding-right: 0px">类型（父节点）</label>-->
+                                                <!--<select  name="superiorId"-->
+                                                         <!--class="form-group select2 select2-hidden-accessible"-->
+                                                         <!--style="width:70%" tabindex="-1" aria-hidden="true">-->
+                                                    <!--<option value="0">父节点</option>-->
+                                                <!--</select>-->
+                                            <!--</div>-->
+                                      <!--</div>-->
+
+                                        <!--<div class="form-inline-item">-->
+                                            <!--<div class="form-group"><label>英文名称</label><input type="text" class="form-control" name="enName"/></div>-->
+                                            <!--<div class="form-group"><label>英文描述</label><input type="text" class="form-control" name="description"/></div>-->
+                                        <!--</div>-->
+                                        <!--<div class="form-inline-item">-->
+                                            <!--<div class="form-group"><label>中文名称</label><input type="text" class="form-control" name="cnName"/></div>-->
+                                            <!--<div class="form-group"><label>中文描述</label><input type="text" class="form-control" name="descriptionChinese"/></div>-->
+                                        <!--</div>-->
+                                        <!--<div class="form-inline-item">-->
+                                            <!--<div class="form-group"><label>代码</label><input type="text" class="form-control" name="code"/></div>-->
+                                            <!--<div class="form-group"><label>代码3&nbsp</label><input type="text" class="form-control" name="code3"/></div>-->
+                                        <!--</div>-->
+                                        <!--<div class="form-inline-item">-->
+                                            <!--<div class="form-group"><label>最后修改人</label><input type="text" class="form-control" name="amenderName" value="admin" readonly id="amender"/></div>-->
+                                            <!--<div class="form-group"><label>最后修改时间</label><input type="text" class="form-control" name="amendTime" readonly id="amendTime"/></div>-->
+                                        <!--</div>-->
+                                    <div hidden="true"><label>新增或保存</label><input type="text" name="saveType" id="saveType">
+                                        <input type="text" class="form-control" name="amender" value="1" readonly/><input type="text" name="commonSetId"/></div>
+                                    <div class="modal-footer">
+                                        <div class="sm-wrapper">
+                                            <button type="button" class="btn btn btn-primary" data-dismiss="modal">取消</button>
+                                            <!--<button type="button" class="btn btn btn-primary" id="submitCommonsetAddModal">确定</button>-->
+                                            <input type="submit" class="btn btn-primary"
+                                                   id="submitCommonsetAddModal" value="确定"/>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+
+                        </div><!-- /.modal-content -->
+                    </div><!-- /.modal -->
+                </div>
+
+                <div class="btn_group">
+
+                    <button href="#" class="btn btn-info" onclick="jQuery('#commonsetTreetable').treetable('expandAll'); return false;">
+                        展开
+                    </button>
+                    <button href="#" class="btn btn-info" onclick="jQuery('#commonsetTreetable').treetable('collapseAll'); return false;">
+                        折叠
+                    </button>
+                    <button id="BTN_90010200" onclick="commonSet.addCommonset()" class="btn btn-info">
+                        增加
+                    </button>
+                    <button id="BTN_90010300" onclick="commonSet.editCommonset()" class="btn btn-info">
+                        修改
+                    </button>
+                    <button id="BTN_90010400" onclick="commonSet.deleteCommonset()" class="btn btn-info">
+                        删除
+                    </button>
+                    <!--<button id="refreshCommonset" class="btn btn-info">-->
+                        <!--刷新-->
+                    <!--</button>-->
+                    <!--<button id="showCommonsetDetail" class="btn btn-info">-->
+                        <!--详情-->
+                    <!--</button>-->
+
+                </div>
+                <div class="box datable-box" style="margin-bottom: 10px">
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <!--<table id="common-set_tb" class="table table-bordered table-striped">-->
+                        <!--</table>-->
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <table id="commonsetTreetable" class="tree_Table" >
+                                </table>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- /.box-body -->
+
+                    <!--modify button-->
+
+                </div>
+                <!-- /.box -->
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </section>
+    <!-- DataTables -->
+    <script src="basedata/js/common-set.js"></script>
+    <script src="basedata/js/public.js"></script>
+    <script src="js/setToolbar.js"></script>
+</div>

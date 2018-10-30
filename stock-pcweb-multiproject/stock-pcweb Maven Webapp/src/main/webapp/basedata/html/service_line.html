@@ -1,0 +1,307 @@
+<div id="tab_9010" class="service_line ServiceLine basedata tab-page" role="tabpanel">
+    <!--<div class="content-header">-->
+        <!---->
+        <!--<h1>-->
+            <!--基础资料-->
+            <!--<small>航线</small>-->
+        <!--</h1>-->
+        <!--<ol class="breadcrumb">-->
+            <!--<li><a href="#"><i class="fa fa-dashboard"></i>基础资料</a></li>-->
+            <!--<li><a href="#">航线</a></li>-->
+            <!--<li class="active">数据表格</li>-->
+        <!--</ol>-->
+    <!--</div>-->
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <!--begin search box-->
+                <div class="box search-box">
+                    <!--<div class="box-header">-->
+                        <!--<h4 class="box-title">查询</h4>-->
+                        <!--<div class="pull-right box-tools">-->
+                            <!--<button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">-->
+                                <!--<i class="fa fa-plus"></i></button>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <div class="box-body">
+                        <form class="search-table form-inline" id="searchServiceLineForm" role="form">
+                            <!--<div class="row" style="margin-bottom: 10px">-->
+                                <!--<div class="col-md-4">-->
+                                    <!--<label>区域</label>-->
+                                    <!--<div class="form-item-select">-->
+                                        <!--<select  name="areaCommonSetId" class="form-control select2 select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true">-->
+                                            <!--<option value=""></option>-->
+                                        <!--</select>-->
+                                    <!--</div>-->
+                                 <!--</div>-->
+                                <!--<div class="col-md-4">-->
+                                    <!--<label>航线</label>-->
+                                    <!--<div class="form-item-select">-->
+                                        <!--<select  name="routeCommonSetId" class="form-control select2 select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true">-->
+                                            <!--<option value=""></option>-->
+                                        <!--</select>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                                <!--<div class="col-md-4">-->
+                                    <!--<label>国家</label>-->
+                                    <!--<div class="form-item-select">-->
+                                        <!--<select  name="countryCommonSetId" class="form-control  select2 select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true">-->
+                                            <!--<option value=""></option>-->
+                                        <!--</select>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</div>-->
+
+                                <div class="form-group">
+                                    <label>代码</label>
+                                    <input type="text" class="form-control" name="serviceLineCode">
+                                </div>
+                                <div class="form-group">
+                                    <label>英文名称</label>
+                                    <input type="text" class="form-control" name="ServiceLineName">
+                                </div>
+                                <div class="form-group">
+                                    <label>中文名称</label>
+                                    <input type="text" class="form-control" name="ServiceLineNameCn">
+                                </div>
+
+                                <div class="form-group">
+                                        <select name="isBulkSuit" class="form-control">
+                                            <option value="">全部</option>
+                                            <option value="1">散货适用</option>
+                                            <option value="0">散货不适用</option>
+                                        </select>
+                                        <select name="isContainerSuit" class="form-control">
+                                            <option value="">全部</option>
+                                            <option value="1">集装箱适用</option>
+                                            <option value="0">集装箱不适用</option>
+                                        </select>
+                                </div>
+
+                        </form>
+                        <!--<div class="form-item">-->
+                        <!--<label>港口3代码</label>-->
+                        <!--<input type="text" name="ServiceLine3code" class="form-control"  placeholder="港口3代码">-->
+                        <!--</div>-->
+                        <div class="sm-wrqapper" style="position: absolute;right: 20px; bottom: 10px;">
+                            <input type="button" class="btn btn-info btn-size" onclick="serviceLine.doSearch()" id="BTN_90100100" value="查找"/>
+
+                            <button class="btn btn-info search_reset" id="resetSeachServiceLineForm">
+                                重置
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!--end search box-->
+                <div class="modal fade" id="editServiceLineModal" tabindex="-1" role="dialog"
+                     aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close modal_close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title" id="editServiceLineModalTitle">增加</h4>
+                            </div>
+                            <div class="modal-body" style="padding: 5px" id="editServiceLineModalBody">
+                                <form id="editServiceLineForm" class="form-inline">
+                                    <table class="edit-table">
+                                        <tr>
+                                            <td>代码</td>
+                                            <td><input type="text" class="form-control" name="serviceLineCode"/></td>
+                                            <td><input type="checkbox" name="isBulkSuit"> 散货适用</td>
+                                            <td> <input type="checkbox" name="isContainerSuit"> 集装箱适用</td>
+                                        </tr>
+                                        <tr>
+                                            <td>英文名称</td>
+                                            <td><input type="text" class="form-control" name="serviceLineName"/></td>
+                                            <td>中文名称</td>
+                                            <td><input type="text" class="form-control" name="serviceLineNameCn"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td>最后修改人</td>
+                                            <td><input type="text" class="form-control" name="amenderName" readonly/></td>
+                                            <td>最后修改时间</td>
+                                            <td><input type="text" class="form-control" name="amendTime" readonly/></td>
+                                        </tr>
+                                    </table>
+                                    <!--<div class="form-inline-item">-->
+                                        <!--<div class="form-group">-->
+                                            <!--<label>代码</label>-->
+                                            <!--<input type="text" class="form-control form-control-line" name="serviceLineCode"/>-->
+                                        <!--</div>-->
+                                        <!--<div class="form-group checkbox" style="width: 275px;">-->
+                                            <!--<label style="width:130px;">-->
+                                                <!--<input type="checkbox" name="isBulkSuit" style="width: 20px;"> 散货适用-->
+                                            <!--</label>-->
+                                            <!--<label style="width:120px;">-->
+                                                <!--<input type="checkbox" name="isContainerSuit" style="width: 20px;"> 集装箱适用-->
+                                            <!--</label>-->
+
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                    <!--<div class="form-inline-item">-->
+                                        <!--<div class="form-group"><label>英文名称</label><input type="text" class="form-control form-control-line" name="serviceLineName"/></div>-->
+                                        <!--<div class="form-group"><label>中文名称</label><input type="text" class="form-control form-control-line" name="serviceLineNameCn"/></div>-->
+                                    <!--</div>-->
+
+                                    <!--<div class="form-inline-item">-->
+                                        <!--<div class="form-group"><label>最后修改人</label><input type="text" class="form-control form-control-line" name="amenderName" value="1" readonly/></div>-->
+                                        <!--<div class="form-group"><label>最后修改时间</label><input type="text" class="form-control form-control-line" name="amendTime" readonly/></div>-->
+                                    <!--</div>-->
+                                    <!--end row-->
+
+                                    <div hidden="true"><label>新增或保存</label><input type="text"  name="amender" value="1"/>
+                                        <input type="text" name="saveType" id="saveType"><input type="text"  name="serviceLineId"/></div>
+                                    <div class="modal-footer">
+                                        <div class="sm-wrapper">
+                                            <button type="button" class="btn btn-primary" data-dismiss="modal">取消</button></button>
+                                            <!--<button type="button" class="btn btn-primary" id="editserviceLineModalSubmit">确定</button>-->
+                                            <input type="submit" class="btn btn-primary" id="editServiceLineModalSubmit" value="确定"/>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div><!-- /.modal-content -->
+                    </div><!-- /.modal -->
+                </div>
+                <!--挂港编辑框-->
+                <div class="modal fade" id="editServiceLinePortModal" tabindex="-1" role="dialog"
+                     aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close modal_close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title" id="editServiceLinePortModalTitle">挂港</h4>
+                            </div>
+                            <div class="modal-body" style="padding: 0px" id="editServiceLinePortModalBody">
+                                <form id="editServiceLinePortForm" class="form-inline">
+                                    <div class="form-inline-item">
+                                        <div class="form-group">
+                                            <label>港口名称</label>
+                                            <select  name="portId" class="form-control select2 select2-hidden-accessible" style="width: 170px;" tabindex="-1" aria-hidden="true">
+                                                <option value=""></option>
+                                            </select>
+
+                                            <!--<input type="text" class="form-control form-control-line" name="portCode"/>-->
+                                        </div>
+                                        <div class="form-group">
+                                            <label>港口代码</label>
+
+                                            <input type="text" class="form-control form-control-line" name="portCode"/>
+                                        </div>
+                                    </div>
+                                    <div class="form-inline-item single-item">
+                                        <div class="form-group" style="margin-left: 14px">
+                                            <label>码头代码</label>
+                                            <select  name="wharfId" class="form-control select2 select2-hidden-accessible" style="width: 170px;" tabindex="-1" aria-hidden="true">
+                                                <option value=""></option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                   <!-- <div class="col-md-6">
+                                        <div class="form-group"><label>中文名称</label><input type="text" class="form-control form-control-line" name="portNameNameCn"/></div>
+                                    </div>-->
+                                    <div class="form-inline-item">
+                                        <div class="form-group"><label>最后修改人</label><input type="text" class="form-control form-control-line" name="amenderName" value="1" readonly/></div>
+                                        <div class="form-group"><label>最后修改时间</label><input type="text" class="form-control form-control-line" name="amendTime" readonly/></div>
+                                    </div>
+                                    <!--end row-->
+
+                                    <div hidden="true"><label>新增或保存</label><input type="text"  name="amender" value="1"/>
+                                        <input type="text" name="saveType"><input type="text"  name="serviceLineId"/>
+                                        <input type="text" name="portName"/>
+                                        <input type="text" name="wharfCode"/>
+                                    </div>
+
+                                </form>
+                                <div class="modal-footer">
+                                    <div class="sm-wrapper">
+                                        <button type="button" class="btn btn-primary" data-dismiss="modal">取消</button>
+                                        <!--<button type="button" class="btn btn-primary" id="editserviceLineModalSubmit">确定</button>-->
+                                        <input type="submit" class="btn btn-primary" id="editServiceLinePortModalSubmit" onclick="submitEditServiceLinePortForm()" value="确定"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- /.modal-content -->
+                    </div><!-- /.modal -->
+                </div>
+                <div class="btn_group">
+                    <button id="BTN_90100200" onclick="serviceLine.addServiceLine()" class="btn btn-info">
+                        增加
+                    </button>
+                    <button id="BTN_90100300" onclick="serviceLine.editServiceLine()" class="btn btn-info">
+                        修改
+                    </button>
+                    <button id="BTN_90100400" onclick="serviceLine.deleteServiceLine()" class="btn btn-info">
+                        删除
+                    </button>
+                    <!--<button id="refreshServiceLine" onclick="serviceLine.doSearch()" class="btn btn-info">-->
+                        <!--刷新-->
+                    <!--</button>-->
+                    <button id="addPortToServiceLine" class="btn btn-info">
+                        挂港
+                    </button>
+                    <div class="btn-group export-excel dataTable-dropdown-menu">
+                        <button type="button" class="btn btn-info">导出Excel</button>
+                        <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                            <span class="caret"></span>
+                            <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                        <ul class="dropdown-menu export-excel-menu" role="menu">
+                            <li id="serviceLine_export-excel-selected"></li>
+                            <li id="serviceLine_export-excel-current"></li>
+                            <li id="serviceLine_export-excel-all"></li>
+                        </ul>
+                    </div>
+                    <!--<button id="serviceLine_import-excel" onclick="customsDocumentAttachment.importExcel()" class="btn btn-info">-->
+                    <!--导出Excel-->
+                    <!--</button>-->
+                    <div class="btn-group export-print dataTable-dropdown-menu">
+                        <button type="button" class="btn btn-info">打印</button>
+                        <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                            <span class="caret"></span>
+                            <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                        <ul class="dropdown-menu export-print-menu" role="menu">
+                            <li id="serviceLine_export-print-selected"></li>
+                            <li id="serviceLine_export-print-all"></li>
+                        </ul>
+                    </div>
+                    <div class="btn-height btn-group" style="vertical-align: top;" id="serviceLine_export-copy"></div>
+                    <div class="btn-height btn-group" style="vertical-align: top;"  id="serviceLine_export-columnVisibility" ></div>
+
+                    <!--<button id="showServiceLineDetail" class="btn btn-info">-->
+                        <!--详情-->
+                    <!--</button>-->
+                </div>
+
+
+                <div class="box datable-box">
+
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <table id="ServiceLine_table" class="table table-bordered table-striped">
+                        </table>
+                    </div>
+                    <!-- /.box-body -->
+
+                    <!--modify button-->
+
+                </div>
+                <!-- /.box -->
+            </div>
+            <!-- /.col -->
+        </div>
+
+        <!-- /.row -->
+    </section>
+
+
+
+    <!-- DataTables -->
+    <script src="basedata/js/service_line.js"></script>
+    <script src="basedata/js/public.js"></script>
+    <script>
+
+    </script>
+</div>

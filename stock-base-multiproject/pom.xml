@@ -1,0 +1,44 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.stock</groupId>
+		<artifactId>stock-framework</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+		<relativePath>../pom.xml</relativePath>
+	</parent>
+	<artifactId>stock-base-multiproject</artifactId>
+	<packaging>pom</packaging>
+	<name>stock-base-multiproject</name>
+	<description>stock-base-multiproject</description>
+	<properties>
+		<project.version>0.0.1-SNAPSHOT</project.version>
+	</properties>
+	<modules>
+		<module>stock-common</module>
+		<module>stock-pojo</module>
+		<module>stock-dao</module>
+	</modules>
+	<dependencies>
+		
+	</dependencies>
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>com.stock</groupId>
+				<artifactId>stock-common</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.stock</groupId>
+				<artifactId>stock-pojo</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.stock</groupId>
+				<artifactId>stock-dao</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+</project>

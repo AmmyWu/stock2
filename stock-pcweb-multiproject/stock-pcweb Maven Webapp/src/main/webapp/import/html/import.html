@@ -1,0 +1,565 @@
+<div id="tab_9201" class="File basedata tab-page" role="tabpanel">
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <!--begin search box-->
+                <div class="box search-box">
+                    
+
+                    <div class="box-body">
+                        <form class="search-table form-inline" id="searchFileForm" role="form">
+<!--                         	<div class="form-group">
+                        		<label>检索内容:</label>
+                        		<input type="text" class="form-control" name="param" placeholder="请输入检索内容" style="width:73%;" />
+                        	</div>
+                        	<div class="form-group">
+								<label class="checkbox-inline"> 
+								<input type="checkbox" name="fileSearchCheck"
+									id="inlineCheckbox1" checked> 
+									全文检索
+								</label> 
+								<label class="checkbox-inline"> 
+								<input
+									type="checkbox" id="inlineCheckbox2" name="fileNameSearchCheck">
+									课题名称
+								</label> 
+								<label class="checkbox-inline"> 
+								<input
+									type="checkbox" id="inlineCheckbox3" name="keyWordSearchCheck">
+									关键字
+								</label>
+							</div> -->
+                            <div class="form-group">
+                                <label>课题名称</label>
+                                <input type="text" class="form-control" name="insertSearchtitle" placeholder="课题名称" />
+                            </div>
+                            <div class="form-group">
+                                <label>关键词/标签</label>
+                                <input type="text" class="form-control" name="insertSearchkeyWord" placeholder="关键词" />
+                            </div>
+                            <!-- <div class="form-group">
+                            	<label>来源</label>
+                                <input type="text" class="form-control" name="source" placeholder="来源" />
+                            </div> -->
+                            
+                        </form>
+
+                        <div class="sm-wrqapper">
+                            <input type="button" class="btn btn-info btn-size" onclick="File.doSearch()" value="查找" />
+
+                            <button class="btn btn-info search_reset" id="resetsearchFileForm">
+                                重置
+                            </button>
+                        </div>
+                    </div>
+                  </div>
+                
+                <!-- 新增弹框 -->
+				<div class="modal fade bs-example-modal-lg" id="myModalInfoInsert" tabindex="-1" role="dialog"
+					aria-labelledby="myModalLabel">
+					<div class="modal-dialog modal-lg" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal"
+									aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+								<h4 class="modal-title" id="myModalLabel">新增</h4>
+							</div>
+							<div class="modal-body">
+								<form class="form-horizontal" role="form" id="form2Inner">
+									<fieldset>
+										<div class="form-group" style="margin-bottom: 10px;">
+											<div class="col-sm-1">
+											</div>
+											<div class="col-sm-5">
+												<label class="control-label">上传文件</label>
+												<input name="file" type="file" id="file" style="display: none" />
+												<!-- 用于展示上传文件名的表单 -->
+													<input id="showname" class="form-control" type="text">												
+											</div>
+											<div style="display:inline-block;height:50px">
+												<!-- 点击触发按钮 -->
+												<!-- <a class="btn" onclick="File.makeThisfile()"
+												style="order: 1px solid #ccc; padding: 4px; border-radius: 4px; background-color: #2c9a8a; color: #fff;">浏览</a> -->
+												<button type="button" id="btn_browse" class="btn btn-primary" onclick="File.makeThisfile()" style="margin-top:23px">
+													<span class="glyphicon glyphicon-search"
+															aria-hidden="true"></span>浏览
+												</button>
+												<button type="button" id="_btn_insert" class="btn btn-primary" onclick="File.analyseFile('form2Inner')" style="margin-top:23px">
+													<span class="glyphicon glyphicon-link"
+															aria-hidden="true"></span>一键解析
+												</button>
+											</div>
+											<!-- <label class="col-sm-2 control-label">上传文件</label>
+											<div class="col-sm-6">
+												<input type="file" name="file"  />
+ 												 <input name="file" type="file" id="file" style="display: none" />
+												<div class="input-append">
+													用于展示上传文件名的表单
+													<input id="showname" class="input-large" type="text"
+														style="height: 25px;">
+													点击触发按钮
+													<a class="btn" onclick="File.makeThisfile()"
+														style="order: 1px solid #ccc; padding: 4px; border-radius: 4px; background-color: #2c9a8a; color: #fff;">浏览</a>
+												</div>
+
+												<div class="red-font">请导入xls、pdf、txt、doc类型的文档！</div>
+											</div> -->
+											<!-- <div class="col-sm-2"></div>
+											<div class="col-sm-2">
+												<button type="button" id="btn_submit" class="btn btn-primary" onclick="File.analyseFile('form2Inner')">
+													<span class="glyphicon glyphicon-search"
+															aria-hidden="true"></span>一键解析
+												</button>
+											</div> -->
+										</div>
+									</fieldset>
+									<fieldset>									
+										<div class="form-group" style="margin-bottom: 10px;">	
+											<div class="col-sm-1">
+											</div>
+											<div class="col-sm-5">
+												<label class="control-label">类型
+                                                	<span style="color: red">*</span>
+                                            	</label>
+                                            	<select id="type_list" name="fileType" class="form-control input-sm downList1" >
+                                            	
+                                            	</select>
+											</div>	
+											<div class="col-sm-5">
+												<label class="control-label">课题分类
+													<span style="color: red">*</span>
+												</label>
+												<select id="category" name="category" class="form-control input-sm downList1" >
+
+												</select>
+											</div>	
+											<div class="col-sm-1">
+											</div>		
+											<!-- <label class="col-sm-2 control-label">类型
+                                                <span style="color: red">*</span>
+                                            </label>
+											<div class="col-sm-4">
+												<select id="type_list" name="fileType" class="form-control input-sm downList1" >
+                                            	
+                                            	</select>
+											</div>										
+											<label class="col-sm-2 control-label">分类名称
+												<span style="color: red">*</span>
+											</label>
+											<div class="col-sm-4">
+												<select id="category" name="category" class="form-control input-sm downList1" >
+
+												</select>
+											</div> -->
+										</div>
+										<div class="form-group" style="margin-bottom: 10px;">
+											<div class="col-sm-1">
+											</div>
+											<div class="col-sm-5">
+												<label class="control-label">关键词/标签(每个词之间用;间隔)</label>
+												<input type="text" class="form-control" id="keywords" name="keywords" placeholder="关键词" />
+											</div>
+											<div style="display:inline-block;height:50px">
+												<button type="button" class="btn btn-primary" style="margin-top:23px" id="tagSelectBtn"
+													data-container="body" data-toggle="popover" data-placement="right" 
+													>
+													选择
+												</button>
+											</div>
+<!-- 											<label class="col-sm-2 control-label">关键词</label>
+											<div class="col-sm-4">
+												<input type="text" class="form-control search-query" name="keywords" placeholder="关键词" />
+											</div> -->
+										</div>
+										<div class="form-group" style="margin-bottom: 10px;">
+											<div class="col-sm-1">
+											</div>
+											<div class="col-sm-5">
+												<label class="control-label">课题名称
+													<span style="color: red">*</span>
+												</label>
+												<input type="text" class="form-control" name="title" placeholder="课题名称" />
+											</div>
+											<div class="col-sm-5">
+												<label class="control-label">主题</label>
+												<input type="text" class="form-control" name="theme" placeholder="主题"  />
+											</div>
+											<div class="col-sm-1">
+											</div>
+											<!-- <label class="col-sm-2 control-label">标题
+												<span style="color: red">*</span>
+											</label>
+											<div class="col-sm-4">
+												<input type="text" class="form-control" name="title" placeholder="标题" />
+											</div> -->
+											<!-- <label class="col-sm-2 control-label">主题</label>
+											<div class="col-sm-4">
+												<input type="text" class="form-control" name="theme" placeholder="主题"  />
+											</div> -->
+										</div>
+										<div class="form-group" style="margin-bottom: 10px;">
+											<div class="col-sm-1">
+											</div>
+											<div class="col-sm-5">
+												<label class="ccontrol-label">作者</label>
+												<input type="text" class="form-control" name="author" placeholder="作者"  />
+											</div>
+											<div class="col-sm-5">
+												<label class="control-label">课题来源</label>
+												<input type="text" class="form-control" name="source" placeholder="课题来源"  />
+											</div>
+											<div class="col-sm-1">
+											</div>
+											<!-- <label class="col-sm-2 control-label">作者</label>
+											<div class="col-sm-4">
+												<input type="text" class="form-control" name="author" placeholder="作者"  />
+											</div>
+											<label class="col-sm-2 control-label">来源</label>
+											<div class="col-sm-4">
+												<input type="text" class="form-control" name="source" placeholder="来源"  />
+											</div> -->
+										</div>
+										<div class="form-group" style="margin-bottom: 10px;">
+											<div class="col-sm-1">
+											</div>
+											<div class="col-sm-5">
+												<label class="control-label">发布时间</label>
+												<input name="publishTime" size="16" type="text" value="" class="form_datetime form-control" >
+											</div>
+<!-- 											<label class="col-sm-2 control-label">发布时间</label>
+											<div class="col-sm-4">
+												<input name="publishTime" size="16" type="text" value="" class="form_datetime form-control" >
+											</div> -->
+										</div>
+										<div class="form-group">
+											<div class="col-sm-1">
+											</div>
+											<div class="col-sm-10">
+												<label class="control-label">摘要</label>
+												<textarea id="summary" name="summary" class="form-control" rows="5"></textarea>
+											</div>
+											<div class="col-sm-1">
+											</div>
+											<!-- <label class="col-sm-1 control-label">摘要</label>
+											<div class="col-sm-9">
+												<textarea id="summary" name="summary" class="form-control" rows="3"></textarea>
+											</div> -->
+										</div>
+									</fieldset>
+								</form>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-default"
+									data-dismiss="modal">
+									<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>关闭
+								</button>
+								<button type="button" class="btn btn-primary"
+									 onclick="File.importFile2('form2Inner','','')">
+									<span class="glyphicon glyphicon-floppy-disk"
+										aria-hidden="true"></span>保存
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- import -->
+<!--                 <div class="modal fade" id="importFileAdministrationModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" style="width: 450px;position: relative;top: 20%;">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close modal_close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title">文档上传</h4>
+                            </div>
+
+                            <div class="modal-body" style="padding:40px" id="importFileAdministrationModalBody1">
+                                <div id="chooseFileAdministration" class="easyui-window" data-options="iconCls:'icon-table',draggable:true,minimizable:true,collapsible:false, closable:true,closed:true,shadow:true,modal:true">
+                                    <form action="servlet/UploadFile" method="post" enctype="multipart/form-data" 
+                                    id="form2Inner" target="reportFrameInner">
+                                        <form id="form1" accept-charset="UTF-8">
+                                        <fieldset style="display: inline-block;">
+                                            <input type="file" name="file" style="width:300px;display:inline-block;" />
+                                             <input type="text" name="taskSketchId" id="taskSketchId" hidden="true" />
+                                        </fieldset>
+                                        <div class="form-group">
+                                            <label>标签
+                                                <span style="color: red">*</span>
+                                            </label>
+                                            <input type="text" list="tag_list" class="form-control" name="tag" placeholder="文档标签" style="width:70%;" required />
+                                            <datalist id="tag_list">
+                                                
+                                            </datalist>
+                                            <label>来源
+                                                <span style="color: red">*</span>
+                                            </label>
+                                            <input type="text" list="source_list" class="form-control" name="resource" placeholder="文档来源" style="width:70%;" required
+                                            />
+                                            <datalist id="source_list">
+                                               
+                                            </datalist>
+                                            <label>类型
+                                                <span style="color: red">*</span>
+                                            </label>
+                                            <input type="text" list="type_list" class="form-control" name="fileType" placeholder="文档类型" style="width:70%;" required="required"
+                                            />
+
+                                            <datalist id="type_list">
+                                                
+                                            </datalist>
+                                            <label>类型
+                                                <span style="color: red">*</span>
+                                            </label>
+                                            <select id="type_list" name="fileType" class="form-control input-sm downList1" style="width:70%;">
+                                            	
+                                            </select>
+                                            <label>分类名称</label>
+											<select id="category" name="category" class="form-control input-sm downList1" style="width:70%;">
+												<optgroup label="农林牧渔/科学/卫生研究">
+													<option value="1">农业</option>
+													<option value="2">食品</option>
+												</optgroup>
+											</select>
+											<label>关键词</label>
+                                            <input type="text" class="form-control" name="keywords" placeholder="关键词" style="width:70%;" required="required" />
+                                            <label>标题</label>
+                                            <input type="text" class="form-control" name="title" placeholder="标题" style="width:70%;" />
+                                            <label>主题</label>
+                                            <input type="text" class="form-control" name="theme" placeholder="主题" style="width:70%;" />
+                                            <label>作者</label>
+                                            <input type="text" class="form-control" name="author" placeholder="作者" style="width:70%;" required="required" />
+                                            <label>来源</label>
+                                            <input type="text" class="form-control" name="source" placeholder="来源" style="width:70%;" required="required" />
+                                            <label>发布时间</label>
+                                            <input name="publishTime" size="16" type="text" value="" class="form_datetime form-control" required="required" style="width: 250px;">
+                                            <label>摘要</label>
+                                            <textarea name="summary" class="form-control" rows="3" style="width:90%;"></textarea>
+
+                                            
+                                        </div>
+
+                                        <div style="padding:5px 10px;text-align:center;display: inline-block;">
+                                            <input type="button" value="完成" class="btn btn-primary" onclick="File.importFile2('form2Inner','','')" />
+                                            <input type="button" onclick="rejectChooseExcel();" value="取消" />
+                                        </div>
+
+                                        <iframe id="reportFrameInner" name="reportFrame" width="100%" height="500px" frameborder=no style="display: none"></iframe>
+                                    </form>
+                                </div>
+                                <div class="red-font">
+                                    请导入xls、pdf、txt、doc类型的文档！
+                                    <a style="cursor: pointer;" href="excelTemplates/addresslist.xlsx">说明</a>
+                                </div>
+                            </div>
+
+                        </div>
+                        /.modal-content
+                    </div>
+                    /.modal
+                </div> -->
+
+				<!-- 编辑弹框 -->
+				<div class="modal fade bs-example-modal-lg" id="editModal"
+					tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+					aria-hidden="true">
+					<div class="modal-dialog modal-lg" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close modal_close"
+									data-dismiss="modal" aria-hidden="true">&times;</button>
+								<h4 class="modal-title">编辑</h4>
+							</div>
+
+							<div class="modal-body" style="padding: 40px"
+								id="editModalBody1">
+								<div id="chooseFileAdministration" class="easyui-window"
+									data-options="iconCls:'icon-table',draggable:true,minimizable:true,collapsible:false, closable:true,closed:true,shadow:true,modal:true">
+									<form id="formEdit" class="form-horizontal" role="form">
+										<fieldset>
+											<div class="form-group" style="margin-bottom: 10px;">
+												<div class="col-sm-1">
+												</div>
+												<div class="col-sm-5">
+													<input id="editId" name="editId" style="display:none;"/>
+													<label class="control-label">类型
+                                                		<span style="color: red">*</span>
+                                            		</label>
+                                            		<select id="edit_type_list" name="editFileType" class="form-control input-sm downList1">
+                                            	
+                                            		</select>
+												</div>
+												<div class="col-sm-5">
+													<label class="control-label">课题分类
+                                                		<span style="color: red">*</span>
+                                            		</label>
+                                            		<select id="editCategory" name="editCategory" class="form-control input-sm downList1">
+
+													</select>
+												</div>
+												<div class="col-sm-1">
+												</div>
+											</div>
+											<div class="form-group" style="margin-bottom: 10px;">
+												<div class="col-sm-1">
+												</div>
+												<div class="col-sm-5">
+													<label class="control-label">关键词/标签(每个词之间用;间隔)</label>
+													<input type="text" class="form-control" id="editKeywords" name="editKeywords" placeholder="关键词"/>
+												</div>
+												<button type="button" class="btn btn-primary" style="margin-top:23px" id="editTagSelectBtn"
+													data-container="body" data-toggle="popover" data-placement="right" 
+													>
+													选择
+												</button>
+											</div>
+											<div class="form-group" style="margin-bottom: 10px;">
+												<div class="col-sm-1">
+												</div>
+												<div class="col-sm-5">
+													<label class="control-label">课题名称</label>
+													<input type="text" class="form-control" id="editTitle" name="editTitle" placeholder="课题名称"  />
+												</div>
+											</div>
+											<div class="form-group" style="margin-bottom: 10px;">
+												<div class="col-sm-1">
+												</div>
+												<div class="col-sm-5">
+													<label class="control-label">主题</label>
+													<input type="text" class="form-control" id="editTheme" name="editTheme" placeholder="主题"  />
+												</div>
+												<div class="col-sm-5">
+													<label class="control-label">作者</label>
+													<input type="text" class="form-control" id="editAuthor" name="editAuthor" placeholder="作者" />
+												</div>
+												<div class="col-sm-1">
+												</div>
+											</div>
+											<div class="form-group" style="margin-bottom: 10px;">
+												<div class="col-sm-1">
+												</div>
+												<div class="col-sm-5">
+													<label class="control-label">来源</label>
+													<input type="text" class="form-control" id="editSource" name="editSource" placeholder="来源" />
+												</div>
+												<div class="col-sm-5">
+													<label class="control-label">发布时间</label>
+													<input id="editPublishTime" name="editPublishTime" size="16" type="text" value="" class="form_datetime form-control">
+												</div>
+												<div class="col-sm-1">
+												</div>
+											</div>
+											<div class="form-group">
+												<div class="col-sm-1">
+												</div>
+												<div class="col-sm-10">
+													<label class="control-label">摘要</label>
+													<textarea id="editSummary" name="editSummary" class="form-control" rows="5"></textarea>
+												</div>
+												<div class="col-sm-1">
+												</div>
+											</div>
+										</fieldset>																																											
+										
+										<!-- <iframe id="reportFrameInner" name="reportFrame" width="100%" height="500px" frameborder=no style="display: none"></iframe> -->
+									</form>
+								</div>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-default"
+									data-dismiss="modal">
+									<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>关闭
+								</button>
+								<button type="button" id="edit_btn_submit" class="btn btn-primary"
+									 onclick="File.editInfo('formEdit')">
+									<span class="glyphicon glyphicon-floppy-disk"
+										aria-hidden="true"></span>保存
+								</button>
+							</div>
+
+						</div>
+						<!-- /.modal-content -->
+					</div>
+					<!-- /.modal -->
+				</div>
+
+
+
+				<div class="btn_group">
+                    <div class="import-excel btn-group">
+                        <button id="import-file" onclick="File.importFile()" class="btn btn-info">课题录入</button>
+                    </div>
+                    <div class="btn-group build-index dataTable-dropdown-menu">
+
+                        <button type="button" class="btn btn-info">建立索引</button>
+                        <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                            <span class="caret"></span>
+                            <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                        <ul class="dropdown-menu build-index-menu" role="menu">
+                            <li id="File_build-index-part"></li>
+                            <li id="File_build-index-all" onclick="File.buildIndexForAll()"></li>
+                        </ul>
+                    </div>
+<!--                     <div class="btn-group export-excel dataTable-dropdown-menu">
+
+                        <button type="button" class="btn btn-info">导出Excel</button>
+                        <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                            <span class="caret"></span>
+                            <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                        <ul class="dropdown-menu export-excel-menu" role="menu">
+                            <li id="File_export-excel-selected"></li>
+                            <li id="File_export-excel-current"></li>
+                            <li id="File_export-excel-all"></li>
+                        </ul>
+                    </div> -->
+                    <!--<button id="File_import-file" onclick="customsDocumentAttachment.importFile()" class="btn btn-info">-->
+                    <!--导出Excel-->
+                    <!--</button>-->
+<!--                     <div class="btn-group export-print dataTable-dropdown-menu">
+                        <button type="button" class="btn btn-info">打印</button>
+                        <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                            <span class="caret"></span>
+                            <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                        <ul class="dropdown-menu export-print-menu" role="menu">
+                            <li id="File_export-print-selected"></li>
+                            <li id="File_export-print-all"></li>
+                        </ul>
+                    </div> -->
+<!--                     <div class="btn-height btn-group" style="vertical-align: top;" id="File_export-copy"></div>
+                    <div class="btn-height btn-group" style="vertical-align: top;" id="File_export-columnVisibility"></div> -->
+
+                </div>
+                <div class="box datable-box">
+                    <!-- /.box-header -->
+                    <div class="box-body">
+
+                        <table id="fileTable" class="table table-bordered table-striped" style="width:100%;">
+                        </table>
+                    </div>
+                    <!-- /.box-body -->
+
+                    <!--modify button-->
+
+                </div>
+                <!-- /.box -->
+            
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </section>
+    <!-- DataTables -->
+    <script src="sys/js/district_public.js"></script>
+    <script src="sys/js/public.js"></script>
+    <script src="import/js/import.js"></script>
+    <script src="js/setToolbar.js"></script>
+    <script src="sys/js/administrationTree.js"></script>
+    <!-- bootstrap-treeview -->
+    <!-- <script src="plugins/bootstrap-treeview/js/bootstrap-treeview.js"></script> -->
+    <!-- bootstrap-select -->
+    <!-- <script src="plugins/bootstrap-select/js/bootstrap-select.min.js"></script> -->
+</div>
+</div>

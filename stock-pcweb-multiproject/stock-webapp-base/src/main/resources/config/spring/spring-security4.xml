@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+	xmlns:beans="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans  
+          http://www.springframework.org/schema/beans/spring-beans.xsd  
+          http://www.springframework.org/schema/context  
+          http://www.springframework.org/schema/context/spring-context.xsd  
+          http://www.springframework.org/schema/security  
+              http://www.springframework.org/schema/security/spring-security.xsd">   
+  
+	<!--密码重置，判断客户是否存在的方法 -->
+		<!-- <http pattern="/**/*.do" security="none"></http> -->
+	<http pattern="/authentication/checkStatus.do" security="none"></http>
+	<http pattern="/authentication/getAuthenticationMap.do" security="none"></http>
+	<http pattern="authentication/updatePassword.do" security="none"></http>
+	<http pattern="/authentication/alterWrongTimes.do" security="none"></http>
+	<http pattern="/**/resetPassword.do" security="none"></http>
+	<http pattern="/ssoClient/loginBySSO.do" security="none"></http>
+
+<!-- 	<http pattern="/sysadmin/log*.html" security="none"></http> -->
+	<http pattern="/**/js/**/*" security="none"></http>
+	<http pattern="/**/css/**/*" security="none"></http>
+	<http pattern="/**/img/**/*" security="none"></http>
+	<http pattern="/plugins/**/*" security="none"></http>
+	<http pattern="/bootstrap/**/*" security="none"></http>
+	<http pattern="/images/**/*" security="none"></http>
+	<http pattern="/upload/**/*.*" security="none"></http>
+
+	<!--for sysadmin -->
+<!-- 	<http pattern="/sysadmin/pagejs/**/*" security="none"></http>
+	<http pattern="/sysadmin/error*.jsp" security="none"></http> -->
+    
+    <http auto-config="false" use-expressions="true" entry-point-ref="myAuthenticationEntryPoint" >  
+    	<custom-filter before="FILTER_SECURITY_INTERCEPTOR" ref="securityInterceptor"/>
+        <!--  <form-login   
+            login-page="login.html"  
+            login-processing-url="/j_spring_security_check"  
+            authentication-failure-handler-ref="authenticationFailureHandler"  
+            authentication-success-handler-ref="authenticationSuccessHandler" />  -->   
+         <!-- 退出处理 -->  
+         <logout logout-url="/j_spring_security_logout"   
+                logout-success-url="/loginlog/logout.do"   
+                invalidate-session="true"  />  
+        <custom-filter ref="loginFilter" position="FORM_LOGIN_FILTER" />
+        <!-- 登录成功后拒绝访问跳转的页面 -->         
+        <access-denied-handler ref="accessDeniedHandler" />  
+        <csrf disabled="true" />  
+    </http>
+    
+    <!-- 自定义权限不足处理程序 -->
+	<beans:bean id="accessDeniedHandler"
+		class="com.stock.webapp.base.security.MyAccessDeniedHandler">
+		<beans:property name="errorPage" value="/sysadmin/error.jsp?errorCode=1"></beans:property>
+	</beans:bean>
+  
+    <!-- 使用自定义类myUserDetailsService从数据库获取用户信息 -->  
+    <authentication-manager alias="myAuthenticationManager">    
+        <authentication-provider user-service-ref="myUserDetailsService"></authentication-provider>  
+    </authentication-manager>  
+    
+    <!-- 自定义用户资源信息获取 -->
+    <beans:bean id="myUserDetailsService"
+		class="com.stock.webapp.base.security.MyUserDetailService">
+	</beans:bean>
+      
+    <!-- 被认证请求根据所需权限跳转到不同的登录界面 -->  
+    <beans:bean id="myAuthenticationEntryPoint"   
+        class="org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint">  
+        <beans:constructor-arg name="loginFormUrl" value="/login.html"></beans:constructor-arg>  
+    </beans:bean>  
+    
+    <!-- 验证成功后操作 -->
+    <beans:bean id="authenticationSuccessHandler" class="com.stock.webapp.base.security.MySimpleUrlAuthenticationSuccessHandler" />
+
+	<!-- 验证失败后操作 -->
+	<beans:bean id="authenticationFailureHandler"
+		class="com.stock.webapp.base.security.MySimpleUrlAuthenticationFailureHandler">
+		<beans:property name="defaultFailureUrl" value="/login.html" />
+	</beans:bean>
+	
+	<!-- 自定义登陆拦截器 -->
+	<beans:bean id="loginFilter"
+		class="com.stock.webapp.base.security.MyAuthenticationFilter">
+		<beans:property name="authenticationManager" ref="myAuthenticationManager" />
+		<beans:property name="filterProcessesUrl" value="/j_spring_security_check" />
+		 <!-- 认证成功用自定义类authenticationSuccessHandler处理 -->  
+		<beans:property name="authenticationSuccessHandler" ref="authenticationSuccessHandler"/>
+		<beans:property name="authenticationFailureHandler" ref="authenticationFailureHandler"/>
+	</beans:bean>
+	
+	<!-- 自定义拦截器 -->
+	<beans:bean id="securityInterceptor" class="com.stock.webapp.base.security.MyAuthorizationFilter">
+        <beans:property name="authenticationManager" ref="myAuthenticationManager"/>  
+        <beans:property name="accessDecisionManager" ref="mysecurityAccessDecisionManager"/>  
+        <beans:property name="securityMetadataSource" ref="secureResourceFilterInvocationDefinitionSource" />  
+    </beans:bean> 
+    
+    <beans:bean id="mysecurityAccessDecisionManager" class="com.stock.webapp.base.security.MyAccessDecisionManager" />
+
+	<beans:bean id="secureResourceFilterInvocationDefinitionSource" class="com.stock.webapp.base.security.MySecurityMetadataSource" />
+	<beans:bean id="securityUtils" class="com.stock.webapp.base.security.SecurityUtils"/>
+	<beans:bean id="ssoLoginServiceImpl" class="com.stock.webapp.base.security.SsoLoginServiceImpl"/>
+</beans:beans> 

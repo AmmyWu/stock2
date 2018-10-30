@@ -1,0 +1,210 @@
+<div id="tab_9002" class="rate-base basedata tab-page" role="tabpanel">
+    <!--<div class="content-header">-->
+        <!--<h1>-->
+            <!--基础资料-->
+            <!--<small>计费单位</small>-->
+        <!--</h1>-->
+        <!--<ol class="breadcrumb">-->
+            <!--<li><a href="#"><i class="fa fa-dashboard"></i>基础资料</a></li>-->
+            <!--<li><a href="#">计费单位</a></li>-->
+            <!--<li class="active">数据表格</li>-->
+        <!--</ol>-->
+        <!---->
+    <!--</div>-->
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <!--begin search box-->
+                <div class="box search-box">
+                    <!--<div class="box-header">-->
+                        <!--<h4 class="box-title">查询</h4>-->
+                        <!--<div class="pull-right box-tools">-->
+                            <!--<button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">-->
+                                <!--<i class="fa fa-plus"></i></button>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <div class="box-body">
+                        <form class="search-table form-inline" id="searchRatebaseForm" role="form">
+                                <div class="form-group">
+                                    <label>计价单位</label>
+                                    <input type="text" class="form-control" name="rateBase" placeholder="计价单位">
+                                </div>
+                                <div class="form-group">
+                                    <label>计价单位名称(EN)</label>
+                                    <input type="text" class="form-control" name="rateName" placeholder="计价单位名称(EN)" style="width: 140px;">
+                                </div>
+                                <div class="form-group">
+                                    <label>计价单位名称(CN)</label>
+                                    <input type="text" class="form-control" name="rateNameCn" placeholder="计价单位名称(CN)" style="width: 140px;">
+                                </div>
+                        </form>
+                        <div class="sm-wrqapper">
+                            <input type="button" id="BTN_90020100" class="btn btn-info btn-size" onclick="rateBase.doSearch()" value="查找"/>
+                            <button class="btn btn-info search_reset" id="rate-base_reset">
+                                重置
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!--end search box-->
+                <!--begin operation box-->
+                <div class="modal fade" id="editRatebaseModal" tabindex="-1" role="dialog"
+                     aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close modal_close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title" id="editRatebaseModalTitle">增加</h4>
+                            </div>
+                            <div class="modal-body" style="padding: 5px" id="editRatebaseModalBody">
+                                <form id="editRatebaseForm" class="form-inline">
+                                    <table class="edit-table">
+                                        <tr>
+                                            <td class="color-red">计价单位</td>
+                                            <td>
+                                                <input type="text" class="form-control" name="rateBase"/>
+                                            </td>
+                                            <td>计价单位名称(CN)</td>
+                                            <td>
+                                                <input type="text" class="form-control" name="rateNameCn"/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>计费代码</td>
+                                            <td>
+                                                <input type="text" class="form-control" name="rateCode"/>
+                                            </td>
+                                            <td>计价单位名称(EN)</td>
+                                            <td>
+                                                <input type="text" class="form-control" name="rateName"/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>描述</td>
+                                            <td>
+                                                <input type="text" class="form-control" name="description"/>
+                                            </td>
+                                            <td></td>
+                                            <td>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>最后修改人</td>
+                                            <td>
+                                                <input type="text" class="form-control" name="amenderName" readonly/>
+                                            </td>
+                                            <td>最后修改时间</td>
+                                            <td>
+                                                <input type="text" class="form-control" name="amendTime" readonly/>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <!-- <div class="form-group"><label>计价单位ID</label></div>-->
+                                        <!--<div class="form-inline-item">-->
+                                            <!--<div class="form-group"><label class="color-red" style="width:71px">计价单位</label><input type="text" class="form-control" name="rateBase"/></div>-->
+                                            <!--<div class="form-group"><label style="width: 122px">计价单位名称(CN)</label><input type="text" class="form-control" name="rateNameCn"/></div>-->
+                                        <!--</div>-->
+                                        <!--<div class="form-inline-item">-->
+                                            <!--<div class="form-group"><label  style="width:71px">计费代码</label><input type="text" class="form-control" name="rateCode"/></div>-->
+                                            <!--<div class="form-group"><label style="width: 122px">计价单位名称(EN)</label><input type="text"-->
+                                                                                                     <!--class="form-control" name="rateName"/></div>-->
+                                        <!--</div>-->
+                                        <!--<div class="form-inline-item single-item">-->
+                                            <!--<div class="form-group"><label  style="width:71px">描述</label><input type="text" class="form-control" name="description"/></div>-->
+                                        <!--</div>-->
+                                        <!--<div class="form-inline-item">-->
+                                            <!--<div class="form-group"><label style="width:75px">最后修改人</label><input type="text" class="form-control" name="amenderName" value="admin" readonly/></div>-->
+                                            <!--<div class="form-group"><label style="width:122px">最后修改时间</label><input type="text" class="form-control" name="amendTime" readonly></div>-->
+                                        <!--</div>-->
+                                    <div hidden="true"><label>新增或保存</label><input type="text" class="form-control" name="rateBaseId"/><input type="text" class="form-control" name="rateBaseId"/><input type="text" name="saveType" id="saveType"></div>
+                                    <div class="modal-footer">
+                                        <div class="sm-wrapper">
+                                            <button type="button" class="btn btn-primary" data-dismiss="modal">取消</button></button>
+                                            <!--<button type="button" class="btn btn-primary" id="editRatebaseModalSubmit">确定</button>-->
+                                            <input type="submit" class="btn btn-primary"
+                                                   id="submitRatebaseAddModal" value="确定"/>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+
+                        </div><!-- /.modal-content -->
+                    </div><!-- /.modal -->
+                </div>
+                <!--end operation box-->
+                <div class="btn_group">
+                    <button id="BTN_90020200" onclick="rateBase.addRatebase()" class="btn btn-info">
+                        增加
+                    </button>
+                    <button id="BTN_90020300" onclick="rateBase.editRatebase()" class="btn btn-info">
+                        修改
+                    </button>
+                    <button id="BTN_90020400" onclick="rateBase.deleteRatebase()" class="btn btn-info">
+                        删除
+                    </button>
+                    <div class="btn-group export-excel dataTable-dropdown-menu">
+                        <button type="button" class="btn btn-info">导出Excel</button>
+                        <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                            <span class="caret"></span>
+                            <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                        <ul class="dropdown-menu export-excel-menu" role="menu">
+                            <li id="rateBase_export-excel-selected"></li>
+                            <li id="rateBase_export-excel-current"></li>
+                            <li id="rateBase_export-excel-all"></li>
+                        </ul>
+                    </div>
+                    <!--<button id="rateBase_import-excel" onclick="customsDocumentAttachment.importExcel()" class="btn btn-info">-->
+                        <!--导出Excel-->
+                    <!--</button>-->
+                    <div class="btn-group export-print dataTable-dropdown-menu">
+                        <button type="button" class="btn btn-info">打印</button>
+                        <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                            <span class="caret"></span>
+                            <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                        <ul class="dropdown-menu export-print-menu" role="menu">
+                            <li id="rateBase_export-print-selected"></li>
+                            <li id="rateBase_export-print-all"></li>
+                        </ul>
+                    </div>
+                    <div class="btn-height btn-group" style="vertical-align: top;" id="rateBase_export-copy"></div>
+                    <div class="btn-height btn-group" style="vertical-align: top;"  id="rateBase_export-columnVisibility" ></div>
+                    <!--<button id="refreshRatebase" onclick="rateBase.doSearch()" class="btn btn-info">-->
+                        <!--刷新-->
+                    <!--</button>-->
+                    <!--<button id="showRatebaseDetail" class="btn btn-info">-->
+                        <!--详情-->
+                    <!--</button>-->
+
+                </div>
+                <div class="box datable-box">
+
+                    <!-- /.box-header -->
+                    <div class="box-body">
+
+                        <table id="ratebaseTable" class="table table-bordered table-striped">
+                        </table>
+                    </div>
+                    <!-- /.box-body -->
+
+                    <!--modify button-->
+
+                </div>
+                <!-- /.box -->
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </section>
+    <!-- DataTables -->
+    <script src="basedata/js/rate-base.js"></script>
+    <script src="basedata/js/public.js"></script>
+    <script>
+
+    </script>
+</div>                </div>
+
+

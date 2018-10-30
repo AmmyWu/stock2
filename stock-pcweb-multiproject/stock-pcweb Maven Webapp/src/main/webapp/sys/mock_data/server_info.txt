@@ -1,0 +1,38 @@
+    {
+        "data": [
+        {
+              "logDirectory": "1111111",
+               "serverIp": "192.0.0.1",
+               "port": "52",
+               "serverName": "murcury",
+               "description": "best server",
+               "accessGroup": "group1",
+               "recordVersion":"VS 6.0",
+               "amender": "Jonny",
+                "amendTime": "12/02/02"
+        },
+         {
+                    "logDirectory": "2222222",
+                   "serverIp": "192.0.0.1",
+                   "port": "52",
+                   "serverName": "murcury",
+                   "description": "best server",
+                   "accessGroup": "group1",
+                   "recordVersion":"VS 6.0",
+                   "amender": "Jonny",
+                    "amendTime": "12/02/02"
+                },
+        {
+                   "logDirectory": "33333",
+                  "serverIp": "192.0.0.1",
+                  "port": "52",
+                  "serverName": "murcury",
+                  "description": "best server",
+                  "accessGroup": "group1",
+                  "recordVersion":"VS 6.0",
+                  "amender": "Jonny",
+                   "amendTime": "12/02/02"
+               }
+
+    ]
+    }

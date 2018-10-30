@@ -1,0 +1,233 @@
+<div id="tab_92101" class="user sys tab-page active" role="tabpanel">
+	<!-- 新增/修改弹出框 -->
+	<div class="modal fade" id="editUserModal" tabindex="-1"
+		 role="dialog" aria-labelledby="roleModalLabel"
+		 aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close modal_close"
+							data-dismiss="modal" aria-hidden="true">&times;
+					</button>
+					<h4 class="modal-title" id="addModalLabel">新增</h4>
+				</div>
+				<div class="modal-body" style="padding: 5px">
+					<form id="userForm" class="form-inline">
+						<table class="edit-table">
+							<tr>
+                                <td>医院名称</td>
+                                <td><select id="hos_name2" class="form-control" name="hospKey"></td>
+
+                                <td>医院类别</td>
+                                <td><select id="hos_type2" class="form-control" name="hospKind"></td>
+                            </tr>
+                            <tr>
+                                <td>科室</td>
+                                <td><select id="office2" class="form-control" name="departKey"></td>
+
+                                <td>医生工号</td>
+                                <td><input type="text" class="form-control" name="doctorKey" /></td>
+                            </tr>
+                            <tr>
+                                <td>医生姓名</td>
+                                <td><input type="text" class="form-control" name="doctorName" /></td>
+
+                                <td>医生职称</td>
+                                <td><select id="doctor_prof2" class="form-control" name="doctorProf"></td>
+                            </tr>
+                            <tr>
+                                <td>医生职级</td>
+                                <td><select id="doctor_level2" class="form-control" name="doctorLevel"></td>
+
+                                <td>处方权</td>
+                                <td>
+                                    <select id="prescription2" class="form-control" name="recipePermit">
+                                        <option value="有">有</option>
+                                        <option value="无">无</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>按时注册</td>
+                                <td>
+                                    <select id="register2" class="form-control" name="registerFlag">
+                                        <option value="有">是</option>
+                                        <option value="无">否</option>
+                                    </select>
+                                </td>
+
+                                <td>印鉴卡</td>
+                                <td>
+                                    <select id="card2" class="form-control" name="signatureCard">
+                                        <option value="有">有</option>
+                                        <option value="无">无</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>抗菌药物权</td>
+                                <td>
+                                    <input type="anti2" class="form-control" name="antibioticsFlag" />
+                                    <option value="有">有</option>
+                                    <option value="无">无</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>最后修改人</td>
+                                <td><input type="text" class="form-control" name="amender" readonly /></td>
+                                <td>最后修改时间</td>
+                                <td><input type="text" class="form-control" name="amenderTime" readonly /></td>
+                            </tr>
+						</table>
+						<div  hidden="true">
+							<input type="text" class="form-control" name="physical_id"/>
+							<!--<input type="text" class="form-control" name="amender" value="1" readonly/>-->
+							<input type="text" name="saveType" hidden="true">
+						</div>
+
+						<div class="modal-footer ">
+							<div class="sm-wrapper">
+								<button type="button" class="btn btn-primary" data-dismiss="modal">取消</button>
+								<!--<button type="button" class="btn btn-primary" id="editBankModalSubmit">确定</button>-->
+								<input type="submit" class="user_save btn btn-primary" id="saveUser" value="确定"/>
+
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+			<!-- /.modal-content -->
+		</div>
+		<!-- /.modal -->
+	</div>
+
+	<section class="content">
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="box search-box">
+					<div class="box-body">
+						<form class="search-table form-inline" id="searchUserForm">
+								<div class="form-group">
+								    <div class="form-group">
+                                        <label>医院名称</label>
+                                        <select id="hos_name" class="form-control" name="hospKey">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>医院类别</label>
+                                        <select id="hos_type" class="form-control" name="hospKind">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>科室</label>
+                                        <select id="office" class="form-control" name="departKey">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>医生工号</label>
+                                        <input type="text" name="doctorKey" class="form-control" placeholder="医生工号">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>医生姓名</label>
+                                        <input type="text" name="doctorName" class="form-control" placeholder="医生姓名">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>医生职称</label>
+                                        <select id="doctorProf" class="form-control" name="doctorProf">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>医生职级</label>
+                                        <select id="doctor_level" class="form-control" name="doctorLevel">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>处方权</label>
+                                        <select id="prescription" class="form-control" name="recipePermit">
+                                            <option value="有">有</option>
+                                            <option value="无">无</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>按时注册</label>
+                                        <select id="register" class="form-control" name="registerFlag">
+                                            <option value="是">是</option>
+                                            <option value="否">否</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>印鉴卡</label>
+                                        <select id="card" class="form-control" name="signatureCard">
+                                            <option value="有">有</option>
+                                            <option value="无">无</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>抗菌药物权</label>
+                                        <select id="anti" class="form-control" name="antibioticsFlag">
+                                            <option value="有">有</option>
+                                            <option value="无">无</option>
+                                        </select>
+                                    </div>
+								</div>
+						</form>
+						<div class="sm-wrqapper">
+							<input type="button" class="btn btn-info btn-size" id="searchUser" style="width:58px;" onclick="User.doSearch()" value="查找"/>
+
+							<!--   <label onclick="doSearch()">adasdfasdf</label> -->
+							<button class="btn btn-info btn-size search_reset"
+									id="resetSearchUserForm" style="width:58px;">重置
+							</button>
+						</div>
+					</div>
+					<!-- /.box-body -->
+				</div>
+				<div class="btn_group">
+					<button id="BTN_91040200" onclick="User.addUser()" class="btn btn-info">新增</button>
+					<button id="BTN_91040400" onclick="User.deleteUser()" class="btn btn-info">删除</button>
+					<button id="BTN_91040300" onclick="User.editUser()" class="btn btn-info">修改</button>
+					<button id="refreshUser" onclick="User.doSearch()" class="btn btn-info">刷新</button>
+					<button id="showUserDetail" onclick="User.showUserDetail()" class="btn btn-info">详情</button>
+					<div class="btn-group export-excel dataTable-dropdown-menu">
+						<button type="button" class="btn btn-info">导出Excel</button>
+						<button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+							<span class="caret"></span>
+							<span class="sr-only">Toggle Dropdown</span>
+						</button>
+						<ul class="dropdown-menu export-excel-menu" role="menu">
+							<li id="User_export-excel-selected"></li>
+							<li id="User_export-excel-current"></li>
+							<li id="User_export-excel-all"></li>
+						</ul>
+					</div>
+					<!--<button id="User_import-excel" onclick="customsDocumentAttachment.importExcel()" class="btn btn-info">-->
+					<!--导出Excel-->
+					<!--</button>-->
+					<div class="btn-group export-print dataTable-dropdown-menu">
+						<button type="button" class="btn btn-info">打印</button>
+						<button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+							<span class="caret"></span>
+							<span class="sr-only">Toggle Dropdown</span>
+						</button>
+						<ul class="dropdown-menu export-print-menu" role="menu">
+							<li id="User_export-print-selected"></li>
+							<li id="User_export-print-all"></li>
+						</ul>
+					</div>
+					<div class="btn-height btn-group" style="vertical-align: top;" id="User_export-copy"></div>
+					<div class="btn-height btn-group" style="vertical-align: top;"  id="User_export-columnVisibility" ></div>
+
+				</div>
+				<div class="box datable-box">
+					<!-- /.box-header -->
+					<div class="box-body">
+						<table id="user_tb" class="table table-bordered table-striped"></table>
+					</div>
+				</div>
+				<!--主要表单内容-->
+			</div>
+		</div>
+	</section>
+	<script src="basicInformation/js/doctor.js"></script>
+	<script src="sys/js/public.js"></script>
+	<script src="js/setToolbar.js"></script>
+
+</div>
+
+

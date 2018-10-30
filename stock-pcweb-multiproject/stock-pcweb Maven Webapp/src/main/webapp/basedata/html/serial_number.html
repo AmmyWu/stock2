@@ -1,0 +1,216 @@
+<div id="tab_9013" class="serial_number basedata tab-page" role="tabpanel" onload="InitSerialNumber()">
+    <!--<div class="content-header">-->
+        <!--<h1>-->
+            <!--基础资料-->
+            <!--<small>序列号</small>-->
+        <!--</h1>-->
+        <!--<ol class="breadcrumb">-->
+            <!--<li><a href="#"><i class="fa fa-dashboard"></i>基础资料</a></li>-->
+            <!--<li><a href="#">序列号</a></li>-->
+            <!--<li class="active">数据表格</li>-->
+        <!--</ol>-->
+    <!--</div>-->
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <!--begin search box-->
+                <div class="box search-box">
+                    <!--<div class="box-header">-->
+                        <!--<h4 class="box-title">查询</h4>-->
+                        <!--<div class="pull-right box-tools">-->
+                            <!--<button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">-->
+                                <!--<i class="fa fa-plus"></i></button>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <div class="box-body">
+                        <form class="search-table form-inline" id="serialNumberSearchForm" role="form">
+                            <div hidden="true"><label>组织架构节点id</label><input type="text" name="organizationStructureId"/></div>
+                            <!--<div class="row">-->
+                                <div class="form-group">
+                                    <div class="zTreeDemoBackground left">
+                                        <!--<li class="title">&nbsp;&nbsp;<span class="highlight_red">选择城市时，按下 Ctrl 或 Cmd 键可以进行多选</span></li>-->
+                                        <div class="title form-group" style="width:100%;">
+                                            <label style="width:25%;">组织架构</label>
+                                            <input type="text" class="organizationalstructureResourceSel form-control" onclick="showOrgstruMenu('serialNumberOrganizationalStructureRtreemenuContent_search');return false;" name="organizationStructureName" readonly="" placeholder="不选择或者选择一个父资源" style="width:72%;">
+                                        </div>
+                                    </div>
+                                    <div class="serialNumberOrganizationalStructureRtreemenuContent_search menuContent"
+                                         style="position: absolute; width: 250px; z-index: 3000; top: 35px; display: none;">
+                                        <ul id="serialNumberOrganizationalStructureTreeResouce_search" class="ztree" style="margin-top:0; width: 100%"></ul>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>用途标识</label>
+                                    <input type="text" class="form-control" name="useLogo">
+                                </div>
+
+                            <!--</div>-->
+                        </form>
+                        <div class="sm-wrqapper">
+                            <input id ="BTN_90130100" type="button" class="btn btn-info btn-size" onclick="serialNumber.doSearch()"
+                                   value="查找"/>
+
+                            <button class="btn btn-info search_reset" id="charge_reset">
+                                重置
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal fade" id="editSerialNumberModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close modal_close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title" id="editSerialNumberModalTitle">增加</h4>
+                            </div>
+                            <div class="modal-body" style="padding:5px" id="editSerialNumberModalBody">
+                                <form id="editSerialNumberForm" class="form-inline">
+                                    <table class="edit-table">
+                                        <tr>
+                                            <td>组织架构</td>
+                                            <td>
+                                                <div class="zTreeDemoBackground left">
+                                                    <div class="title">
+                                                        <!--<label>组织架构</label>-->
+                                                        <input type="text" class="organizationalstructureResourceSel form-control form-control-line" onclick="showOrgstruMenu('serialNumberOrganizationalStructureRtreemenuContent');return false;" name="organizationStructureName" readonly placeholder="不选择或者选择一个父资源"/>
+                                                    </div>
+                                                    <div hidden="true"><label>组织架构节点id</label><input type="text" name="organizationStructureId"/></div>
+                                                </div>
+                                                <div
+                                                        class="serialNumberOrganizationalStructureRtreemenuContent menuContent" style="display:none; position: absolute;width:31%;z-index: 3000; top: 34px;">
+                                                    <ul id="serialNumberOrganizationalStructureTreeResouce" class="ztree" style="margin-top:0; width: 100%"></ul>
+                                                </div>
+                                            </td>
+                                            <td>规则文本</td>
+                                            <td><input type="text" class="form-control" name="ruleText"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="color-red">用途标识</td>
+                                            <td><input type="text" class="form-control" name="useLogo"/></td>
+                                            <td>序列号起始值</td>
+                                            <td><input type="text" class="form-control" name="serialNumberStart"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td>序列号长度</td>
+                                            <td><input type="text" class="form-control" name="serialNumberLength"/></td>
+                                            <td>最新的序列号</td>
+                                            <td><input type="text" class="form-control" name="serialNumberLatest"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td>最后修改人</td>
+                                            <td><input type="text" class="form-control" name="amenderName" readonly/></td>
+                                            <td>最后修改时间</td>
+                                            <td><input type="text" class="form-control" name="amendTime" readonly/></td>
+                                        </tr>
+
+                                    </table>
+                                    <!--<div class="form-inline-item">-->
+                                        <!--<div class="form-group"><label class="color-red">用途标识</label><input type="text" class="form-control" name="useLogo"/></div>-->
+                                        <!--<div class="form-group"><label>序列号起始值</label><input type="text" class="form-control" name="serialNumberStart"/></div>-->
+                                    <!--</div>-->
+                                    <!--<div class="form-inline-item">-->
+                                        <!--<div class="form-group"><label>规则文本</label><input style="width: 185px!important;" type="text" class="form-control" name="ruleText"/></div>-->
+                                        <!--<div class="form-group">-->
+                                            <!--<div class="zTreeDemoBackground left">-->
+                                                <!--&lt;!&ndash;<li class="title">&nbsp;&nbsp;<span class="highlight_red">选择城市时，按下 Ctrl 或 Cmd 键可以进行多选</span></li>&ndash;&gt;-->
+                                                <!--<div class="title">-->
+                                                    <!--<label>组织架构</label>-->
+                                                    <!--<input type="text" class="organizationalstructureResourceSel form-control form-control-line" onclick="showOrgstruMenu('serialNumberOrganizationalStructureRtreemenuContent');return false;" name="organizationStructureName" readonly placeholder="不选择或者选择一个父资源"/>-->
+                                                <!--</div>-->
+                                                <!--<div hidden="true"><label>组织架构节点id</label><input type="text" name="organizationStructureId"/></div>-->
+                                            <!--</div>-->
+                                            <!--<div class="serialNumberOrganizationalStructureRtreemenuContent menuContent" style="display:none; position: absolute;width:100%;z-index: 3000; top: 34px;">-->
+                                                <!--<ul id="serialNumberOrganizationalStructureTreeResouce" class="ztree" style="margin-top:0; width: 100%"></ul>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                    <!--<div class="form-inline-item">-->
+                                        <!--<div class="form-group"><label>序列号长度</label><input type="text" class="form-control" name="serialNumberLength"/></div>-->
+                                        <!--<div class="form-group"><label>最新的序列号</label><input type="text" class="form-control" name="serialNumberLatest"/></div>-->
+                                    <!--</div>-->
+                                    <!--<div class="form-inline-item">-->
+                                        <!--<div class="form-group"><label>最后修改人</label><input type="text" class="form-control" name="amenderName"  readonly/></div>-->
+                                        <!--<div class="form-group"><label>最后修改时间</label><input type="text" class="form-control" name="amendTime" readonly/></div>-->
+                                    <!--</div>-->
+                                    <div  hidden="true"><input type="text" class="form-control" name="serialNumberId" readonly/><input type="text" class="form-control" name="amender" value="1" readonly/><input type="text" name="saveType" hidden="true"><input type="text" class="form-control" name="saveType" id="saveType"/></div>
+                                    <div class="modal-footer ">
+                                        <div class="sm-wrapper">
+                                            <label>用途和规则说明</label>
+                                            <input type="text" class="form-control" name="description" style="width:55%;margin-right: 9%;">
+                                            <button type="button" class="btn btn-primary" data-dismiss="modal" style="background-color:white;color: #367fa9;">取消</button>
+                                            <!--<button type="button" class="btn btn-primary" data-dismiss="modal">取消</button>-->
+                                            <!--<button type="button" class="btn btn-primary" id="editSerialNumberModalSubmit">确定</button>-->
+                                            <input type="submit" class="btn btn-primary" id="editSerialNumberModalSubmit" value="确定"/>
+
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div><!-- /.modal-content -->
+                    </div><!-- /.modal -->
+                </div>
+                <div class="btn_group">
+                    <button id="BTN_90130200" onclick="serialNumber.addSerialNumber()" class="btn btn-info">
+                        新增
+                    </button>
+                    <button id="BTN_90130300" onclick="serialNumber.editSerialNumber()" class="btn btn-info">
+                        修改
+                    </button>
+                    <button id="BTN_90130400" onclick="serialNumber.deleteSerialNumber()" class="btn btn-info">
+                        删除
+                    </button>
+                    <div class="btn-group export-excel dataTable-dropdown-menu">
+                        <button type="button" class="btn btn-info">导出Excel</button>
+                        <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                            <span class="caret"></span>
+                            <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                        <ul class="dropdown-menu export-excel-menu" role="menu">
+                            <li id="serialNumber_export-excel-selected"></li>
+                            <li id="serialNumber_export-excel-current"></li>
+                            <li id="serialNumber_export-excel-all"></li>
+                        </ul>
+                    </div>
+                    <!--<button id="serialNumber_import-excel" onclick="customsDocumentAttachment.importExcel()" class="btn btn-info">-->
+                    <!--导出Excel-->
+                    <!--</button>-->
+                    <div class="btn-group export-print dataTable-dropdown-menu">
+                        <button type="button" class="btn btn-info">打印</button>
+                        <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                            <span class="caret"></span>
+                            <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                        <ul class="dropdown-menu export-print-menu" role="menu">
+                            <li id="serialNumber_export-print-selected"></li>
+                            <li id="serialNumber_export-print-all"></li>
+                        </ul>
+                    </div>
+                    <div class="btn-height btn-group" style="vertical-align: top;" id="serialNumber_export-copy"></div>
+                    <div class="btn-height btn-group" style="vertical-align: top;"  id="serialNumber_export-columnVisibility" ></div>
+
+                    <!--<button id="refreshSerialNumber" onclick="serialNumber.doSearch()" class="btn btn-info">-->
+                        <!--刷新-->
+                    <!--</button>-->
+                    <!--<button id="showSerialNumberDetail" class="btn btn-info">-->
+                        <!--详情-->
+                    <!--</button>-->
+                </div>
+                <div class="box datable-box">
+                    <div class="box-body">
+                        <table id="serialNumberTable" class="table table-bordered table-striped">
+                        </table>
+                    </div>
+                </div>
+                <!-- /.box -->
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </section>
+    <!-- DataTables -->
+    <script src="sys/js/organizationStructureTree.js"></script>
+    <script src="basedata/js/public.js"></script>
+    <script src="basedata/js/serial_number.js"></script>
+</div>

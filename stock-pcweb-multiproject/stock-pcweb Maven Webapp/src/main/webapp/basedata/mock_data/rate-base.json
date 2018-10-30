@@ -1,0 +1,101 @@
+{
+  "recordsFiltered": 5,
+  "recordsTotal": 5,
+  "aaData": [
+    {
+      "accessGroup": 0,
+      "amendTime": "2017-05-25 23:41:38",
+      "amender": 0,
+      "baseModel": {
+        "creatorName": "test",
+        "organiztionName": "test"
+      },
+      "createTime": "2017-05-25 23:41:23",
+      "creator": 0,
+      "description": "",
+      "isDeleted": 0,
+      "rateBase": "",
+      "rateBaseId": 6,
+      "rateCode": "aa",
+      "rateName": "aa",
+      "rateNameCn": "",
+      "recordVersion": 0
+    },
+    {
+      "accessGroup": 0,
+      "amendTime": "2017-05-25 23:41:14",
+      "amender": 0,
+      "baseModel": {
+        "creatorName": "test",
+        "organiztionName": "test"
+      },
+      "createTime": "2017-05-25 23:41:14",
+      "creator": 0,
+      "description": "",
+      "isDeleted": 0,
+      "rateBase": "22",
+      "rateBaseId": 5,
+      "rateCode": "11",
+      "rateName": "11",
+      "rateNameCn": "22",
+      "recordVersion": 0
+    },
+    {
+      "accessGroup": 0,
+      "amendTime": "2017-05-24 18:24:08",
+      "amender": 0,
+      "baseModel": {
+        "creatorName": "test",
+        "organiztionName": "test"
+      },
+      "createTime": "2017-05-24 18:24:08",
+      "creator": 0,
+      "description": "",
+      "isDeleted": 0,
+      "rateBase": "啊",
+      "rateBaseId": 4,
+      "rateCode": "啊啊啊",
+      "rateName": "啊啊",
+      "rateNameCn": "啊啊",
+      "recordVersion": 0
+    },
+    {
+      "accessGroup": 0,
+      "amendTime": "2017-05-24 18:20:16",
+      "amender": 0,
+      "baseModel": {
+        "creatorName": "test",
+        "organiztionName": "test"
+      },
+      "createTime": "2017-05-24 18:20:00",
+      "creator": 0,
+      "description": "cc",
+      "isDeleted": 0,
+      "rateBase": "cc",
+      "rateBaseId": 3,
+      "rateCode": "cc地方啊啊",
+      "rateName": "cc",
+      "rateNameCn": "cc",
+      "recordVersion": 0
+    },
+    {
+      "accessGroup": 0,
+      "amendTime": "",
+      "amender": 0,
+      "baseModel": {
+        "creatorName": "test",
+        "organiztionName": "test"
+      },
+      "createTime": "",
+      "creator": 0,
+      "description": "",
+      "isDeleted": 0,
+      "rateBase": "aa",
+      "rateBaseId": 1,
+      "rateCode": "cc",
+      "rateName": "aaa",
+      "rateNameCn": "cc",
+      "recordVersion": 0
+    }
+  ]
+}

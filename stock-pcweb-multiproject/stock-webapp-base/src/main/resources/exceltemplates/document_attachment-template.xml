@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<template>
+  <table>
+    <maintable name="customs_document_attachment" description="报关委托随附单证">
+     <column name="attachment_name" field="随附单证名字" jdbcType="VARCHAR2" notNull="true"/>
+     <column name="attachment_no" field="随附单证编号" jdbcType="VARCHAR2" notNull="true"/>
+     <column name="company_name" field="公司名字" jdbcType="VARCHAR2" notNull="true"/>
+    </maintable>
+  </table>
+</template>

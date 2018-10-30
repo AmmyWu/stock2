@@ -1,0 +1,146 @@
+{
+  "recordsFiltered": 7,
+  "recordsTotal": 7,
+  "aaData": [
+    {
+      "abbrev": "中行",
+      "accessGroup": 0,
+      "addr": "33",
+      "amendTime": "2017-05-30 08:34:48",
+      "amender": 1,
+      "bankId": 1,
+      "bankName": "中国银行",
+      "bankNameNative": "",
+      "baseModel": {
+        "creatorName": "test",
+        "organiztionName": "test"
+      },
+      "createTime": "",
+      "creator": 0,
+      "description": "",
+      "isDeleted": 0,
+      "recordVersion": 0,
+      "xchgDays": 3
+    },
+    {
+      "abbrev": "工行",
+      "accessGroup": 0,
+      "addr": "43",
+      "amendTime": "",
+      "amender": 0,
+      "bankId": 2,
+      "bankName": "中国工商银行",
+      "bankNameNative": "",
+      "baseModel": {
+        "creatorName": "test",
+        "organiztionName": "test"
+      },
+      "createTime": "",
+      "creator": 0,
+      "description": "",
+      "isDeleted": 0,
+      "recordVersion": 0,
+      "xchgDays": 44445
+    },
+    {
+      "abbrev": "建航",
+      "accessGroup": 0,
+      "addr": "",
+      "amendTime": "",
+      "amender": 0,
+      "bankId": 3,
+      "bankName": "中国建设银行",
+      "bankNameNative": "",
+      "baseModel": {
+        "creatorName": "test",
+        "organiztionName": "test"
+      },
+      "createTime": "",
+      "creator": 0,
+      "description": "",
+      "isDeleted": 0,
+      "recordVersion": 0,
+      "xchgDays": 0
+    },
+    {
+      "abbrev": "农行",
+      "accessGroup": 0,
+      "addr": "",
+      "amendTime": "",
+      "amender": 0,
+      "bankId": 7,
+      "bankName": "中国农业银行",
+      "bankNameNative": "",
+      "baseModel": {
+        "creatorName": "test",
+        "organiztionName": "test"
+      },
+      "createTime": "",
+      "creator": 0,
+      "description": "",
+      "isDeleted": 0,
+      "recordVersion": 0,
+      "xchgDays": 0
+    },
+    {
+      "abbrev": "招行",
+      "accessGroup": 0,
+      "addr": "1122",
+      "amendTime": "2017-05-30 08:44:15",
+      "amender": 1,
+      "bankId": 8,
+      "bankName": "招商银行",
+      "bankNameNative": "",
+      "baseModel": {
+        "creatorName": "test",
+        "organiztionName": "test"
+      },
+      "createTime": "",
+      "creator": 0,
+      "description": "",
+      "isDeleted": 0,
+      "recordVersion": 0,
+      "xchgDays": 0
+    },
+    {
+      "abbrev": "宁波银行",
+      "accessGroup": 0,
+      "addr": "43",
+      "amendTime": "",
+      "amender": 0,
+      "bankId": 9,
+      "bankName": "宁波银行",
+      "bankNameNative": "",
+      "baseModel": {
+        "creatorName": "test",
+        "organiztionName": "test"
+      },
+      "createTime": "",
+      "creator": 0,
+      "description": "",
+      "isDeleted": 0,
+      "recordVersion": 0,
+      "xchgDays": 0
+    },
+    {
+      "abbrev": "",
+      "accessGroup": 0,
+      "addr": "",
+      "amendTime": "",
+      "amender": 0,
+      "bankId": 10,
+      "bankName": "杭州银行",
+      "bankNameNative": "",
+      "baseModel": {
+        "creatorName": "test",
+        "organiztionName": "test"
+      },
+      "createTime": "",
+      "creator": 0,
+      "description": "",
+      "isDeleted": 0,
+      "recordVersion": 0,
+      "xchgDays": 0
+    }
+  ]
+}

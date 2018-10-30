@@ -1,0 +1,138 @@
+{
+    "recordsFiltered": 6,
+    "recordsTotal": 6,
+    "aaData": [
+        {
+            "accessGroup": 0,
+            "amendTime": "2017-05-24 17:18:59",
+            "amender": 1,
+            "baseModel": {
+                "creatorName": "test",
+                "organiztionName": "test"
+            },
+            "chargeId": 15,
+            "cnName": "",
+            "code": "范德萨",
+            "createTime": "2017-05-24 17:18:59",
+            "creator": 1,
+            "description": "",
+            "ediCode": "",
+            "enName": "",
+            "isDeleted": 0,
+            "otherEdiCode": "",
+            "rateBase": "",
+            "recordVersion": 0,
+            "superiorId": 0
+        },
+        {
+            "accessGroup": 0,
+            "amendTime": "2017-05-24 17:04:24",
+            "amender": 1,
+            "baseModel": {
+                "creatorName": "test",
+                "organiztionName": "test"
+            },
+            "chargeId": 9,
+            "cnName": "adsfasd",
+            "code": "adfasd",
+            "createTime": "2017-05-24 17:04:24",
+            "creator": 1,
+            "description": "",
+            "ediCode": "",
+            "enName": "asdfas",
+            "isDeleted": 0,
+            "otherEdiCode": "",
+            "rateBase": "",
+            "recordVersion": 0,
+            "superiorId": 0
+        },
+        {
+            "accessGroup": 0,
+            "amendTime": "2017-05-24 14:16:22",
+            "amender": 1,
+            "baseModel": {
+                "creatorName": "test",
+                "organiztionName": "test"
+            },
+            "chargeId": 8,
+            "cnName": "",
+            "code": "trfds",
+            "createTime": "2017-05-24 14:16:22",
+            "creator": 1,
+            "description": "",
+            "ediCode": "",
+            "enName": "",
+            "isDeleted": 0,
+            "otherEdiCode": "",
+            "rateBase": "",
+            "recordVersion": 0,
+            "superiorId": 0
+        },
+        {
+            "accessGroup": 0,
+            "amendTime": "2017-05-24 11:25:35",
+            "amender": 1,
+            "baseModel": {
+                "creatorName": "test",
+                "organiztionName": "test"
+            },
+            "chargeId": 1,
+            "cnName": "aaaa",
+            "code": "RMB",
+            "createTime": "2017-05-24 11:25:27",
+            "creator": 1,
+            "description": "aaa",
+            "ediCode": "aa",
+            "enName": "aaa",
+            "isDeleted": 0,
+            "otherEdiCode": "a",
+            "rateBase": "a",
+            "recordVersion": 0,
+            "superiorId": 0
+        },
+        {
+            "accessGroup": 0,
+            "amendTime": "2017-05-24 14:38:43",
+            "amender": 1,
+            "baseModel": {
+                "creatorName": "test",
+                "organiztionName": "test"
+            },
+            "chargeId": 6,
+            "cnName": "",
+            "code": "dasdfasd",
+            "createTime": "",
+            "creator": 0,
+            "description": "",
+            "ediCode": "",
+            "enName": "",
+            "isDeleted": 0,
+            "otherEdiCode": "",
+            "rateBase": "",
+            "recordVersion": 0,
+            "superiorId": 0
+        },
+        {
+            "accessGroup": 0,
+            "amendTime": "2017-05-24 14:39:12",
+            "amender": 1,
+            "baseModel": {
+                "creatorName": "test",
+                "organiztionName": "test"
+            },
+            "chargeId": 7,
+            "cnName": "",
+            "code": "cnb",
+            "createTime": "",
+            "creator": 0,
+            "description": "",
+            "ediCode": "",
+            "enName": "",
+            "isDeleted": 0,
+            "otherEdiCode": "",
+            "rateBase": "",
+            "recordVersion": 0,
+            "superiorId": 0
+        }
+    ]
+}

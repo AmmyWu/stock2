@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://www.springframework.org/schema/beans" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:cache="http://www.springframework.org/schema/cache" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+       http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context-4.0.xsd
+       http://www.springframework.org/schema/tx
+       http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+       http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache-4.0.xsd">
+
+	<!-- druid数据源配置 -->
+	<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource"
+		init-method="init" destroy-method="close" > 
+		<!-- 基本属性 url、user、password -->
+		<property name="url" value="${stock.datasource.url}" />
+		<property name="username" value="${stock.datasource.userName}" />
+		<property name="password" value="${stock.datasource.password}" />
+		
+		<!-- 配置初始化大小、最小、最大 -->  
+    	<property name="initialSize" value="${stock.datasource.initialSize}" />
+    	<property name="minIdle" value="${stock.datasource.minIdle}" />
+    	<property name="maxActive" value="${stock.datasource.maxActive}" />
+    	
+    	<!-- 配置获取连接等待超时的时间 -->  
+    	<property name="maxWait" value="${stock.datasource.maxWait}" />
+    	
+    	<!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 -->  
+    	<property name="timeBetweenEvictionRunsMillis" value="${stock.datasource.timeBetweenEvictionRunsMillis}" />
+	
+		<!-- 配置一个连接在池中最小生存的时间，单位是毫秒 -->  
+    	<property name="minEvictableIdleTimeMillis" value="${stock.datasource.minEvictableIdleTimeMillis}" />
+    	
+    	<property name="validationQuery" value="${stock.datasource.validationQuery}" />
+	    <property name="testWhileIdle" value="${stock.datasource.testWhileIdle}" />
+	    <property name="testOnBorrow" value="${stock.datasource.testOnBorrow}" />
+	    <property name="testOnReturn" value="${stock.datasource.testOnReturn}" />
+	   
+	    <!-- 打开PSCache，并且指定每个连接上PSCache的大小 -->  
+	    <property name="poolPreparedStatements" value="${stock.datasource.poolPreparedStatements}" />
+	    <property name="maxPoolPreparedStatementPerConnectionSize" value="${stock.datasource.maxPoolPreparedStatementPerConnectionSize}" />
+	    
+	    <property name="removeAbandoned" value="${stock.datasource.removeAbandoned}" /> <!-- 打开removeAbandoned功能 -->
+        
+        <property name="removeAbandonedTimeout" value="${stock.datasource.removeAbandonedTimeout}" /> <!-- 1800秒，也就是30分钟 -->
+        <property name="logAbandoned" value="${stock.datasource.logAbandoned}" /> <!-- 关闭abanded连接时输出错误日志 -->
+	    
+	    <!-- 配置监控统计拦截的filters，去掉后监控界面sql无法统计 
+	    <property name="filters" value="stat" /> -->  
+	</bean>
+
+	<!-- 配置SqlSessionFactoryBean -->
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="configLocation" value="classpath:config/orm/mybatis/mybatis.xml" />
+		<property name="mapperLocations"><!--value="classpath*:com/stock/dao/mapper/**/*.xml"  -->
+		  <array>
+                <value>classpath:com/stock/dao/mapper/sys/*.xml</value>
+                <value>classpath:com/stock/dao/mapper/basedata/*.xml</value>
+            </array>
+        </property>
+        
+        <!-- 扫描 entity 包，这样在 mapper 中就可以使用简单类名，多个用 ; 隔开 -->
+<!--         <property name="typeAliasesPackage" value="com/stock/dao/model/basedata;com/stock/dao/model/sys"/>
+ -->	</bean>
+
+	<!--创建数据映射器，使用自动扫描包的方式来注册各种映射器 -->
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="com.stock.dao.mapper" />
+	</bean>
+
+	<!-- 事务管理 -->
+	<bean name="transactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource"></property>
+
+	</bean>
+
+	<!-- 拦击通知点配置 -->
+<!-- 	<tx:advice id="txAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="insert*" propagation="REQUIRED" />
+			<tx:method name="save*" propagation="REQUIRED" />
+			<tx:method name="delete*" propagation="REQUIRED" />
+			<tx:method name="update*" propagation="REQUIRED" />
+			<tx:method name="select*" propagation="REQUIRED" />
+			<tx:method name="count*" propagation="REQUIRED" />
+			<tx:method name="find*" propagation="REQUIRED" />
+			<tx:method name="get*" propagation="REQUIRED" />
+			<tx:method name="change*" propagation="REQUIRED" />
+			<tx:method name="refresh*" propagation="REQUIRED" />
+			<tx:method name="log*" propagation="REQUIRES_NEW" />
+		</tx:attributes>
+	</tx:advice> -->
+	<bean id="aspectForLog" class="com.stock.webapp.base.log.AspectForLog" />
+	<aop:aspectj-autoproxy />
+
+<!-- 	<aop:config>
+		<aop:pointcut expression="execution(* com.stock.service.*.*.*(..))"
+			id="basicServiceMethod" />
+		<aop:advisor pointcut-ref="basicServiceMethod" advice-ref="txAdvice" />
+	</aop:config> -->
+
+	<aop:aspectj-autoproxy proxy-target-class="true" />
+
+	<!-- 支持 @Transactional 标记 -->
+	<tx:annotation-driven transaction-manager="transactionManager" proxy-target-class="true"/>
+
+	<!-- 自动代理 -->
+	<!-- <context:annotation-config /> -->
+
+
+	<!-- spring系统启动以后，加载该类，查询所有数据 -->
+	<bean class="com.stock.webapp.base.controller.util.SysConstInitListener"></bean>
+	
+</beans>

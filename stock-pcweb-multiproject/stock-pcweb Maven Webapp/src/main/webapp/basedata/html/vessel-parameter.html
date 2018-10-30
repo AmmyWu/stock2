@@ -1,0 +1,202 @@
+<div id="tab_9005" class="vessel-parameter basedata tab-page" role="tabpanel">
+    <!--<div class="content-header">-->
+        <!--<h1>-->
+            <!--基础资料-->
+            <!--<small>船公司</small>-->
+        <!--</h1>-->
+        <!--<ol class="breadcrumb">-->
+            <!--<li><a href="#"><i class="fa fa-dashboard"></i>基础资料</a></li>-->
+            <!--<li><a href="#">船公司</a></li>-->
+            <!--<li class="active">数据表格</li>-->
+        <!--</ol>-->
+    <!--</div>-->
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <!--begin search box-->
+                <div class="box search-box">
+                    <!--<div class="box-header">-->
+                        <!--<h4 class="box-title">查询</h4>-->
+                        <!--<div class="pull-right box-tools">-->
+                            <!--<button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">-->
+                                <!--<i class="fa fa-plus"></i></button>-->
+                            <!--<button type="button" class="btn btn-info btn-sm" data-widget="remove" data-toggle="tooltip" title="Remove">-->
+                            <!--<i class="fa fa-times"></i></button>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <div class="box-body">
+                        <form class="search-table form-inline" id="vesselParameterSearchForm" role="form">
+                                <div class="form-group">
+                                    <label>船公司代码</label>
+                                    <input type="text" class="form-control"
+                                           name="vesselParameterCode" placeholder="船公司代码">
+                                </div>
+                                <div class="form-group">
+                                    <label>船公司名称(CN)</label>
+                                    <input type="text" class="form-control"
+                                           name="vesselParameterNameCn" placeholder="船公司名称(CN)">
+                                </div>
+                                <div class="form-group">
+                                    <label>船公司名称(EN)</label>
+                                    <input type="text" class="form-control" name="vesselParameterName" placeholder="船公司名称(EN)">
+                                </div>
+                        </form>
+
+                        <div class="sm-wrqapper">
+                            <!--<lable class="check-1">生效&nbsp&nbsp&nbsp&nbsp<input class="check-size" type="checkbox" name="生效"/>-->
+                            <!--</lable>-->
+                            <button class="btn btn-info" id="BTN_90050100" onclick="vesselParameter.doSearch()">
+                                查找
+                            </button>
+                            <button class="btn btn-info search_reset" id="shipping-company_reset">
+                                重置
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!--end search box-->
+
+                <div class="modal fade" id="editVesselParameterModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close modal_close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title" id="editVesselParameterModalTitle">增加</h4>
+                            </div>
+                            <div class="modal-body" style="padding: 5px" id="editVesselParameterModalBody">
+                                <form id="editVesselParameterForm" class="form-inline">
+                                    <table class="edit-table">
+                                        <tr>
+                                            <td class="color-red">船公司代码</td>
+                                            <td><input type="text" class="form-control" name="vesselParameterCode"/></td>
+                                            <td>船公司名称(EN)</td>
+                                            <td><input type="text" class="form-control" name="vesselParameterName"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td>网址</td>
+                                            <td><input type="text" class="form-control" name="field"/></td>
+                                            <td>船公司名称(CN)</td>
+                                            <td><input type="text" class="form-control" name="vesselParameterNameCn"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td>描述</td>
+                                            <td><input type="text" class="form-control" name="description"/></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>最后修改人</td>
+                                            <td><input type="text" class="form-control" name="amenderName" readonly/></td>
+                                            <td>最后修改时间</td>
+                                            <td><input type="text" class="form-control" name="amendTime" readonly/></td>
+                                        </tr>
+                                    </table>
+                                        <!--<div class="form-inline-item">-->
+                                            <!--<div class="form-group"><label class="color-red">船公司代码</label><input type="text" class="form-control form-control-line" name="vesselParameterCode"/></div>-->
+                                            <!--<div class="form-group"><label style="padding-right: 0px;width: 105px;">船公司名称(EN)</label><input type="text"-->
+                                                                                                    <!--class="form-control form-control-line" name="vesselParameterName"/></div>-->
+                                        <!--</div>-->
+                                        <!--<div class="form-inline-item">-->
+                                            <!--<div class="form-group"><label>网址</label><input type="text" class="form-control form-control-line" name="field"/></div>-->
+                                            <!--<div class="form-group"><label style="padding: 0px;width: 105px;">船公司名称(CN)</label><input type="text" class="form-control form-control-line" name="vesselParameterNameCn"/></div>-->
+                                        <!--</div>-->
+                                        <!--<div class="form-inline-item single-item" style="margin-left: 20px">-->
+                                            <!--<div class="form-group"><label style="width:86px;">描述</label><input type="text" class="form-control form-control-line" name="description"/></div>-->
+                                        <!--</div>-->
+                                        <!--<div class="form-inline-item">-->
+                                            <!--<div class="form-group"><label>最后修改人</label><input type="text" class="form-control form-control-line" name="amenderName" value="admin" readonly/></div>-->
+                                            <!--<div class="form-group"><label>最后修改时间</label><input type="text" class="form-control form-control-line" name="amendTime" readonly/></div>-->
+                                        <!--</div>-->
+                                    <div hidden="true"><label>新增或保存</label><input type="text" name="saveType" hidden="true">
+                                        <input type="text" name="vesselParameterId" hidden="true">
+                                        <input type="text" name="amender" hidden="true" value="1">
+                                    </div>
+                                    <div class="modal-footer ">
+                                        <div class="sm-wrapper">
+                                            <button type="button" class="btn btn-primary" data-dismiss="modal">取消</button></button>
+                                            <!--<button type="button" class="btn btn-primary" data-dismiss="modal" id="editVesselParameterModalSubmit">确定</button>-->
+                                            <input type="submit" class="btn btn-primary"
+                                                   id="submitVesselParameterAddModal" value="确定"/>
+                                        </div>
+                                    </div>
+                                </form>
+
+                            </div>
+
+                        </div><!-- /.modal-content -->
+                    </div><!-- /.modal -->
+                </div>
+                <div class="btn_group">
+                    <button id="BTN_90050200" onclick="vesselParameter.addVesselParameter()" class="btn btn-info">
+                        增加
+                    </button>
+                    <button id="BTN_90050300" onclick="vesselParameter.editVesselParameter()" class="btn btn-info">
+                        修改
+                    </button>
+                    <button id="BTN_90050400" onclick="vesselParameter.deleteVesselParameter()" class="btn btn-info">
+                        删除
+                    </button>
+                    <div class="btn-group export-excel dataTable-dropdown-menu">
+                        <button type="button" class="btn btn-info">导出Excel</button>
+                        <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                            <span class="caret"></span>
+                            <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                        <ul class="dropdown-menu export-excel-menu" role="menu">
+                            <li id="vesselParameter_export-excel-selected"></li>
+                            <li id="vesselParameter_export-excel-current"></li>
+                            <li id="vesselParameter_export-excel-all"></li>
+                        </ul>
+                    </div>
+                    <!--<button id="vesselParameter_import-excel" onclick="customsDocumentAttachment.importExcel()" class="btn btn-info">-->
+                    <!--导出Excel-->
+                    <!--</button>-->
+                    <div class="btn-group export-print dataTable-dropdown-menu">
+                        <button type="button" class="btn btn-info">打印</button>
+                        <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                            <span class="caret"></span>
+                            <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                        <ul class="dropdown-menu export-print-menu" role="menu">
+                            <li id="vesselParameter_export-print-selected"></li>
+                            <li id="vesselParameter_export-print-all"></li>
+                        </ul>
+                    </div>
+                    <div class="btn-height btn-group" style="vertical-align: top;" id="vesselParameter_export-copy"></div>
+                    <div class="btn-height btn-group" style="vertical-align: top;"  id="vesselParameter_export-columnVisibility" ></div>
+
+                    <!--<button id="refreshVesselParameter" onclick="vesselParameter.doSearch()" class="btn btn-info">-->
+                        <!--刷新-->
+                    <!--</button>-->
+                    <!--<button id="showVesselParameterDetail" class="btn btn-info">-->
+                        <!--详情-->
+                    <!--</button>-->
+
+                </div>
+
+                <div class="box datable-box">
+
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <table id="vesselParameterTable" class="table table-bordered table-striped">
+                        </table>
+                    </div>
+                    <!-- /.box-body -->
+
+                    <!--modify button-->
+
+                </div>
+                <!-- /.box -->
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </section>
+    <!-- DataTables -->
+    <script src="basedata/js/vessel-parameter.js"></script>
+    <script src="basedata/js/public.js"></script>
+    <script>
+
+    </script>
+</div>

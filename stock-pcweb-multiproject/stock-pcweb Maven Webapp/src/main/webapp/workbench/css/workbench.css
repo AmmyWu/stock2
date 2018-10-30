@@ -1,0 +1,172 @@
+/*工作台公告*/
+.workbench .topic{
+    margin-bottom: 15px;
+}
+.workbench .topic img{
+    margin-right:10px;
+    width: 14px;
+}
+.workbench .topic span{
+    margin-left:40px;
+    text-decoration:underline;
+    color:#3c8dbc;
+    cursor: pointer;
+}
+
+/*工作台我的消息*/
+.workbench_left ul{
+     padding-left: 0;
+}
+.workbench_left ul li{
+    float:left;
+    list-style: none;
+    margin-right: 10px;
+}
+.workbench_right ul li{
+    float:left;
+    list-style: none;
+    margin-left: 20px;
+    font-size:14px;
+    cursor: pointer;
+}
+.workbench_right ul li i{
+    color:#8dc3ff;
+}
+.color-blue{
+    color:#005AFF;
+}
+.box.topic-box{
+    display: none;
+}
+.box.edit-topic-box{
+    display: none;
+}
+.box.topic-box.active{
+    display: block;
+}
+.box.edit-topic-box.active{
+    display: block;
+}
+.box.message-box{
+    display: none;
+}
+.box.edit-message-box{
+    display: none;
+}
+.box.message-box.active{
+    display: block;
+}
+.box.edit-message-box.active{
+    display: block;
+}
+.workbench  form .form-group{
+    /*height: 44px;*/
+    margin-right: 0px;
+    margin-bottom: 10px;
+    position: inherit;
+}
+.workbench .table td.topic-message > span{
+    display: inline-block;
+    /*width: 149.35px;*/
+    width: 600px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.workbench .dataTable th,.workbench .dataTable td{
+    text-align: center;
+}
+.workbench .dataTable tbody tr{
+    cursor: pointer;
+}
+#workbench_small_topicTable thead,
+#workbench_small_messageTable thead{
+    display: none;
+}
+input#searchAtten{
+    box-shadow: 1px 1px 2px rgba(0,0,0,.1) inset;
+    width: 70%;
+}
+.atten-box .box-body{
+    padding-top: 0px;
+}
+.box-body #attenList{
+    list-style: none;
+    padding-left: 0px;
+}
+.box-body #attenList li{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+}
+.box-body #attenList li a{
+    zoom: 1;
+    display: block;
+    overflow: hidden;
+    color: #555;
+    padding: 3px 4px 3px 10px;
+    white-space: normal;
+    word-break: break-all;
+}
+.atten-box{
+    display: none;
+}
+.message-consumer{
+    border-bottom: 1px solid #d2d6de;
+}
+.message-consumer-input input:focus{
+    outline: none;
+}
+.message-consumer-select .messageConsumerItem {
+    display: inline-block;
+    background-color: #e8f0f7;
+    color: #6C6969;
+    border: 1px solid #3c8dbc;
+    margin-right: 10px;
+    white-space: nowrap;
+    min-width: 100px;
+    max-width: 400px;
+    border-radius: 5px;
+}
+.message-consumer-select .messageConsumerItem strong{
+    display: inline-block;
+    width: 80%;
+    border-right: 1px solid #3c8dbc;
+    margin-right: 5px;
+    padding-left: 3px;
+
+}
+.message-consumer-select .messageConsumerItem i{
+    cursor: pointer;
+}
+/*.workbench table.dataTable tbody > tr.selected,*/
+/*.workbench table.dataTable tbody > tr > .selected{*/
+    /*background-color: initial;*/
+/*}*/
+/*隐藏链接和图片摁钮，在显示存在bug*/
+.wysihtml5-toolbar li:nth-last-child(1),
+.wysihtml5-toolbar li:nth-last-child(2){
+    display: none;
+}
+
+
+/*为空时显示 element attribute content*/
+.message-consumer-name:empty:before{
+    content: attr(placeholder);   /* element attribute*/
+    /*content: '请输入联系人';*/
+    color:#999;
+}
+.message-operation button{
+    margin-bottom: 5px;
+}
+#workbench_topic .row button{
+    margin-bottom: 5px;
+}
+.canceleditTopic,
+.sendeditedTopic{
+    display: none;
+}
+#workbench_small_topicTable_paginate  .pagination,
+#workbench_small_messageTable_paginate .pagination{
+    display: none;
+}

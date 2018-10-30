@@ -1,0 +1,158 @@
+<div id="tab_9105" class="administration basedata tab-page" role="tabpanel">
+   
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+            
+              
+                <!--end search box-->
+                <div class="modal fade" id="editAdministrationModal" tabindex="-1" role="dialog"
+                     aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close modal_close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title" id="editAdministrationModalTitle">增加</h4>
+                            </div>
+                            <div class="modal-body" style="padding: 10px 10px 40px" id="editAdministrationModalBody">
+                                <form id="editAdministrationForm" class="form-inline">
+                                    <table class="edit-table">
+                                        <tr>
+                                            <td>组织架构父节点</td>
+                                            <td>
+                                                <div hidden="true"><label>组织架构父节点id</label><input type="text" name="superiorId"/></div>
+                                                <div hidden="true"><label>创始人</label><input type="text" name="creator"/></div>
+                                                <div class="zTreeDemoBackground left">
+                                                    <!--<li class="title">&nbsp;&nbsp;<span class="highlight_red">选择城市时，按下 Ctrl 或 Cmd 键可以进行多选</span></li>-->
+                                                    <div class="title">
+                                                        <input type="text" class="administrationResourceSel form-control form-control-line" onclick="showAdministrationMenu('administrationRtreemenuContent');return false;" name="parentName" readonly placeholder="不选择或者选择一个父资源"/>
+                                                        <!--id="dutiesResourceSel"-->
+                                                        <!--<span class="input-group-addon"><i class="fa fa-angle-double-down"></i></span>-->
+                                                        <!--&nbsp;<a id="menuBtn" href="#" onclick="showMenu(); return false;">选择</a>-->
+                                                    </div>
+                                                </div>
+                                                <div class="administrationRtreemenuContent menuContent" style="display:none; position: absolute;width:31%;z-index: 3000;top: 35px;">
+                                                    <ul id="administrationTreeResouce" class="ztree" style="margin-top:0; width: 100%"></ul>
+                                                </div>
+                                            </td>
+                                              <td>地区名称</td>
+                                            <td><input type="text" class="form-control" name="name"/></td>
+
+                                        </tr>
+                                       
+                                    </table>
+
+                                    <div hidden="true">
+                                        <input type="text" name="saveType" id="saveType">
+                                        <!--<input type="text" class="form-control" name="governmentId"/>-->
+                                         <input type="text" class="form-control" name="organizationStructureId"/>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <div class="sm-wrapper">
+                                            <input type="submit" class="btn btn-primary" id="submitAdministrationStructureAddModal" value="确定"/>
+                                            <button type="button" class="btn btn-primary" data-dismiss="modal">取消</button>
+
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div><!-- /.modal-content -->
+                    </div><!-- /.modal -->
+                </div>
+                
+                 <div class="modal fade" id="importExcelAdministrationModal" tabindex="-1"
+                     role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" style="width: 490px;position: relative;top: 40%;">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close modal_close"
+                                        data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title">导入</h4>
+                            </div>
+                            <div class="modal-body" style="padding:20px" id="importExcelAdministrationModalBody">
+                                <div id="chooseExcelAdministration" class="easyui-window"
+                                     data-options="iconCls:'icon-table',draggable:true,minimizable:true,collapsible:false, closable:true,closed:true,shadow:true,modal:true">
+                                    <form id="form1Administration"method="post" action=""
+                                          enctype="multipart/form-data" accept-charset="UTF-8" target="reportFrameAdministration">
+                                        <!--<form id="form1" accept-charset="UTF-8">-->
+                                        <fieldset style="display: inline-block;">
+                                            <input type="file" name="excel" style="width:160px;display:inline-block;" />
+                                           <!--  <input type="text" name="taskSketchId" id="taskSketchId" hidden="true" /> -->
+                                        </fieldset>
+                                        <div style="padding:5px 10px;text-align:center;display: inline-block;">
+                                            <input type="button" value="上传"  class="btn btn-primary" onclick="Administration.importExcel2('form1Administration','','')"/>
+                                            <!--<input type="button" onclick="rejectChooseExcel();" value="取消" />-->
+                                        </div>
+                                        <iframe id="reportFrameAdministration" name="reportFrame" width="100%" height="500px" frameborder=no  style="display: none"></iframe>
+                                    </form>
+                                </div>
+                                <div class="red-font">
+                                    导入说明：
+                                    1：序号，标记，名字不能为空。
+                                    2：最高节点标记为0，其他标记为所在地区下的序号。
+                                    <a style="cursor: pointer;" href="excelTemplates/administration.xlsx">模版下载</a>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- /.modal-content -->
+                    </div>
+                    <!-- /.modal -->
+                </div>
+
+                <div class="btn_group treeTable_btn_group">
+                    <button type="button" href="#" class="btn btn-info" onclick="jQuery('#administrationTreeTable').treetable('expandAll'); return false;">
+                        展开
+                    </button>
+                    <button type="button" href="#" class="btn btn-info" onclick="jQuery('#administrationTreeTable').treetable('collapseAll'); return false;">
+                        折叠
+                    </button>
+                    <button id="BTN_91050100" onclick="Administration.addAdministration()" class="btn btn-info">
+                        增加
+                    </button>
+                    <button id="BTN_91050200" onclick="Administration.editAdministration()" class="btn btn-info">
+                        修改
+                    </button>
+                    <button id="BTN_91050300" onclick="Administration.deleteAdministration()" class="btn btn-info">
+                        删除
+                    </button>
+                    <button id="refreshAdministration" onclick="Administration.refreshAdministration()" class="btn btn-info">
+                        刷新
+                    </button>
+                     <button id="Administration_import-excel" onclick="Administration.importExcel()" class="btn btn-info">
+                     导入
+                     </button>
+ 
+                    <!--<table id="dutiesTreeTablehead" class="tree_Table">-->
+                    <!--</table>-->
+                    <!--<button id="showDutiesDetail" class="btn btn-info">-->
+                        <!--详情-->
+                    <!--</button>-->
+                </div>
+                <div class="box datable-box" style="margin-bottom: 10px">
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                      <!--   <div class="wrapAdministrationTreeTable"> -->
+                            <table id="resourceTreetable" class="tree_Table">
+                            </table>
+                      <!--   </div> -->
+                    </div>
+                    <!-- /.box-body -->
+                    <!--modify button-->
+
+                </div>
+                <!-- /.box -->
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </section>
+    <!-- DataTables -->
+    
+    <script src="sys/js/district_public.js"></script>
+    <script src="sys/js/administrationTree.js"></script>
+    <script src="sys/js/administration.js"></script>
+    <!--<script src="js/setToolbar.js"></script>-->
+
+</div>

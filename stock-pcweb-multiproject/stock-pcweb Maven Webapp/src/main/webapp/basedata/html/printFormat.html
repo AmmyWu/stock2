@@ -1,0 +1,225 @@
+<div id="tab_9014" class="printFormat basedata tab-page" role="tabpanel">
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <!--begin search box-->
+                <div class="box search-box">
+                    <div class="box-body" style="padding-top: 0px">
+                        <form class="search-table form-inline" id="printFormatSearchForm" role="form">
+                            <div class="form-group" style="margin-top: 10px">
+                                <label>名称</label>
+                                <input type="text" class="form-control" name="name" placeholder="名称">
+                            </div>
+                        </form>
+                        <div class="sm-wrqapper" style="position: absolute;right: 20px; bottom: 10px;">
+                            <input type="button" class="btn btn-info btn-size" id="BTN_90140100" onclick="printFormat.doSearch()" value="查找"/>
+
+                            <button class="btn btn-info search_reset" id="printFormat_reset">
+                                重置
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!--end search box-->
+                <div class="modal fade" id="editPrintFormatModal" tabindex="-1" role="dialog"
+                     aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close modal_close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title" id="beditPrintFormatModalTitle">增加</h4>
+                            </div>
+                            <div class="modal-body" style="padding: 5px" id="editPrintFormatModalBody">
+                                <form id="editPrintFormatForm" class="form-inline">
+                                    <table class="edit-table">
+                                        <tr>
+                                            <td class="color-red">打印代码</td>
+                                            <td><input type="text" class="form-control" name="printCode"/></td>
+                                            <td>名称</td>
+                                            <td><input type="text" class="form-control" name="name"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="color-red">格式文件名</td>
+                                            <td><input type="text" class="form-control" name="fileName"/></td>
+                                            <td>类型</td>
+                                            <td><input type="text" class="form-control" name="type"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td>fax To</td>
+                                            <td><input type="text" class="form-control" name="faxTo"/></td>
+                                            <td>外部接口</td>
+                                            <td><input type="text" class="form-control" name="exterInterface"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="color-red">应用方式</td>
+                                            <td><input type="text" class="form-control" name="applicationMode"/></td>
+                                            <td>场合</td>
+                                            <td><input type="text" class="form-control" name="occasion"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td>备注</td>
+                                            <td><input type="text" class="form-control" name="note"/></td>
+                                             <td colspan="2">
+                                                 <input type="checkbox" name="startup"> 启用
+                                                 <input type="checkbox" name="commonUse"> 常用
+                                             </td>
+                                        </tr>
+                                        <tr>
+                                            <td>最后修改人</td>
+                                            <td><input type="text" class="form-control" name="amenderName" readonly/></td>
+                                            <td>最后修改时间</td>
+                                            <td><input type="text" class="form-control" name="amendTime" readonly/></td>
+                                        </tr>
+                                    </table>
+                                    <!--<div class="form-inline-item">-->
+                                        <!--<div class="form-group">-->
+                                            <!--<label class="color-red">打印代码</label>-->
+                                            <!--<input class="form-control form-control-line" type="text" name="printCode"/>-->
+                                        <!--</div>-->
+                                        <!--<div class="form-group">-->
+                                            <!--<label>名称</label>-->
+                                            <!--<input class="form-control form-control-line" type="text" name="name"/>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                    <!--<div class="form-inline-item">-->
+                                        <!--<div class="form-group">-->
+                                            <!--<label class="color-red">格式文件名</label>-->
+                                            <!--<input type="text" class="form-control form-control-line" name="fileName"/>-->
+                                        <!--</div>-->
+                                        <!--<div class="form-group">-->
+                                            <!--<label>类型</label>-->
+                                            <!--<input type="text" class="form-control form-control-line" name="type"/>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                    <!--<div class="form-inline-item">-->
+                                        <!--<div class="form-group">-->
+                                            <!--<label>fax To</label>-->
+                                            <!--<input type="text" class="form-control form-control-line" name="faxTo"/>-->
+                                        <!--</div>-->
+                                        <!--<div class="form-group">-->
+                                            <!--<label>外部接口</label>-->
+                                            <!--<input type="text" class="form-control form-control-line" name="exterInterface"/>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                    <!--<div class="form-inline-item">-->
+                                            <!--<div class="form-group">-->
+                                                <!--<label class="color-red">应用方式</label>-->
+                                                <!--<input type="text" class="form-control form-control-line" name="applicationMode"/>-->
+                                            <!--</div>-->
+                                            <!--<div class="form-group">-->
+                                                <!--<label>场合</label>-->
+                                                <!--<input type="text" class="form-control form-control-line" name="occasion"/>-->
+                                            <!--</div>-->
+                                    <!--</div>-->
+                                    <!--<div class="form-inline-item">-->
+                                        <!--<div class="form-group">-->
+                                            <!--<label style="width: 107px!important;" class="color-red">备注</label>-->
+                                            <!--<input type="text" class=" form-control form-control-line" name="note"/>-->
+                                        <!--</div>-->
+                                        <!--<div class="form-group checkbox" style="width: 272px;">-->
+                                            <!--<label style="width:100px;">-->
+                                                <!--<input type="checkbox" name="startup"> 启用-->
+                                            <!--</label>-->
+
+                                            <!--<label style="width:100px;">-->
+                                                <!--<input type="checkbox" name="commonUse"> 常用-->
+                                            <!--</label>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                        <!--<div class="form-group" hidden="true" style="display: none">-->
+                                            <!--<label>新增或保存</label>-->
+                                            <!--<input type="text" name="saveType" id="saveType">-->
+                                            <!--<input type="text" name="printFormatId">-->
+                                        <!--</div>-->
+                                    <!--<div class="form-inline-item">-->
+                                        <!--<div class="form-group">-->
+                                            <!--<label>最后修改人</label>-->
+                                            <!--<input type="text" class="form-control form-control-line" name="amenderName" value="admin" readonly/>-->
+                                        <!--</div>-->
+                                        <!--<div class="form-group">-->
+                                            <!--<label>最后修改时间</label>-->
+                                            <!--<input type="text" class="form-control form-control-line" name="amendTime" readonly/>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                    <div class="modal-footer">
+                                        <div class="sm-wrapper">
+                                            <button type="button" class="btn btn-primary" data-dismiss="modal">取消</button></button>
+                                            <!--<button type="button" class="btn btn-primary" id="editprintFormatModalSubmit">确定</button>-->
+                                            <input type="submit" class="btn btn-primary"
+                                                   id="editPrintFormatModalSubmit" value="确定"/>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+
+                        </div><!-- /.modal-content -->
+                    </div><!-- /.modal -->
+                </div>
+                <div class="btn_group">
+                    <button id="BTN_90140200" onclick="printFormat.addPrintFormat()" class="btn btn-info">
+                        增加
+                    </button>
+                    <button id="BTN_90140300" onclick="printFormat.editPrintFormat()" class="btn btn-info">
+                        修改
+                    </button>
+                    <button id="BTN_90140400" onclick="printFormat.deletePrintFormat()" class="btn btn-info">
+                        删除
+                    </button>
+                    <div class="btn-group export-excel dataTable-dropdown-menu">
+                        <button type="button" class="btn btn-info">导出Excel</button>
+                        <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                            <span class="caret"></span>
+                            <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                        <ul class="dropdown-menu export-excel-menu" role="menu">
+                            <li id="printFormat_export-excel-selected"></li>
+                            <li id="printFormat_export-excel-current"></li>
+                            <li id="printFormat_export-excel-all"></li>
+                        </ul>
+                    </div>
+                    <!--<button id="printFormat_import-excel" onclick="customsDocumentAttachment.importExcel()" class="btn btn-info">-->
+                    <!--导出Excel-->
+                    <!--</button>-->
+                    <div class="btn-group export-print dataTable-dropdown-menu">
+                        <button type="button" class="btn btn-info">打印</button>
+                        <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                            <span class="caret"></span>
+                            <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                        <ul class="dropdown-menu export-print-menu" role="menu">
+                            <li id="printFormat_export-print-selected"></li>
+                            <li id="printFormat_export-print-all"></li>
+                        </ul>
+                    </div>
+                    <div class="btn-height btn-group" style="vertical-align: top;" id="printFormat_export-copy"></div>
+                    <div class="btn-height btn-group" style="vertical-align: top;"  id="printFormat_export-columnVisibility" ></div>
+
+                    <!--<button id="refreshPrintFormat" onclick="printFormat.doSearch()" class="btn btn-info">-->
+                        <!--刷新-->
+                    <!--</button>-->
+                    <!--<button id="showPrintFormatDetail" class="btn btn-info">-->
+                        <!--详情-->
+                    <!--</button>-->
+                </div>
+                <div class="box datable-box">
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <table id="printFormatTable" class="table table-bordered table-striped">
+                        </table>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+                <!-- /.box -->
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </section>
+    <!-- DataTables -->
+    <script src="basedata/js/printFormat.js"></script>
+    <script src="basedata/js/public.js"></script>
+    <script>
+
+    </script>
+</div>

@@ -1,0 +1,66 @@
+{
+  "recordsFiltered": 3,
+  "recordsTotal": 3,
+  "aaData": [
+    {
+      "accessGroup": 0,
+      "amendTime": "2017-05-26 19:38:02",
+      "amender": 1,
+      "baseModel": {
+        "creatorName": "test",
+        "organiztionName": "test"
+      },
+      "createTime": "2017-05-26 19:38:02",
+      "creator": 1,
+      "description": "",
+      "field": "",
+      "isDeleted": 0,
+      "recordVersion": 0,
+      "unit": "cc",
+      "vesselParameterCode": "aac",
+      "vesselParameterId": 5,
+      "vesselParameterName": "db",
+      "vesselParameterNameCn": "cc"
+    },
+    {
+      "accessGroup": 0,
+      "amendTime": "2017-05-26 19:26:02",
+      "amender": 1,
+      "baseModel": {
+        "creatorName": "test",
+        "organiztionName": "test"
+      },
+      "createTime": "2017-05-26 19:26:02",
+      "creator": 1,
+      "description": "",
+      "field": "",
+      "isDeleted": 0,
+      "recordVersion": 0,
+      "unit": "asd",
+      "vesselParameterCode": "12",
+      "vesselParameterId": 2,
+      "vesselParameterName": "aasd",
+      "vesselParameterNameCn": "ds"
+    },
+    {
+      "accessGroup": 0,
+      "amendTime": "",
+      "amender": 0,
+      "baseModel": {
+        "creatorName": "test",
+        "organiztionName": "test"
+      },
+      "createTime": "",
+      "creator": 0,
+      "description": "",
+      "field": "",
+      "isDeleted": 0,
+      "recordVersion": 0,
+      "unit": "2",
+      "vesselParameterCode": "11",
+      "vesselParameterId": 1,
+      "vesselParameterName": "",
+      "vesselParameterNameCn": "33"
+    }
+  ]
+}

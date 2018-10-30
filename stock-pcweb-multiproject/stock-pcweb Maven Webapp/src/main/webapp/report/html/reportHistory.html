@@ -1,0 +1,132 @@
+<div id="tab_8902" class="report basedata tab-page" role="tabpanel">
+   
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <!--begin search box-->
+                <div class="box search-box">
+                    <!--<div class="box-header">-->
+                        <!--<h3 class="box-title">查询</h3>-->
+                        <!--<div class="pull-right box-tools">-->
+                            <!--<button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">-->
+                                <!--<i class="fa fa-plus"></i></button>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <div class="box-body">
+                        <form class="search-table form-inline" id="searchReportHistoryForm" role="form">
+
+                          
+                               
+                                <div class="form-group">
+                                    <label>模板名称</label>
+                                    <input type="text" class="form-control" name="templetdataName" placeholder="模板名称" style="width:73%;">
+                                </div>
+                        </form>
+                        <div class="sm-wrqapper">
+                            <!--  <lable class="check-1">生效&nbsp&nbsp&nbsp&nbsp<input class="check-size" type="checkbox" name="生效"/>
+                             </lable> -->
+                            <input type="button" class="btn btn-info btn-size" onclick="ReportHistory.doSearch()" value="查找"/>
+
+                            <button class="btn btn-info search_reset" id="resetsearchHistoryForm">
+                                重置
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!--end search box-->
+
+                <div class="modal fade" id="editReportHistoryModal" tabindex="-1" role="dialog"
+                     aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close modal_close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title" id="editReportHistoryModalTitle">增加</h4>
+                            </div>
+                            <div class="modal-body" style="padding: 5px" id="editReportHistoryModalBody">
+                                <form id="editReportHistoryForm" class="form-inline">
+                                    <table class="edit-table">
+                                        <tr>
+                                            <td class="color-red">报表名称</td>
+                                            <td>
+                                                 <input type="text" class="form-control" name="templetdataName"/>
+                                            </td>
+                                              <td class="color-red">报表链接</td>
+                                            <td><input type="text" class="form-control" name="templetdataLink"/></td>
+                                        </tr>
+                                       
+                                        <tr>
+                                         <td>备注</td>
+                                            <td><input type="text" class="form-control" name="comment"/></td>
+                                        </tr>
+                                        <tr>
+                                           <!--  <td>最后修改人</td>
+                                            <td><input type="text" class="form-control" name="amenderName" readonly/></td> -->
+                                            <td>最后修改时间</td>
+                                            <td><input type="text" class="form-control" name="amendTime" readonly/></td>
+                                        </tr>
+                                    </table>
+                                  
+                                    <div hidden="true"><label>新增或保存</label><input type="text" name="saveType" id="saveType">
+                                        <input type="text" class="form-control" name="amender"  readonly/> <input type="text" class="form-control" name="creator"/><input type="text" class="form-control" name="templetdataId"/></div>
+                                    <div class="modal-footer">
+                                        <div class="sm-wrapper">
+                                            <button type="button" class="btn btn-primary" data-dismiss="modal">取消</button></button>
+                                            <!--<button type="button" class="btn btn-primary" data-dismiss="modal" id="editReportHistoryModalSubmit">确定</button>-->
+                                            <input type="submit" class="btn btn-primary" id="editReportHistoryModalSubmit" value="确定"/>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div><!-- /.modal-content -->
+                    </div><!-- /.modal -->
+                </div>
+                <div class="btn_group">
+                    <button id="BTN_91060100" onclick="ReportHistory.addReportHistory()" class="btn btn-info">
+                        增加
+                    </button>
+                    <button id="BTN_91060200" onclick="ReportHistory.editReportHistory()" class="btn btn-info">
+                        修改
+                    </button>
+                    <button id="BTN_91060300" onclick="ReportHistory.deleteReportHistory()" class="btn btn-info">
+                        删除
+                    </button>
+                    <div class="btn-height btn-group" style="vertical-align: top;" id="ReportHistory_export-copy"></div>
+                    <div class="btn-height btn-group" style="vertical-align: top;"  id="ReportHistory_export-columnVisibility" ></div>
+
+                    <!--<button id="refreshReportHistory" onclick="ReportHistory.doSearch()" class="btn btn-info">-->
+                        <!--刷新-->
+                    <!--</button>-->
+                    <!--<button id="showReportHistoryDetail" class="btn btn-info">-->
+                        <!--详情-->
+                    <!--</button>-->
+                </div>
+                <div class="box datable-box">
+                    <!-- /.box-header -->
+                    <div class="box-body">
+
+                        <table id="reportTempletHistoryTable" class="table table-bordered table-striped">
+                        </table>
+                    </div>
+                    <!-- /.box-body -->
+
+                    <!--modify button-->
+
+                </div>
+                <!-- /.box -->
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </section>
+    <!-- DataTables -->
+    <!-- <script src="sys/js/organizationStructureTree.js"></script> -->
+    <script src="sys/js/public.js"></script>
+    <script src="report/js/reportHistory.js"></script>
+    <script src="js/setToolbar.js"></script>
+    <script src="js/common.js"></script>
+
+</div>
+</div>

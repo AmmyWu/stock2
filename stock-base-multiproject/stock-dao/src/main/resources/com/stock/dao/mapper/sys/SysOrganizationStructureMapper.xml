@@ -1,0 +1,1068 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.stock.dao.mapper.sys.SysOrganizationStructureMapper" >
+  <resultMap id="BaseResultMap" type="com.stock.dao.model.sys.SysOrganizationStructure" >
+    <id column="organization_structure_id" property="organizationStructureId" jdbcType="INTEGER" />
+    <result column="superior_id" property="superiorId" jdbcType="INTEGER" />
+    <result column="code_common_set_id" property="codeCommonSetId" jdbcType="INTEGER" />
+    <result column="code_name" property="codeName" jdbcType="VARCHAR" />
+    <result column="type" property="type" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="office_native_name" property="officeNativeName" jdbcType="VARCHAR" />
+    <result column="abbrev" property="abbrev" jdbcType="VARCHAR" />
+    <result column="business_register_no" property="businessRegisterNo" jdbcType="VARCHAR" />
+    <result column="tax_register_no" property="taxRegisterNo" jdbcType="VARCHAR" />
+    <result column="port_code" property="portCode" jdbcType="VARCHAR" />
+    <result column="contact" property="contact" jdbcType="VARCHAR" />
+    <result column="email" property="email" jdbcType="VARCHAR" />
+    <result column="tel" property="tel" jdbcType="VARCHAR" />
+    <result column="supplier_type" property="supplierType" jdbcType="VARCHAR" />
+    <result column="cust_type" property="custType" jdbcType="VARCHAR" />
+    <result column="fax" property="fax" jdbcType="VARCHAR" />
+    <result column="address" property="address" jdbcType="VARCHAR" />
+    <result column="is_internal" property="isInternal" jdbcType="INTEGER" />
+    <result column="is_customer" property="isCustomer" jdbcType="INTEGER" />
+    <result column="is_supplier" property="isSupplier" jdbcType="INTEGER" />
+    <result column="active" property="active" jdbcType="INTEGER" />
+    <result column="xchgr_name" property="xchgrName" jdbcType="VARCHAR" />
+    <result column="company_code" property="companyCode" jdbcType="VARCHAR" />
+    <result column="home_currency" property="homeCurrency" jdbcType="CHAR" />
+    <result column="settle_office" property="settleOffice" jdbcType="VARCHAR" />
+    <result column="bl_content" property="blContent" jdbcType="VARCHAR" />
+    <result column="company_id" property="companyId" jdbcType="INTEGER" />
+    <result column="cust_id" property="custId" jdbcType="VARCHAR" />
+    <result column="cust_code" property="custCode" jdbcType="VARCHAR" />
+    <result column="function_type" property="functionType" jdbcType="VARCHAR" />
+    <result column="region_id" property="regionId" jdbcType="INTEGER" />
+    <result column="region_code" property="regionCode" jdbcType="CHAR" />
+    <result column="port_id" property="portId" jdbcType="INTEGER" />
+    <result column="language" property="language" jdbcType="VARCHAR" />
+    <result column="superior_office_id" property="superiorOfficeId" jdbcType="VARCHAR" />
+    <result column="auto_internal" property="autoInternal" jdbcType="INTEGER" />
+    <result column="deleted" property="deleted" jdbcType="INTEGER" />
+    <result column="input_user" property="inputUser" jdbcType="CHAR" />
+    <result column="input_user_name" property="inputUserName" jdbcType="VARCHAR" />
+    <result column="input_office" property="inputOffice" jdbcType="VARCHAR" />
+    <result column="use_system" property="useSystem" jdbcType="INTEGER" />
+    <result column="country_id" property="countryId" jdbcType="INTEGER" />
+    <result column="country_code" property="countryCode" jdbcType="CHAR" />
+    <result column="city_id" property="cityId" jdbcType="INTEGER" />
+    <result column="city_code" property="cityCode" jdbcType="CHAR" />
+    <result column="is_dept" property="isDept" jdbcType="INTEGER" />
+    <result column="relaction_tag" property="relactionTag" jdbcType="VARCHAR" />
+    <result column="booking_process_type" property="bookingProcessType" jdbcType="INTEGER" />
+    <result column="not_statistic_flag" property="notStatisticFlag" jdbcType="INTEGER" />
+    <result column="website_address" property="websiteAddress" jdbcType="VARCHAR" />
+    <result column="description" property="description" jdbcType="VARCHAR" />
+    <result column="creator" property="creator" jdbcType="INTEGER" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="access_group" property="accessGroup" jdbcType="INTEGER" />
+    <result column="amender" property="amender" jdbcType="INTEGER" />
+    <result column="amend_time" property="amendTime" jdbcType="TIMESTAMP" />
+    <result column="record_version" property="recordVersion" jdbcType="INTEGER" />
+    <result column="is_deleted" property="isDeleted" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    organization_structure_id, superior_id, code_common_set_id, code_name, type, name, 
+    office_native_name, abbrev, business_register_no, tax_register_no, port_code, contact, 
+    email, tel, supplier_type, cust_type, fax, address, is_internal, is_customer, is_supplier, 
+    active, xchgr_name, company_code, home_currency, settle_office, bl_content, company_id, 
+    cust_id, cust_code, function_type, region_id, region_code, port_id, language, superior_office_id, 
+    auto_internal, deleted, input_user, input_user_name, input_office, use_system, country_id, 
+    country_code, city_id, city_code, is_dept, relaction_tag, booking_process_type, not_statistic_flag, 
+    website_address, description, creator, create_time, access_group, amender, amend_time, 
+    record_version, is_deleted
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.stock.dao.model.sys.SysOrganizationStructureExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from sys_organization_structure
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from sys_organization_structure
+    where organization_structure_id = #{organizationStructureId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from sys_organization_structure
+    where organization_structure_id = #{organizationStructureId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.stock.dao.model.sys.SysOrganizationStructureExample" >
+    delete from sys_organization_structure
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.stock.dao.model.sys.SysOrganizationStructure" >
+    insert into sys_organization_structure (organization_structure_id, superior_id, 
+      code_common_set_id, code_name, type, 
+      name, office_native_name, abbrev, 
+      business_register_no, tax_register_no, port_code, 
+      contact, email, tel, 
+      supplier_type, cust_type, fax, 
+      address, is_internal, is_customer, 
+      is_supplier, active, xchgr_name, 
+      company_code, home_currency, settle_office, 
+      bl_content, company_id, cust_id, 
+      cust_code, function_type, region_id, 
+      region_code, port_id, language, 
+      superior_office_id, auto_internal, deleted, 
+      input_user, input_user_name, input_office, 
+      use_system, country_id, country_code, 
+      city_id, city_code, is_dept, 
+      relaction_tag, booking_process_type, not_statistic_flag, 
+      website_address, description, creator, 
+      create_time, access_group, amender, 
+      amend_time, record_version, is_deleted
+      )
+    values (#{organizationStructureId,jdbcType=INTEGER}, #{superiorId,jdbcType=INTEGER}, 
+      #{codeCommonSetId,jdbcType=INTEGER}, #{codeName,jdbcType=VARCHAR}, #{type,jdbcType=INTEGER}, 
+      #{name,jdbcType=VARCHAR}, #{officeNativeName,jdbcType=VARCHAR}, #{abbrev,jdbcType=VARCHAR}, 
+      #{businessRegisterNo,jdbcType=VARCHAR}, #{taxRegisterNo,jdbcType=VARCHAR}, #{portCode,jdbcType=VARCHAR}, 
+      #{contact,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{tel,jdbcType=VARCHAR}, 
+      #{supplierType,jdbcType=VARCHAR}, #{custType,jdbcType=VARCHAR}, #{fax,jdbcType=VARCHAR}, 
+      #{address,jdbcType=VARCHAR}, #{isInternal,jdbcType=INTEGER}, #{isCustomer,jdbcType=INTEGER}, 
+      #{isSupplier,jdbcType=INTEGER}, #{active,jdbcType=INTEGER}, #{xchgrName,jdbcType=VARCHAR}, 
+      #{companyCode,jdbcType=VARCHAR}, #{homeCurrency,jdbcType=CHAR}, #{settleOffice,jdbcType=VARCHAR}, 
+      #{blContent,jdbcType=VARCHAR}, #{companyId,jdbcType=INTEGER}, #{custId,jdbcType=VARCHAR}, 
+      #{custCode,jdbcType=VARCHAR}, #{functionType,jdbcType=VARCHAR}, #{regionId,jdbcType=INTEGER}, 
+      #{regionCode,jdbcType=CHAR}, #{portId,jdbcType=INTEGER}, #{language,jdbcType=VARCHAR}, 
+      #{superiorOfficeId,jdbcType=VARCHAR}, #{autoInternal,jdbcType=INTEGER}, #{deleted,jdbcType=INTEGER}, 
+      #{inputUser,jdbcType=CHAR}, #{inputUserName,jdbcType=VARCHAR}, #{inputOffice,jdbcType=VARCHAR}, 
+      #{useSystem,jdbcType=INTEGER}, #{countryId,jdbcType=INTEGER}, #{countryCode,jdbcType=CHAR}, 
+      #{cityId,jdbcType=INTEGER}, #{cityCode,jdbcType=CHAR}, #{isDept,jdbcType=INTEGER}, 
+      #{relactionTag,jdbcType=VARCHAR}, #{bookingProcessType,jdbcType=INTEGER}, #{notStatisticFlag,jdbcType=INTEGER}, 
+      #{websiteAddress,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}, #{creator,jdbcType=INTEGER}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{accessGroup,jdbcType=INTEGER}, #{amender,jdbcType=INTEGER}, 
+      #{amendTime,jdbcType=TIMESTAMP}, #{recordVersion,jdbcType=INTEGER}, #{isDeleted,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.stock.dao.model.sys.SysOrganizationStructure" >
+    insert into sys_organization_structure
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="organizationStructureId != null" >
+        organization_structure_id,
+      </if>
+      <if test="superiorId != null" >
+        superior_id,
+      </if>
+      <if test="codeCommonSetId != null" >
+        code_common_set_id,
+      </if>
+      <if test="codeName != null" >
+        code_name,
+      </if>
+      <if test="type != null" >
+        type,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="officeNativeName != null" >
+        office_native_name,
+      </if>
+      <if test="abbrev != null" >
+        abbrev,
+      </if>
+      <if test="businessRegisterNo != null" >
+        business_register_no,
+      </if>
+      <if test="taxRegisterNo != null" >
+        tax_register_no,
+      </if>
+      <if test="portCode != null" >
+        port_code,
+      </if>
+      <if test="contact != null" >
+        contact,
+      </if>
+      <if test="email != null" >
+        email,
+      </if>
+      <if test="tel != null" >
+        tel,
+      </if>
+      <if test="supplierType != null" >
+        supplier_type,
+      </if>
+      <if test="custType != null" >
+        cust_type,
+      </if>
+      <if test="fax != null" >
+        fax,
+      </if>
+      <if test="address != null" >
+        address,
+      </if>
+      <if test="isInternal != null" >
+        is_internal,
+      </if>
+      <if test="isCustomer != null" >
+        is_customer,
+      </if>
+      <if test="isSupplier != null" >
+        is_supplier,
+      </if>
+      <if test="active != null" >
+        active,
+      </if>
+      <if test="xchgrName != null" >
+        xchgr_name,
+      </if>
+      <if test="companyCode != null" >
+        company_code,
+      </if>
+      <if test="homeCurrency != null" >
+        home_currency,
+      </if>
+      <if test="settleOffice != null" >
+        settle_office,
+      </if>
+      <if test="blContent != null" >
+        bl_content,
+      </if>
+      <if test="companyId != null" >
+        company_id,
+      </if>
+      <if test="custId != null" >
+        cust_id,
+      </if>
+      <if test="custCode != null" >
+        cust_code,
+      </if>
+      <if test="functionType != null" >
+        function_type,
+      </if>
+      <if test="regionId != null" >
+        region_id,
+      </if>
+      <if test="regionCode != null" >
+        region_code,
+      </if>
+      <if test="portId != null" >
+        port_id,
+      </if>
+      <if test="language != null" >
+        language,
+      </if>
+      <if test="superiorOfficeId != null" >
+        superior_office_id,
+      </if>
+      <if test="autoInternal != null" >
+        auto_internal,
+      </if>
+      <if test="deleted != null" >
+        deleted,
+      </if>
+      <if test="inputUser != null" >
+        input_user,
+      </if>
+      <if test="inputUserName != null" >
+        input_user_name,
+      </if>
+      <if test="inputOffice != null" >
+        input_office,
+      </if>
+      <if test="useSystem != null" >
+        use_system,
+      </if>
+      <if test="countryId != null" >
+        country_id,
+      </if>
+      <if test="countryCode != null" >
+        country_code,
+      </if>
+      <if test="cityId != null" >
+        city_id,
+      </if>
+      <if test="cityCode != null" >
+        city_code,
+      </if>
+      <if test="isDept != null" >
+        is_dept,
+      </if>
+      <if test="relactionTag != null" >
+        relaction_tag,
+      </if>
+      <if test="bookingProcessType != null" >
+        booking_process_type,
+      </if>
+      <if test="notStatisticFlag != null" >
+        not_statistic_flag,
+      </if>
+      <if test="websiteAddress != null" >
+        website_address,
+      </if>
+      <if test="description != null" >
+        description,
+      </if>
+      <if test="creator != null" >
+        creator,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="accessGroup != null" >
+        access_group,
+      </if>
+      <if test="amender != null" >
+        amender,
+      </if>
+      <if test="amendTime != null" >
+        amend_time,
+      </if>
+      <if test="recordVersion != null" >
+        record_version,
+      </if>
+      <if test="isDeleted != null" >
+        is_deleted,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="organizationStructureId != null" >
+        #{organizationStructureId,jdbcType=INTEGER},
+      </if>
+      <if test="superiorId != null" >
+        #{superiorId,jdbcType=INTEGER},
+      </if>
+      <if test="codeCommonSetId != null" >
+        #{codeCommonSetId,jdbcType=INTEGER},
+      </if>
+      <if test="codeName != null" >
+        #{codeName,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        #{type,jdbcType=INTEGER},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="officeNativeName != null" >
+        #{officeNativeName,jdbcType=VARCHAR},
+      </if>
+      <if test="abbrev != null" >
+        #{abbrev,jdbcType=VARCHAR},
+      </if>
+      <if test="businessRegisterNo != null" >
+        #{businessRegisterNo,jdbcType=VARCHAR},
+      </if>
+      <if test="taxRegisterNo != null" >
+        #{taxRegisterNo,jdbcType=VARCHAR},
+      </if>
+      <if test="portCode != null" >
+        #{portCode,jdbcType=VARCHAR},
+      </if>
+      <if test="contact != null" >
+        #{contact,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null" >
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="tel != null" >
+        #{tel,jdbcType=VARCHAR},
+      </if>
+      <if test="supplierType != null" >
+        #{supplierType,jdbcType=VARCHAR},
+      </if>
+      <if test="custType != null" >
+        #{custType,jdbcType=VARCHAR},
+      </if>
+      <if test="fax != null" >
+        #{fax,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="isInternal != null" >
+        #{isInternal,jdbcType=INTEGER},
+      </if>
+      <if test="isCustomer != null" >
+        #{isCustomer,jdbcType=INTEGER},
+      </if>
+      <if test="isSupplier != null" >
+        #{isSupplier,jdbcType=INTEGER},
+      </if>
+      <if test="active != null" >
+        #{active,jdbcType=INTEGER},
+      </if>
+      <if test="xchgrName != null" >
+        #{xchgrName,jdbcType=VARCHAR},
+      </if>
+      <if test="companyCode != null" >
+        #{companyCode,jdbcType=VARCHAR},
+      </if>
+      <if test="homeCurrency != null" >
+        #{homeCurrency,jdbcType=CHAR},
+      </if>
+      <if test="settleOffice != null" >
+        #{settleOffice,jdbcType=VARCHAR},
+      </if>
+      <if test="blContent != null" >
+        #{blContent,jdbcType=VARCHAR},
+      </if>
+      <if test="companyId != null" >
+        #{companyId,jdbcType=INTEGER},
+      </if>
+      <if test="custId != null" >
+        #{custId,jdbcType=VARCHAR},
+      </if>
+      <if test="custCode != null" >
+        #{custCode,jdbcType=VARCHAR},
+      </if>
+      <if test="functionType != null" >
+        #{functionType,jdbcType=VARCHAR},
+      </if>
+      <if test="regionId != null" >
+        #{regionId,jdbcType=INTEGER},
+      </if>
+      <if test="regionCode != null" >
+        #{regionCode,jdbcType=CHAR},
+      </if>
+      <if test="portId != null" >
+        #{portId,jdbcType=INTEGER},
+      </if>
+      <if test="language != null" >
+        #{language,jdbcType=VARCHAR},
+      </if>
+      <if test="superiorOfficeId != null" >
+        #{superiorOfficeId,jdbcType=VARCHAR},
+      </if>
+      <if test="autoInternal != null" >
+        #{autoInternal,jdbcType=INTEGER},
+      </if>
+      <if test="deleted != null" >
+        #{deleted,jdbcType=INTEGER},
+      </if>
+      <if test="inputUser != null" >
+        #{inputUser,jdbcType=CHAR},
+      </if>
+      <if test="inputUserName != null" >
+        #{inputUserName,jdbcType=VARCHAR},
+      </if>
+      <if test="inputOffice != null" >
+        #{inputOffice,jdbcType=VARCHAR},
+      </if>
+      <if test="useSystem != null" >
+        #{useSystem,jdbcType=INTEGER},
+      </if>
+      <if test="countryId != null" >
+        #{countryId,jdbcType=INTEGER},
+      </if>
+      <if test="countryCode != null" >
+        #{countryCode,jdbcType=CHAR},
+      </if>
+      <if test="cityId != null" >
+        #{cityId,jdbcType=INTEGER},
+      </if>
+      <if test="cityCode != null" >
+        #{cityCode,jdbcType=CHAR},
+      </if>
+      <if test="isDept != null" >
+        #{isDept,jdbcType=INTEGER},
+      </if>
+      <if test="relactionTag != null" >
+        #{relactionTag,jdbcType=VARCHAR},
+      </if>
+      <if test="bookingProcessType != null" >
+        #{bookingProcessType,jdbcType=INTEGER},
+      </if>
+      <if test="notStatisticFlag != null" >
+        #{notStatisticFlag,jdbcType=INTEGER},
+      </if>
+      <if test="websiteAddress != null" >
+        #{websiteAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null" >
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="creator != null" >
+        #{creator,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="accessGroup != null" >
+        #{accessGroup,jdbcType=INTEGER},
+      </if>
+      <if test="amender != null" >
+        #{amender,jdbcType=INTEGER},
+      </if>
+      <if test="amendTime != null" >
+        #{amendTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="recordVersion != null" >
+        #{recordVersion,jdbcType=INTEGER},
+      </if>
+      <if test="isDeleted != null" >
+        #{isDeleted,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.stock.dao.model.sys.SysOrganizationStructureExample" resultType="java.lang.Integer" >
+    select count(*) from sys_organization_structure
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update sys_organization_structure
+    <set >
+      <if test="record.organizationStructureId != null" >
+        organization_structure_id = #{record.organizationStructureId,jdbcType=INTEGER},
+      </if>
+      <if test="record.superiorId != null" >
+        superior_id = #{record.superiorId,jdbcType=INTEGER},
+      </if>
+      <if test="record.codeCommonSetId != null" >
+        code_common_set_id = #{record.codeCommonSetId,jdbcType=INTEGER},
+      </if>
+      <if test="record.codeName != null" >
+        code_name = #{record.codeName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.type != null" >
+        type = #{record.type,jdbcType=INTEGER},
+      </if>
+      <if test="record.name != null" >
+        name = #{record.name,jdbcType=VARCHAR},
+      </if>
+      <if test="record.officeNativeName != null" >
+        office_native_name = #{record.officeNativeName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.abbrev != null" >
+        abbrev = #{record.abbrev,jdbcType=VARCHAR},
+      </if>
+      <if test="record.businessRegisterNo != null" >
+        business_register_no = #{record.businessRegisterNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.taxRegisterNo != null" >
+        tax_register_no = #{record.taxRegisterNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.portCode != null" >
+        port_code = #{record.portCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.contact != null" >
+        contact = #{record.contact,jdbcType=VARCHAR},
+      </if>
+      <if test="record.email != null" >
+        email = #{record.email,jdbcType=VARCHAR},
+      </if>
+      <if test="record.tel != null" >
+        tel = #{record.tel,jdbcType=VARCHAR},
+      </if>
+      <if test="record.supplierType != null" >
+        supplier_type = #{record.supplierType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.custType != null" >
+        cust_type = #{record.custType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.fax != null" >
+        fax = #{record.fax,jdbcType=VARCHAR},
+      </if>
+      <if test="record.address != null" >
+        address = #{record.address,jdbcType=VARCHAR},
+      </if>
+      <if test="record.isInternal != null" >
+        is_internal = #{record.isInternal,jdbcType=INTEGER},
+      </if>
+      <if test="record.isCustomer != null" >
+        is_customer = #{record.isCustomer,jdbcType=INTEGER},
+      </if>
+      <if test="record.isSupplier != null" >
+        is_supplier = #{record.isSupplier,jdbcType=INTEGER},
+      </if>
+      <if test="record.active != null" >
+        active = #{record.active,jdbcType=INTEGER},
+      </if>
+      <if test="record.xchgrName != null" >
+        xchgr_name = #{record.xchgrName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.companyCode != null" >
+        company_code = #{record.companyCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.homeCurrency != null" >
+        home_currency = #{record.homeCurrency,jdbcType=CHAR},
+      </if>
+      <if test="record.settleOffice != null" >
+        settle_office = #{record.settleOffice,jdbcType=VARCHAR},
+      </if>
+      <if test="record.blContent != null" >
+        bl_content = #{record.blContent,jdbcType=VARCHAR},
+      </if>
+      <if test="record.companyId != null" >
+        company_id = #{record.companyId,jdbcType=INTEGER},
+      </if>
+      <if test="record.custId != null" >
+        cust_id = #{record.custId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.custCode != null" >
+        cust_code = #{record.custCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.functionType != null" >
+        function_type = #{record.functionType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.regionId != null" >
+        region_id = #{record.regionId,jdbcType=INTEGER},
+      </if>
+      <if test="record.regionCode != null" >
+        region_code = #{record.regionCode,jdbcType=CHAR},
+      </if>
+      <if test="record.portId != null" >
+        port_id = #{record.portId,jdbcType=INTEGER},
+      </if>
+      <if test="record.language != null" >
+        language = #{record.language,jdbcType=VARCHAR},
+      </if>
+      <if test="record.superiorOfficeId != null" >
+        superior_office_id = #{record.superiorOfficeId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.autoInternal != null" >
+        auto_internal = #{record.autoInternal,jdbcType=INTEGER},
+      </if>
+      <if test="record.deleted != null" >
+        deleted = #{record.deleted,jdbcType=INTEGER},
+      </if>
+      <if test="record.inputUser != null" >
+        input_user = #{record.inputUser,jdbcType=CHAR},
+      </if>
+      <if test="record.inputUserName != null" >
+        input_user_name = #{record.inputUserName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.inputOffice != null" >
+        input_office = #{record.inputOffice,jdbcType=VARCHAR},
+      </if>
+      <if test="record.useSystem != null" >
+        use_system = #{record.useSystem,jdbcType=INTEGER},
+      </if>
+      <if test="record.countryId != null" >
+        country_id = #{record.countryId,jdbcType=INTEGER},
+      </if>
+      <if test="record.countryCode != null" >
+        country_code = #{record.countryCode,jdbcType=CHAR},
+      </if>
+      <if test="record.cityId != null" >
+        city_id = #{record.cityId,jdbcType=INTEGER},
+      </if>
+      <if test="record.cityCode != null" >
+        city_code = #{record.cityCode,jdbcType=CHAR},
+      </if>
+      <if test="record.isDept != null" >
+        is_dept = #{record.isDept,jdbcType=INTEGER},
+      </if>
+      <if test="record.relactionTag != null" >
+        relaction_tag = #{record.relactionTag,jdbcType=VARCHAR},
+      </if>
+      <if test="record.bookingProcessType != null" >
+        booking_process_type = #{record.bookingProcessType,jdbcType=INTEGER},
+      </if>
+      <if test="record.notStatisticFlag != null" >
+        not_statistic_flag = #{record.notStatisticFlag,jdbcType=INTEGER},
+      </if>
+      <if test="record.websiteAddress != null" >
+        website_address = #{record.websiteAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="record.description != null" >
+        description = #{record.description,jdbcType=VARCHAR},
+      </if>
+      <if test="record.creator != null" >
+        creator = #{record.creator,jdbcType=INTEGER},
+      </if>
+      <if test="record.createTime != null" >
+        create_time = #{record.createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.accessGroup != null" >
+        access_group = #{record.accessGroup,jdbcType=INTEGER},
+      </if>
+      <if test="record.amender != null" >
+        amender = #{record.amender,jdbcType=INTEGER},
+      </if>
+      <if test="record.amendTime != null" >
+        amend_time = #{record.amendTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.recordVersion != null" >
+        record_version = #{record.recordVersion,jdbcType=INTEGER},
+      </if>
+      <if test="record.isDeleted != null" >
+        is_deleted = #{record.isDeleted,jdbcType=INTEGER},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update sys_organization_structure
+    set organization_structure_id = #{record.organizationStructureId,jdbcType=INTEGER},
+      superior_id = #{record.superiorId,jdbcType=INTEGER},
+      code_common_set_id = #{record.codeCommonSetId,jdbcType=INTEGER},
+      code_name = #{record.codeName,jdbcType=VARCHAR},
+      type = #{record.type,jdbcType=INTEGER},
+      name = #{record.name,jdbcType=VARCHAR},
+      office_native_name = #{record.officeNativeName,jdbcType=VARCHAR},
+      abbrev = #{record.abbrev,jdbcType=VARCHAR},
+      business_register_no = #{record.businessRegisterNo,jdbcType=VARCHAR},
+      tax_register_no = #{record.taxRegisterNo,jdbcType=VARCHAR},
+      port_code = #{record.portCode,jdbcType=VARCHAR},
+      contact = #{record.contact,jdbcType=VARCHAR},
+      email = #{record.email,jdbcType=VARCHAR},
+      tel = #{record.tel,jdbcType=VARCHAR},
+      supplier_type = #{record.supplierType,jdbcType=VARCHAR},
+      cust_type = #{record.custType,jdbcType=VARCHAR},
+      fax = #{record.fax,jdbcType=VARCHAR},
+      address = #{record.address,jdbcType=VARCHAR},
+      is_internal = #{record.isInternal,jdbcType=INTEGER},
+      is_customer = #{record.isCustomer,jdbcType=INTEGER},
+      is_supplier = #{record.isSupplier,jdbcType=INTEGER},
+      active = #{record.active,jdbcType=INTEGER},
+      xchgr_name = #{record.xchgrName,jdbcType=VARCHAR},
+      company_code = #{record.companyCode,jdbcType=VARCHAR},
+      home_currency = #{record.homeCurrency,jdbcType=CHAR},
+      settle_office = #{record.settleOffice,jdbcType=VARCHAR},
+      bl_content = #{record.blContent,jdbcType=VARCHAR},
+      company_id = #{record.companyId,jdbcType=INTEGER},
+      cust_id = #{record.custId,jdbcType=VARCHAR},
+      cust_code = #{record.custCode,jdbcType=VARCHAR},
+      function_type = #{record.functionType,jdbcType=VARCHAR},
+      region_id = #{record.regionId,jdbcType=INTEGER},
+      region_code = #{record.regionCode,jdbcType=CHAR},
+      port_id = #{record.portId,jdbcType=INTEGER},
+      language = #{record.language,jdbcType=VARCHAR},
+      superior_office_id = #{record.superiorOfficeId,jdbcType=VARCHAR},
+      auto_internal = #{record.autoInternal,jdbcType=INTEGER},
+      deleted = #{record.deleted,jdbcType=INTEGER},
+      input_user = #{record.inputUser,jdbcType=CHAR},
+      input_user_name = #{record.inputUserName,jdbcType=VARCHAR},
+      input_office = #{record.inputOffice,jdbcType=VARCHAR},
+      use_system = #{record.useSystem,jdbcType=INTEGER},
+      country_id = #{record.countryId,jdbcType=INTEGER},
+      country_code = #{record.countryCode,jdbcType=CHAR},
+      city_id = #{record.cityId,jdbcType=INTEGER},
+      city_code = #{record.cityCode,jdbcType=CHAR},
+      is_dept = #{record.isDept,jdbcType=INTEGER},
+      relaction_tag = #{record.relactionTag,jdbcType=VARCHAR},
+      booking_process_type = #{record.bookingProcessType,jdbcType=INTEGER},
+      not_statistic_flag = #{record.notStatisticFlag,jdbcType=INTEGER},
+      website_address = #{record.websiteAddress,jdbcType=VARCHAR},
+      description = #{record.description,jdbcType=VARCHAR},
+      creator = #{record.creator,jdbcType=INTEGER},
+      create_time = #{record.createTime,jdbcType=TIMESTAMP},
+      access_group = #{record.accessGroup,jdbcType=INTEGER},
+      amender = #{record.amender,jdbcType=INTEGER},
+      amend_time = #{record.amendTime,jdbcType=TIMESTAMP},
+      record_version = #{record.recordVersion,jdbcType=INTEGER},
+      is_deleted = #{record.isDeleted,jdbcType=INTEGER}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.stock.dao.model.sys.SysOrganizationStructure" >
+    update sys_organization_structure
+    <set >
+      <if test="superiorId != null" >
+        superior_id = #{superiorId,jdbcType=INTEGER},
+      </if>
+      <if test="codeCommonSetId != null" >
+        code_common_set_id = #{codeCommonSetId,jdbcType=INTEGER},
+      </if>
+      <if test="codeName != null" >
+        code_name = #{codeName,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        type = #{type,jdbcType=INTEGER},
+      </if>
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="officeNativeName != null" >
+        office_native_name = #{officeNativeName,jdbcType=VARCHAR},
+      </if>
+      <if test="abbrev != null" >
+        abbrev = #{abbrev,jdbcType=VARCHAR},
+      </if>
+      <if test="businessRegisterNo != null" >
+        business_register_no = #{businessRegisterNo,jdbcType=VARCHAR},
+      </if>
+      <if test="taxRegisterNo != null" >
+        tax_register_no = #{taxRegisterNo,jdbcType=VARCHAR},
+      </if>
+      <if test="portCode != null" >
+        port_code = #{portCode,jdbcType=VARCHAR},
+      </if>
+      <if test="contact != null" >
+        contact = #{contact,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null" >
+        email = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="tel != null" >
+        tel = #{tel,jdbcType=VARCHAR},
+      </if>
+      <if test="supplierType != null" >
+        supplier_type = #{supplierType,jdbcType=VARCHAR},
+      </if>
+      <if test="custType != null" >
+        cust_type = #{custType,jdbcType=VARCHAR},
+      </if>
+      <if test="fax != null" >
+        fax = #{fax,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        address = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="isInternal != null" >
+        is_internal = #{isInternal,jdbcType=INTEGER},
+      </if>
+      <if test="isCustomer != null" >
+        is_customer = #{isCustomer,jdbcType=INTEGER},
+      </if>
+      <if test="isSupplier != null" >
+        is_supplier = #{isSupplier,jdbcType=INTEGER},
+      </if>
+      <if test="active != null" >
+        active = #{active,jdbcType=INTEGER},
+      </if>
+      <if test="xchgrName != null" >
+        xchgr_name = #{xchgrName,jdbcType=VARCHAR},
+      </if>
+      <if test="companyCode != null" >
+        company_code = #{companyCode,jdbcType=VARCHAR},
+      </if>
+      <if test="homeCurrency != null" >
+        home_currency = #{homeCurrency,jdbcType=CHAR},
+      </if>
+      <if test="settleOffice != null" >
+        settle_office = #{settleOffice,jdbcType=VARCHAR},
+      </if>
+      <if test="blContent != null" >
+        bl_content = #{blContent,jdbcType=VARCHAR},
+      </if>
+      <if test="companyId != null" >
+        company_id = #{companyId,jdbcType=INTEGER},
+      </if>
+      <if test="custId != null" >
+        cust_id = #{custId,jdbcType=VARCHAR},
+      </if>
+      <if test="custCode != null" >
+        cust_code = #{custCode,jdbcType=VARCHAR},
+      </if>
+      <if test="functionType != null" >
+        function_type = #{functionType,jdbcType=VARCHAR},
+      </if>
+      <if test="regionId != null" >
+        region_id = #{regionId,jdbcType=INTEGER},
+      </if>
+      <if test="regionCode != null" >
+        region_code = #{regionCode,jdbcType=CHAR},
+      </if>
+      <if test="portId != null" >
+        port_id = #{portId,jdbcType=INTEGER},
+      </if>
+      <if test="language != null" >
+        language = #{language,jdbcType=VARCHAR},
+      </if>
+      <if test="superiorOfficeId != null" >
+        superior_office_id = #{superiorOfficeId,jdbcType=VARCHAR},
+      </if>
+      <if test="autoInternal != null" >
+        auto_internal = #{autoInternal,jdbcType=INTEGER},
+      </if>
+      <if test="deleted != null" >
+        deleted = #{deleted,jdbcType=INTEGER},
+      </if>
+      <if test="inputUser != null" >
+        input_user = #{inputUser,jdbcType=CHAR},
+      </if>
+      <if test="inputUserName != null" >
+        input_user_name = #{inputUserName,jdbcType=VARCHAR},
+      </if>
+      <if test="inputOffice != null" >
+        input_office = #{inputOffice,jdbcType=VARCHAR},
+      </if>
+      <if test="useSystem != null" >
+        use_system = #{useSystem,jdbcType=INTEGER},
+      </if>
+      <if test="countryId != null" >
+        country_id = #{countryId,jdbcType=INTEGER},
+      </if>
+      <if test="countryCode != null" >
+        country_code = #{countryCode,jdbcType=CHAR},
+      </if>
+      <if test="cityId != null" >
+        city_id = #{cityId,jdbcType=INTEGER},
+      </if>
+      <if test="cityCode != null" >
+        city_code = #{cityCode,jdbcType=CHAR},
+      </if>
+      <if test="isDept != null" >
+        is_dept = #{isDept,jdbcType=INTEGER},
+      </if>
+      <if test="relactionTag != null" >
+        relaction_tag = #{relactionTag,jdbcType=VARCHAR},
+      </if>
+      <if test="bookingProcessType != null" >
+        booking_process_type = #{bookingProcessType,jdbcType=INTEGER},
+      </if>
+      <if test="notStatisticFlag != null" >
+        not_statistic_flag = #{notStatisticFlag,jdbcType=INTEGER},
+      </if>
+      <if test="websiteAddress != null" >
+        website_address = #{websiteAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null" >
+        description = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="creator != null" >
+        creator = #{creator,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="accessGroup != null" >
+        access_group = #{accessGroup,jdbcType=INTEGER},
+      </if>
+      <if test="amender != null" >
+        amender = #{amender,jdbcType=INTEGER},
+      </if>
+      <if test="amendTime != null" >
+        amend_time = #{amendTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="recordVersion != null" >
+        record_version = #{recordVersion,jdbcType=INTEGER},
+      </if>
+      <if test="isDeleted != null" >
+        is_deleted = #{isDeleted,jdbcType=INTEGER},
+      </if>
+    </set>
+    where organization_structure_id = #{organizationStructureId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.stock.dao.model.sys.SysOrganizationStructure" >
+    update sys_organization_structure
+    set superior_id = #{superiorId,jdbcType=INTEGER},
+      code_common_set_id = #{codeCommonSetId,jdbcType=INTEGER},
+      code_name = #{codeName,jdbcType=VARCHAR},
+      type = #{type,jdbcType=INTEGER},
+      name = #{name,jdbcType=VARCHAR},
+      office_native_name = #{officeNativeName,jdbcType=VARCHAR},
+      abbrev = #{abbrev,jdbcType=VARCHAR},
+      business_register_no = #{businessRegisterNo,jdbcType=VARCHAR},
+      tax_register_no = #{taxRegisterNo,jdbcType=VARCHAR},
+      port_code = #{portCode,jdbcType=VARCHAR},
+      contact = #{contact,jdbcType=VARCHAR},
+      email = #{email,jdbcType=VARCHAR},
+      tel = #{tel,jdbcType=VARCHAR},
+      supplier_type = #{supplierType,jdbcType=VARCHAR},
+      cust_type = #{custType,jdbcType=VARCHAR},
+      fax = #{fax,jdbcType=VARCHAR},
+      address = #{address,jdbcType=VARCHAR},
+      is_internal = #{isInternal,jdbcType=INTEGER},
+      is_customer = #{isCustomer,jdbcType=INTEGER},
+      is_supplier = #{isSupplier,jdbcType=INTEGER},
+      active = #{active,jdbcType=INTEGER},
+      xchgr_name = #{xchgrName,jdbcType=VARCHAR},
+      company_code = #{companyCode,jdbcType=VARCHAR},
+      home_currency = #{homeCurrency,jdbcType=CHAR},
+      settle_office = #{settleOffice,jdbcType=VARCHAR},
+      bl_content = #{blContent,jdbcType=VARCHAR},
+      company_id = #{companyId,jdbcType=INTEGER},
+      cust_id = #{custId,jdbcType=VARCHAR},
+      cust_code = #{custCode,jdbcType=VARCHAR},
+      function_type = #{functionType,jdbcType=VARCHAR},
+      region_id = #{regionId,jdbcType=INTEGER},
+      region_code = #{regionCode,jdbcType=CHAR},
+      port_id = #{portId,jdbcType=INTEGER},
+      language = #{language,jdbcType=VARCHAR},
+      superior_office_id = #{superiorOfficeId,jdbcType=VARCHAR},
+      auto_internal = #{autoInternal,jdbcType=INTEGER},
+      deleted = #{deleted,jdbcType=INTEGER},
+      input_user = #{inputUser,jdbcType=CHAR},
+      input_user_name = #{inputUserName,jdbcType=VARCHAR},
+      input_office = #{inputOffice,jdbcType=VARCHAR},
+      use_system = #{useSystem,jdbcType=INTEGER},
+      country_id = #{countryId,jdbcType=INTEGER},
+      country_code = #{countryCode,jdbcType=CHAR},
+      city_id = #{cityId,jdbcType=INTEGER},
+      city_code = #{cityCode,jdbcType=CHAR},
+      is_dept = #{isDept,jdbcType=INTEGER},
+      relaction_tag = #{relactionTag,jdbcType=VARCHAR},
+      booking_process_type = #{bookingProcessType,jdbcType=INTEGER},
+      not_statistic_flag = #{notStatisticFlag,jdbcType=INTEGER},
+      website_address = #{websiteAddress,jdbcType=VARCHAR},
+      description = #{description,jdbcType=VARCHAR},
+      creator = #{creator,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      access_group = #{accessGroup,jdbcType=INTEGER},
+      amender = #{amender,jdbcType=INTEGER},
+      amend_time = #{amendTime,jdbcType=TIMESTAMP},
+      record_version = #{recordVersion,jdbcType=INTEGER},
+      is_deleted = #{isDeleted,jdbcType=INTEGER}
+    where organization_structure_id = #{organizationStructureId,jdbcType=INTEGER}
+  </update>
+</mapper>

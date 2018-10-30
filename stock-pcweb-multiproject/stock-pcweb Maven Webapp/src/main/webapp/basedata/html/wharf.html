@@ -1,0 +1,214 @@
+<div id="tab_9009" class="wharf basedata tab-page" role="tabpanel">
+    <!--<div class="content-header">-->
+        <!--<h1>-->
+            <!--基础资料-->
+            <!--<small>码头</small>-->
+        <!--</h1>-->
+        <!--<ol class="breadcrumb">-->
+            <!--<li><a href="#"><i class="fa fa-dashboard"></i>基础资料</a></li>-->
+            <!--<li><a href="#">码头</a></li>-->
+            <!--<li class="active">数据表格</li>-->
+        <!--</ol>-->
+       <!---->
+    <!--</div>-->
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <!--begin search box-->
+                <div class="box search-box">
+                    <!--<div class="box-header">-->
+                        <!--<h4 class="box-title">查询</h4>-->
+                        <!--<div class="pull-right box-tools">-->
+                            <!--<button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">-->
+                                <!--<i class="fa fa-plus"></i></button>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <div class="box-body">
+                        <form class="search-table form-inline" id="searchWharfForm" role="form">
+                                <div class="form-group" style="width: 300px">
+                                    <label>港口名称</label>
+                                    <!--<div class="form-item-select">-->
+                                        <select  name="portId" class="form-control select2 select2-hidden-accessible" style="width:65%;" tabindex="-1" aria-hidden="true">
+                                            <option value=""></option>
+                                        </select>
+                                    <!--</div>-->
+                                  <!--  <input type="text" class="form-control" name="facilityCode"/>-->
+                                </div>
+                                <div class="form-group">
+                                    <label>码头名称EN</label>
+                                    <input type="text" class="form-control" name="nameEn" style="width:65%;"/>
+                                </div>
+                                <div class="form-group">
+                                    <label>码头代码</label>
+                                    <input type="text" class="form-control" name="wharfCode" style="width:65%;"/>
+                                </div>
+                        </form>
+                        <div class="sm-wrqapper">
+                            <input type="button" id="BTN_90090100" class="btn btn-info btn-size" onclick="Wharf.doSearch()" value="查找"/>
+
+                            <button class="btn btn-info search_reset" id="resetSeachWharfForm">
+                                重置
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!--end search box-->
+                <div class="modal fade" id="editWharfModal" tabindex="-1" role="dialog"
+                     aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close modal_close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title" id="editWharfModalTitle">增加</h4>
+                            </div>
+                            <div class="modal-body" style="padding: 5px" id="editWharfModalBody">
+                                <form id="editWharfForm" class="form-inline">
+                                    <table class="edit-table">
+                                        <tr>
+                                            <td class="color-red">港口名称</td>
+                                            <td>
+                                                <select  name="portId" class="form-control select2 select2-hidden-accessible" style="width: 90%" tabindex="-1" aria-hidden="true">
+                                                    <option value=""></option>
+                                                </select>
+                                            </td>
+                                            <td>国家名称</td>
+                                            <td><input type="text" class="form-control" name="countryName"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td>码头代码</td>
+                                            <td><input type="text" class="form-control" name="wharfCode"/></td>
+                                            <td>英文名称</td>
+                                            <td><input type="text" class="form-control" name="nameEn"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td>中文名称</td>
+                                            <td><input type="text" class="form-control" name="nameCn"/></td>
+                                            <td>码头网站</td>
+                                            <td><input type="text" class="form-control" name="wharfUrl"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td>备注</td>
+                                            <td><input type="text" class="form-control" name="description"/></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>最后修改人</td>
+                                            <td><input type="text" class="form-control" name="amenderName" readonly/></td>
+                                            <td>最后修改时间</td>
+                                            <td><input type="text" class="form-control" name="amendTime" readonly/></td>
+                                        </tr>
+                                    </table>
+                                    <!--<div class="form-inline-item">-->
+                                        <!--<div class="form-group"><label class="color-red">港口名称</label>-->
+                                            <!--<select  name="portId" class="form-control select2 select2-hidden-accessible" style="width: 170px;" tabindex="-1" aria-hidden="true">-->
+                                                <!--<option value=""></option>-->
+                                            <!--</select>-->
+                                        <!--</div>-->
+                                        <!--<div class="form-group"><label>国家名称</label><input type="text" class="form-control" name="countryName"/></div>-->
+                                    <!--</div>-->
+                                    <!--<div class="form-inline-item">-->
+                                        <!--<div class="form-group"><label>码头代码</label><input type="text" class="form-control" name="wharfCode"/></div>-->
+                                        <!--<div class="form-group"><label>英文名称</label><input type="text" class="form-control" name="nameEn"/></div>-->
+                                    <!--</div>-->
+                                    <!--<div class="form-inline-item">-->
+                                       <!--<div class="form-group"><label>中文名称</label><input type="text" class="form-control" name="nameCn"/></div>-->
+                                        <!--<div class="form-group"><label>码头网站</label><input type="text" class="form-control" name="wharfUrl"/></div>-->
+                                    <!--</div>-->
+                                    <!--<div class="form-inline-item single-item" style="margin-left: 20px">-->
+                                        <!--<div class="form-group"><label style="width: 87px;">备注</label><input type="text" class="form-control" name="description"/></div>-->
+                                    <!--</div>-->
+                                    <!--<div class="form-inline-item">-->
+                                        <!--<div class="form-group"><label>最后修改人</label><input type="text" class="form-control" name="amenderName" value="admin" readonly/></div>-->
+                                        <!--<div class="form-group"><label>最后修改时间</label><input type="text" class="form-control" name="amendTime" readonly/></div>-->
+                                    <!--</div>-->
+
+                                    <div hidden="true"><label>新增或保存</label><input type="text" name="saveType" id="saveType">
+                                        <input type="text" class="form-control" name="wharfId"/></div>
+                                    <div class="modal-footer">
+                                        <div class="sm-wrapper">
+                                            <button type="button" class="btn btn-primary" data-dismiss="modal">取消</button></button>
+                                            <!--<button type="button" class="btn btn-primary" data-dismiss="modal" id="editWharfModalSubmit">确定</button>-->
+                                            <input type="submit" class="btn btn-primary" id="editWharfModalSubmit" value="确定"/>
+
+                                        </div>
+                                    </div>
+
+                                </form>
+                            </div>
+                        </div><!-- /.modal-content -->
+                    </div><!-- /.modal -->
+                </div>
+                <div class="btn_group">
+                    <button id="BTN_90090200" onclick="Wharf.addWharf()" class="btn btn-info">
+                        增加
+                    </button>
+                    <button id="BTN_90090300" onclick="Wharf.editWharf()" class="btn btn-info">
+                        修改
+                    </button>
+                    <button id="BTN_90090400" onclick="Wharf.deleteWharf()" class="btn btn-info">
+                        删除
+                    </button>
+                    <div class="btn-group export-excel dataTable-dropdown-menu">
+                        <button type="button" class="btn btn-info">导出Excel</button>
+                        <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                            <span class="caret"></span>
+                            <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                        <ul class="dropdown-menu export-excel-menu" role="menu">
+                            <li id="Wharf_export-excel-selected"></li>
+                            <li id="Wharf_export-excel-current"></li>
+                            <li id="Wharf_export-excel-all"></li>
+                        </ul>
+                    </div>
+                    <!--<button id="Wharf_import-excel" onclick="customsDocumentAttachment.importExcel()" class="btn btn-info">-->
+                    <!--导出Excel-->
+                    <!--</button>-->
+                    <div class="btn-group export-print dataTable-dropdown-menu">
+                        <button type="button" class="btn btn-info">打印</button>
+                        <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                            <span class="caret"></span>
+                            <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                        <ul class="dropdown-menu export-print-menu" role="menu">
+                            <li id="Wharf_export-print-selected"></li>
+                            <li id="Wharf_export-print-all"></li>
+                        </ul>
+                    </div>
+                    <div class="btn-height btn-group" style="vertical-align: top;" id="Wharf_export-copy"></div>
+                    <div class="btn-height btn-group" style="vertical-align: top;"  id="Wharf_export-columnVisibility" ></div>
+
+                    <!--<button id="refreshWharf" onclick="Wharf.doSearch()" class="btn btn-info">-->
+                        <!--刷新-->
+                    <!--</button>-->
+                    <!--<button id="showWharfDetail" class="btn btn-info">-->
+                        <!--详情-->
+                    <!--</button>-->
+                </div>
+
+                <div class="box datable-box">
+
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <table id="WharfTable" class="table table-bordered table-striped">
+                        </table>
+                    </div>
+                    <!-- /.box-body -->
+
+                    <!--modify button-->
+
+                </div>
+                <!-- /.box -->
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </section>
+    <!-- DataTables -->
+    <script src="basedata/js/wharf.js"></script>
+    <script src="basedata/js/public.js"></script>
+    <script>
+
+    </script>
+</div>

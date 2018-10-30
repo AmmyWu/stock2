@@ -1,0 +1,43 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<artifactId>stock-base-multiproject</artifactId>
+		<groupId>com.stock</groupId>
+		<version>0.0.1-SNAPSHOT</version>
+		<relativePath>../stock-base-multiproject/pom.xml</relativePath>
+	</parent>
+	<artifactId>stock-service-multiproject</artifactId>
+	<packaging>pom</packaging>
+	<modules>
+		<module>stock-service</module>
+		<module>stock-service-base</module>
+	</modules>
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>com.stock</groupId>
+				<artifactId>stock-service</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.stock</groupId>
+				<artifactId>stock-service-base</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+		</dependencies>
+	</dependencyManagement>
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>

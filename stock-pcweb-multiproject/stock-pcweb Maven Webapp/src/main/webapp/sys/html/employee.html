@@ -1,0 +1,281 @@
+<div id="tab_9106" class="employee basedata tab-page" role="tabpanel">
+    <!--<div class="content-header">-->
+        <!--<h1>-->
+            <!--基础资料-->
+            <!--<small>员工</small>-->
+        <!--</h1>-->
+        <!--<ol class="breadcrumb">-->
+            <!--<li><a href="#"><i class="fa fa-dashboard"></i>基础资料</a></li>-->
+            <!--<li><a href="#">员工</a></li>-->
+            <!--<li class="active">数据表格</li>-->
+        <!--</ol>-->
+       <!---->
+    <!--</div>-->
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <!--begin search box-->
+                <div class="box search-box">
+                    <!--<div class="box-header">-->
+                        <!--<h3 class="box-title">查询</h3>-->
+                        <!--<div class="pull-right box-tools">-->
+                            <!--<button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">-->
+                                <!--<i class="fa fa-plus"></i></button>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <div class="box-body">
+                        <form class="search-table form-inline" id="searchEmployeeForm" role="form">
+                          <!--   <div hidden="true"><label>组织架构节点id</label><input type="text" name="companyId"/></div>
+                                <div class="form-group">
+                                     <div class="zTreeDemoBackground left">
+                                                    <li class="title">&nbsp;&nbsp;<span class="highlight_red">选择城市时，按下 Ctrl 或 Cmd 键可以进行多选</span></li>
+                                                    <div class="title">
+                                                        <input type="text" class="administrationResourceSel form-control form-control-line" onclick="showAdministrationMenu('administrationRtreemenuContent');return false;" name="name" readonly placeholder="不选择或者选择一个父资源"/>
+                                                    </div>
+                                                </div>
+                                                <div class="administrationRtreemenuContent menuContent" style="display:none; position: absolute;width:100%;z-index: 3000;top: 35px;">
+                                                    <ul id="administrationTreeResouce" class="ztree" style="margin-top:0; width: 100%"></ul>
+                                                </div>
+
+                                </div> -->
+                                <div class="form-group">
+                                    <label>姓名</label>
+                                    <input type="text" class="form-control" name="employeeName" placeholder="姓名" style="width:73%;">
+                                </div>
+                        </form>
+                        <div class="sm-wrqapper">
+                            <!--  <lable class="check-1">生效&nbsp&nbsp&nbsp&nbsp<input class="check-size" type="checkbox" name="生效"/>
+                             </lable> -->
+                            <input type="button" class="btn btn-info btn-size" onclick="Employee.doSearch()" value="查找"/>
+
+                            <button class="btn btn-info search_reset" id="resetSearchEmployeeForm">
+                                重置
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!--end search box-->
+                <!-- import -->
+                 <div class="modal fade" id="importExcelAdministrationModal1" tabindex="-1"
+                     role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" style="width: 490px;position: relative;top: 40%;">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close modal_close"
+                                        data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title">导入</h4>
+                            </div>
+                            <div class="modal-body" style="padding:20px" id="importExcelAdministrationModalBody1">
+                                <div id="chooseExcelAdministration" class="easyui-window"
+                                     data-options="iconCls:'icon-table',draggable:true,minimizable:true,collapsible:false, closable:true,closed:true,shadow:true,modal:true">
+                                    <form id="form2Administration"method="post" action=""
+                                          enctype="multipart/form-data" accept-charset="UTF-8" target="reportFrameAdministration">
+                                        <!--<form id="form1" accept-charset="UTF-8">-->
+                                        <fieldset style="display: inline-block;">
+                                            <input type="file" name="excel" style="width:160px;display:inline-block;" />
+                                           <!--  <input type="text" name="taskSketchId" id="taskSketchId" hidden="true" /> -->
+                                        </fieldset>
+                                        <div style="padding:5px 10px;text-align:center;display: inline-block;">
+                                            <input type="button" value="上传"  class="btn btn-primary" onclick="Employee.importExcel2('form2Administration','','')"/>
+                                            <!--<input type="button" onclick="rejectChooseExcel();" value="取消" />-->
+                                        </div>
+                                        <iframe id="reportFrameAdministration" name="reportFrame" width="100%" height="500px" frameborder=no  style="display: none"></iframe>
+                                    </form>
+                                </div>
+                                <div class="red-font">
+                                    导入说明：
+                                    1：excel表格内字段不允许为空。
+                                    2：组织结构id可以根据组织架构中id来填写
+                                    <a style="cursor: pointer;" href="excelTemplates/addresslist.xlsx">模版下载</a>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- /.modal-content -->
+                    </div>
+                    <!-- /.modal -->
+                </div>
+
+                <div class="modal fade" id="editEmployeeModal" tabindex="-1" role="dialog"
+                     aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close modal_close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title" id="editEmployeeModalTitle">增加</h4>
+                            </div>
+                            <div class="modal-body" style="padding: 5px" id="editEmployeeModalBody">
+                                <form id="editEmployeeForm" class="form-inline">
+                                    <table class="edit-table">
+                                        <tr>
+                                            <td>组织架构</td>
+                                            <td>
+                                                  <div hidden="true"><label>组织架构父节点id</label><input type="text" name="gocode"/></div>
+                                                <div hidden="true"><label>创始人</label><input type="text" name="creator"/></div>
+                                                 <div hidden="true"><label>组织节点</label><input type="text" name="organizationStructureId"/></div>
+                                                <div class="zTreeDemoBackground left">
+                                                    <!--<li class="title">&nbsp;&nbsp;<span class="highlight_red">选择城市时，按下 Ctrl 或 Cmd 键可以进行多选</span></li>-->
+                                                    <div class="title">
+                                                        <input type="text" class="administrationResourceSel form-control form-control-line" onclick="showAdministrationMenu('administrationRtreemenuContent');return false;" name="name" readonly placeholder="不选择或者选择一个父资源"/>
+                                                    </div>
+                                                </div>
+                                                <div class="administrationRtreemenuContent menuContent" style="display:none; position: absolute;width:31%;z-index: 3000;top: 35px;">
+                                                    <ul id="employeeTreeResouce" class="ztree" style="margin-top:0; width: 100%"></ul>
+                                                </div>
+                                            </td>
+                                            <td class="color-red">姓名</td>
+                                            <td><input type="text" class="form-control" name="employeeName"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td>性别</td>
+                                            <td>
+                                                <select class="form-control" name="sex" style="width:90%;">
+                                                    <option value="">请选择</option>
+                                                    <option value="男">男</option>
+                                                    <option value="女">女</option>
+                                                </select>
+                                            </td>
+                                            <td>婚姻状况</td>
+                                            <td>
+                                                <select class="form-control" name="marital" style="width:90%;">
+                                                    <option value="">请选择</option>
+                                                    <option value="已婚">已婚</option>
+                                                    <option value="未婚">未婚</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>籍贯</td>
+                                            <td><input type="text" class="form-control" name="nativeAddress"/></td>
+                                            <td>学历</td>
+                                            <td><input type="text" class="form-control" name="education"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td>邮编</td>
+                                            <td><input type="text" class="form-control" name="zip"/></td>
+                                            <td>员工类别</td>
+                                            <td><input type="text" class="form-control" name="employeeType"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td  class="color-red">员工代码</td>
+                                            <td><input type="text" class="form-control" name="employeeCode"/></td>
+                                            <td>身份证</td>
+                                            <td><input type="text" class="form-control" name="idCard"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td  class="color-red">通讯地址</td>
+                                            <td><input type="text" class="form-control" name="contactAddress"/></td>
+                                            <td>家庭住址</td>
+                                            <td><input type="text" class="form-control" name="homeAddress"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td  class="color-red">手机号码</td>
+                                            <td><input type="text" class="form-control" name="employeeCellPhone"/></td>
+                                            <td>办公电话</td>
+                                            <td><input type="text" class="form-control" name="employeeOfficePhone"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td>邮箱</td>
+                                            <td><input type="text" class="form-control" name="email"/></td>
+                                            <td>雇佣日期</td>
+                                            <td><input type="text" class="form-control" name="hireDate"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td>最后修改人</td>
+                                            <td><input type="text" class="form-control" name="amenderName" readonly/></td>
+                                            <td>最后修改时间</td>
+                                            <td><input type="text" class="form-control" name="amendTime" readonly/></td>
+                                        </tr>
+                                    </table>
+                                   
+                                    <div hidden="true"><label>新增或保存</label><input type="text" name="saveType" id="saveType">
+                                        <input type="text" class="form-control" name="amender" value="1" readonly/> <input type="text" class="form-control" name="employeeId"/></div>
+                                    <div class="modal-footer">
+                                        <div class="sm-wrapper">
+                                            <button type="button" class="btn btn-primary" data-dismiss="modal">取消</button></button>
+                                            <!--<button type="button" class="btn btn-primary" data-dismiss="modal" id="editEmployeeModalSubmit">确定</button>-->
+                                            <input type="submit" class="btn btn-primary" id="editEmployeeModalSubmit" value="确定"/>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div><!-- /.modal-content -->
+                    </div><!-- /.modal -->
+                </div>
+                <div class="btn_group">
+                    <button id="BTN_91060100" onclick="Employee.addEmployee()" class="btn btn-info">
+                        增加
+                    </button>
+                    <button id="BTN_91060200" onclick="Employee.editEmployee()" class="btn btn-info">
+                        修改
+                    </button>
+                    <button id="BTN_91060300" onclick="Employee.deleteEmployee()" class="btn btn-info">
+                        删除
+                    </button>
+                    <div class="btn-group export-excel dataTable-dropdown-menu">
+                        <button type="button" class="btn btn-info">导出Excel</button>
+                        <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                            <span class="caret"></span>
+                            <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                        <ul class="dropdown-menu export-excel-menu" role="menu">
+                            <li id="Employee_export-excel-selected"></li>
+                            <li id="Employee_export-excel-current"></li>
+                            <li id="Employee_export-excel-all"></li>
+                        </ul>
+                    </div>
+                    <!--<button id="Employee_import-excel" onclick="customsDocumentAttachment.importExcel()" class="btn btn-info">-->
+                    <!--导出Excel-->
+                    <!--</button>-->
+                    <div class="btn-group export-print dataTable-dropdown-menu">
+                        <button type="button" class="btn btn-info">打印</button>
+                        <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                            <span class="caret"></span>
+                            <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                        <ul class="dropdown-menu export-print-menu" role="menu">
+                            <li id="Employee_export-print-selected"></li>
+                            <li id="Employee_export-print-all"></li>
+                        </ul>
+                    </div>
+                    <div class="btn-height btn-group" style="vertical-align: top;" id="Employee_export-copy"></div>
+                    <div class="btn-height btn-group" style="vertical-align: top;"  id="Employee_export-columnVisibility" ></div>
+
+                    <!--<button id="refreshEmployee" onclick="Employee.doSearch()" class="btn btn-info">-->
+                        <!--刷新-->
+                    <!--</button>-->
+                    <!--<button id="showEmployeeDetail" class="btn btn-info">-->
+                        <!--详情-->
+                    <!--</button>-->
+                    <button id="import-excel" onclick="Employee.importExcel()" class="btn btn-info">
+                     导入
+                     </button>
+                </div>
+                <div class="box datable-box">
+                    <!-- /.box-header -->
+                    <div class="box-body">
+
+                        <table id="employeeTable" class="table table-bordered table-striped">
+                        </table>
+                    </div>
+                    <!-- /.box-body -->
+
+                    <!--modify button-->
+
+                </div>
+                <!-- /.box -->
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </section>
+    <!-- DataTables -->
+     <script src="sys/js/district_public.js"></script>
+    <script src="sys/js/public.js"></script>
+    <script src="sys/js/employee.js"></script>
+    <script src="js/setToolbar.js"></script>
+ <script src="sys/js/administrationTree.js"></script>
+</div>
+</div>

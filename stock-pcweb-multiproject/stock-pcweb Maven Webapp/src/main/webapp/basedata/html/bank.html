@@ -1,0 +1,151 @@
+<div id="tab_14_2" class="bank basedata tab-page" role="tabpanel" onload="InitBank()">
+    <div class="content-header">
+        <!--<h1>-->
+            <!--基础资料-->
+            <!--<small>银行</small>-->
+        <!--</h1>-->
+        <!--<ol class="breadcrumb">-->
+            <!--<li><a href="#"><i class="fa fa-dashboard"></i>基础资料</a></li>-->
+            <!--<li><a href="#">银行</a></li>-->
+            <!--<li class="active">数据表格</li>-->
+        <!--</ol>-->
+        <div class="btn_group">
+
+            <button id="addBank" onclick="Bank.addBank" class="btn btn-info">
+                新增
+            </button>
+
+            <button id="editBank" onclick="Bank.editBank()" class="btn btn-info">
+                修改
+            </button>
+
+            <button id="deleteBank" onclick="Bank.deleteBank()" class="btn btn-info">
+                删除
+            </button>
+            <!--<button id="refreshBank" onclick="Bank.doSearch()" class="btn btn-info">-->
+                <!--刷新-->
+            <!--</button>-->
+            <!--<button id="showBankDetail" class="btn btn-info">-->
+                <!--详情-->
+            <!--</button>-->
+
+        </div>
+    </div>
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <!--begin search box-->
+                <div class="box">
+                    <div class="box-header">
+                        <h3 class="box-title">查询</h3>
+                        <div class="pull-right box-tools">
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
+                                <i class="fa fa-plus"></i></button>
+                            <!--<button type="button" class="btn btn-info btn-sm" data-widget="remove" data-toggle="tooltip" title="Remove">-->
+                            <!--<i class="fa fa-times"></i></button>-->
+                        </div>
+                    </div>
+                    <div class="box-body">
+                        <form class="search-table form-inline" id="bankSearchForm" role="form">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label>银行名称缩写</label>
+                                    <input type="text" class="form-control" name="abbrev" placeholder="银行名称缩写">
+                                </div>
+                                <div class="col-md-4">
+                                    <label>银行名称</label>
+                                    <input type="text" class="form-control" name="bankName" placeholder="银行名称">
+                                </div>
+                            </div>
+                        </form>
+
+                        <div class="sm-wrqapper">
+                            <input type="button" class="btn btn-info btn-size" onclick="Bank.doSearch()" value="查找"/>
+
+                            <button class="btn btn-info search_reset" id="charge_reset">
+                                重置
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal fade" id="editBankModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close modal_close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title" id="editBankModalTitle">增加</h4>
+                            </div>
+                            <div class="modal-body" style="padding: 20px" id="editBankModalBody">
+                                <form id="editBankForm">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group"><label>银行名称缩写</label><input type="text" class="form-control" name="abbrev"/></div>
+                                            <div class="form-group"><label>银行地址</label><input type="text" class="form-control" name="addr"/></div>
+                                            <div class="form-group"><label class="small-font" title="bankNameNative">bankNameNative</label><input type="text" class="form-control" name="bankNameNative"/></div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group"><label>银行名称</label><input type="text" class="form-control" name="bankName"/></div>
+                                            <div class="form-group"><label class="small-font" title="xchgDays">xchgDays
+                                            </label><input type="text" class="form-control" name="xchgDays"/></div>
+                                            <!--<div class="form-group"><label  class="ellipsis" title="xchgDays">xchgDays</label><input type="text" class="form-control form-control-line" name="xchgDays"/></div>-->
+                                            <div class="form-group"><label>描述</label><input type="text" class="form-control" name="description"/></div>
+                                        </div>
+                                    </div>
+                                    <!--<div class="row single-row">-->
+                                        <!--<div class="col-md-12">-->
+                                            <!--<div class="form-group"><label>描述</label><input type="text" class="form-control form-control-line" name="description"/></div>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group"><label>最后修改人</label><input type="text" class="form-control" name="amender" value="admin" readonly/></div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group"><label>最后修改时间</label><input type="text" class="form-control" name="amendTime" readonly/></div>
+                                        </div>
+                                    </div>
+                                    <div  hidden="true"><input type="text" class="form-control" name="bankId" readonly/><input type="text" class="form-control" name="amender" value="1" readonly/><input type="text" name="saveType" hidden="true"><input type="text" class="form-control" name="saveType" id="saveType"/></div>
+                                    <div class="modal-footer ">
+                                        <div class="sm-wrapper">
+                                            <button type="button" class="btn btn-primary" data-dismiss="modal">取消</button>
+                                            <!--<button type="button" class="btn btn-primary" id="editBankModalSubmit">确定</button>-->
+                                            <input type="submit" class="btn btn-primary" id="editBankModalSubmit" value="确定"/>
+
+                                        </div>
+                                    </div>
+
+                                </form>
+                            </div>
+                        </div><!-- /.modal-content -->
+                    </div><!-- /.modal -->
+                </div>
+
+
+                <div class="box datable-box">
+
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <table id="bankTable" class="table table-bordered table-striped">
+                        </table>
+                    </div>
+                    <!-- /.box-body -->
+
+                    <!--modify button-->
+
+                </div>
+                <!-- /.box -->
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </section>
+    <!-- DataTables -->
+
+    <script src="basedata/js/public.js"></script>
+    <script src="basedata/js/bank.js"></script>
+    <script>
+//
+    </script>
+</div>

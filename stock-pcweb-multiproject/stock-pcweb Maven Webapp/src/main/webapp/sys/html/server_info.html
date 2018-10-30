@@ -1,0 +1,186 @@
+<!--设计者：金天-->
+<!--截至时间：2017/5/2-->
+<!--项目名称：海盟物流管理系统、用户管理-->
+
+<!-- Content Wrapper. Contains page content -->
+<div id="tab_15_1" class="server_info sys tab-page" role="tabpanel">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>系统管理
+            <small>服务器信息</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i>系统管理</a></li>
+            <li><a href="#">服务器信息</a></li>
+            <li class="active">数据表格</li>
+        </ol>
+    </section>
+
+    <!-- 新增/修改弹出框 -->
+    <div class="modal fade" id="editServerModal" tabindex="-1"
+         role="dialog" aria-labelledby="serverModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close modal_close"
+                            data-dismiss="modal" aria-hidden="true">&times;
+                    </button>
+                    <h4 class="modal-title" id="serverModalLabel">编辑</h4>
+                </div>
+                <div class="modal-body">
+                    <form id="serverForm">
+                        <div class="form-group">
+                            <label>日志目录</label>
+                            <div><input type="text" name="logDirectory"
+                                        class="form-control"> <input
+                                    type="text" name="userId" hidden="true">
+                                <input type="text" name="saveType" hidden="true" value="insert">
+                            </div>
+
+                        </div>
+                        <div class="form-group">
+                            <label>服务器ip</label>
+                            <div><input name="serverIp" type="text" class="form-control"></div>
+                        </div>
+                        <div class="form-group">
+                            <label>端口</label>
+                            <div><input type="text" name="port" class="form-control"></div>
+                        </div>
+                        <div class="form-group">
+                            <label>服务器名称</label>
+                            <div><input type="text" name="serverName" class="form-control"></div>
+                        </div>
+                        <div class="form-group">
+                            <label>描述</label>
+                            <div>
+                                <div><input type="text" name="description" class="form-control"></div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>接口组</label>
+                            <div>
+                                <input name = "accessGroup"  type="text" class="form-control "></div>
+                        </div>
+                        <div class="form-group">
+                            <label>记录版本</label>
+                            <div>
+                                <input name = "recordVersion"  type="text" class="form-control ">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>录入人</label>
+                            <div><input name="amender" type="text" class="form-control "></div>
+                        </div>
+                        <div class="form-group">
+                            <label>录入时间</label>
+                            <div>
+                                <input name="amendTime" type="text" class="form-control ">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <div class="sm-wrapper">
+                        <button id="saveServer" type="button" data-dismiss="modal" class="btn btn-primary">
+                            保存
+                        </button>
+                        <button id="cancelServer2" type="button" class="btn btn-primary">
+                            取消
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal -->
+    </div>
+
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box search-box">
+                    <div class="box-body">
+                        <form class="search-table" id="serverInfo_search-table" role="form">
+                            <div class="form-item">
+                                <label>服务器IP：</label>
+                                <input type="text" name="serverIp" class="form-control" placeholder="服务器IP">
+                            </div>
+                            <div class="form-item">
+                                <label>服务器名字：</label>
+                                <input type="text" name="serverName" class="form-control" placeholder="服务器名字">
+                            </div>
+                        </form>
+                        <div class="sm-wrapper">
+                            <input type="button" class="btn btn-info" id="searchServer" onclick="doSearch()" value="查找"/>
+                            <input type="button" class="btn btn-info" id="resetServer" value="重置"/>
+                        </div>
+
+                    </div>
+                </div>
+                <!--<div class="box collapsed-box add-box box-primary">-->
+                    <!--<div class="box-header">-->
+                        <!--<h3 class="box-title">新增</h3>-->
+                        <!--<div class="pull-right box-tools">-->
+                            <!--<button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">-->
+                                <!--<i id="add_fa_btn" class="fa fa-plus"></i></button>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="box-body add-box-body">-->
+                        <!--<form id="server_info_add-table" role="form" class="hidden-xs hidden-sm visible-md visible-lg add-table">-->
+                        <!--</form>-->
+                        <!--<div class="btn_group">-->
+                            <!--<button id="server_info_save" class="btn btn-info">-->
+                                <!--保存-->
+                            <!--</button>-->
+                            <!--<button id="server_info_cancel" class="btn btn-info add_cancel">-->
+                                <!--取消-->
+                            <!--</button>-->
+                            <!--<button id="server_info_reset2" class="btn btn-info add_reset">-->
+                                <!--重置-->
+                            <!--</button>-->
+
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!-- 新增按钮 -->
+                <div class="box box-primary">
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <div class="btn_group">
+                            <button id="addServer" class="btn btn-info" data-toggle="modal">
+                                新增
+                            </button>
+                            <button id="deleteServer" class="btn btn-info" data-toggle="modal">
+                                删除
+                            </button>
+                            <button id="editServer" class="btn btn-info">
+                                修改
+                            </button>
+                            <button id="cancelServer" class="btn btn-info">
+                                取消
+                            </button>
+                        </div>
+                        <table id="server_tb" class="table table-bordered table-striped">
+                        </table>
+                    </div>
+                    <!-- /.box-body -->
+
+                    <!--modify button-->
+
+                </div>
+                <!-- /.box -->
+                <div>
+
+                </div>
+
+            </div>
+            <!--/col-->
+        </div>
+        <!-- /.row -->
+    </section>
+    <!-- /.content -->
+
+    <script src="sys/js/server_info.js"></script>
+    <script src="sys/js/public.js"></script>
+</div>

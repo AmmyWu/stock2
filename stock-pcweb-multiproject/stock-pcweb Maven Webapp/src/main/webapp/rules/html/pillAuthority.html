@@ -1,0 +1,99 @@
+<div id="tab_932" class="user sys tab-page active" role="tabpanel">
+    <div id="container" style="width: 980px;margin: 0px auto;">
+        <div id="header" style="width:100%;height:50px;">
+            <form id="searchForm">
+                <label>请输入药品名</label>
+                <input type="text" name="doc_name" placeholder="药品名">
+
+                <label>请选择药品用量</label>
+                <select id="hos_type" name="hos_type"></select>
+
+                <label>医生职称</label>
+                <select id="doc_title" name="doc_title"></select>
+
+                <label>医生职级</label>
+                <select id="doc_level" name="doc_level"></select>
+
+                <label>处方权</label>
+                <select id="prescription" name="prescription"></select>
+
+                <label>权限类型</label>
+                <select id="register" name="register"></select>
+
+                <label>印鉴卡</label>
+                <select id="card" name="card"></select>
+
+                <label>抗菌药物权</label>
+                <select id="anti" name="anti"></select>
+
+            </form>
+        </div>
+        <div class=father>
+                <div id="main" style="width:100%;height:300px;">
+                    <div class="box datable-box">
+                        <!-- /.box-header -->
+                        <div class="box-body" style=" background:#ecf0f5;">
+                            <table border="0" style="border-collapse: separate; border-spacing: 50px 5px;">
+                                <tr style="border:0">
+                                    <td style="border:0">请选择药品</td>
+                                </tr>
+                                <tr style="border:0">
+                                    <td style="border:0">
+                                        <select name="p1" style="width: 280px;height: 230px;" multiple="multiple" size="5">
+                                            <option value="员工">员工</option>
+                                            <option value="客户">客户</option>
+                                        </select>
+                                    </td>
+                                    <td style="border:0">
+                                        <select name="p2" style="width: 280px;height: 230px;" multiple="multiple" size="5">
+                                            <option value="员工">员工</option>
+                                            <option value="客户">客户</option>
+                                        </select>
+                                    </td>
+                                    <td style="border:0">
+                                        <select name="p3" style="width: 280px;height: 230px;" multiple="multiple" size="5">
+                                            <option value="员工">员工</option>
+                                            <option value="客户">客户</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+    
+                <div id="footer" style="width:100%;height:300px">
+                    <div class="box datable-box">
+                        <!-- /.box-header -->
+                        <div class="box-body " style=" background:#ecf0f5">
+                            <table style="border-collapse: separate; border-spacing: 50px 5px;" border="0">
+                                <tr style="border:0">
+                                    <td>请选择科室</td>
+                                </tr>
+                                <tr style="border:0">
+                                    <td style="border:0">
+                                        <select style="width: 280px;height: 230px;" name="hospital" multiple="multiple"
+                                            size="5">
+                                            <option value="员工">员工</option>
+                                            <option value="客户">客户</option>
+                                        </select>
+                                    </td>
+                                    <td style="border:0">
+                                        <select style="width: 280px;height: 230px;" name="office" multiple="multiple" size="5">
+                                            <option value="员工">员工</option>
+                                            <option value="客户">客户</option>
+                                        </select>
+                                    </td>
+    
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+    
+                </div>
+                <div style="width:100%;height:50px">
+                    <input type="submit" class="user_save btn btn-primary" id="createRule" value="创建规则" />
+                </div>
+            </div>
+    <script src="rules/js/pillAuthority.js"></script>
+</div>

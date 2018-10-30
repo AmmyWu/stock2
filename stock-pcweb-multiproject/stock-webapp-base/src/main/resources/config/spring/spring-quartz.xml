@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://www.springframework.org/schema/beans" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:cache="http://www.springframework.org/schema/cache" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+       http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context-4.0.xsd
+       http://www.springframework.org/schema/tx
+       http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+       http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache-4.0.xsd">
+
+
+	<!-- 年检时间定时触发 -->
+	<bean id="Quartz" class="com.stock.webapp.base.quartz.YearCheckQuartz"></bean>
+	<bean id="QuartzDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="Quartz" />
+		<property name="targetMethod" value="modDateJudge" />
+		<!-- concurrent设为false，多个job不会并发运行 -->
+		<property name="concurrent" value="true" />
+	</bean>
+	<bean id="OrderInfoCronTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail">
+			<ref bean="QuartzDetail" />
+		</property>
+		<property name="cronExpression">
+			<value>0 0 9 * * ?</value>
+		</property>
+	</bean>
+
+	<!-- 晚上12点恢复设备状态，置为0 -->
+	<bean id="RestoreQuartz" class="com.stock.webapp.base.quartz.RestoreStatusQuartz"></bean>
+	<bean id="RestoreQuartzDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="RestoreQuartz" />
+		<property name="targetMethod" value="restoreEveInspectedStatus" />
+		<!-- concurrent设为false，多个job不会并发运行 -->
+		<property name="concurrent" value="false" />
+	</bean>
+	<bean id="RestoreOrderInfoCronTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail">
+			<ref bean="RestoreQuartzDetail" />
+		</property>
+		<property name="cronExpression">
+			<value>0 0 0 * * ?</value>
+		</property>
+	</bean>
+
+	<!-- 中午12点恢复设备状态，置为0 -->
+	<bean id="RestoreNoonQuartz" class="com.stock.webapp.base.quartz.RestoreStatusQuartz"></bean>
+	<bean id="RestoreNoonQuartzDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="RestoreNoonQuartz" />
+		<property name="targetMethod" value="restoreEveInspectedStatus" />
+		<!-- concurrent设为false，多个job不会并发运行 -->
+		<property name="concurrent" value="false" />
+	</bean>
+	<bean id="RestoreNoonOrderInfoCronTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail">
+			<ref bean="RestoreNoonQuartzDetail" />
+		</property>
+		<property name="cronExpression">
+			<value>0 0 12 * * ?</value>
+		</property>
+	</bean>
+
+
+	<!-- 早上9点判断 -->
+	<bean id="MorJudgeQuartz" class="com.stock.webapp.base.quartz.JudgeIsInspectedQuartz"></bean>
+	<bean id="MorQuartzDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="MorJudgeQuartz" />
+		<property name="targetMethod" value="judgeIsInspected" />
+		<!-- concurrent设为false，多个job不会并发运行 -->
+		<property name="concurrent" value="false" />
+	</bean>
+	<bean id="MorOrderInfoCronTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail">
+			<ref bean="MorQuartzDetail" />
+		</property>
+		<property name="cronExpression">
+			<value>0 0 9 * * ?</value>
+		</property>
+	</bean>
+
+	<!-- 下午5点判断 -->
+	<bean id="AfJudgeQuartz" class="com.stock.webapp.base.quartz.JudgeIsInspectedQuartz"></bean>
+	<bean id="AfQuartzDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="AfJudgeQuartz" />
+		<property name="targetMethod" value="judgeIsInspected" />
+		<!-- concurrent设为false，多个job不会并发运行 -->
+		<property name="concurrent" value="false" />
+	</bean>
+	<bean id="AfOrderInfoCronTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail">
+			<ref bean="AfQuartzDetail" />
+		</property>
+		<property name="cronExpression">
+			<value>0 0 17 * * ?</value>
+		</property>
+	</bean>
+
+	
+	
+
+
+
+	<!-- 触发器调用 -->
+	<bean id="schedulerFactory" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+	<!-- 			<ref local="OrderInfoCronTrigger" />
+				<ref local="RestoreOrderInfoCronTrigger" />
+				<ref local="RestoreNoonOrderInfoCronTrigger" />
+				<ref local="MorOrderInfoCronTrigger" />
+				<ref local="AfOrderInfoCronTrigger" /> -->
+			</list>
+		</property>
+		<!-- 程序加载后是否自动启动 -->
+		<property name="autoStartup" value="true" />
+	</bean>
+</beans>

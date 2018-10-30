@@ -1,0 +1,125 @@
+<div id="tab_9102" class="resource sys tab-page active" role="tabpanel">
+    <!-- Content Header (Page header) -->
+    <!--<div class="content-header">-->
+        <!--<h1>-->
+            <!--系统管理-->
+            <!--<small>资源</small>-->
+        <!--</h1>-->
+        <!--<ol class="breadcrumb">-->
+            <!--<li><a href="#"><i class="fa fa-calendar"></i>系统管理</a></li>-->
+            <!--<li><a href="#">资源管理</a></li>-->
+            <!--<li class="active">设置</li>-->
+        <!--</ol>-->
+        <!---->
+    <!--</div>-->
+    <!-- Main content -->
+    <div class="modal fade" id="resourceAddModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close modal_close" data-dismiss="modal" aria-hidden="true" onclick="emptyAddForm()">&times;</button>
+                    <h4 class="modal-title" id="resourceAddModalTitle">增加</h4>
+                </div>
+                <div class="modal-body" style="padding: 20px" id="resourceAddModalBody">
+                    <form id="resourceAddForm">
+                        <div>
+                            <div class="zTreeDemoBackground left">
+                                <!--<li class="title">&nbsp;&nbsp;<span class="highlight_red">选择城市时，按下 Ctrl 或 Cmd 键可以进行多选</span></li>-->
+                                <div class="title form-group">
+                                    <label>父资源</label>
+                                    <input type="text" class="form-control" id="resourceSel" onclick="showMenu(); return
+                                    false;" name="parentName" readonly placeholder="不选择或者选择一个父资源"/>
+                                    <!--<span class="input-group-addon"><i class="fa fa-angle-double-down"></i></span>-->
+                                    <!--&nbsp;<a id="menuBtn" href="#" onclick="showMenu(); return false;">选择</a>-->
+                                </div>
+                            </div>
+                            <div id="RtreemenuContent" class="menuContent" style="display:none; position: absolute;
+                            width:94%;    z-index: 3000;">
+                                <ul id="treeResouce" class="ztree" style="margin-top:0; width: 100%"></ul>
+                            </div>
+                        </div>
+                        <div style="visibility: hidden"><label>父资源id</label><input type="text" name="parentId" id="parentId"/></div>
+                        <div class="form-group"><label>资源名称</label><input type="text"
+                                                                          class="form-control" name="name"/></div>
+                        <div class="form-group"><label>资源类型</label><input type="text" class="form-control" name="type"/></div>
+                        <div class="form-group"><label>资源优先级</label><input type="text" class="form-control" name="priority"/></div>
+                        <div class="form-group"><label>资源链接</label><input type="text" class="form-control" name="url"/></div>
+                        <div class="form-group"><label>资源描述</label><input type="text" class="form-control" name="description"/></div>
+                        <div class="form-group"><label>备注</label><input type="text" class="form-control" name="remark"/></div>
+                        <div class="form-group"><label>最近修改时间</label><input type="text" class="form-control" name="createTime" readonly id="createTime"/></div>
+                        <div class="form-group"><label>最近修改人</label><input type="text" class="form-control" name="creater" readonly id="creatorName"/></div>
+                        <div style="visibility: hidden"><label>新增或保存</label><input type="text" name="optionType" id="optionType"></div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <div class="sm-wrapper">
+                        <button type="button" class="btn btn btn-primary" data-dismiss="modal" onclick="emptyAddForm()">取消
+                        </button>
+                        <button type="button" class="btn btn btn-primary" data-dismiss="modal" id="submitResourceAddModal">确定</button>
+                    </div>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <!-- /.box -->
+                <div class="btn_group treeTable_btn_group">
+                    <button type="button" href="#" class="btn btn-info" onclick="jQuery('#resourceTreetable').treetable('expandAll'); return false;">展开</button>
+                    <button type="button" href="#" class="btn btn-info" onclick="jQuery('#resourceTreetable').treetable('collapseAll'); return false;">折叠</button>
+                    <button type="button" id="showResourceDetail" class="btn btn-info">详情</button>
+                    <button type="button" id="refreshResource" class="btn btn-info">刷新</button>
+                </div>
+                <div class="box datable-box" style="margin-bottom: 10px">
+                    <!-- /.box-header -->
+                    <div class="row">
+                        <div class="col-md-12">
+                                <!--<div class="box-header with-border">-->
+                                    <!--<h3 class="box-title">操作</h3>-->
+                                    <!--&lt;!&ndash;<div class="box-tools pull-right">&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;</button>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                    <!--&lt;!&ndash; /.box-tools &ndash;&gt;-->
+                                <!--</div>-->
+                                <!-- /.box-header -->
+                                <div class="box-body">
+                                        <table id="resourceTreetable" class="tree_Table"></table>
+                                </div>
+                                <!-- /.box-body -->
+                            </div>
+                            <!-- /.box -->
+                    </div>
+
+
+                    <!--<div class="row">-->
+                    <!--<div class="col-xs-12">-->
+                    <!--<table id="resourceTreetable" >-->
+                    <!--&lt;!&ndash;<thead>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<tr>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<th><input type="checkbox">资源名称</th>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<th>资源类型</th>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<th>资源优先级</th>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<th>资源链接</th>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<th>父资源ID</th>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<th>备注</th>&ndash;&gt;-->
+                    <!--&lt;!&ndash;</tr>&ndash;&gt;-->
+                    <!--&lt;!&ndash;</thead>&ndash;&gt;-->
+                    <!--</table>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <!-- /.box-body -->
+                    <!--</div>-->
+                </div>
+                <!-- /.box -->
+            </div>
+            <!-- /.col -->
+        </div>
+
+    </section>
+
+    <!--树状表格-->
+    <script src="sys/js/resource.js"></script>
+    <script src="sys/js/public.js"></script>
+</div>

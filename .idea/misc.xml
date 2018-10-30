@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/blsb-pcweb-multiproject/blsb-pcweb Maven Webapp" />
+    <file type="web" url="file://$PROJECT_DIR$/blsb-pcweb-multiproject/blsb-uploadfile Maven Webapp" />
+    <file type="web" url="file://$PROJECT_DIR$/blsb-pcweb-multiproject/blsb-webapp-base" />
+    <file type="web" url="file://$PROJECT_DIR$/stock-pcweb-multiproject/stock-pcweb Maven Webapp" />
+    <file type="web" url="file://$PROJECT_DIR$/stock-pcweb-multiproject/stock-webapp-base" />
+  </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/blsb-base-multiproject/pom.xml" />
+        <option value="$PROJECT_DIR$/blsb-pcweb-multiproject/pom.xml" />
+        <option value="$PROJECT_DIR$/blsb-pcweb-multiproject/blsb-webapp-base/pom.xml" />
+        <option value="$PROJECT_DIR$/blsb-service-multiproject/pom.xml" />
+        <option value="$PROJECT_DIR$/blsb-pcweb-multiproject/blsb-uploadfile Maven Webapp/pom.xml" />
+        <option value="$PROJECT_DIR$/stock-base-multiproject/pom.xml" />
+        <option value="$PROJECT_DIR$/stock-pcweb-multiproject/pom.xml" />
+        <option value="$PROJECT_DIR$/stock-service-multiproject/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+  <component name="SvnBranchConfigurationManager">
+    <option name="myConfigurationMap">
+      <map>
+        <entry key="$PROJECT_DIR$">
+          <value>
+            <SvnBranchConfiguration />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

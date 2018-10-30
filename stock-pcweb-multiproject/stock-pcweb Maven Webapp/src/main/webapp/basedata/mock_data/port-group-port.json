@@ -1,0 +1,63 @@
+{
+  "recordsFiltered": 3,
+  "recordsTotal": 3,
+  "aaData": [
+    {
+      "accessGroup": 0,
+      "amendTime": "2017-05-25 14:22:43",
+      "amender": 1,
+      "baseModel": {
+        "creatorName": "test",
+        "organiztionName": "test"
+      },
+      "createTime": "2017-05-25 14:22:43",
+      "creator": 1,
+      "description": "",
+      "isDeleted": 0,
+      "portCode": "aa",
+      "portGroupId": 111,
+      "portGroupPortsId": 5,
+      "portName": "a",
+      "portNameCn": "",
+      "recordVersion": 0
+    },
+    {
+      "accessGroup": 0,
+      "amendTime": "2017-05-25 14:14:53",
+      "amender": 1,
+      "baseModel": {
+        "creatorName": "test",
+        "organiztionName": "test"
+      },
+      "createTime": "2017-05-25 14:14:53",
+      "creator": 1,
+      "description": "",
+      "isDeleted": 0,
+      "portCode": "333",
+      "portGroupId": 2211,
+      "portGroupPortsId": 4,
+      "portName": "22",
+      "portNameCn": "",
+      "recordVersion": 0
+    },
+    {
+      "accessGroup": 0,
+      "amendTime": "2017-05-25 13:32:10",
+      "amender": 1,
+      "baseModel": {
+        "creatorName": "test",
+        "organiztionName": "test"
+      },
+      "createTime": "2017-05-25 13:32:10",
+      "creator": 1,
+      "description": "",
+      "isDeleted": 0,
+      "portCode": "223",
+      "portGroupId": 1133,
+      "portGroupPortsId": 2,
+      "portName": "22",
+      "portNameCn": "22",
+      "recordVersion": 0
+    }
+  ]
+}

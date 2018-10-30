@@ -1,0 +1,66 @@
+<div id="tab_9107" class="log sys tab-page" role="tabpanel">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+        <!--<h1>-->
+            <!--系统管理-->
+            <!--<small>日志</small>-->
+        <!--</h1>-->
+        <!--<ol class="breadcrumb">-->
+            <!--<li><a href="#"><i class="fa fa-calendar"></i>系统管理</a></li>-->
+            <!--<li><a href="#">日志</a></li>-->
+            <!--<li class="active">查询</li>-->
+        <!--</ol>-->
+    </div>
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+                 <div class="col-md-12">
+                        <div class="box search-box">
+                         <div class="box-body">
+                             <form class="search-table form-inline" id="searchLogForm" role="form">
+                                     <div class="form-group">
+                                         <label>开始时间</label>
+                                         <input type="text" name="startDate" class="form-control date">
+                                     </div>
+                                     <div class="form-group">
+                                         <label>结束时间</label>
+                                         <input type="text" name="endDate" class="form-control date">
+                                     </div>
+                                     <div class="form-group">
+                                         <label>用户编号</label>
+                                         <input type="text" name="logUserId" class="form-control" placeholder="用户编号">
+                                     </div>
+                                <!-- <div class="form-item">
+                                     <label>操作内容</label>
+                                     <input type="text" name="logContent" class="form-control" placeholder="操作内容">
+                                 </div>-->
+                             </form>
+                             <div class="sm-wrqapper">
+                                 <button class="btn btn-info btn-size"  onclick="doSearch(log_table)"  id="btn_91050100" style="width: 54px;">
+                                     查找
+                                 </button>
+                                 <button class="btn btn-info btn-size search_reset" id="resetSeachLogForm" style="width: 54px;">
+                                     重置
+                                 </button>
+                             </div>
+                         </div>
+                     </div>
+                     <!--<div class="btn_group" style="visibility: hidden;">-->
+                         <!--<button class="btn btn-info">-->
+                             <!--占位-->
+                         <!--</button>-->
+                     <!--</div>-->
+                     <div class="box datable-box">
+                         <div class="box-body">
+                            <table id="log_table" class="table table-bordered table-striped">
+                            </table>
+                         </div>
+                     </div>
+                <!-- /.box -->
+                  </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </section>
+    <script src="sys/js/log.js"></script>
+</div>

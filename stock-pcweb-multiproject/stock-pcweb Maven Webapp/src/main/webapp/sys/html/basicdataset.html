@@ -1,0 +1,133 @@
+<div id="tab_9001" class="basicdataset basedata tab-page" role="tabpanel">
+   
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+            
+              
+                <!--end search box-->
+                <div class="modal fade" id="editbasicdatasetModal" tabindex="-1" role="dialog"
+                     aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close modal_close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title" id="editbasicdatasetModalTitle">增加</h4>
+                            </div>
+                            <div class="modal-body" style="padding: 10px 10px 40px" id="editbasicdatasetModalBody">
+                                <form id="editbasicdatasetForm" class="form-inline">
+                                    <table class="edit-table">
+                                        <tr>
+                                            <td>组织架构父节点</td>
+                                            <td>
+                                                <div hidden="true"><label>组织架构父节点id</label><input type="text" name="superiorId"/></div>
+                                                <div hidden="true"><label>创始人</label><input type="text" name="creator"/></div>
+                                                <div class="zTreeDemoBackground left">
+                                                    <!--<li class="title">&nbsp;&nbsp;<span class="highlight_red">选择城市时，按下 Ctrl 或 Cmd 键可以进行多选</span></li>-->
+                                                    <div class="title">
+                                                        <input type="text" class="basicdatasetResourceSel form-control form-control-line" onclick="showbasicdatasetMenu('basicdatasetRtreemenuContent');return false;" name="parentName" readonly placeholder="不选择或者选择一个父资源"/>
+                                                        <!--id="dutiesResourceSel"-->
+                                                        <!--<span class="input-group-addon"><i class="fa fa-angle-double-down"></i></span>-->
+                                                        <!--&nbsp;<a id="menuBtn" href="#" onclick="showMenu(); return false;">选择</a>-->
+                                                    </div>
+                                                </div>
+                                                <div class="basicdatasetRtreemenuContent menuContent" style="display:none; position: absolute;width:31%;z-index: 3000;top: 35px;">
+                                                    <ul id="basicdatasetTreeResouce" class="ztree" style="margin-top:0; width: 100%"></ul>
+                                                </div>
+                                            </td>
+                                              <td>地区名称</td>
+                                            <td><input type="text" class="form-control" name="cnName"/></td>
+
+                                        </tr>
+                                       
+                                    </table>
+
+                                    <div hidden="true">
+                                        <input type="text" name="saveType" id="saveType">
+                                        <!--<input type="text" class="form-control" name="governmentId"/>-->
+                                         <input type="text" class="form-control" name="basicDataSetId"/>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <div class="sm-wrapper">
+                                            <input type="submit" class="btn btn-primary" id="submitbasicdatasetStructureAddModal" value="确定"/>
+                                            <button type="button" class="btn btn-primary" data-dismiss="modal">取消</button>
+
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div><!-- /.modal-content -->
+                    </div><!-- /.modal -->
+                </div>
+                
+                 <div class="modal fade" id="importExcelbasicdatasetModal" tabindex="-1"
+                     role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" style="width: 490px;position: relative;top: 40%;">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close modal_close"
+                                        data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title">导入</h4>
+                            </div>
+                           
+
+                        </div>
+                        <!-- /.modal-content -->
+                    </div>
+                    <!-- /.modal -->
+                </div>
+
+                <div class="btn_group treeTable_btn_group">
+                    <button type="button" href="#" class="btn btn-info" onclick="jQuery('#resourceTreetable').treetable('expandAll'); return false;">
+                        展开
+                    </button>
+                    <button type="button" href="#" class="btn btn-info" onclick="jQuery('#resourceTreetable').treetable('collapseAll'); return false;">
+                        折叠
+                    </button>
+                    <button id="" onclick="basicdataset.addbasicdataset()" class="btn btn-info">
+                        增加
+                    </button>
+                    <button id="" onclick="basicdataset.editbasicdataset()" class="btn btn-info">
+                        修改
+                    </button>
+                    <button id="" onclick="basicdataset.deletebasicdataset()" class="btn btn-info">
+                        删除
+                    </button>
+                    <button id="refreshbasicdataset" onclick="basicdataset.refreshbasicdataset()" class="btn btn-info">
+                        刷新
+                    </button>
+                    
+ 
+                    <!--<table id="dutiesTreeTablehead" class="tree_Table">-->
+                    <!--</table>-->
+                    <!--<button id="showDutiesDetail" class="btn btn-info">-->
+                        <!--详情-->
+                    <!--</button>-->
+                </div>
+                <div class="box datable-box" style="margin-bottom: 10px">
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                      <!--   <div class="wrapbasicdatasetTreeTable"> -->
+                            <table id="resourceTreetable" class="tree_Table">
+                            </table>
+                      <!--   </div> -->
+                    </div>
+                    <!-- /.box-body -->
+                    <!--modify button-->
+
+                </div>
+                <!-- /.box -->
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </section>
+    <!-- DataTables -->
+    
+    <script src="sys/js/district_public.js"></script>
+    <script src="sys/js/basicdataSetTree.js"></script>
+    <script src="sys/js/basicdataset.js"></script>
+    <!--<script src="js/setToolbar.js"></script>-->
+
+</div>

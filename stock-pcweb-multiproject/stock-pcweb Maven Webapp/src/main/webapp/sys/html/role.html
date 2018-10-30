@@ -1,0 +1,209 @@
+<div id="tab_9103" class="role sys tab-page" role="tabpanel">
+    <!-- Content Header (Page header) -->
+    <!--<div class="content-header">-->
+        <!--<h1>-->
+            <!--系统管理-->
+            <!--<small>角色</small>-->
+        <!--</h1>-->
+        <!--<ol class="breadcrumb">-->
+            <!--<li><a href="#"><i class="fa fa-calendar"></i>系统管理</a></li>-->
+            <!--<li><a href="#">角色管理</a></li>-->
+            <!--<li class="active">表格</li>-->
+        <!--</ol>-->
+        <!---->
+
+    <!--</div>-->
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box search-box">
+                    <div class="box-body">
+                        <form class="search-table form-inline" id="searchForm">
+                                <div class="form-group">
+                                    <label>角色名称</label>
+                                    <input type="text" name="name" class="form-control" placeholder="角色名称">
+                                </div>
+                                <div class="form-group">
+                                    <label>角色描述</label>
+                                    <input type="text" name="description" class="form-control" placeholder="角色描述">
+                                </div>
+                        </form>
+                        <div class="sm-wrqapper">
+                            <input type="button" class="btn btn-info" id="searchUser" onclick="Role.doSearch()" value="查找"/>
+                            <button class="btn btn-info search_reset" id="role_reset">重置</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="btn_group">
+                    <button id="BTN_91030200" class="btn btn-info" onclick="Role.addRole()">
+                        新增
+                    </button>
+                    <button id="BTN_91030400" onclick="Role.deleteRole()" class="btn btn-info">
+                        删除
+                    </button>
+                    </button>
+                    <button id="BTN_91030300" onclick="Role.editRole()" class="btn btn-info">
+                        修改
+                    </button>
+                    <button id="refreshRole" onclick="Role.doSearch()" class="btn btn-info">刷新
+                    </button>
+                    <button id="authorizationRole" class="btn btn-info">
+                        授权
+                    </button>
+                    <button id="showRoleDetail" class="btn btn-info">
+                        详情
+                    </button>
+                    <div class="btn-group export-excel dataTable-dropdown-menu">
+                        <button type="button" class="btn btn-info">导出Excel</button>
+                        <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                            <span class="caret"></span>
+                            <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                        <ul class="dropdown-menu export-excel-menu" role="menu">
+                            <li id="Role_export-excel-selected"></li>
+                            <li id="Role_export-excel-current"></li>
+                            <li id="Role_export-excel-all"></li>
+                        </ul>
+                    </div>
+                    <!--<button id="Role_import-excel" onclick="customsDocumentAttachment.importExcel()" class="btn btn-info">-->
+                    <!--导出Excel-->
+                    <!--</button>-->
+                    <div class="btn-group export-print dataTable-dropdown-menu">
+                        <button type="button" class="btn btn-info">打印</button>
+                        <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                            <span class="caret"></span>
+                            <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                        <ul class="dropdown-menu export-print-menu" role="menu">
+                            <li id="Role_export-print-selected"></li>
+                            <li id="Role_export-print-all"></li>
+                        </ul>
+                    </div>
+                    <div class="btn-height btn-group" style="vertical-align: top;" id="Role_export-copy"></div>
+                    <div class="btn-height btn-group" style="vertical-align: top;"  id="Role_export-columnVisibility" ></div>
+
+                </div>
+                <div class="box datable-box">
+                    <div class="box-body">
+                        <table id="roleTable" class="table table-bordered table-striped" ></table>
+                    </div>
+                </div>
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </section>
+    <!-- 新增/修改弹出框 -->
+    <div class="modal fade" id="editRoleModal" tabindex="-1" role="dialog" aria-labelledby="roleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close modal_close" data-dismiss="modal" aria-hidden="true">&times;
+                    </button>
+                    <h4 class="modal-title" id="addModalLabel">新增</h4>
+                </div>
+                <div class="modal-body" style="padding: 5px">
+                    <form id="roleForm" class="form-inline">
+                        <table class="edit-table">
+                            <tr>
+                                <td>角色名称</td>
+                                <td><input type="text" class="form-control" name="name"/></td>
+                                <td>角色描述</td>
+                                <td><input type="text" class="form-control" name="description"/></td>
+                            </tr>
+                            <tr>
+                                <td>最后修改人</td>
+                                <td><input type="text" class="form-control" name="amenderName" readonly/></td>
+                                <td>最后修改时间</td>
+                                <td><input type="text" class="form-control" name="amendTime" readonly/></td>
+                            </tr>
+                        </table>
+
+                        <div>
+                            <input type="text" name="roleId" hidden="true">
+                            <input type="text" name="amender" value="1" hidden="true">
+                            <input type="text" name="saveType" hidden="true" value="insert">
+                        </div>
+                    </form>
+                    <div class="modal-footer">
+                        <div class="sm-wrapper">
+                            <button id="saveUserCancel" type="button" data-dismiss="modal" class="user_cancel btn btn-primary">
+                                取消
+                            </button>
+                            <button id="saveRole" type="button" data-dismiss="modal" class="user_save btn btn-primary">
+                                确定
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal -->
+    </div>
+    <div class="modal fade" id="editAuthorizeResource" tabindex="-1" role="dialog"
+         aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close modal_close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="editAuthorizeResourceTitle">增加</h4>
+                </div>
+                <div class="modal-body" style="padding: 20px" id="editAuthorizeResourceBody">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <form id="editAuthorizeResourceForm">
+                                <div>
+                                    <div class="zTreeDemoBackground left">
+                                        <div class="title form-group">
+                                            <label>资源</label>
+                                            <input type="text" hidden="true" name="roleId">
+                                            <input type="text" class="form-control" id="roleResourceSel"  name="parentName" readonly placeholder="请选择需要的资源"/>
+                                        </div>
+                                    </div>
+                                    <div id="roleRtreemenuContent" class="menuContent">
+                                        <ul id="roleTreeResouce" class="ztree" style="margin-top:0; width: 100%"></ul>
+                                    </div>
+
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-md-6">
+                            <!--<div class="mask"></div>-->
+                            <form id="editAuthorizeResourceOSForm">
+                                <div>
+                                    <div class="zTreeDemoBackground left">
+                                        <div class="title form-group">
+                                            <label style="width: 100%">组织架构</label>
+                                            <input type="text" hidden="true" name="roleId">
+                                            <input type="text" hidden="true" name="resourceId">
+                                            <input type="text" class="form-control" id="roleResourceOSSel"  name="parentName"  placeholder="请选择需要的资源"/>
+                                            <!--<span class="input-group-addon"><i class="fa fa-angle-double-down"></i></span>-->
+                                            <!--&nbsp;<a id="menuBtn" href="#" onclick="showMenu(); return false;">选择</a>-->
+                                        </div>
+                                    </div>
+                                    <div id="roleROStreemenuContent" class="menuContent">
+                                        <ul id="roleTreeResouceOS" class="ztree" style="margin-top:0; width:
+                                                    100%"></ul>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="sm-wrapper">
+                        <button type="button" class="btn btn btn-primary" data-dismiss="modal">取消</button>
+                        <button type="button" class="btn btn btn-primary" data-dismiss="modal" id="submitAuthorizeResourceModal">确定</button>
+                    </div>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+    <script src="sys/js/public.js"></script>
+    <script src="sys/js/roleTree.js"></script>
+    <script src="sys/js/role.js"></script>
+    <script src="js/setToolbar.js"></script>
+</div>

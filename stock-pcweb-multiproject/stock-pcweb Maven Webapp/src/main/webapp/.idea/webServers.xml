@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="1accf55f-785d-42bd-a2ed-df5a32432e48" name="localhost" url="http://localhost:8080">
+        <fileTransfer port="0" mountedRoot="F:\workspace-blsb\.metadata\.me_tcat7\webapps\blsb-webapp-pcweb" accessType="MOUNT" />
+      </webServer>
+    </option>
+  </component>
+</project>
