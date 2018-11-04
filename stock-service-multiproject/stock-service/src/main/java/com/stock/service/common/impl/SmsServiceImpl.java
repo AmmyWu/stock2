@@ -40,7 +40,7 @@ public class SmsServiceImpl implements SmsService {
 		
 		
 		try {
-			content = transferChinese(content+"【北仑区域卫生信息分析决策平台】");
+			content = transferChinese(content+"【股票交易平台】");
 			
 		} catch (UnsupportedEncodingException e) {
 			// TODO Auto-generated catch block

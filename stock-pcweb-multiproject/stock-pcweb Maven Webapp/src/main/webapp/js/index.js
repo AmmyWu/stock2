@@ -28,6 +28,7 @@ $(function () {
     });
     var loginingEmployee = $.cookie("loginingEmployee");//获取当前的user
     $("#loginingUserName").html(JSON.parse(loginingEmployee)['user']['username']);
+    // $("loginingUserName").innerHTML(localStorage.username);
     var  _menus = JSON.parse(localStorage.menu);
 
 

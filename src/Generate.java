@@ -40,7 +40,7 @@ public class Generate {
 
         List<Object> modellist = new ArrayList<Object>();
         //读取配置文件
-        File xmlFile = new File(System.getProperty("user.dir"), "/src/GenerateConfStock.xml");
+        File xmlFile = new File(System.getProperty("user.dir"), "\\src\\GenerateConfStock.xml");
         DocumentBuilderFactory builderFactory =  DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = builderFactory.newDocumentBuilder();
         Document doc = builder.parse(xmlFile);

@@ -60,10 +60,11 @@ function isLogin() {
 }
 
 function doLogin() {
+    console.log("login..");
     if (!checkAccountIntput($("#loginCellPhone")) || !checkPasswordInput($("#loginPassword")) ||
         !$.string.isNullOrEmpty($(".alert_span").text()))
         return false;
-    //checkStatus();
+    checkStatus();
     var type = $("#type").val();
     var test = hex_md5($('#loginPassword').val());
     if (!flag) {
@@ -78,7 +79,6 @@ function doLogin() {
             type: type
         },
         dataType: "json",
-
 
         success: function (returnMsg) {
             if (!returnMsg.status || !returnMsg.menuJSON) {
@@ -158,13 +158,14 @@ function loginSuccess(returnMsg) {
     if ("员工" == returnMsg.user.type) {
         //主菜单
         localStorage.menu = JSON.stringify(returnMsg.menuJSON);
+        // alert(returnMsg);
 
         localStorage.button = returnMsg.btnResourceIds;
-
+        localStorage.username = returnMsg.employee.employeeName;
         delete returnMsg.menuJSON;
         delete returnMsg.btnResourceIds;
         $.cookie('loginingEmployee', JSON.stringify(returnMsg), {
-            path: '/stock-pcweb'
+            path: '/stock'
         }); //expires: 7,
         window.location.href = "index-for-login.html";
         return;

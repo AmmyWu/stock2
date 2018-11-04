@@ -63,7 +63,7 @@ public class MyAuthenticationFilter extends UsernamePasswordAuthenticationFilter
 		}
 		
 	    response.setContentType("text/html;charset=utf-8"); 
-	    
+
 		String username = obtainUsername(request);
 		String password = obtainPassword(request);
 		String randomCode = obtainRandomcode(request);
@@ -71,8 +71,10 @@ public class MyAuthenticationFilter extends UsernamePasswordAuthenticationFilter
 		UsernamePasswordAuthenticationToken authRequest = new UsernamePasswordAuthenticationToken(username,password);/*MD5Encoder.getMD5Str(password)*/
 		
 		setDetails(request, authRequest);
-		
-		return this.getAuthenticationManager().authenticate(authRequest);
+
+		Authentication authentication = this.getAuthenticationManager().authenticate(authRequest);
+		return authentication;
+		//return this.getAuthenticationManager().authenticate(authRequest);
 	}	
 
 	

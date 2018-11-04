@@ -60,7 +60,7 @@
 		<property name="mapperLocations"><!--value="classpath*:com/stock/dao/mapper/**/*.xml"  -->
 		  <array>
                 <value>classpath:com/stock/dao/mapper/sys/*.xml</value>
-                <value>classpath:com/stock/dao/mapper/basedata/*.xml</value>
+                <value>classpath:com/stock/dao/mapper/stock/*.xml</value>
             </array>
         </property>
         

@@ -3,7 +3,7 @@
 <root>
     <!-- 模板配置
             模板文件路径和modelVO、controller、service对应需要的模板名-->
-    <ftl path="/src/ftl">
+    <ftl path="\\src\\ftl">
         <param name="modelVO">/modelVO.ftl</param>
         <param name="controller">/controller.ftl</param>
         <param name="service">/service.ftl</param>
@@ -13,53 +13,53 @@
                 path service包路径
                 packageName service中的java文件需要指定包名
                 -->
-        <service path="/stock-service-multiproject/stock-service-base/src/main/java/com/stock/service/stock">
-            <servicePackageName>com.stock.service.stock</servicePackageName>
-            <modelPackageName>com.stock.dao.model.stock</modelPackageName>
-            <parentPackageName>com.stock</parentPackageName>
-            <class name="BuyerEntrustPrice" id ="buyerEntrustPriceId"/>
-            <class name="BuyerEntrustPriceQueue" id ="buyerEntrustPriceQueueId"/>
-            <class name="BuyerHistoryEntrustRecord" id ="buyerHistoryEntrustRecordId"/>
-            <class name="BuyerSellerHistoryEntrustRecord" id ="buyerSellerHistoryEntrustRecordId"/>
-            <class name="SellerEntrustPrice" id ="sellerEntrustPriceId"/>
-            <class name="SellerEntrustPriceQueue" id ="sellerEntrustPriceQueueId"/>
-            <class name="SellerHistoryEntrustRecord" id ="sellerHistoryEntrustRecordId"/>
-            <class name="Stock" id ="stockId"/>
-            <class name="StockAccount" id ="stockAccountId"/>
-            <class name="StockExisting" id ="existingId"/>
-            <class name="StockOpenClosePrice" id ="stockOpenClosePriceId"/>
-            <class name="StockPriceChangePercent" id ="stockPriceChangePercentId"/>
-            <class name="StockTradeNum" id ="stockTradeNumId"/>
-            <class name="StockTradePrice" id ="stockTradePriceId"/>
-            <class name="StockTurnoverRate" id ="stockTernoverRateId"/>
-        </service>
+    <service path="\\stock-service-multiproject\\stock-service-base\\src\\main\\java\\com\\stock\\service\\stock">
+        <servicePackageName>com.stock.service.stock</servicePackageName>
+        <modelPackageName>com.stock.dao.model.stock</modelPackageName>
+        <parentPackageName>com.stock</parentPackageName>
+        <class name="BuyerEntrustPrice" id ="buyerEntrustPriceId"/>
+        <class name="BuyerEntrustPriceQueue" id ="buyerEntrustPriceQueueId"/>
+        <class name="BuyerHistoryEntrustRecord" id ="buyerHistoryEntrustRecordId"/>
+        <class name="BuyerSellerHistoryEntrustRecord" id ="buyerSellerHistoryEntrustRecordId"/>
+        <class name="SellerEntrustPrice" id ="sellerEntrustPriceId"/>
+        <class name="SellerEntrustPriceQueue" id ="sellerEntrustPriceQueueId"/>
+        <class name="SellerHistoryEntrustRecord" id ="sellerHistoryEntrustRecordId"/>
+        <class name="Stock" id ="stockId"/>
+        <class name="StockAccount" id ="stockAccountId"/>
+        <class name="StockExisting" id ="existingId"/>
+        <class name="StockOpenClosePrice" id ="stockOpenClosePriceId"/>
+        <class name="StockPriceChangePercent" id ="stockPriceChangePercentId"/>
+        <class name="StockTradeNum" id ="stockTradeNumId"/>
+        <class name="StockTradePrice" id ="stockTradePriceId"/>
+        <class name="StockTurnoverRate" id ="stockTernoverRateId"/>
+    </service>
 
 
-        <modelVO path="/stock-base-multiproject/stock-pojo/src/main/java/com/stock/pojo/vo/stock">
-            <modelVOPackageName>com.stock.pojo.vo.stock</modelVOPackageName>
-            <modelPackageName>com.stock.dao.model.stock</modelPackageName>
-            <class name="BuyerEntrustPrice" />
-            <class name="BuyerEntrustPriceQueue"/>
-            <class name="BuyerHistoryEntrustRecord"/>
-            <class name="BuyerSellerHistoryEntrustRecord"/>
-            <class name="SellerEntrustPrice" />
-            <class name="SellerEntrustPriceQueue" />
-            <class name="SellerHistoryEntrustRecord" />
-            <class name="Stock" />
-            <class name="StockAccount" />
-            <class name="StockExisting" />
-            <class name="StockOpenClosePrice" />
-            <class name="StockPriceChangePercent" />
-            <class name="StockTradeNum" />
-            <class name="StockTradePrice" />
-            <class name="StockTurnoverRate" />
+    <modelVO path="\\stock-base-multiproject\\stock-pojo\\src\\main\\java\\com\\stock\\pojo\\vo\\stock">
+        <modelVOPackageName>com.stock.pojo.vo.stock</modelVOPackageName>
+        <modelPackageName>com.stock.dao.model.stock</modelPackageName>
+        <class name="BuyerEntrustPrice" />
+        <class name="BuyerEntrustPriceQueue"/>
+        <class name="BuyerHistoryEntrustRecord"/>
+        <class name="BuyerSellerHistoryEntrustRecord"/>
+        <class name="SellerEntrustPrice" />
+        <class name="SellerEntrustPriceQueue" />
+        <class name="SellerHistoryEntrustRecord" />
+        <class name="Stock" />
+        <class name="StockAccount" />
+        <class name="StockExisting" />
+        <class name="StockOpenClosePrice" />
+        <class name="StockPriceChangePercent" />
+        <class name="StockTradeNum" />
+        <class name="StockTradePrice" />
+        <class name="StockTurnoverRate" />
 
-        </modelVO>
-        -->
+    </modelVO>
+    -->
     <!-- controller.ftl需要的信息
             path controller包路径
             packageName controller中的java文件需要指定包名 -->
-    <controller path="/stock-pcweb-multiproject/stock-webapp-base/src/main/java/com/stock/webapp/base/controller/stock">
+    <controller path="\\stock-pcweb-multiproject\\stock-webapp-base\\src\\main\\java\\com\\stock\\webapp\\base\\controller\\stock">
         <controllerPackageName>com.stock.webapp.base.controller.stock</controllerPackageName>
         <modelPackageName>com.stock.dao.model.stock</modelPackageName>
         <parentPackageName>com.stock</parentPackageName>
@@ -88,7 +88,7 @@
                 fieldName 字段名
                 fieldType 字段类型
                 fieldComment 注释-->
-    <model path="/stock-base-multiproject/stock-dao/src/main/java/com/stock/dao/model/stock">
+    <model path="\\stock-base-multiproject\\stock-dao\\src\\main\\java\\com\\stock\\dao\\model\\stock">
         <packageName>com.stock.dao.model.stock</packageName>
         <class>BuyerEntrustPrice</class>
         <class>BuyerEntrustPriceQueue</class>
@@ -106,5 +106,5 @@
         <class>StockTradePrice</class>
         <class>StockTurnoverRate</class>
     </model>
-    
+
 </root>
