@@ -1,10 +1,85 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<div id="tab_622" class="role sys tab-page" role="tabpanel">
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box datable-box">
+                    <div class="box-body">
+                        <table id="marketStock" class="table table-bordered table-striped"></table>
+                    </div>
+                </div>
+                <div></div>
+                <div class="btn_group">
+                        <button id="BTN_91090100" class="btn btn-info" onclick="Stock.sell()">
+                            委托卖出
+                        </button>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="box datable-box">
+                                <div class="box-body">
+                                    <table id="myStock" class="table table-bordered table-striped"></table>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.col -->
+                    </div>
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </section>
+    <!-- 新增/修改弹出框 -->
+    <div class="modal fade" id="editRoleModal" tabindex="-1" role="dialog" aria-labelledby="roleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close modal_close" data-dismiss="modal" aria-hidden="true">&times;
+                    </button>
+                    <h4 class="modal-title" id="addModalLabel">新增</h4>
+                </div>
+                <div class="modal-body" style="padding: 5px">
+                    <form id="roleForm" class="form-inline">
+                        <table class="edit-table">
+                            <tr>
+                                <td>证券代码</td>
+                                <td><input type="text" class="form-control" name="name" readonly /></td>
+                                <td>证券名称</td>
+                                <td><input type="text" class="form-control" name="description" readonly /></td>
+                            </tr>
+                            <tr>
+                                <td>买入价格</td>
+                                <td><input type="text" class="form-control" name="amenderName" readonly /></td>
+                                <td>可卖数量</td>
+                                <td><input type="text" class="form-control" name="amendTime" readonly /></td>
+                            </tr>
+                            <tr>
+                                <td>卖出数量</td>
+                                <td><input type="text" class="form-control" name="amenderName" /></td>
+                                <td>委托价格</td>
+                                <td><input type="text" class="form-control" name="amendTime" /></td>
+                            </tr>
+                        </table>
 
-</body>
-</html>
+                        <div>
+                            <input type="text" name="roleId" hidden="true">
+                            <input type="text" name="saveType" hidden="true" value="insert">
+                        </div>
+                    </form>
+                    <div class="modal-footer">
+                        <div class="sm-wrapper">
+                            <button id="saveUserCancel" type="button" data-dismiss="modal" class="user_cancel btn btn-primary">
+                                取消
+                            </button>
+                            <button id="saveRole" type="button" data-dismiss="modal" class="user_save btn btn-primary">
+                                确定
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal -->
+    </div>
+    <script src="bussinessOperation/js/sell.js"></script>
+</div>

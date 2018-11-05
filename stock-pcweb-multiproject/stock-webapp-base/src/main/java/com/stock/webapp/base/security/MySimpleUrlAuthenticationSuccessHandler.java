@@ -128,18 +128,16 @@ public class MySimpleUrlAuthenticationSuccessHandler extends
 
 		authResult.setMsg("登陆验证成功！");
 
-		// 客户登陆
-		 if ("客户".equals(user.getType())) {
-
+//		// 客户登陆
+//		 if ("用户".equals(user.getType())) {
+//
 //			 this.doLoginForCustomer(session, user);
+//
+//		 }
 
-		 }
-
-		// 员工登陆
+		 //员工登陆
 		if ("员工".equals(user.getType())) {
-
-			
-			this.doLoginForEmployee(request, authentication, authResult, user);
+			this.doLoginForUser(request, authentication, authResult, user);
 		}
 		
 		
@@ -148,8 +146,7 @@ public class MySimpleUrlAuthenticationSuccessHandler extends
 		 
 		 this.addLoginLog(authentication,sysAuthentication,user);
 	}
-	
-	
+
 	
 	/**
 	 * 
@@ -159,7 +156,7 @@ public class MySimpleUrlAuthenticationSuccessHandler extends
 	   * @param authResult
 	   * @param user
 	 */
-	private void doLoginForEmployee(HttpServletRequest request,
+	private void doLoginForUser(HttpServletRequest request,
 			Authentication authentication,AuthencationResult authResult,SysUser user){
 		
 		SysEmployee employee = employeeService.getEmployeeById(user.getUserDetailId());
@@ -235,26 +232,7 @@ public class MySimpleUrlAuthenticationSuccessHandler extends
 		return roleList;
 	}
 
-	// SysCustomer customer
-	public void doLoginForCustomer(HttpSession session, SysUser user) {
 
-		SysUserVO userEx = new SysUserVO();
-
-		try {
-
-			BeanUtils.copyProperties(userEx, user);
-
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
-		// 说明当前登陆的是客户，创建的所有记录的数据访问组为-1
-//		userEx.setCounterMan(-1);
-		userEx.setAccessGroup(-1);
-
-		session.setAttribute("loginingUser", userEx);
-	}
 
 	/**
 	 * 
@@ -296,5 +274,26 @@ public class MySimpleUrlAuthenticationSuccessHandler extends
 		 sysLoginLogService.insert(loginLog);
 	//
 	 }
+
+	// SysCustomer customer
+	public void doLoginForCustomer(HttpSession session, SysUser user) {
+
+		SysUserVO userEx = new SysUserVO();
+
+		try {
+
+			BeanUtils.copyProperties(userEx, user);
+
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		// 说明当前登陆的是客户，创建的所有记录的数据访问组为-1
+//		userEx.setCounterMan(-1);
+		userEx.setAccessGroup(-1);
+
+		session.setAttribute("loginingUser", userEx);
+	}
 
 }

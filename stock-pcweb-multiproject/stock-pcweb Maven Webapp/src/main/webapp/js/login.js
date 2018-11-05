@@ -70,6 +70,7 @@ function doLogin() {
     if (!flag) {
         return false;
     }
+    alert("login");
     $.ajax({
         type: "POST",
         url: getContextPath() + "j_spring_security_check", //baseURL
