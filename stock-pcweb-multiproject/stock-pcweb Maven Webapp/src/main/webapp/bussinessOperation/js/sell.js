@@ -147,7 +147,7 @@ var Stock = (function () {
         var price={};
         price.entrustPrice=entrustPrice;
         price.stockId=stockId.toString();
-        price.sellerEntrustPriceId="";
+        //price.sellerEntrustPriceId="";
         console.log(price);
         var priceQueue={};
         priceQueue.entrustNum=entrustNum;
@@ -157,7 +157,7 @@ var Stock = (function () {
             type: 'POST',
             data:
             {
-                stockExisting: JSON.stringify($('#sellStockForm').serializeObject()),
+                //stockExisting: JSON.stringify($('#sellStockForm').serializeObject()),
                 price: JSON.stringify(price),
                 priceQueue: JSON.stringify(priceQueue),
                 //entrustPrice:JSON.stringify(entrustPrice)
