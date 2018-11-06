@@ -136,18 +136,19 @@ public class SellerEntrustPriceServiceImpl implements SellerEntrustPriceService 
         BuyerEntrustPrice buyerEntrustPrice = buyerEntrustPriceService.findBuyerEntrustPriceByPriceAndStock(price);
         BuyerEntrustPriceQueue buyerEntrustPriceQueue = buyerEntrustPriceQueueService.findByBuyerEntrustPrice(buyerEntrustPrice.getBuyerEntrustPriceId());
 
-        StockAccount buyerStockAccount;
+        StockAccount buyerStockAccount;//资金账户
         StockAccount sellerStockAccount;
 
-        StockExisting buyerStockExisting;
+        StockExisting buyerStockExisting;//股票账户
         StockExisting sellerStockExisting;
-        if (buyerEntrustPriceQueue != null) {
+        if (buyerEntrustPriceQueue != null) {//如果买家当中有匹配的，那么改变卖家买家的资金账户和股票账户
             int stockId = buyerEntrustPrice.getStockId();
             buyerStockAccount = stockAccountService.findStockAccountByUser(String.valueOf(buyerEntrustPriceQueue.getUserId()));
             sellerStockAccount = stockAccountService.findStockAccountByUser();
 
             buyerStockExisting = stockExistingService.findStockExistingByAccountAndStock(buyerStockAccount.getStockAccountId(), stockId);
             sellerStockExisting = stockExistingService.findStockExistingByAccountAndStock(sellerStockAccount.getStockAccountId(), stockId);
+
 
 
         }
