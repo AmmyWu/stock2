@@ -1,7 +1,6 @@
 package com.stock.service.stock.impl;
 
 
-
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -9,8 +8,16 @@ import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpSession;
 
+import com.stock.dao.mapper.stock.StockAccountMapper;
+import com.stock.dao.mapper.stock.StockMapper;
+import com.stock.dao.model.stock.Stock;
+import com.stock.dao.model.stock.StockAccount;
+import com.stock.dao.model.sys.SysUser;
+import com.stock.service.stock.StockAccountService;
 import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
 import net.sf.json.JsonConfig;
 
 import org.springframework.beans.BeanUtils;
@@ -37,97 +44,112 @@ import com.stock.service.stock.StockExistingService;
 @Service
 public class StockExistingServiceImpl implements StockExistingService {
 
-	@Autowired
-	private StockExistingMapper stockExistingMapper;
+    @Autowired
+    private StockExistingMapper stockExistingMapper;
 
-	@Autowired
-	private DataAuthorizeService dataAuthorizeService;
+    @Autowired
+    private DataAuthorizeService dataAuthorizeService;
 
-	private CommonService<StockExisting, StockExistingMapper, StockExistingExample> commonService;
-	//注入commonService
-	@Resource(name = "commonService")
-	public void setCommonService(CommonService<StockExisting, StockExistingMapper, StockExistingExample> commonService) {
-		this.commonService = commonService;
-	}
+    @Autowired
+    StockAccountService stockAccountService;
 
-	@Override
-	public RequestResultVO insert(StockExisting stockExisting) {
-		if(stockExisting == null){
-			throw new BizException(Public.ERROR_700);
-		}
-		dataAuthorizeService.addDataAuthorizeInfo(stockExisting, "insert");
-    stockExistingMapper.insert(stockExisting);
-		return ResultBuilder.buildSuccessResult(Public.SUCCESS_200, "");
-	}
+    @Autowired
+    StockMapper stockMapper;
 
-	@Override
-	public RequestResultVO update(StockExisting stockExisting) {
-		if(stockExisting == null || stockExisting.getExistingId() == null){
-			throw new BizException(Public.ERROR_700);
-		}
-		dataAuthorizeService.addDataAuthorizeInfo(stockExisting, "update");
-    stockExistingMapper.updateByPrimaryKeySelective(stockExisting);
-		return ResultBuilder.buildSuccessResult(Public.SUCCESS_300, "");
-	}
+    private CommonService<StockExisting, StockExistingMapper, StockExistingExample> commonService;
 
-	@Override
-	public RequestResultVO delete(List<Integer> existingIds) {
-    if(existingIds == null || existingIds.size() == 0){
-    throw new BizException(Public.ERROR_700);
+
+    //注入commonService
+    @Resource(name = "commonService")
+    public void setCommonService(CommonService<StockExisting, StockExistingMapper, StockExistingExample> commonService) {
+        this.commonService = commonService;
     }
-    StockExistingExample stockExistingExample = new StockExistingExample();
-    stockExistingExample.createCriteria().andExistingIdIn(existingIds);
-    stockExistingMapper.deleteByExample(stockExistingExample);
-    return ResultBuilder.buildSuccessResult(Public.SUCCESS_400, "");
+
+    @Override
+    public RequestResultVO insert(StockExisting stockExisting) {
+        if (stockExisting == null) {
+            throw new BizException(Public.ERROR_700);
+        }
+        dataAuthorizeService.addDataAuthorizeInfo(stockExisting, "insert");
+        stockExistingMapper.insert(stockExisting);
+        return ResultBuilder.buildSuccessResult(Public.SUCCESS_200, "");
+    }
+
+    @Override
+    public RequestResultVO update(StockExisting stockExisting) {
+        if (stockExisting == null || stockExisting.getExistingId() == null) {
+            throw new BizException(Public.ERROR_700);
+        }
+        dataAuthorizeService.addDataAuthorizeInfo(stockExisting, "update");
+        stockExistingMapper.updateByPrimaryKeySelective(stockExisting);
+        return ResultBuilder.buildSuccessResult(Public.SUCCESS_300, "");
+    }
+
+    @Override
+    public RequestResultVO delete(List<Integer> existingIds) {
+        if (existingIds == null || existingIds.size() == 0) {
+            throw new BizException(Public.ERROR_700);
+        }
+        StockExistingExample stockExistingExample = new StockExistingExample();
+        stockExistingExample.createCriteria().andExistingIdIn(existingIds);
+        stockExistingMapper.deleteByExample(stockExistingExample);
+        return ResultBuilder.buildSuccessResult(Public.SUCCESS_400, "");
     }
 
     @Override
     public Map<String, Object> getByPage(String keys, Integer pageSize,
-    Integer pageNow) {
-    StockExistingExample stockExistingExample = new StockExistingExample();
-    this.setCriteria(keys, stockExistingExample);
-    int totalrecords = stockExistingMapper.countByExample(stockExistingExample);
+                                         Integer pageNow) {
+        StockExistingExample stockExistingExample = new StockExistingExample();
+        this.setCriteria(keys, stockExistingExample);
+        int totalrecords = stockExistingMapper.countByExample(stockExistingExample);
 
-    Page page = new Page();
-    page.setBegin(pageNow);
-    page.setLength(pageSize);
-    stockExistingExample.setOrderByClause("existingId desc");
-    stockExistingExample.setPage(page);
-    List<StockExisting> stockExistings = stockExistingMapper.selectByExample(stockExistingExample);
+        Page page = new Page();
+        page.setBegin(pageNow);
+        page.setLength(pageSize);
+        stockExistingExample.setOrderByClause("existing_id desc");
+        stockExistingExample.setPage(page);
+        List<StockExisting> stockExistings = stockExistingMapper.selectByExample(stockExistingExample);
+        Map<String, Object> map = new HashMap<String, Object>();
+        JsonConfig config = new JsonConfig();
 
-    Map<String, Object> map = new HashMap<String, Object>();
-    JsonConfig config = new JsonConfig();
-    config.setIgnoreDefaultExcludes(false);
-    config.registerJsonValueProcessor(Date.class,new DateJsonValueProcessor("yyyy-MM-dd"));
-    try {
-    map.put("aaData", JSONArray.fromObject(this.creatVos(stockExistings), config));
-    } catch (Exception e) {
-    LogUtil.error(ErrorLoggers.ERROR_LOGGER, e.getMessage());
-    throw new BizException(Public.ERROR_100);
+        config.setIgnoreDefaultExcludes(false);
+        config.registerJsonValueProcessor(Date.class, new DateJsonValueProcessor("yyyy-MM-dd"));
+        try {
+            map.put("aaData", JSONArray.fromObject(this.creatVos(stockExistings), config));
+        } catch (Exception e) {
+            LogUtil.error(ErrorLoggers.ERROR_LOGGER, e.getMessage());
+            throw new BizException(Public.ERROR_100);
+        }
+        map.put("recordsTotal", totalrecords);
+        map.put("recordsFiltered", totalrecords);
+
+        return map;
     }
-    map.put("recordsTotal", totalrecords);
-    map.put("recordsFiltered", totalrecords);
 
-    return map;
-    }
     private void setCriteria(String keys, StockExistingExample stockExistingExample) {
-    if (keys == null || "{}".equals(keys))
-    return;
-    //JSONObject jKeys = JSONObject.fromObject(keys);
-    //Criteria criteria = stockExistingExample.createCriteria();
+        if (keys == null || "{}".equals(keys))
+            return;
+        JSONObject jKeys = JSONObject.fromObject(keys);
+        StockExistingExample.Criteria criteria = stockExistingExample.createCriteria();
 
+        StockAccount stockAccount=stockAccountService.findStockAccountByUser();
+        criteria.andStockAccountIdEqualTo(stockAccount.getStockAccountId());
     }
-    private List<StockExistingVO> creatVos(List<StockExisting> stockExistings) throws Exception{
+
+    private List<StockExistingVO> creatVos(List<StockExisting> stockExistings) throws Exception {
         List<StockExistingVO> stockExistingVOs = new ArrayList<StockExistingVO>();
-            for(StockExisting stockExisting : stockExistings){
+        for (StockExisting stockExisting : stockExistings) {
             StockExistingVO stockExistingVO = new StockExistingVO();
             BeanUtils.copyProperties(stockExisting, stockExistingVO);
+            Stock stock=stockMapper.selectByPrimaryKey(stockExistingVO.getStockId());
+            stockExistingVO.setStockCode(stock.getStockCode());
+            stockExistingVO.setStockName(stock.getStockName());
             commonService.addBaseModel(stockExisting, stockExistingVO);
             stockExistingVOs.add(stockExistingVO);
-            }
-            return stockExistingVOs;
-            }
-            }
+        }
+        return stockExistingVOs;
+    }
+}
 
 
 
