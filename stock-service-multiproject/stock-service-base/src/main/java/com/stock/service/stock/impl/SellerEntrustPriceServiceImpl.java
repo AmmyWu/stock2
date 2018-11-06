@@ -163,7 +163,7 @@ public class SellerEntrustPriceServiceImpl implements SellerEntrustPriceService 
             stockExistingService.update(sellerStockExisting);
 
             buyerEntrustPriceQueueService.delete(Arrays.asList(buyerEntrustPriceQueue.getBuyerEntrustPriceQueueId()));
-            sellerEntrustPriceQueueService.delete(Arrays.asList(SellerEntrustPriceQueue.))
+            //sellerEntrustPriceQueueService.delete(Arrays.asList(SellerEntrustPriceQueue.))
 
             //改变资金账户
             double total = entrustNum * Double.valueOf(priceKeys.getString("entrustPrice"));
@@ -174,6 +174,7 @@ public class SellerEntrustPriceServiceImpl implements SellerEntrustPriceService 
         }else{//去卖家价格队列中找
 
         }
+        return null;
     }
 
     @Override
