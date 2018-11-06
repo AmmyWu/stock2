@@ -19,7 +19,7 @@ public interface SellerEntrustPriceService {
 
     public RequestResultVO sell(String price,String priceQueue);
 
-    public BuyerEntrustPrice findSellerEntrustPriceByPriceAndStock(String priceJson);
+    public SellerEntrustPrice findSellerEntrustPriceByPriceAndStock(String priceJson);
 
     }
 

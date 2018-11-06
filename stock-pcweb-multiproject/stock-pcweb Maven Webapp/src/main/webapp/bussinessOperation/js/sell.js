@@ -153,13 +153,14 @@ var Stock = (function () {
         priceQueue.entrustNum=entrustNum;
         console.log(priceQueue);
         $.ajax({
-            url: getContextPath() + 'sellerEntrustPrice/' + saveType + '.do',
+            url: getContextPath() + 'sellerEntrustPrice/sell.do',
             type: 'POST',
             data:
             {
                 stockExisting: JSON.stringify($('#sellStockForm').serializeObject()),
                 price: JSON.stringify(price),
-                priceQueue: JSON.stringify(priceQueue)
+                priceQueue: JSON.stringify(priceQueue),
+                //entrustPrice:JSON.stringify(entrustPrice)
             },
             dataType: 'json',
             async: false,
