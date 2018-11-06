@@ -23,7 +23,7 @@ public interface HttpResponseConstants {
 		/**保存成功**/
 		public static final String SUCCESS_100 = "保存成功";
 		/**新增成功**/
-		public static final String SUCCESS_200 = "新增成功";
+		public static final String SUCCESS_200 = "委托成功";
 		/**修改成功**/
 		public static final String SUCCESS_300 = "修改成功";
 		/**删除成功**/
@@ -50,6 +50,7 @@ public interface HttpResponseConstants {
 		public static final String ERROR_800 = "未知异常";
 		/**账号或密码错误**/
 		public static final String ERROR_900 = "账号或密码错误";
+
 	}
 
 	/**
