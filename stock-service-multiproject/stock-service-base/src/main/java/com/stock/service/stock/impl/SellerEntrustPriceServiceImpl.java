@@ -1,11 +1,7 @@
 package com.stock.service.stock.impl;
 
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import javax.annotation.Resource;
 
@@ -62,6 +58,10 @@ public class SellerEntrustPriceServiceImpl implements SellerEntrustPriceService 
 
     @Autowired
     private BuyerEntrustPriceQueueService buyerEntrustPriceQueueService;
+
+    @Autowired
+    private SellerEntrustPriceQueueService sellerEntrustPriceQueueService;
+
     private CommonService<SellerEntrustPrice, SellerEntrustPriceMapper, SellerEntrustPriceExample> commonService;
 
     //注入commonService
@@ -136,11 +136,18 @@ public class SellerEntrustPriceServiceImpl implements SellerEntrustPriceService 
         BuyerEntrustPrice buyerEntrustPrice = buyerEntrustPriceService.findBuyerEntrustPriceByPriceAndStock(price);
         BuyerEntrustPriceQueue buyerEntrustPriceQueue = buyerEntrustPriceQueueService.findByBuyerEntrustPrice(buyerEntrustPrice.getBuyerEntrustPriceId());
 
+
+
         StockAccount buyerStockAccount;//资金账户
         StockAccount sellerStockAccount;
 
         StockExisting buyerStockExisting;//股票账户
         StockExisting sellerStockExisting;
+
+        JSONObject priceQueueKeys = JSONObject.fromObject(priceQueue);
+        JSONObject priceKeys = JSONObject.fromObject(price);
+
+        int entrustNum = Integer.parseInt(priceQueueKeys.getString("entrustNum"));
         if (buyerEntrustPriceQueue != null) {//如果买家当中有匹配的，那么改变卖家买家的资金账户和股票账户
             int stockId = buyerEntrustPrice.getStockId();
             buyerStockAccount = stockAccountService.findStockAccountByUser(String.valueOf(buyerEntrustPriceQueue.getUserId()));
@@ -149,7 +156,22 @@ public class SellerEntrustPriceServiceImpl implements SellerEntrustPriceService 
             buyerStockExisting = stockExistingService.findStockExistingByAccountAndStock(buyerStockAccount.getStockAccountId(), stockId);
             sellerStockExisting = stockExistingService.findStockExistingByAccountAndStock(sellerStockAccount.getStockAccountId(), stockId);
 
+            //改变持仓
+            buyerStockExisting.setStockAvailableSellNum(buyerStockExisting.getStockAvailableSellNum() + entrustNum);
+            sellerStockExisting.setStockAvailableSellNum(sellerStockExisting.getStockAvailableSellNum() - entrustNum);
+            stockExistingService.update(buyerStockExisting);
+            stockExistingService.update(sellerStockExisting);
 
+            buyerEntrustPriceQueueService.delete(Arrays.asList(buyerEntrustPriceQueue.getBuyerEntrustPriceQueueId()));
+            sellerEntrustPriceQueueService.delete(Arrays.asList(SellerEntrustPriceQueue.))
+
+            //改变资金账户
+            double total = entrustNum * Double.valueOf(priceKeys.getString("entrustPrice"));
+            buyerStockAccount.setAvailableFund(buyerStockAccount.getAvailableFund() - total);
+            sellerStockAccount.setAvailableFund(sellerStockAccount.getAvailableFund()+total);
+            stockAccountService.update(buyerStockAccount);
+            stockAccountService.update(sellerStockAccount);
+        }else{//去卖家价格队列中找
 
         }
     }
@@ -173,7 +195,6 @@ public class SellerEntrustPriceServiceImpl implements SellerEntrustPriceService 
         return sellerEntrustPriceVOs;
     }
 
-    public void
 }
 
 
