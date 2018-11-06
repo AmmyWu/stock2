@@ -126,13 +126,26 @@ public class StockExistingServiceImpl implements StockExistingService {
         return map;
     }
 
+    @Override
+    public StockExisting findStockExistingByAccountAndStock(int accountId, int stockId) {
+        StockExistingExample stockExistingExample = new StockExistingExample();
+        StockExistingExample.Criteria criteria = stockExistingExample.createCriteria();
+        criteria.andStockAccountIdEqualTo(accountId);
+        criteria.andStockIdEqualTo(stockId);
+        List<StockExisting> stockExistings = stockExistingMapper.selectByExample(stockExistingExample);
+        if (stockExistings.size() != 0)
+            return stockExistings.get(0);
+        else
+            return null;
+    }
+
     private void setCriteria(String keys, StockExistingExample stockExistingExample) {
         if (keys == null || "{}".equals(keys))
             return;
         JSONObject jKeys = JSONObject.fromObject(keys);
         StockExistingExample.Criteria criteria = stockExistingExample.createCriteria();
 
-        StockAccount stockAccount=stockAccountService.findStockAccountByUser();
+        StockAccount stockAccount = stockAccountService.findStockAccountByUser();
         criteria.andStockAccountIdEqualTo(stockAccount.getStockAccountId());
     }
 
@@ -141,7 +154,7 @@ public class StockExistingServiceImpl implements StockExistingService {
         for (StockExisting stockExisting : stockExistings) {
             StockExistingVO stockExistingVO = new StockExistingVO();
             BeanUtils.copyProperties(stockExisting, stockExistingVO);
-            Stock stock=stockMapper.selectByPrimaryKey(stockExistingVO.getStockId());
+            Stock stock = stockMapper.selectByPrimaryKey(stockExistingVO.getStockId());
             stockExistingVO.setStockCode(stock.getStockCode());
             stockExistingVO.setStockName(stock.getStockName());
             commonService.addBaseModel(stockExisting, stockExistingVO);

@@ -16,6 +16,7 @@ public interface StockExistingService {
 
     public Map<String,Object> getByPage(String keys, Integer pageSize,Integer pageNow);
 
+    public StockExisting findStockExistingByAccountAndStock(int accountId,int stockId);
     }
 
 

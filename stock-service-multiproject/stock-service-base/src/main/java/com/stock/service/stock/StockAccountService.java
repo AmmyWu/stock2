@@ -16,6 +16,9 @@ public interface StockAccountService {
 
     public Map<String,Object> getByPage(String keys, Integer pageSize,Integer pageNow);
 
+	public StockAccount findStockAccountByUser();
+
+	public StockAccount findStockAccountByUser(String userId);
     }
 
 

@@ -1,28 +1,50 @@
 <div id="tab_622" class="role sys tab-page" role="tabpanel">
+    <!-- <div id="result"></div> -->
     <section class="content">
         <div class="row">
             <div class="col-xs-12">
                 <div class="box datable-box">
                     <div class="box-body">
-                        <table id="marketStock" class="table table-bordered table-striped"></table>
+                        <table id="marketStock" class="table table-bordered table-striped">
+                            <tr>
+                            </tr>
+                            <tr>
+                            </tr>
+                            <tr>
+                            </tr>
+                            <tr>
+                            </tr>
+                            <tr>
+                            </tr>
+                            <tr>
+                            </tr>
+                            <tr>
+                            </tr>
+                            <tr>
+                            </tr>
+                            <tr>
+                            </tr>
+                            <tr>
+                            </tr>
+                        </table>
                     </div>
                 </div>
                 <div></div>
                 <div class="btn_group">
-                        <button id="BTN_91090100" class="btn btn-info" onclick="Stock.sell()">
-                            委托卖出
-                        </button>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <div class="box datable-box">
-                                <div class="box-body">
-                                    <table id="myStock" class="table table-bordered table-striped"></table>
-                                </div>
+                    <button id="BTN_91090100" class="btn btn-info" onclick="Stock.sell()">
+                        委托卖出
+                    </button>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="box datable-box">
+                            <div class="box-body">
+                                <table id="myStock" class="table table-bordered table-striped"></table>
                             </div>
                         </div>
-                        <!-- /.col -->
                     </div>
+                    <!-- /.col -->
+                </div>
             </div>
             <!-- /.col -->
         </div>
@@ -38,30 +60,30 @@
                     <h4 class="modal-title" id="addModalLabel">新增</h4>
                 </div>
                 <div class="modal-body" style="padding: 5px">
-                    <form id="roleForm" class="form-inline">
+                    <form id="sellStockForm" class="form-inline">
                         <table class="edit-table">
                             <tr>
                                 <td>证券代码</td>
-                                <td><input type="text" class="form-control" name="name" readonly /></td>
+                                <td><input type="text" class="form-control" name="stockCode" readonly /></td>
                                 <td>证券名称</td>
-                                <td><input type="text" class="form-control" name="description" readonly /></td>
+                                <td><input type="text" class="form-control" name="stockName" readonly /></td>
                             </tr>
                             <tr>
                                 <td>买入价格</td>
-                                <td><input type="text" class="form-control" name="amenderName" readonly /></td>
+                                <td><input type="text" class="form-control" name="costPrice" readonly /></td>
                                 <td>可卖数量</td>
-                                <td><input type="text" class="form-control" name="amendTime" readonly /></td>
+                                <td><input type="text" class="form-control" name="stockAvailableSellNum" readonly /></td>
                             </tr>
                             <tr>
-                                <td>卖出数量</td>
-                                <td><input type="text" class="form-control" name="amenderName" /></td>
+                                <td>卖出数量(X100)</td>
+                                <td><input type="text" class="form-control" name="entrustNum" /></td>
                                 <td>委托价格</td>
-                                <td><input type="text" class="form-control" name="amendTime" /></td>
+                                <td><input type="text" class="form-control" name="entrustPrice" /></td>
                             </tr>
                         </table>
 
                         <div>
-                            <input type="text" name="roleId" hidden="true">
+                            <input type="text" name="sellerEntrustPriceId" hidden="true">
                             <input type="text" name="saveType" hidden="true" value="insert">
                         </div>
                     </form>
@@ -82,4 +104,6 @@
         <!-- /.modal -->
     </div>
     <script src="bussinessOperation/js/sell.js"></script>
+    <script src="bussinessOperation/js/sellStockInterface.js"></script>
+
 </div>

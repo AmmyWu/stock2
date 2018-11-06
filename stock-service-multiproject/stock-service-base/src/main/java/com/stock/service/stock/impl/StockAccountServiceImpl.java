@@ -128,6 +128,15 @@ public class StockAccountServiceImpl implements StockAccountService {
         List<StockAccount> stockAccounts=stockAccountMapper.selectByExample(stockAccountExample);
         return stockAccounts.get(0);
     }
+    @Override
+    public StockAccount findStockAccountByUser(String userId) {
+        StockAccountExample stockAccountExample = new StockAccountExample();
+        StockAccountExample.Criteria criteria = stockAccountExample.createCriteria();
+        JSONObject jKeys = JSONObject.fromObject(userId);
+        criteria.andUserIdEqualTo(Integer.parseInt(jKeys.getString("userId")));
+        List<StockAccount> stockAccounts=stockAccountMapper.selectByExample(stockAccountExample);
+        return stockAccounts.get(0);
+    }
 
     private void setCriteria(String keys, StockAccountExample stockAccountExample) {
         if (keys == null || "{}".equals(keys))

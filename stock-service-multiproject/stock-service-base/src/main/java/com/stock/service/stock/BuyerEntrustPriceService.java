@@ -16,6 +16,8 @@ public interface BuyerEntrustPriceService {
 
     public Map<String,Object> getByPage(String keys, Integer pageSize,Integer pageNow);
 
+    public BuyerEntrustPrice findBuyerEntrustPriceByPriceAndStock(String priceJson);
+
     }
 
 

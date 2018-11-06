@@ -16,6 +16,8 @@ public interface SellerEntrustPriceService {
 
     public Map<String,Object> getByPage(String keys, Integer pageSize,Integer pageNow);
 
+    public RequestResultVO sell(String price,String priceQueue);
+
     }
 
 
