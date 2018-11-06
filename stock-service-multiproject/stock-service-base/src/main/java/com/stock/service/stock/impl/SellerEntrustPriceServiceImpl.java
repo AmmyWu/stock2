@@ -146,25 +146,25 @@ public class SellerEntrustPriceServiceImpl implements SellerEntrustPriceService 
 
         SellerEntrustPrice sellerEntrustPrice = findSellerEntrustPriceByPriceAndStock(price);
 
-
-        StockAccount buyerStockAccount;//资金账户
-        StockAccount sellerStockAccount;
-
-        StockExisting buyerStockExisting;//股票账户
-        StockExisting sellerStockExisting;
-
         JSONObject priceQueueKeys = JSONObject.fromObject(priceQueue);
         JSONObject priceKeys = JSONObject.fromObject(price);
+
+        StockAccount buyerStockAccount;//资金账户
+        StockAccount sellerStockAccount= stockAccountService.findStockAccountByUser();;
+
+        StockExisting buyerStockExisting;//股票账户
+        StockExisting sellerStockExisting=stockExistingService.findStockExistingByAccountAndStock(sellerStockAccount.getStockAccountId(), Integer.parseInt(priceKeys.getString("stockId")));;
+
+
 
         int entrustNum = Integer.parseInt(priceQueueKeys.getString("entrustNum"));
         if (buyerEntrustPrice != null) {//如果买家当中有匹配的，那么改变卖家买家的资金账户和股票账户
             BuyerEntrustPriceQueue buyerEntrustPriceQueue = buyerEntrustPriceQueueService.findByBuyerEntrustPrice(buyerEntrustPrice.getBuyerEntrustPriceId());
             int stockId = buyerEntrustPrice.getStockId();
             buyerStockAccount = stockAccountService.findStockAccountByUser(String.valueOf(buyerEntrustPriceQueue.getUserId()));
-            sellerStockAccount = stockAccountService.findStockAccountByUser();
+
 
             buyerStockExisting = stockExistingService.findStockExistingByAccountAndStock(buyerStockAccount.getStockAccountId(), stockId);
-            sellerStockExisting = stockExistingService.findStockExistingByAccountAndStock(sellerStockAccount.getStockAccountId(), stockId);
 
             //改变持仓
             buyerStockExisting.setStockAvailableSellNum(buyerStockExisting.getStockAvailableSellNum() + entrustNum);
@@ -202,6 +202,8 @@ public class SellerEntrustPriceServiceImpl implements SellerEntrustPriceService 
             dataAuthorizeService.addDataAuthorizeInfo(sellerEntrustPriceQueue, "insert");
             sellerEntrustPriceQueueMapper.insert(sellerEntrustPriceQueue);
         }
+        sellerStockExisting.setStockAvailableSellNum(sellerStockExisting.getStockAvailableSellNum() - entrustNum);
+        stockExistingService.update(sellerStockExisting);
         return ResultBuilder.buildSuccessResult(Public.SUCCESS_200, "");
     }
 
@@ -213,7 +215,10 @@ public class SellerEntrustPriceServiceImpl implements SellerEntrustPriceService 
         criteria.andEntrustPriceEqualTo(Double.parseDouble(jKeys.getString("entrustPrice")));
         criteria.andStockIdEqualTo(Integer.parseInt(jKeys.getString("stockId")));
         List<SellerEntrustPrice> sellerEntrustPrices = sellerEntrustPriceMapper.selectByExample(sellerEntrustPriceExample);
-        return sellerEntrustPrices.get(0);
+        if (sellerEntrustPrices.size() != 0)
+            return sellerEntrustPrices.get(0);
+        else
+            return null;
     }
 
     private void setCriteria(String keys, SellerEntrustPriceExample sellerEntrustPriceExample) {

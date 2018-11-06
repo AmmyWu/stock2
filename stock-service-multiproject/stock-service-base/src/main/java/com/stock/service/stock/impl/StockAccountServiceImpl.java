@@ -123,8 +123,8 @@ public class StockAccountServiceImpl implements StockAccountService {
     public StockAccount findStockAccountByUser() {
         SysUser user = (SysUser) httpSession.getAttribute("loginingUser");
         StockAccountExample stockAccountExample = new StockAccountExample();
-
-        this.setCriteria("{userId:"+user.getUserId()+"}",stockAccountExample);
+        StockAccountExample.Criteria criteria = stockAccountExample.createCriteria();
+        criteria.andUserIdEqualTo(user.getUserId());
         List<StockAccount> stockAccounts=stockAccountMapper.selectByExample(stockAccountExample);
         return stockAccounts.get(0);
     }
@@ -132,8 +132,7 @@ public class StockAccountServiceImpl implements StockAccountService {
     public StockAccount findStockAccountByUser(String userId) {
         StockAccountExample stockAccountExample = new StockAccountExample();
         StockAccountExample.Criteria criteria = stockAccountExample.createCriteria();
-        JSONObject jKeys = JSONObject.fromObject(userId);
-        criteria.andUserIdEqualTo(Integer.parseInt(jKeys.getString("userId")));
+        criteria.andUserIdEqualTo(Integer.parseInt(userId));
         List<StockAccount> stockAccounts=stockAccountMapper.selectByExample(stockAccountExample);
         return stockAccounts.get(0);
     }
@@ -144,9 +143,9 @@ public class StockAccountServiceImpl implements StockAccountService {
         JSONObject jKeys = JSONObject.fromObject(keys);
         StockAccountExample.Criteria criteria = stockAccountExample.createCriteria();
 
-        if (jKeys.containsKey("userId") && !StringUtil.isBlank(jKeys.getString("userId"))) {
-            criteria.andUserIdEqualTo(Integer.parseInt(jKeys.getString("userId")));
-        }
+//        if (jKeys.containsKey("userId") && !StringUtil.isBlank(jKeys.getString("userId"))) {
+//            criteria.andUserIdEqualTo(Integer.parseInt(jKeys.getString("userId")));
+//        }
 
     }
 

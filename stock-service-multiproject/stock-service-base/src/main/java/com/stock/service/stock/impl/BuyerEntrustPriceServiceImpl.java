@@ -120,7 +120,12 @@ public class BuyerEntrustPriceServiceImpl implements BuyerEntrustPriceService {
         criteria.andEntrustPriceEqualTo(Double.parseDouble(jKeys.getString("entrustPrice")));
         criteria.andStockIdEqualTo(Integer.parseInt(jKeys.getString("stockId")));
         List<BuyerEntrustPrice> buyerEntrustPrices = buyerEntrustPriceMapper.selectByExample(buyerEntrustPriceExample);
-        return buyerEntrustPrices.get(0);
+        if(buyerEntrustPrices.size()!=0){
+            return buyerEntrustPrices.get(0);
+        }
+        else{
+            return null;
+        }
     }
 
 
