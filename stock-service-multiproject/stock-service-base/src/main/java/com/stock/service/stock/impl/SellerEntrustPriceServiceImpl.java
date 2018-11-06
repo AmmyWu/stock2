@@ -176,6 +176,11 @@ public class SellerEntrustPriceServiceImpl implements SellerEntrustPriceService 
         }
     }
 
+    @Override
+    public BuyerEntrustPrice findSellerEntrustPriceByPriceAndStock(String priceJson) {
+        return null;
+    }
+
     private void setCriteria(String keys, SellerEntrustPriceExample sellerEntrustPriceExample) {
         if (keys == null || "{}".equals(keys))
             return;
