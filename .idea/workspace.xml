@@ -1,0 +1,1027 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="stock-pcweb:war" />
+      <artifact name="stock-webapp-base:war" />
+    </artifacts-to-build>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="9b2ac399-e937-4f40-af24-5132edddd229" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/target/" />
+    <ignored path="$PROJECT_DIR$/blsb-base-multiproject/blsb-common/target/" />
+    <ignored path="$PROJECT_DIR$/blsb-base-multiproject/target/" />
+    <ignored path="$PROJECT_DIR$/blsb-base-multiproject/blsb-dao/target/" />
+    <ignored path="$PROJECT_DIR$/blsb-base-multiproject/blsb-pojo/target/" />
+    <ignored path="$PROJECT_DIR$/blsb-pcweb-multiproject/blsb-webapp-base/target/" />
+    <ignored path="$PROJECT_DIR$/blsb-pcweb-multiproject/target/" />
+    <ignored path="$PROJECT_DIR$/blsb-pcweb-multiproject/blsb-pcweb Maven Webapp/target/" />
+    <ignored path="$PROJECT_DIR$/blsb-service-multiproject/target/" />
+    <ignored path="$PROJECT_DIR$/blsb-service-multiproject/blsb-service/target/" />
+    <ignored path="$PROJECT_DIR$/blsb-service-multiproject/blsb-service-base/target/" />
+    <ignored path="$PROJECT_DIR$/blsb-pcweb-multiproject/blsb-uploadfile Maven Webapp/target/" />
+    <ignored path="$PROJECT_DIR$/stock-base-multiproject/stock-dao/target/" />
+    <ignored path="$PROJECT_DIR$/stock-base-multiproject/target/" />
+    <ignored path="$PROJECT_DIR$/stock-base-multiproject/stock-common/target/" />
+    <ignored path="$PROJECT_DIR$/stock-base-multiproject/stock-pojo/target/" />
+    <ignored path="$PROJECT_DIR$/stock-pcweb-multiproject/stock-pcweb Maven Webapp/target/" />
+    <ignored path="$PROJECT_DIR$/stock-pcweb-multiproject/target/" />
+    <ignored path="$PROJECT_DIR$/stock-pcweb-multiproject/stock-webapp-base/target/" />
+    <ignored path="$PROJECT_DIR$/stock-service-multiproject/target/" />
+    <ignored path="$PROJECT_DIR$/stock-service-multiproject/stock-service-base/target/" />
+    <ignored path="$PROJECT_DIR$/stock-service-multiproject/stock-service/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/blsb_framework$tomcat9_0_111.ic" NAME="tomcat9.0.111 Coverage Results" MODIFIED="1540271690532" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
+  <component name="CoverageViewManager">
+    <option name="myElementSize" value="16" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="-1978520597">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="13" />
+          <entry key="project.open.time.1" value="7" />
+          <entry key="project.open.time.10" value="1" />
+          <entry key="project.open.time.2" value="1" />
+          <entry key="project.open.time.5" value="3" />
+          <entry key="project.open.time.6" value="1" />
+          <entry key="project.open.time.8" value="1" />
+          <entry key="project.opened" value="14" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="class" value="1" />
+          <entry key="html" value="4" />
+          <entry key="java" value="185" />
+          <entry key="prefs" value="1" />
+          <entry key="properties" value="3" />
+          <entry key="txt" value="1" />
+          <entry key="xml" value="44" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="CLASS" value="1" />
+          <entry key="HTML" value="4" />
+          <entry key="JAVA" value="185" />
+          <entry key="PLAIN_TEXT" value="2" />
+          <entry key="Properties" value="3" />
+          <entry key="XML" value="44" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="html" value="3" />
+          <entry key="java" value="2" />
+          <entry key="xml" value="30" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="HTML" value="3" />
+          <entry key="JAVA" value="2" />
+          <entry key="XML" value="30" />
+        </counts>
+      </usages-collector>
+    </session>
+    <session id="179187466">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.1" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="class" value="3" />
+          <entry key="classpath" value="1" />
+          <entry key="ftl" value="6" />
+          <entry key="java" value="14" />
+          <entry key="properties" value="2" />
+          <entry key="xml" value="18" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="CLASS" value="3" />
+          <entry key="Eclipse" value="1" />
+          <entry key="FTL" value="6" />
+          <entry key="JAVA" value="14" />
+          <entry key="Properties" value="2" />
+          <entry key="XML" value="18" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="class" value="1" />
+          <entry key="dummy" value="5" />
+          <entry key="java" value="13" />
+          <entry key="properties" value="5" />
+          <entry key="xml" value="71" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="CLASS" value="1" />
+          <entry key="JAVA" value="13" />
+          <entry key="PLAIN_TEXT" value="5" />
+          <entry key="Properties" value="5" />
+          <entry key="XML" value="71" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Generate.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="143" column="30" selection-start-line="143" selection-start-column="30" selection-end-line="143" selection-end-column="30" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$PROJECT_DIR$/src/lib/generateVSC.jar!/com/core/generate/GenerateService.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/GenerateConf.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="10" column="4" lean-forward="true" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ftl/service.ftl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ftl/controller.ftl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="390">
+              <caret line="26" selection-start-line="26" selection-end-line="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/ftl/modelVO.ftl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/GenerateConfStock.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="276">
+              <caret line="23" column="38" selection-start-line="23" selection-start-column="38" selection-end-line="23" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>Sys</find>
+      <find>SysRoleService</find>
+      <find>\\</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>/</replace>
+    </replaceStrings>
+    <dirStrings>
+      <dir>$PROJECT_DIR$/stock-base-multiproject/stock-dao/src/main/java</dir>
+    </dirStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/blsb-base-multiproject/blsb-dao/src/main/resources/com/blsb/dao/mapper/file/ConsumeBaseInfoMapper.xml" />
+        <option value="$PROJECT_DIR$/blsb-service-multiproject/pom.xml" />
+        <option value="$PROJECT_DIR$/blsb-pcweb-multiproject/blsb-pcweb Maven Webapp/src/main/webapp/rules/html/materialAuthority.html" />
+        <option value="$PROJECT_DIR$/blsb-pcweb-multiproject/blsb-webapp-base/src/main/java/com/blsb/webapp/base/controller/pcweb/SysRoleController.java" />
+        <option value="$PROJECT_DIR$/blsb-pcweb-multiproject/blsb-webapp-base/src/main/java/com/blsb/webapp/base/controller/drugMonitor/PharmacistBaseInfoController.java" />
+        <option value="$PROJECT_DIR$/blsb-base-multiproject/blsb-dao/src/main/java/com/blsb/dao/model/drugMonitor/PharmacistBaseInfo.java" />
+        <option value="$PROJECT_DIR$/stock-pcweb-multiproject/stock-webapp-base/src/main/resources/config/spring/spring-db.xml" />
+        <option value="$PROJECT_DIR$/stock-base-multiproject/stock-dao/src/main/resources/generatorConfig.xml" />
+        <option value="$PROJECT_DIR$/stock-base-multiproject/stock-dao/src/main/java/com/stock/dao/page/MySQLPaginationPlugin_stock.java" />
+        <option value="$PROJECT_DIR$/stock-pcweb-multiproject/stock-webapp-base/src/main/resources/config/deploy/jdbc.properties" />
+        <option value="$PROJECT_DIR$/src/src/Generate.java" />
+        <option value="$PROJECT_DIR$/src/src/GenerateConf.xml" />
+        <option value="$PROJECT_DIR$/src/src/GenerateConfStock.xml" />
+        <option value="$PROJECT_DIR$/stock-base-multiproject/stock-dao/src/main/resources/generatorConfig_stock.xml" />
+        <option value="$PROJECT_DIR$/stock-service-multiproject/stock-service-base/src/main/java/com/stock/service/sys/impl/TempletDataServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/GenerateConfStock.xml" />
+        <option value="$PROJECT_DIR$/src/Generate.java" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="stock-framework" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="stock-framework" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
+        </path>
+      </expand>
+      <select />
+    </treeState>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="y" value="23" />
+    <option name="width" value="1680" />
+    <option name="height" value="1027" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="AndroidView" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="stock-framework" type="b2602c69:ProjectViewProjectNode" />
+              <item name="stock-framework" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="stock-framework" type="b2602c69:ProjectViewProjectNode" />
+              <item name="stock-framework" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="stock-framework" type="b2602c69:ProjectViewProjectNode" />
+              <item name="stock-framework" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="ftl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="stock-framework" type="b2602c69:ProjectViewProjectNode" />
+              <item name="stock-framework" type="462c0819:PsiDirectoryNode" />
+              <item name="stock-service-multiproject" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="stock-framework" type="b2602c69:ProjectViewProjectNode" />
+              <item name="stock-framework" type="462c0819:PsiDirectoryNode" />
+              <item name="stock-service-multiproject" type="462c0819:PsiDirectoryNode" />
+              <item name="stock-service-base" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="stock-framework" type="b2602c69:ProjectViewProjectNode" />
+              <item name="stock-framework" type="462c0819:PsiDirectoryNode" />
+              <item name="stock-service-multiproject" type="462c0819:PsiDirectoryNode" />
+              <item name="stock-service-base" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="stock-framework" type="b2602c69:ProjectViewProjectNode" />
+              <item name="stock-framework" type="462c0819:PsiDirectoryNode" />
+              <item name="stock-service-multiproject" type="462c0819:PsiDirectoryNode" />
+              <item name="stock-service-base" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="stock-framework" type="b2602c69:ProjectViewProjectNode" />
+              <item name="stock-framework" type="462c0819:PsiDirectoryNode" />
+              <item name="stock-service-multiproject" type="462c0819:PsiDirectoryNode" />
+              <item name="stock-service-base" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="stock-framework" type="b2602c69:ProjectViewProjectNode" />
+              <item name="stock-framework" type="462c0819:PsiDirectoryNode" />
+              <item name="stock-service-multiproject" type="462c0819:PsiDirectoryNode" />
+              <item name="stock-service-base" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="stock-framework" type="b2602c69:ProjectViewProjectNode" />
+              <item name="stock-framework" type="462c0819:PsiDirectoryNode" />
+              <item name="stock-service-multiproject" type="462c0819:PsiDirectoryNode" />
+              <item name="stock-service-base" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="stock" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="stock-framework" type="b2602c69:ProjectViewProjectNode" />
+              <item name="stock-framework" type="462c0819:PsiDirectoryNode" />
+              <item name="stock-service-multiproject" type="462c0819:PsiDirectoryNode" />
+              <item name="stock-service-base" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="stock" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="SearchEverywhereHistoryKey" value="controllerftlName&#9;ACTION&#9;null&#10;implflag&#9;PSI&#9;JAVA://org.apache.lucene.analysis.hunspell.Dictionary.SimpleFlagParsingStrategy&#10;addbase&#9;PSI&#9;JAVA://com.blsb.service.sys.CommonService#addBaseModel" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540881917025" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.3151163" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.completion" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.Generate">
+    <configuration name="Generate" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Generate" />
+      <module name="stock-framework" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MySQLPaginationPlugin_stock" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.stock.dao.page.MySQLPaginationPlugin_stock" />
+      <module name="stock-dao" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.stock.dao.page.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="tomcat9.0.111" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.111" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/stockPcweb/" />
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="stock-pcweb:war">
+          <settings>
+            <option name="CONTEXT_PATH" value="/stockPcweb" />
+          </settings>
+        </artifact>
+        <artifact name="stock-webapp-base:war">
+          <settings>
+            <option name="CONTEXT_PATH" value="/stockWebapp" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="Unnamed_blsb-framework" />
+      </server-settings>
+      <predefined_log_file id="Tomcat" enabled="true" />
+      <predefined_log_file id="Tomcat Catalina" enabled="true" />
+      <predefined_log_file id="Tomcat Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Host Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="51059" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="blsb-pcweb:war" />
+          <artifact name="blsb-webapp-base:war" />
+          <artifact name="stock-pcweb:war" />
+          <artifact name="stock-webapp-base:war" />
+        </option>
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Tomcat Server.tomcat9.0.111" />
+      <item itemvalue="Application.MySQLPaginationPlugin_stock" />
+      <item itemvalue="Application.Generate" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Generate" />
+        <item itemvalue="Application.MySQLPaginationPlugin_stock" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration" cleanupOnStartRun="true">
+    <configuration>$USER_HOME$/.subversion</configuration>
+    <supportedVersion>125</supportedVersion>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9b2ac399-e937-4f40-af24-5132edddd229" name="Default Changelist" comment="" />
+      <created>1539223801613</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1539223801613</updated>
+      <workItem from="1539223803426" duration="3680000" />
+      <workItem from="1539332600146" duration="4708000" />
+      <workItem from="1539585705343" duration="6121000" />
+      <workItem from="1539824713809" duration="4983000" />
+      <workItem from="1539871445112" duration="2400000" />
+      <workItem from="1539925846277" duration="5909000" />
+      <workItem from="1539940998603" duration="2016000" />
+      <workItem from="1540000872160" duration="2932000" />
+      <workItem from="1540083570569" duration="21886000" />
+      <workItem from="1540470369661" duration="505000" />
+      <workItem from="1540473892412" duration="3769000" />
+      <workItem from="1540601627537" duration="257000" />
+      <workItem from="1540687358545" duration="7603000" />
+      <workItem from="1540782233349" duration="10740000" />
+      <workItem from="1540864988845" duration="5672000" />
+    </task>
+    <task id="LOCAL-00001">
+      <created>1539855970032</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1539855970032</updated>
+    </task>
+    <task id="LOCAL-00002">
+      <created>1539855997027</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1539855997027</updated>
+    </task>
+    <task id="LOCAL-00003">
+      <created>1539856023027</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1539856023027</updated>
+    </task>
+    <task id="LOCAL-00004">
+      <created>1539951443039</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1539951443039</updated>
+    </task>
+    <task id="LOCAL-00005">
+      <created>1540040178037</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1540040178037</updated>
+    </task>
+    <task id="LOCAL-00006">
+      <created>1540136746127</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1540136746127</updated>
+    </task>
+    <task id="LOCAL-00007">
+      <created>1540694417030</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1540694417030</updated>
+    </task>
+    <task id="LOCAL-00008">
+      <created>1540792598037</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1540792598037</updated>
+    </task>
+    <task id="LOCAL-00009">
+      <created>1540792608034</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1540792608034</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="83181000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="23" width="1680" height="1027" extended-state="0" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2954823" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info id="Capture Tool" order="6" />
+      <window_info id="Web" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3614973" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4673797" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Application Servers" order="7" weight="0.32941177" />
+      <window_info anchor="bottom" id="Spring" order="8" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.14438502" />
+      <window_info anchor="bottom" id="Java Enterprise" order="12" />
+      <window_info anchor="bottom" id="Database Changes" order="13" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="14" weight="0.32941177" />
+      <window_info active="true" anchor="bottom" id="SVN Repositories" order="15" visible="true" weight="0.32941177" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="JSF" order="5" />
+      <window_info anchor="right" id="Maven Projects" order="6" sideWeight="0.4910891" weight="0.0964591" />
+      <window_info anchor="right" id="Database" order="7" />
+      <window_info anchor="right" id="Palette&#9;" order="8" />
+      <window_info anchor="right" id="Theme Preview" order="9" />
+      <window_info anchor="right" id="CDI" order="10" weight="0.3295711" />
+      <window_info anchor="right" id="Bean Validation" order="11" />
+      <window_info anchor="right" id="Coverage" order="12" sideWeight="0.5089109" side_tool="true" weight="0.13492064" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$" />
+    </ignored-roots>
+    <option name="LAST_COMMIT_MESSAGE" value="" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/blsb-pcweb-multiproject/blsb-webapp-base/src/main/resources/config/spring/spring-db.xml" />
+    <entry file="file://$PROJECT_DIR$/blsb-service-multiproject/blsb-service-base/src/main/java/com/blsb/service/sys/CommonService.java" />
+    <entry file="file://$PROJECT_DIR$/blsb-service-multiproject/blsb-service-base/src/main/java/com/blsb/service/sys/ssoClientService.java" />
+    <entry file="file://$PROJECT_DIR$/.idea/vcs.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="44" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blsb-service-multiproject/blsb-service-base/src/main/java/com/blsb/service/drugMonitor/DoctorBaseInfoService.java" />
+    <entry file="file://$PROJECT_DIR$/blsb-service-multiproject/blsb-service-base/src/main/java/com/blsb/service/drugMonitor/impl/DrugBaseInfoServiceImpl.java" />
+    <entry file="file://$PROJECT_DIR$/blsb-service-multiproject/blsb-service-base/src/main/resources/solr.properties" />
+    <entry file="file://$PROJECT_DIR$/blsb-service-multiproject/blsb-service-base/src/main/java/com/blsb/service/drugMonitor/ConsumeBaseInfoService.java" />
+    <entry file="file://$PROJECT_DIR$/blsb-service-multiproject/blsb-service-base/src/main/java/com/blsb/service/drugMonitor/impl/DoctorBaseInfoServiceImpl.java" />
+    <entry file="file://$PROJECT_DIR$/blsb-pcweb-multiproject/blsb-webapp-base/src/main/resources/config/beans.xml" />
+    <entry file="file://$PROJECT_DIR$/blsb-pcweb-multiproject/blsb-webapp-base/src/main/resources/config/spring/spring-common.xml" />
+    <entry file="file://$PROJECT_DIR$/blsb-pcweb-multiproject/blsb-webapp-base/src/main/resources/config/orm/mybatis/mybatis.xml" />
+    <entry file="file://$PROJECT_DIR$/blsb-pcweb-multiproject/blsb-webapp-base/src/main/resources/config/spring/spring-mvc.xml" />
+    <entry file="file://$PROJECT_DIR$/blsb-pcweb-multiproject/blsb-webapp-base/src/main/resources/config/spring/spring-redis.xml" />
+    <entry file="file://$PROJECT_DIR$/blsb-pcweb-multiproject/blsb-webapp-base/src/main/resources/config/spring/spring-quartz.xml" />
+    <entry file="file://$PROJECT_DIR$/blsb-pcweb-multiproject/blsb-webapp-base/src/main/resources/config/spring/spring-redis-cluster.xml" />
+    <entry file="file://$PROJECT_DIR$/stock-base-multiproject/stock-common/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="12" lean-forward="true" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stock-base-multiproject/stock-dao/src/main/java/com/stock/dao/mapper/sys/SysOrganizationStructureMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="20" column="57" lean-forward="true" selection-start-line="20" selection-start-column="57" selection-end-line="20" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stock-service-multiproject/stock-service-base/src/main/java/com/stock/service/sys/impl/SysRoleResourceServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="53">
+          <caret line="363" column="45" selection-start-line="363" selection-start-column="39" selection-end-line="363" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stock-service-multiproject/stock-service-base/src/main/java/com/stock/service/sys/impl/SysOrganizationStructureServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="45" column="10" selection-start-line="45" selection-start-column="10" selection-end-line="45" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stock-pcweb-multiproject/stock-webapp-base/src/main/resources/config/spring/spring-common.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stock-pcweb-multiproject/stock-webapp-base/src/main/resources/config/spring/spring-security4.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stock-pcweb-multiproject/stock-webapp-base/src/main/resources/config/spring/spring-redis-cluster.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stock-pcweb-multiproject/stock-webapp-base/src/main/resources/config/spring/spring-redis.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stock-pcweb-multiproject/stock-webapp-base/src/main/resources/config/spring/spring-mvc.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-363" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stock-pcweb-multiproject/stock-webapp-base/src/main/resources/config/beans.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-175" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stock-pcweb-multiproject/stock-webapp-base/src/main/resources/config/spring/spring-quartz.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="11" selection-start-line="23" selection-start-column="11" selection-end-line="23" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stock-base-multiproject/stock-dao/src/main/resources/com/stock/dao/mapper/file/BaseEmployeeInfoMapper.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stock-pcweb-multiproject/stock-webapp-base/src/main/resources/config/spring/spring-db.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="48" column="124" selection-start-line="48" selection-start-column="124" selection-end-line="48" selection-end-column="124" />
+          <folding>
+            <element signature="e#1249#1274#0" expanded="true" />
+            <element signature="e#1312#1342#0" expanded="true" />
+            <element signature="e#1380#1410#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stock-pcweb-multiproject/stock-webapp-base/src/main/resources/config/deploy/jdbc.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="57" selection-start-line="5" selection-start-column="57" selection-end-line="5" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stock-base-multiproject/stock-dao/src/main/java/com/stock/dao/model/stock/SysAttachmentExample.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/src/src/lib/generateVSC.jar!/com/core/generate/GenerateService.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="41" selection-start-line="41" selection-end-line="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stock-base-multiproject/stock-pojo/src/main/java/com/stock/pojo/vo/drugMonitor/DrugBaseInfoVO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="38" selection-start-line="2" selection-start-column="38" selection-end-line="2" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stock-base-multiproject/stock-pojo/src/main/java/com/stock/pojo/vo/stock/BuyerEntrustPriceQueueVO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="15" column="1" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stock-base-multiproject/stock-dao/src/main/resources/generatorConfig_sys.out.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stock-base-multiproject/stock-dao/src/main/resources/generatorConfig_stock.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="80" column="49" selection-start-line="80" selection-start-column="49" selection-end-line="80" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stock-base-multiproject/stock-pojo/src/main/java/com/stock/pojo/vo/TempletVO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="33" selection-start-line="2" selection-start-column="33" selection-end-line="2" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stock-base-multiproject/stock-dao/src/main/java/com/stock/dao/page/MySQLPaginationPlugin_stock.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="26" column="50" selection-start-line="26" selection-start-column="50" selection-end-line="26" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stock-service-multiproject/stock-service-base/src/main/java/com/stock/service/sys/impl/TempletDataServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24">
+          <caret line="23" column="34" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stock-service-multiproject/stock-service-base/src/main/java/com/stock/service/sys/impl/CommonServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="46" column="13" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stock-pcweb-multiproject/.classpath">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/lucene/lucene-analyzers-common/6.5.1/lucene-analyzers-common-6.5.1.jar!/org/apache/lucene/analysis/hunspell/Dictionary.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="16365">
+          <caret line="1162" column="25" lean-forward="true" selection-start-line="1162" selection-start-column="25" selection-end-line="1162" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stock-service-multiproject/stock-service-base/src/main/java/com/stock/service/stock/BuyerEntrustPriceQueueService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ftl/controller.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ftl/service.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Generate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="143" column="30" selection-start-line="143" selection-start-column="30" selection-end-line="143" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/src/lib/generateVSC.jar!/com/core/generate/GenerateService.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GenerateConf.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="4" lean-forward="true" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GenerateConfStock.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="23" column="38" selection-start-line="23" selection-start-column="38" selection-end-line="23" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ftl/modelVO.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <last-edited>stock-pcweb:war</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.3151163" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Spring (stock-webapp-base)|Spring</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.3151163" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.3151163" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>stock-framework</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.3151163" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: aopalliance:aopalliance:1.0</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.3151163" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
