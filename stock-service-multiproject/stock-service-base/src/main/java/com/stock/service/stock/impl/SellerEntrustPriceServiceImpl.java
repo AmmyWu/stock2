@@ -143,7 +143,6 @@ public class SellerEntrustPriceServiceImpl implements SellerEntrustPriceService 
     public RequestResultVO sell(String price, String priceQueue) {
         BuyerEntrustPrice buyerEntrustPrice = buyerEntrustPriceService.findBuyerEntrustPriceByPriceAndStock(price);
 
-
         SellerEntrustPrice sellerEntrustPrice = findSellerEntrustPriceByPriceAndStock(price);
 
         JSONObject priceQueueKeys = JSONObject.fromObject(priceQueue);
@@ -169,6 +168,7 @@ public class SellerEntrustPriceServiceImpl implements SellerEntrustPriceService 
             //改变持仓
             buyerStockExisting.setStockAvailableSellNum(buyerStockExisting.getStockAvailableSellNum() + entrustNum);
             sellerStockExisting.setStockAvailableSellNum(sellerStockExisting.getStockAvailableSellNum() - entrustNum);
+
             stockExistingService.update(buyerStockExisting);
             stockExistingService.update(sellerStockExisting);
 
@@ -178,8 +178,14 @@ public class SellerEntrustPriceServiceImpl implements SellerEntrustPriceService 
             //改变资金账户
             double total = entrustNum * Double.valueOf(priceKeys.getString("entrustPrice"));
             buyerStockAccount.setAvailableFund(buyerStockAccount.getAvailableFund() - total);
-            sellerStockAccount.setAvailableFund(sellerStockAccount.getAvailableFund() + total);
+            buyerStockAccount.setTotalAsset(buyerStockAccount.getTotalAsset()+total);
+            buyerStockAccount.setStockAsset(buyerStockAccount.getStockAsset()+total);
             stockAccountService.update(buyerStockAccount);
+
+            sellerStockAccount.setAvailableFund(sellerStockAccount.getAvailableFund() + total);
+            sellerStockAccount.setTotalAsset(sellerStockAccount.getTotalAsset()+total);
+            sellerStockAccount.setTotalAsset(sellerStockAccount.getTotalAsset()+total);
+            sellerStockAccount.setStockAsset(sellerStockAccount.getStockAsset()+total);
             stockAccountService.update(sellerStockAccount);
         } else {//去卖家价格队列中找
             SellerEntrustPriceQueue sellerEntrustPriceQueue = new SellerEntrustPriceQueue();
