@@ -106,7 +106,7 @@ public class SellerEntrustPriceController {
     public @ResponseBody RequestResultVO sell(HttpServletRequest request){
         String priceQueue = request.getParameter("priceQueue");
         String price = request.getParameter("price");
-        String entrustPrice=request.getParameter("entrustPrice");
+        //String entrustPrice=request.getParameter("entrustPrice");
         return sellerEntrustPriceService.sell(price,priceQueue);
     }
 }
