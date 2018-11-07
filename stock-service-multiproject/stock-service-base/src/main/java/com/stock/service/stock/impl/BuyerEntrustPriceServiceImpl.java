@@ -11,6 +11,7 @@ import java.util.Map;
 import javax.annotation.Resource;
 
 import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
 import net.sf.json.JsonConfig;
 
 import org.springframework.beans.BeanUtils;
@@ -110,6 +111,24 @@ public class BuyerEntrustPriceServiceImpl implements BuyerEntrustPriceService {
 
     return map;
     }
+
+    @Override
+    public BuyerEntrustPrice findBuyerEntrustPriceByPriceAndStock(String priceJson) {
+        BuyerEntrustPriceExample buyerEntrustPriceExample = new BuyerEntrustPriceExample();
+        BuyerEntrustPriceExample.Criteria criteria = buyerEntrustPriceExample.createCriteria();
+        JSONObject jKeys = JSONObject.fromObject(priceJson);
+        criteria.andEntrustPriceEqualTo(Double.parseDouble(jKeys.getString("entrustPrice")));
+        criteria.andStockIdEqualTo(Integer.parseInt(jKeys.getString("stockId")));
+        List<BuyerEntrustPrice> buyerEntrustPrices = buyerEntrustPriceMapper.selectByExample(buyerEntrustPriceExample);
+        if(buyerEntrustPrices.size()!=0){
+            return buyerEntrustPrices.get(0);
+        }
+        else{
+            return null;
+        }
+    }
+
+
     private void setCriteria(String keys, BuyerEntrustPriceExample buyerEntrustPriceExample) {
     if (keys == null || "{}".equals(keys))
     return;

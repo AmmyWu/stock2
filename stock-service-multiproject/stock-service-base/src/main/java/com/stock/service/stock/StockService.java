@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.stock.dao.model.stock.Stock;
+import com.stock.dao.model.stock.StockAccount;
 import com.stock.pojo.vo.RequestResultVO;
 
 public interface StockService {
@@ -15,6 +16,7 @@ public interface StockService {
 	public RequestResultVO delete(List<Integer> stockIds);
 
     public Map<String,Object> getByPage(String keys, Integer pageSize,Integer pageNow);
+
 
     }
 

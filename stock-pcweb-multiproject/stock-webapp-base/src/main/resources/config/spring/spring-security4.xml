@@ -32,12 +32,12 @@
 	<http pattern="/sysadmin/error*.jsp" security="none"></http> -->
     
     <http auto-config="false" use-expressions="true" entry-point-ref="myAuthenticationEntryPoint" >  
-    	<custom-filter before="FILTER_SECURITY_INTERCEPTOR" ref="securityInterceptor"/>
-        <!--  <form-login   
-            login-page="login.html"  
-            login-processing-url="/j_spring_security_check"  
-            authentication-failure-handler-ref="authenticationFailureHandler"  
-            authentication-success-handler-ref="authenticationSuccessHandler" />  -->   
+    	<!--<custom-filter before="FILTER_SECURITY_INTERCEPTOR" ref="securityInterceptor"/>-->
+         <!--<form-login-->
+            <!--login-page="login.html"  -->
+            <!--login-processing-url="/j_spring_security_check"  -->
+            <!--authentication-failure-handler-ref="authenticationFailureHandler"  -->
+            <!--authentication-success-handler-ref="authenticationSuccessHandler" />-->
          <!-- 退出处理 -->  
          <logout logout-url="/j_spring_security_logout"   
                 logout-success-url="/loginlog/logout.do"   

@@ -22,69 +22,91 @@ import com.stock.pojo.vo.RequestResultVO;
 import com.stock.service.sys.utils.HttpResponseConstants.Public;
 
 @Controller
-@RequestMapping(value="/sellerEntrustPrice")
+@RequestMapping(value = "/sellerEntrustPrice")
 public class SellerEntrustPriceController {
 
-	@Autowired
-	private SellerEntrustPriceService sellerEntrustPriceService;
-	/**
-	 * 新增
-	 * @param request
-	 * @return
-	 */
-	@RequestMapping(value="/insert.do")
-	public @ResponseBody RequestResultVO insert(HttpServletRequest request){
-		String sellerEntrustPriceString = request.getParameter("sellerEntrustPrice");
-SellerEntrustPrice sellerEntrustPrice = null;
-		try{
-sellerEntrustPrice = JsonFastUtil.parseObject(sellerEntrustPriceString, SellerEntrustPrice.class);
-		}catch(Exception e){
-			throw new BizException(Public.ERROR_700);
-		}
-		return sellerEntrustPriceService.insert(sellerEntrustPrice);
-	}
-	/**
-	 * 修改
-	 * @param request
-	 * @return
-	 */
-	@RequestMapping(value="/update.do")
-	public @ResponseBody RequestResultVO update(HttpServletRequest request){
-		String sellerEntrustPriceString = request.getParameter("sellerEntrustPrice");
-SellerEntrustPrice sellerEntrustPrice = null;
-		try{
-sellerEntrustPrice = JsonFastUtil.parseObject(sellerEntrustPriceString, SellerEntrustPrice.class);
-		}catch(Exception e){
-			throw new BizException(Public.ERROR_700);
-		}
-		return sellerEntrustPriceService.update(sellerEntrustPrice);
-	}
-	/**
-	 * 删除
-	 * @param request
-	 * @return
-	 */
-	@RequestMapping(value="/delete.do")
-	public @ResponseBody RequestResultVO delete(HttpServletRequest request){
-		String sellerEntrustPriceIdsString = request.getParameter("sellerEntrustPriceIds");
-		List<Integer> sellerEntrustPriceIds;
-    try{
-sellerEntrustPriceIds = CommonUtils.idsArrayToList(sellerEntrustPriceIdsString);
-    }catch(Exception e){
-    throw new BizException(Public.ERROR_700);
-    }
-    return sellerEntrustPriceService.delete(sellerEntrustPriceIds);
-    }
+    @Autowired
+    private SellerEntrustPriceService sellerEntrustPriceService;
+
     /**
-    * 分页查询
-    * @param request
-    * @return
-    */
-    @RequestMapping(value="/getByPage.do")
-    public @ResponseBody Object getByPage(HttpServletRequest request){
-    String keys = request.getParameter("keys");
-    Integer length = Integer.parseInt(request.getParameter("length"));
-    Integer start = Integer.parseInt(request.getParameter("start"));
-    return sellerEntrustPriceService.getByPage(keys, length, start);
+     * 新增
+     *
+     * @param request
+     * @return
+     */
+    @RequestMapping(value = "/insert.do")
+    public @ResponseBody
+    RequestResultVO insert(HttpServletRequest request) {
+        //String sellerEntrustPriceString = request.getParameter("sellerEntrustPrice");
+        String priceQueue = request.getParameter("priceQueue");
+        String price = request.getParameter("price");
+        SellerEntrustPrice sellerEntrustPrice = null;
+        try {
+            sellerEntrustPrice = JsonFastUtil.parseObject(price, SellerEntrustPrice.class);
+        } catch (Exception e) {
+            throw new BizException(Public.ERROR_700);
+        }
+        return sellerEntrustPriceService.insert(sellerEntrustPrice);
     }
+
+    /**
+     * 修改
+     *
+     * @param request
+     * @return
+     */
+    @RequestMapping(value = "/update.do")
+    public @ResponseBody
+    RequestResultVO update(HttpServletRequest request) {
+        String sellerEntrustPriceString = request.getParameter("sellerEntrustPrice");
+        SellerEntrustPrice sellerEntrustPrice = null;
+        try {
+            sellerEntrustPrice = JsonFastUtil.parseObject(sellerEntrustPriceString, SellerEntrustPrice.class);
+        } catch (Exception e) {
+            throw new BizException(Public.ERROR_700);
+        }
+        return sellerEntrustPriceService.update(sellerEntrustPrice);
     }
+
+    /**
+     * 删除
+     *
+     * @param request
+     * @return
+     */
+    @RequestMapping(value = "/delete.do")
+    public @ResponseBody
+    RequestResultVO delete(HttpServletRequest request) {
+        String sellerEntrustPriceIdsString = request.getParameter("sellerEntrustPriceIds");
+        List<Integer> sellerEntrustPriceIds;
+        try {
+            sellerEntrustPriceIds = CommonUtils.idsArrayToList(sellerEntrustPriceIdsString);
+        } catch (Exception e) {
+            throw new BizException(Public.ERROR_700);
+        }
+        return sellerEntrustPriceService.delete(sellerEntrustPriceIds);
+    }
+
+    /**
+     * 分页查询
+     *
+     * @param request
+     * @return
+     */
+    @RequestMapping(value = "/getByPage.do")
+    public @ResponseBody
+    Object getByPage(HttpServletRequest request) {
+        String keys = request.getParameter("keys");
+        Integer length = Integer.parseInt(request.getParameter("length"));
+        Integer start = Integer.parseInt(request.getParameter("start"));
+        return sellerEntrustPriceService.getByPage(keys, length, start);
+    }
+
+    @RequestMapping(value = "/sell.do")
+    public @ResponseBody RequestResultVO sell(HttpServletRequest request){
+        String priceQueue = request.getParameter("priceQueue");
+        String price = request.getParameter("price");
+        //String entrustPrice=request.getParameter("entrustPrice");
+        return sellerEntrustPriceService.sell(price,priceQueue);
+    }
+}

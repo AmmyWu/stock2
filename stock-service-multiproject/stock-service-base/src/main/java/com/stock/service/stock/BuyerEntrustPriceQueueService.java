@@ -16,6 +16,8 @@ public interface BuyerEntrustPriceQueueService {
 
     public Map<String,Object> getByPage(String keys, Integer pageSize,Integer pageNow);
 
+    public BuyerEntrustPriceQueue findByBuyerEntrustPrice(int buyerEntrustPriceId);
+
     }
 
 
