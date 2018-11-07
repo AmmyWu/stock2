@@ -112,16 +112,12 @@ public class BuyerEntrustPriceQueueServiceImpl implements BuyerEntrustPriceQueue
     }
 
     @Override
-    public BuyerEntrustPriceQueue findByBuyerEntrustPrice(int buyerEntrustPriceId) {
+    public List<BuyerEntrustPriceQueue> findByBuyerEntrustPrice(int buyerEntrustPriceId) {
         BuyerEntrustPriceQueueExample buyerEntrustPriceQueueExample = new BuyerEntrustPriceQueueExample();
         BuyerEntrustPriceQueueExample.Criteria criteria = buyerEntrustPriceQueueExample.createCriteria();
         criteria.andBuyerEntrustPriceIdEqualTo(buyerEntrustPriceId);
         List<BuyerEntrustPriceQueue> buyerEntrustPriceQueues = buyerEntrustPriceQueueMapper.selectByExample(buyerEntrustPriceQueueExample);
-        if (buyerEntrustPriceQueues.size() != 0) {
-            return buyerEntrustPriceQueues.get(0);
-        } else {
-            return null;
-        }
+        return buyerEntrustPriceQueues;
     }
 
     private void setCriteria(String keys, BuyerEntrustPriceQueueExample buyerEntrustPriceQueueExample) {

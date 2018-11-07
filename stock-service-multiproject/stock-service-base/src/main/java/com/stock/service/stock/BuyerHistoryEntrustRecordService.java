@@ -3,7 +3,9 @@ package com.stock.service.stock;
 import java.util.List;
 import java.util.Map;
 
+import com.stock.dao.model.stock.BuyerEntrustPriceQueue;
 import com.stock.dao.model.stock.BuyerHistoryEntrustRecord;
+import com.stock.dao.model.stock.SellerEntrustPriceQueue;
 import com.stock.pojo.vo.RequestResultVO;
 
 public interface BuyerHistoryEntrustRecordService {
@@ -16,6 +18,7 @@ public interface BuyerHistoryEntrustRecordService {
 
     public Map<String,Object> getByPage(String keys, Integer pageSize,Integer pageNow);
 
+	public void addHistory(BuyerEntrustPriceQueue buyerEntrustPriceQueue, int stockId, double price);
     }
 
 

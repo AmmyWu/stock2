@@ -73,6 +73,9 @@ public class SellerEntrustPriceServiceImpl implements SellerEntrustPriceService 
     @Autowired
     SellerHistoryEntrustRecordService sellerHistoryEntrustRecordService;
 
+    @Autowired
+    BuyerHistoryEntrustRecordService buyerHistoryEntrustRecordService;
+
     private CommonService<SellerEntrustPrice, SellerEntrustPriceMapper, SellerEntrustPriceExample> commonService;
 
     //注入commonService
@@ -167,7 +170,8 @@ public class SellerEntrustPriceServiceImpl implements SellerEntrustPriceService 
 
 
         if (buyerEntrustPrice != null) {//如果买家当中有匹配的，那么改变卖家买家的资金账户和股票账户
-            BuyerEntrustPriceQueue buyerEntrustPriceQueue = buyerEntrustPriceQueueService.findByBuyerEntrustPrice(buyerEntrustPrice.getBuyerEntrustPriceId());
+            List<BuyerEntrustPriceQueue> buyerEntrustPriceQueues = buyerEntrustPriceQueueService.findByBuyerEntrustPrice(buyerEntrustPrice.getBuyerEntrustPriceId());
+            BuyerEntrustPriceQueue buyerEntrustPriceQueue=buyerEntrustPriceQueues.get(0);
             int stockId = buyerEntrustPrice.getStockId();
             buyerStockAccount = stockAccountService.findStockAccountByUser(String.valueOf(buyerEntrustPriceQueue.getUserId()));
 
@@ -198,8 +202,11 @@ public class SellerEntrustPriceServiceImpl implements SellerEntrustPriceService 
             stockAccountService.update(sellerStockAccount);
 
             sellerHistoryEntrustRecordService.addHistory(sellerEntrustPriceQueue,stockId,Double.valueOf(priceKeys.getString("entrustPrice")));
+            buyerHistoryEntrustRecordService.addHistory(buyerEntrustPriceQueue,stockId,Double.valueOf(priceKeys.getString("entrustPrice")));
 
-
+            if(buyerEntrustPriceQueues.size()==0){
+                buyerEntrustPriceService.delete(Arrays.asList(buyerEntrustPrice.getBuyerEntrustPriceId()));
+            }
         } else {//去卖家价格队列中找
 
             if (sellerEntrustPrice != null) {
