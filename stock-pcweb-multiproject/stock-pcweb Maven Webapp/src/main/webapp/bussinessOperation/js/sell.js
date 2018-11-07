@@ -62,7 +62,6 @@ var Stock = (function () {
                 "type": "POST",
                 "url": getContextPath() + 'stockExisting/getByPage.do',
             },
-            dom: '<"top">Brt<"bottom"flip><"clear">',
             columns: [
                 { title: "证券代码", data: "stockCode" },
                 { title: "证券名称", data: "stockName" },
