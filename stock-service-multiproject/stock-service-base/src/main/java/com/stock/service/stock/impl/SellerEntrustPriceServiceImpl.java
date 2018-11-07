@@ -70,6 +70,9 @@ public class SellerEntrustPriceServiceImpl implements SellerEntrustPriceService 
     @Autowired
     private HttpSession httpSession;
 
+    @Autowired
+    SellerHistoryEntrustRecordService sellerHistoryEntrustRecordService;
+
     private CommonService<SellerEntrustPrice, SellerEntrustPriceMapper, SellerEntrustPriceExample> commonService;
 
     //注入commonService
@@ -154,9 +157,15 @@ public class SellerEntrustPriceServiceImpl implements SellerEntrustPriceService 
         StockExisting buyerStockExisting;//股票账户
         StockExisting sellerStockExisting=stockExistingService.findStockExistingByAccountAndStock(sellerStockAccount.getStockAccountId(), Integer.parseInt(priceKeys.getString("stockId")));;
 
-
-
         int entrustNum = Integer.parseInt(priceQueueKeys.getString("entrustNum"));
+
+        SellerEntrustPriceQueue sellerEntrustPriceQueue = new SellerEntrustPriceQueue();
+        sellerEntrustPriceQueue.setEntrustNum(entrustNum);
+        SysUser user = (SysUser) httpSession.getAttribute("loginingUser");
+        sellerEntrustPriceQueue.setUserId(user.getUserId());
+        dataAuthorizeService.addDataAuthorizeInfo(sellerEntrustPriceQueue, "insert");
+
+
         if (buyerEntrustPrice != null) {//如果买家当中有匹配的，那么改变卖家买家的资金账户和股票账户
             BuyerEntrustPriceQueue buyerEntrustPriceQueue = buyerEntrustPriceQueueService.findByBuyerEntrustPrice(buyerEntrustPrice.getBuyerEntrustPriceId());
             int stockId = buyerEntrustPrice.getStockId();
@@ -187,8 +196,12 @@ public class SellerEntrustPriceServiceImpl implements SellerEntrustPriceService 
             sellerStockAccount.setTotalAsset(sellerStockAccount.getTotalAsset()+total);
             sellerStockAccount.setStockAsset(sellerStockAccount.getStockAsset()+total);
             stockAccountService.update(sellerStockAccount);
+
+            sellerHistoryEntrustRecordService.addHistory(sellerEntrustPriceQueue,stockId,Double.valueOf(priceKeys.getString("entrustPrice")));
+
+
         } else {//去卖家价格队列中找
-            SellerEntrustPriceQueue sellerEntrustPriceQueue = new SellerEntrustPriceQueue();
+
             if (sellerEntrustPrice != null) {
                 //SellerEntrustPriceQueue sellerEntrustPriceQueue=sellerEntrustPriceQueueService.findBySllerEntrustPrice(sellerEntrustPrice.getSellerEntrustPriceId());
                 sellerEntrustPrice.setTotalEntrustNum(sellerEntrustPrice.getTotalEntrustNum() + entrustNum);
@@ -200,12 +213,7 @@ public class SellerEntrustPriceServiceImpl implements SellerEntrustPriceService 
                 sellerEntrustPrice.setTotalEntrustNum(entrustNum);
                 this.insert(sellerEntrustPrice);
             }
-            sellerEntrustPriceQueue.setEntrustNum(entrustNum);
             sellerEntrustPriceQueue.setSellerEntrustPriceId(sellerEntrustPrice.getSellerEntrustPriceId());
-
-            SysUser user = (SysUser) httpSession.getAttribute("loginingUser");
-            sellerEntrustPriceQueue.setUserId(user.getUserId());
-            dataAuthorizeService.addDataAuthorizeInfo(sellerEntrustPriceQueue, "insert");
             sellerEntrustPriceQueueMapper.insert(sellerEntrustPriceQueue);
         }
         sellerStockExisting.setStockAvailableSellNum(sellerStockExisting.getStockAvailableSellNum() - entrustNum);
