@@ -112,6 +112,18 @@ public class StockServiceImpl implements StockService {
         return map;
     }
 
+    @Override
+    public Stock findByCode(String code) {
+        StockExample stockExample = new StockExample();
+        StockExample.Criteria criteria = stockExample.createCriteria();
+        criteria.andStockCodeEqualTo(code);
+        List<Stock> stocks = stockMapper.selectByExample(stockExample);
+        if (stocks.size() != 0) {
+            return stocks.get(0);
+        }
+        return null;
+    }
+
 
     private void setCriteria(String keys, StockExample stockExample) {
         if (keys == null || "{}".equals(keys))

@@ -17,6 +17,7 @@ public interface StockService {
 
     public Map<String,Object> getByPage(String keys, Integer pageSize,Integer pageNow);
 
+    public Stock findByCode(String code);
 
     }
 

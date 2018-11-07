@@ -1,7 +1,6 @@
 package com.stock.service.stock.impl;
 
 
-
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -10,8 +9,13 @@ import java.util.Map;
 
 import javax.annotation.Resource;
 
+import com.stock.common.util.StringUtil;
+import com.stock.dao.mapper.stock.StockMapper;
 import com.stock.dao.model.stock.SellerEntrustPriceQueue;
+import com.stock.dao.model.stock.Stock;
+import com.stock.service.stock.StockService;
 import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
 import net.sf.json.JsonConfig;
 
 import org.springframework.beans.BeanUtils;
@@ -38,83 +42,90 @@ import com.stock.service.stock.SellerHistoryEntrustRecordService;
 @Service
 public class SellerHistoryEntrustRecordServiceImpl implements SellerHistoryEntrustRecordService {
 
-	@Autowired
-	private SellerHistoryEntrustRecordMapper sellerHistoryEntrustRecordMapper;
+    @Autowired
+    private SellerHistoryEntrustRecordMapper sellerHistoryEntrustRecordMapper;
 
-	@Autowired
-	private DataAuthorizeService dataAuthorizeService;
+    @Autowired
+    private DataAuthorizeService dataAuthorizeService;
 
-	private CommonService<SellerHistoryEntrustRecord, SellerHistoryEntrustRecordMapper, SellerHistoryEntrustRecordExample> commonService;
-	//注入commonService
-	@Resource(name = "commonService")
-	public void setCommonService(CommonService<SellerHistoryEntrustRecord, SellerHistoryEntrustRecordMapper, SellerHistoryEntrustRecordExample> commonService) {
-		this.commonService = commonService;
-	}
+    @Autowired
+    StockService stockService;
 
-	@Override
-	public RequestResultVO insert(SellerHistoryEntrustRecord sellerHistoryEntrustRecord) {
-		if(sellerHistoryEntrustRecord == null){
-			throw new BizException(Public.ERROR_700);
-		}
-		dataAuthorizeService.addDataAuthorizeInfo(sellerHistoryEntrustRecord, "insert");
-    sellerHistoryEntrustRecordMapper.insert(sellerHistoryEntrustRecord);
-		return ResultBuilder.buildSuccessResult(Public.SUCCESS_200, "");
-	}
+    @Autowired
+    StockMapper stockMapper;
 
-	@Override
-	public RequestResultVO update(SellerHistoryEntrustRecord sellerHistoryEntrustRecord) {
-		if(sellerHistoryEntrustRecord == null || sellerHistoryEntrustRecord.getSellerHistoryEntrustRecordId() == null){
-			throw new BizException(Public.ERROR_700);
-		}
-		dataAuthorizeService.addDataAuthorizeInfo(sellerHistoryEntrustRecord, "update");
-    sellerHistoryEntrustRecordMapper.updateByPrimaryKeySelective(sellerHistoryEntrustRecord);
-		return ResultBuilder.buildSuccessResult(Public.SUCCESS_300, "");
-	}
+    private CommonService<SellerHistoryEntrustRecord, SellerHistoryEntrustRecordMapper, SellerHistoryEntrustRecordExample> commonService;
 
-	@Override
-	public RequestResultVO delete(List<Integer> sellerHistoryEntrustRecordIds) {
-    if(sellerHistoryEntrustRecordIds == null || sellerHistoryEntrustRecordIds.size() == 0){
-    throw new BizException(Public.ERROR_700);
+    //注入commonService
+    @Resource(name = "commonService")
+    public void setCommonService(CommonService<SellerHistoryEntrustRecord, SellerHistoryEntrustRecordMapper, SellerHistoryEntrustRecordExample> commonService) {
+        this.commonService = commonService;
     }
-    SellerHistoryEntrustRecordExample sellerHistoryEntrustRecordExample = new SellerHistoryEntrustRecordExample();
-    sellerHistoryEntrustRecordExample.createCriteria().andSellerHistoryEntrustRecordIdIn(sellerHistoryEntrustRecordIds);
-    sellerHistoryEntrustRecordMapper.deleteByExample(sellerHistoryEntrustRecordExample);
-    return ResultBuilder.buildSuccessResult(Public.SUCCESS_400, "");
+
+    @Override
+    public RequestResultVO insert(SellerHistoryEntrustRecord sellerHistoryEntrustRecord) {
+        if (sellerHistoryEntrustRecord == null) {
+            throw new BizException(Public.ERROR_700);
+        }
+        dataAuthorizeService.addDataAuthorizeInfo(sellerHistoryEntrustRecord, "insert");
+        sellerHistoryEntrustRecordMapper.insert(sellerHistoryEntrustRecord);
+        return ResultBuilder.buildSuccessResult(Public.SUCCESS_200, "");
+    }
+
+    @Override
+    public RequestResultVO update(SellerHistoryEntrustRecord sellerHistoryEntrustRecord) {
+        if (sellerHistoryEntrustRecord == null || sellerHistoryEntrustRecord.getSellerHistoryEntrustRecordId() == null) {
+            throw new BizException(Public.ERROR_700);
+        }
+        dataAuthorizeService.addDataAuthorizeInfo(sellerHistoryEntrustRecord, "update");
+        sellerHistoryEntrustRecordMapper.updateByPrimaryKeySelective(sellerHistoryEntrustRecord);
+        return ResultBuilder.buildSuccessResult(Public.SUCCESS_300, "");
+    }
+
+    @Override
+    public RequestResultVO delete(List<Integer> sellerHistoryEntrustRecordIds) {
+        if (sellerHistoryEntrustRecordIds == null || sellerHistoryEntrustRecordIds.size() == 0) {
+            throw new BizException(Public.ERROR_700);
+        }
+        SellerHistoryEntrustRecordExample sellerHistoryEntrustRecordExample = new SellerHistoryEntrustRecordExample();
+        sellerHistoryEntrustRecordExample.createCriteria().andSellerHistoryEntrustRecordIdIn(sellerHistoryEntrustRecordIds);
+        sellerHistoryEntrustRecordMapper.deleteByExample(sellerHistoryEntrustRecordExample);
+        return ResultBuilder.buildSuccessResult(Public.SUCCESS_400, "");
     }
 
     @Override
     public Map<String, Object> getByPage(String keys, Integer pageSize,
-    Integer pageNow) {
-    SellerHistoryEntrustRecordExample sellerHistoryEntrustRecordExample = new SellerHistoryEntrustRecordExample();
-    this.setCriteria(keys, sellerHistoryEntrustRecordExample);
-    int totalrecords = sellerHistoryEntrustRecordMapper.countByExample(sellerHistoryEntrustRecordExample);
+                                         Integer pageNow) {
+        SellerHistoryEntrustRecordExample sellerHistoryEntrustRecordExample = new SellerHistoryEntrustRecordExample();
+        this.setCriteria(keys, sellerHistoryEntrustRecordExample);
+        int totalrecords = sellerHistoryEntrustRecordMapper.countByExample(sellerHistoryEntrustRecordExample);
 
-    Page page = new Page();
-    page.setBegin(pageNow);
-    page.setLength(pageSize);
-    sellerHistoryEntrustRecordExample.setOrderByClause("sellerHistoryEntrustRecordId desc");
-    sellerHistoryEntrustRecordExample.setPage(page);
-    List<SellerHistoryEntrustRecord> sellerHistoryEntrustRecords = sellerHistoryEntrustRecordMapper.selectByExample(sellerHistoryEntrustRecordExample);
+        Page page = new Page();
+        page.setBegin(pageNow);
+        page.setLength(pageSize);
+        sellerHistoryEntrustRecordExample.setOrderByClause("seller_history_entrust_record_id desc");
+        sellerHistoryEntrustRecordExample.setPage(page);
+        List<SellerHistoryEntrustRecord> sellerHistoryEntrustRecords = sellerHistoryEntrustRecordMapper.selectByExample(sellerHistoryEntrustRecordExample);
 
-    Map<String, Object> map = new HashMap<String, Object>();
-    JsonConfig config = new JsonConfig();
-    config.setIgnoreDefaultExcludes(false);
-    config.registerJsonValueProcessor(Date.class,new DateJsonValueProcessor("yyyy-MM-dd"));
-    try {
-    map.put("aaData", JSONArray.fromObject(this.creatVos(sellerHistoryEntrustRecords), config));
-    } catch (Exception e) {
-    LogUtil.error(ErrorLoggers.ERROR_LOGGER, e.getMessage());
-    throw new BizException(Public.ERROR_100);
-    }
-    map.put("recordsTotal", totalrecords);
-    map.put("recordsFiltered", totalrecords);
+        Map<String, Object> map = new HashMap<String, Object>();
+        JsonConfig config = new JsonConfig();
+        config.setIgnoreDefaultExcludes(false);
+        config.registerJsonValueProcessor(Date.class, new DateJsonValueProcessor("yyyy-MM-dd"));
+        try {
+            map.put("aaData", JSONArray.fromObject(this.creatVos(sellerHistoryEntrustRecords), config));
+        } catch (Exception e) {
+            LogUtil.error(ErrorLoggers.ERROR_LOGGER, e.getMessage());
+            throw new BizException(Public.ERROR_100);
+        }
+        map.put("recordsTotal", totalrecords);
+        map.put("recordsFiltered", totalrecords);
 
-    return map;
+        return map;
     }
 
     @Override
-    public void addHistory(SellerEntrustPriceQueue sellerEntrustPriceQueue,int stockId,double price) {
-        SellerHistoryEntrustRecord sellerHistoryEntrustRecord=new SellerHistoryEntrustRecord();
+    public void addHistory(SellerEntrustPriceQueue sellerEntrustPriceQueue, int stockId, double price) {
+        SellerHistoryEntrustRecord sellerHistoryEntrustRecord = new SellerHistoryEntrustRecord();
         sellerHistoryEntrustRecord.setUserId(sellerEntrustPriceQueue.getUserId());
         sellerHistoryEntrustRecord.setStockId(stockId);
         sellerHistoryEntrustRecord.setEntrustDate(sellerEntrustPriceQueue.getAmendTime());
@@ -127,23 +138,36 @@ public class SellerHistoryEntrustRecordServiceImpl implements SellerHistoryEntru
     }
 
     private void setCriteria(String keys, SellerHistoryEntrustRecordExample sellerHistoryEntrustRecordExample) {
-    if (keys == null || "{}".equals(keys))
-    return;
-    //JSONObject jKeys = JSONObject.fromObject(keys);
-    //Criteria criteria = sellerHistoryEntrustRecordExample.createCriteria();
+        if (keys == null || "{}".equals(keys))
+            return;
+        JSONObject jKeys = JSONObject.fromObject(keys);
+        SellerHistoryEntrustRecordExample.Criteria criteria = sellerHistoryEntrustRecordExample.createCriteria();
+        if (jKeys.containsKey("stockCode") && !StringUtil.isBlank(jKeys.getString("stockCode"))) {
+            Stock stock = stockService.findByCode(jKeys.getString("stockCode"));
+            if (stock != null) {
+                criteria.andStockIdEqualTo(stock.getStockId());
+            }else{
+                criteria.andStockIdEqualTo(0);
+            }
+        }
 
     }
-    private List<SellerHistoryEntrustRecordVO> creatVos(List<SellerHistoryEntrustRecord> sellerHistoryEntrustRecords) throws Exception{
+
+    private List<SellerHistoryEntrustRecordVO> creatVos(List<SellerHistoryEntrustRecord> sellerHistoryEntrustRecords) throws Exception {
         List<SellerHistoryEntrustRecordVO> sellerHistoryEntrustRecordVOs = new ArrayList<SellerHistoryEntrustRecordVO>();
-            for(SellerHistoryEntrustRecord sellerHistoryEntrustRecord : sellerHistoryEntrustRecords){
+        Stock stock;
+        for (SellerHistoryEntrustRecord sellerHistoryEntrustRecord : sellerHistoryEntrustRecords) {
             SellerHistoryEntrustRecordVO sellerHistoryEntrustRecordVO = new SellerHistoryEntrustRecordVO();
             BeanUtils.copyProperties(sellerHistoryEntrustRecord, sellerHistoryEntrustRecordVO);
             commonService.addBaseModel(sellerHistoryEntrustRecord, sellerHistoryEntrustRecordVO);
+            stock=stockMapper.selectByPrimaryKey(sellerHistoryEntrustRecord.getStockId());
+            sellerHistoryEntrustRecordVO.setStockCode(stock.getStockCode());
+            sellerHistoryEntrustRecordVO.setStockName(stock.getStockName());
             sellerHistoryEntrustRecordVOs.add(sellerHistoryEntrustRecordVO);
-            }
-            return sellerHistoryEntrustRecordVOs;
-            }
-            }
+        }
+        return sellerHistoryEntrustRecordVOs;
+    }
+}
 
 
 
