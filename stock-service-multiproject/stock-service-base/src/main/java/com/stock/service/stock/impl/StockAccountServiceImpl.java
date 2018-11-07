@@ -99,7 +99,7 @@ public class StockAccountServiceImpl implements StockAccountService {
         Page page = new Page();
         page.setBegin(pageNow);
         page.setLength(pageSize);
-        stockAccountExample.setOrderByClause("stockAccountId desc");
+        stockAccountExample.setOrderByClause("stock_account_id desc");
         stockAccountExample.setPage(page);
         List<StockAccount> stockAccounts = stockAccountMapper.selectByExample(stockAccountExample);
 
