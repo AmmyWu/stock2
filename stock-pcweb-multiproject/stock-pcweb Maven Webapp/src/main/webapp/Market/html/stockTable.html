@@ -1,0 +1,39 @@
+
+<div id="tab_612" class="role sys tab-page" role="tabpanel">
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box search-box">
+                    <div class="box-body">
+                        <form class="search-table form-inline" id="searchForm">
+                            <div class="form-group">
+                                <label>股票代码</label>
+                                <input type="text" name="stock_symbol" class="form-control" placeholder="股票代码">
+                            </div>
+                            <!--<div class="form-group">
+                                <label>股票名称</label>
+                                <input type="text" name="stock_name" class="form-control" placeholder="股票名称">
+                            </div>-->
+                        </form>
+                        <div class="sm-wrqapper">
+                            <input type="button" class="btn btn-info" id="searchUser" onclick="doSearch()" value="查找"/>
+                            <button class="btn btn-info search_reset" id="role_reset">重置</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="box datable-box">
+                    <div class="box-body">
+                        <table id="stockTable" class="table table-bordered table-striped" ></table>
+                    </div>
+                </div>
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </section>
+
+    <script src="Market/js/stock.js"></script>
+    <script src="Market/js/stockTable.js"></script>
+</div>
