@@ -3,7 +3,7 @@ var stock_code = "600804";
 $(document).ready(function () {
     //console.log(stock_code+"js");
     getNewData();
-    var tg = self.setInterval("getNewData()", 2000);//N毫秒刷新一次，1000毫秒＝1秒
+    var tg = self.setInterval("getNewData()", 1000);//N毫秒刷新一次，1000毫秒＝1秒
 });
 //获取新数据
 function getNewData() {
