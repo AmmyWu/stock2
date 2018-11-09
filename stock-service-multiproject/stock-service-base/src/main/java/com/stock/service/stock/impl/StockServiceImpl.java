@@ -6,10 +6,12 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.logging.Logger;
 
 import javax.annotation.Resource;
 
 import com.stock.dao.model.stock.StockAccount;
+import com.stock.dao.model.sys.SysUser;
 import net.sf.json.JSONArray;
 import net.sf.json.JsonConfig;
 
@@ -110,6 +112,32 @@ public class StockServiceImpl implements StockService {
         map.put("recordsFiltered", totalrecords);
 
         return map;
+    }
+
+    @Override
+    public Integer check(String id, String name) {
+        StockExample example = new StockExample();
+        StockExample.Criteria criteria= example.createCriteria();
+        criteria.andStockCodeEqualTo(id);
+        criteria.andStockNameEqualTo(name);
+        return stockMapper.selectByExample(example).get(0).getStockId();
+//        return (stockMapper.countByExample(example) == 0? "wrong":"correct");
+    }
+
+    @Override
+    public Integer findKeyByName(String name) {
+        StockExample example = new StockExample();
+        StockExample.Criteria criteria= example.createCriteria();
+        criteria.andStockNameEqualTo(name);
+        return stockMapper.selectByExample(example).get(0).getStockId();
+    }
+
+    @Override
+    public Integer findKeyByCode(String code) {
+        StockExample example = new StockExample();
+        StockExample.Criteria criteria= example.createCriteria();
+        criteria.andStockCodeEqualTo(code);
+        return stockMapper.selectByExample(example).get(0).getStockId();
     }
 
 
