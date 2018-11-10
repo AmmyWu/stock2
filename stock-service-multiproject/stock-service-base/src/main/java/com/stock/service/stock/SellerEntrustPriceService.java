@@ -21,6 +21,9 @@ public interface SellerEntrustPriceService {
 
     public SellerEntrustPrice findSellerEntrustPriceByPriceAndStock(String priceJson);
 
-    }
+//    public SellerEntrustPrice findSellerEntrustPriceByPriceAndStock(String priceJson);
+
+    public Integer findPriceVaild(Integer stock_id, Double stock_price);
+}
 
 

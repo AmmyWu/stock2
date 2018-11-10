@@ -18,6 +18,9 @@ public interface BuyerEntrustPriceService {
 
     public BuyerEntrustPrice findBuyerEntrustPriceByPriceAndStock(String priceJson);
 
-    }
+    public BuyerEntrustPrice findBuyerEntrustPriceByPriceAndStock(Integer stock_id,Double stock_price);
+
+    public Integer myinsert(Integer stock_id,Integer stock_count,Double stock_price);
+}
 
 

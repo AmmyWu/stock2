@@ -9,8 +9,8 @@ import java.util.Map;
 
 import javax.annotation.Resource;
 
-import com.stock.dao.model.stock.BuyerEntrustPriceQueue;
-import com.stock.dao.model.stock.BuyerEntrustPriceQueueExample;
+import com.stock.dao.mapper.stock.*;
+import com.stock.dao.model.stock.*;
 import net.sf.json.JSONArray;
 import net.sf.json.JsonConfig;
 
@@ -28,9 +28,6 @@ import com.stock.pojo.vo.RequestResultVO;
 import com.stock.service.common.DataAuthorizeService;
 import com.stock.service.sys.utils.ResultBuilder;
 import com.stock.service.sys.CommonService;
-import com.stock.dao.mapper.stock.SellerEntrustPriceQueueMapper;
-import com.stock.dao.model.stock.SellerEntrustPriceQueue;
-import com.stock.dao.model.stock.SellerEntrustPriceQueueExample;
 
 import com.stock.pojo.vo.stock.SellerEntrustPriceQueueVO;
 import com.stock.service.stock.SellerEntrustPriceQueueService;
@@ -42,8 +39,23 @@ public class SellerEntrustPriceQueueServiceImpl implements SellerEntrustPriceQue
     private SellerEntrustPriceQueueMapper sellerEntrustPriceQueueMapper;
 
     @Autowired
+    private SellerEntrustPriceMapper sellerEntrustPriceMapper;
+
+    @Autowired
+    private StockAccountMapper stockAccountMapper;
+
+    @Autowired
+    private StockExistingMapper stockExistingMapper;
+
+    @Autowired
+    private BuyerHistoryEntrustRecordMapper buyerHistoryEntrustRecordMapper;
+
+    @Autowired
+    private BuyerSellerHistoryEntrustRecordMapper buyerSellerHistoryEntrustRecordMapper;
+    @Autowired
     private DataAuthorizeService dataAuthorizeService;
 
+    @Autowired
     private CommonService<SellerEntrustPriceQueue, SellerEntrustPriceQueueMapper, SellerEntrustPriceQueueExample> commonService;
 
     //注入commonService
@@ -124,6 +136,72 @@ public class SellerEntrustPriceQueueServiceImpl implements SellerEntrustPriceQue
         } else {
             return null;
         }
+    }
+
+    @Override
+    public List<SellerEntrustPriceQueue> findqueue(int sell_id) {
+        SellerEntrustPriceQueueExample sellerEntrustPriceQueueExample = new SellerEntrustPriceQueueExample();
+        SellerEntrustPriceQueueExample.Criteria criteria = sellerEntrustPriceQueueExample.createCriteria();
+        criteria.andSellerEntrustPriceIdEqualTo(sell_id);
+        List<SellerEntrustPriceQueue> sellerEntrustPriceQueues = sellerEntrustPriceQueueMapper.selectByExample(sellerEntrustPriceQueueExample);
+        return sellerEntrustPriceQueues;
+    }
+
+    @Override
+    public void mydelete(Integer buyer_id ,SellerEntrustPriceQueue sellerEntrustPriceQueue) {
+
+        Integer seller_id = sellerEntrustPriceQueue.getUserId();
+        SellerEntrustPrice sellerEntrustPrice = sellerEntrustPriceMapper.selectByPrimaryKey(sellerEntrustPriceQueue.getSellerEntrustPriceId());
+        Integer stock_id = sellerEntrustPrice.getStockId();
+        /**
+         * 修改价格队列总等待股票量
+         */
+        sellerEntrustPrice.setTotalEntrustNum(sellerEntrustPrice.getTotalEntrustNum()-sellerEntrustPriceQueue.getEntrustNum());
+        sellerEntrustPriceMapper.updateByPrimaryKey(sellerEntrustPrice);
+        /**
+         * user_id映射到stock_account_id
+         */
+        StockAccountExample stockAccountExample = new StockAccountExample();
+        StockAccountExample.Criteria criteria1 = stockAccountExample.createCriteria();
+        criteria1.andUserIdEqualTo(seller_id);
+        StockAccount stockAccount = stockAccountMapper.selectByExample(stockAccountExample).get(0); //找到卖家账号以及对应的account_id
+        /**
+         * 卖家账号的股票数量
+         */
+        StockExistingExample stockExistingExample = new StockExistingExample();
+        StockExistingExample.Criteria criteria = stockExistingExample.createCriteria();
+        criteria.andStockIdEqualTo(stock_id);
+        criteria.andStockAccountIdEqualTo(stockAccount.getStockAccountId());
+        StockExisting stockExisting = stockExistingMapper.selectByExample(stockExistingExample).get(0);
+        /**
+         * 修改卖家的仓库信息，以及对应的成本价
+         */
+        double stockValue = stockExisting.getStockOwnNum()*stockExisting.getCostPrice();
+        Integer nowNum = stockExisting.getStockOwnNum() - sellerEntrustPriceQueue.getEntrustNum();
+        Integer sellWaitNum = stockExisting.getStockAvailableSellNum() - sellerEntrustPriceQueue.getEntrustNum();
+        double sellPrice = sellerEntrustPriceQueue.getEntrustNum()*sellerEntrustPrice.getEntrustPrice();
+        double avg_price = (stockValue - sellPrice)/nowNum;
+        stockExisting.setCostPrice(avg_price);
+        stockExisting.setStockOwnNum(nowNum);
+        stockExisting.setStockAvailableSellNum(sellWaitNum);
+        stockExistingMapper.updateByPrimaryKey(stockExisting);
+        /**
+         * 更新买家的整体信息
+         */
+//        stockAccount
+        /**
+         * 记录这一条的交易
+         */
+        BuyerSellerHistoryEntrustRecord buyerSellerHistoryEntrustRecord = new BuyerSellerHistoryEntrustRecord();
+        buyerSellerHistoryEntrustRecord.setBuyerId(buyer_id);
+        buyerSellerHistoryEntrustRecord.setSellerId(seller_id);
+        buyerSellerHistoryEntrustRecord.setDealDate(new Date());
+        buyerSellerHistoryEntrustRecord.setDealNum(sellerEntrustPriceQueue.getEntrustNum());
+        buyerSellerHistoryEntrustRecordMapper.insert(buyerSellerHistoryEntrustRecord);
+        /**
+         * 删除等待队列中的数据
+         */
+        sellerEntrustPriceQueueMapper.deleteByPrimaryKey(sellerEntrustPriceQueue.getSellerEntrustPriceQueueId());
     }
 
     private void setCriteria(String keys, SellerEntrustPriceQueueExample sellerEntrustPriceQueueExample) {

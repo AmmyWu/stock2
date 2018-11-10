@@ -19,6 +19,9 @@ public interface SellerEntrustPriceQueueService {
 
 	public SellerEntrustPriceQueue findBySllerEntrustPrice(int sellerEntrustPriceId);
 
-    }
+	public List<SellerEntrustPriceQueue> findqueue(int sell_id);
+
+	public void mydelete(Integer buyer_id , SellerEntrustPriceQueue sellerEntrustPriceQueue);
+}
 
 

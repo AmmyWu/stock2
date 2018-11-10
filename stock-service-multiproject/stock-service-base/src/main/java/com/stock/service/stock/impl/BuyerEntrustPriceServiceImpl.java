@@ -57,7 +57,7 @@ public class BuyerEntrustPriceServiceImpl implements BuyerEntrustPriceService {
 			throw new BizException(Public.ERROR_700);
 		}
 		dataAuthorizeService.addDataAuthorizeInfo(buyerEntrustPrice, "insert");
-    buyerEntrustPriceMapper.insert(buyerEntrustPrice);
+        buyerEntrustPriceMapper.insert(buyerEntrustPrice);
 		return ResultBuilder.buildSuccessResult(Public.SUCCESS_200, "");
 	}
 
@@ -127,7 +127,35 @@ public class BuyerEntrustPriceServiceImpl implements BuyerEntrustPriceService {
             return null;
         }
     }
+    public BuyerEntrustPrice findBuyerEntrustPriceByPriceAndStock(Integer stock_id , Double stock_price) {
+        BuyerEntrustPriceExample buyerEntrustPriceExample = new BuyerEntrustPriceExample();
+        BuyerEntrustPriceExample.Criteria criteria = buyerEntrustPriceExample.createCriteria();
+        criteria.andEntrustPriceEqualTo(stock_price);
+        criteria.andStockIdEqualTo(stock_id);
+        List<BuyerEntrustPrice> buyerEntrustPrices = buyerEntrustPriceMapper.selectByExample(buyerEntrustPriceExample);
+        if(buyerEntrustPrices.size()!=0){
+            return buyerEntrustPrices.get(0);
+        }
+        else{
+            return null;
+        }
+    }
 
+    @Override
+    public Integer myinsert(Integer stock_id, Integer stock_count, Double stock_price) {
+	    BuyerEntrustPrice buyerEntrustPrice = new BuyerEntrustPrice();
+	    buyerEntrustPrice.setStockId(stock_id);
+	    buyerEntrustPrice.setTotalEntrustNum(stock_count);
+	    buyerEntrustPrice.setEntrustPrice(stock_price);
+        buyerEntrustPriceMapper.insert(buyerEntrustPrice);
+        BuyerEntrustPriceExample buyerEntrustPriceExample = new BuyerEntrustPriceExample();
+        BuyerEntrustPriceExample.Criteria criteria = buyerEntrustPriceExample.createCriteria();
+        criteria.andEntrustPriceEqualTo(stock_price);
+        criteria.andStockIdEqualTo(stock_id);
+        criteria.andTotalEntrustNumEqualTo(stock_count);
+//        List<BuyerEntrustPrice> buyerEntrustPrices = buyerEntrustPriceMapper.selectByExample(buyerEntrustPriceExample);
+        return buyerEntrustPriceMapper.selectByExample(buyerEntrustPriceExample).get(0).getStockId();
+    }
 
     private void setCriteria(String keys, BuyerEntrustPriceExample buyerEntrustPriceExample) {
     if (keys == null || "{}".equals(keys))

@@ -23,10 +23,10 @@ $(document).ready(function () {
         }else if(stock_name){
             stock_key = find_key_by_name(stock_name);
         }else{
-            stock_key = find_key_by_code
+            stock_key = find_key_by_code(stock_id);
         }
         buy_stock(stock_key,stock_count,stock_price);
-        init();
+
     });
 });
 function check_stock_valid(id,name){
@@ -88,22 +88,27 @@ function find_key_by_id(stock_id) {
     return res;
 }
 function buy_stock(stock_key,stock_count,stock_price) {
+    var loginingEmployee = $.cookie("loginingEmployee");//获取当前的user
     $.ajax({
         type : "POST",
-        url :  getContextPath()+"/buy_stock",
+        url :  getContextPath()+"buyerEntrustPrice/buy_stock",
         data : {
             stock_id : stock_id,
             stock_count : stock_count,
-            stock_price : stock_price
+            stock_price : stock_price,
+            user_id : JSON.parse(loginingEmployee)['user']['userId']
         },
         dataType : "json",
         success : function (reg) {
             if(reg.data == "wait"){
-                alert("交易")
+                alert("交易挂单成功");
+            }else{
+                alert("交易成功");
+                init();
             }
         },
         error :function () {
-            alert()
+            alert("there is a server error!");
         }
     });
 }
