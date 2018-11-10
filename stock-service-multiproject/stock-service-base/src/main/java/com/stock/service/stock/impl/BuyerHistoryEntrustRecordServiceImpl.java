@@ -10,6 +10,8 @@ import java.util.Map;
 
 import javax.annotation.Resource;
 
+import com.stock.dao.model.stock.BuyerEntrustPriceQueue;
+import com.stock.dao.model.stock.SellerHistoryEntrustRecord;
 import net.sf.json.JSONArray;
 import net.sf.json.JsonConfig;
 
@@ -110,6 +112,21 @@ public class BuyerHistoryEntrustRecordServiceImpl implements BuyerHistoryEntrust
 
     return map;
     }
+
+    @Override
+    public void addHistory(BuyerEntrustPriceQueue buyerEntrustPriceQueue, int stockId, double price) {
+        BuyerHistoryEntrustRecord buyerHistoryEntrustRecord=new BuyerHistoryEntrustRecord();
+        buyerHistoryEntrustRecord.setUserId(buyerEntrustPriceQueue.getUserId());
+        buyerHistoryEntrustRecord.setStockId(stockId);
+        buyerHistoryEntrustRecord.setEntrustDate(buyerEntrustPriceQueue.getAmendTime());
+        //buyerHistoryEntrustRecord.setEntrustPrice(price);
+        buyerHistoryEntrustRecord.setEntrustNum(buyerEntrustPriceQueue.getEntrustNum());
+        buyerHistoryEntrustRecord.setDealNum(buyerEntrustPriceQueue.getEntrustNum());
+        buyerHistoryEntrustRecord.setDealPrice(price);
+        buyerHistoryEntrustRecord.setDealDate(buyerEntrustPriceQueue.getAmendTime());
+        this.insert(buyerHistoryEntrustRecord);
+    }
+
     private void setCriteria(String keys, BuyerHistoryEntrustRecordExample buyerHistoryEntrustRecordExample) {
     if (keys == null || "{}".equals(keys))
     return;

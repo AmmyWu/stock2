@@ -1,0 +1,30 @@
+<div id="tab_632" class="tab-page">
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box search-box">
+                    <div class="box-body">
+                        <form class="search-table form-inline" id="searchSellHistoryForm">
+                            <div class="form-group">
+                                <label>股票代码</label>
+                                <input type="text" class="form-control" name="stockCode" placeholder="股票代码" style="width:73%;">
+                            </div>
+                        </form>
+                        <div class="sm-wrqapper">
+                            <input type="button" class="btn btn-info btn-size" onclick="SellHistory.doSearch()" value="查找" />
+                            <button class="btn btn-info search_reset" id="resetSearchSellHistoryForm">重置</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="box datable-box">
+                    <div class="box-body">
+                        <table id="sellHistoryTable" class="table table-bordered table-striped"></table>
+                    </div>
+                </div>
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </section>
+    <script src="history/js/sellHistory.js"></script>
+</div>
