@@ -3,7 +3,7 @@
     padding: 0;
 }
 body{
-    background: url(../images/bg.png) #fff no-repeat center bottom;
+    background: url(../images/stockPicture.jpg) #fff no-repeat center bottom;
     background-attachment:fixed; 
 }
 .center{
@@ -11,10 +11,10 @@ body{
     height: 72%; */
     width: 1200px;
     height: 692px;
-    background: url(../images/formbg.png) no-repeat;
+    background: url(../images/whiteBg.png) no-repeat;
     /* margin: 0 auto; */
     position: absolute;
-    top: 50%;
+    top: 48%;
     left: 50%;
     margin: -346px 0px 0px -600px;
 }

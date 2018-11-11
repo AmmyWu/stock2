@@ -22,6 +22,8 @@ public interface StockService {
     public Integer findKeyByName(String name);
 
     public Integer findKeyByCode(String code);
+
+    public Stock findByCode(String code);
 }
 
 

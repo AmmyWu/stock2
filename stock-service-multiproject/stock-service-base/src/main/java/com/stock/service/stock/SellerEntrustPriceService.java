@@ -24,6 +24,8 @@ public interface SellerEntrustPriceService {
 //    public SellerEntrustPrice findSellerEntrustPriceByPriceAndStock(String priceJson);
 
     public Integer findPriceVaild(Integer stock_id, Double stock_price);
+
+    public void mydelete(int sell_id);
 }
 
 

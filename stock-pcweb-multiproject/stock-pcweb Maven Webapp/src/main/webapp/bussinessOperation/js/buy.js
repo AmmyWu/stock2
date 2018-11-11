@@ -1,4 +1,4 @@
-var stock_key = null;
+var stock_key = -1 ;
 $(document).ready(function () {
     init();
     $("#buyButton").click(function () {
@@ -16,17 +16,18 @@ $(document).ready(function () {
         }
         else if(stock_id&&stock_name){
             stock_key = check_stock_valid(stock_id,stock_name);
-            if(stock_key == null){
-                alert("股票代码与名称不匹配！");
-                return;
-            }
         }else if(stock_name){
             stock_key = find_key_by_name(stock_name);
         }else{
-            stock_key = find_key_by_code(stock_id);
+            stock_key = find_key_by_id(stock_id);
         }
-        buy_stock(stock_key,stock_count,stock_price);
 
+        if(stock_key==-1){
+            alert("查询不到此股票！交易失败！")
+        }else {
+            // alert("准备开始购买股票~");
+            buy_stock(stock_key,stock_count,stock_price);
+        }
     });
 });
 function check_stock_valid(id,name){
@@ -38,7 +39,7 @@ function check_stock_valid(id,name){
             id:id,
             name: name
        },
-        dataType:"number",
+        // dataType:"number",
         async:false,
         success: function (reg) {
             res =  reg;
@@ -58,7 +59,7 @@ function find_key_by_name(stock_name) {
             stock_name:stock_name
         },
         async:false,
-        dataType:"number",
+        // dataType:"number",
         success : function (reg) {
             res = reg;
         },
@@ -77,7 +78,7 @@ function find_key_by_id(stock_id) {
             code:stock_id
         },
         async:false,
-        dataType:"number",
+        // dataType:"number",
         success : function (reg) {
             res = reg;
         },
@@ -89,18 +90,20 @@ function find_key_by_id(stock_id) {
 }
 function buy_stock(stock_key,stock_count,stock_price) {
     var loginingEmployee = $.cookie("loginingEmployee");//获取当前的user
+    alert("prepare ajax...");
     $.ajax({
         type : "POST",
         url :  getContextPath()+"buyerEntrustPrice/buy_stock",
         data : {
-            stock_id : stock_id,
+            stock_id : stock_key,
             stock_count : stock_count,
             stock_price : stock_price,
             user_id : JSON.parse(loginingEmployee)['user']['userId']
         },
-        dataType : "json",
+        async:false,
+        dataType : "text",
         success : function (reg) {
-            if(reg.data == "wait"){
+            if(reg == "wait"){
                 alert("交易挂单成功");
             }else{
                 alert("交易成功");
@@ -143,7 +146,8 @@ function init() {
             "type": "POST",
             "url": getContextPath() + 'stockExisting/getByPage.do',
         },
-        dom: '<"top">Brt<"bottom"flip><"clear">',
+        // dom: '<"top">Brt<"bottom"><"clear">',//flip
+        // dom: '<"top">Brt<"bottom"flip><"clear">',
         columns: [
             { title: "证券代码", data: "stockCode" },
             { title: "证券名称", data: "stockName" },

@@ -239,6 +239,9 @@ var closeTab = function (id,tabclass) {
         $(".selectedItem").removeClass("selectedItem");
         $(".sideMenu_"+selectedclass).addClass("selectedItem");
     }
+    if(id == 622){
+        window.clearInterval(tg);
+    }
     //关闭TAB
     $("#tab_" + id).empty();
     $("#tab_" + id).remove();
@@ -250,6 +253,7 @@ var closeTab = function (id,tabclass) {
    // $("#tab_" + id).attr("id","#tab_" + id+"_empty");
     //$("#" + id).attr("id","#" + id+"_empty");
     //after remove id still on page
+
 };
 
 $(function () {

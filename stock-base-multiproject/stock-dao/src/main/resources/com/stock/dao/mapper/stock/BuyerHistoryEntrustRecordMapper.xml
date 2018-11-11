@@ -11,7 +11,7 @@
     <result column="user_id" property="userId" jdbcType="INTEGER" />
     <result column="stock_id" property="stockId" jdbcType="INTEGER" />
     <result column="entrust_date" property="entrustDate" jdbcType="TIMESTAMP" />
-    <result column="entrust_price" property="entrustPrice" jdbcType="TIMESTAMP" />
+    <result column="entrust_price" property="entrustPrice" jdbcType="DOUBLE" />
     <result column="entrust_num" property="entrustNum" jdbcType="INTEGER" />
     <result column="deal_num" property="dealNum" jdbcType="INTEGER" />
     <result column="deal_price" property="dealPrice" jdbcType="DOUBLE" />
@@ -167,7 +167,7 @@
       create_time, amender, amend_time, 
       access_group)
     values (#{buyerHistoryEntrustRecordId,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, 
-      #{stockId,jdbcType=INTEGER}, #{entrustDate,jdbcType=TIMESTAMP}, #{entrustPrice,jdbcType=TIMESTAMP}, 
+      #{stockId,jdbcType=INTEGER}, #{entrustDate,jdbcType=TIMESTAMP}, #{entrustPrice,jdbcType=DOUBLE},
       #{entrustNum,jdbcType=INTEGER}, #{dealNum,jdbcType=INTEGER}, #{dealPrice,jdbcType=DOUBLE}, 
       #{dealDate,jdbcType=TIMESTAMP}, #{status,jdbcType=INTEGER}, #{creator,jdbcType=INTEGER}, 
       #{createTime,jdbcType=TIMESTAMP}, #{amender,jdbcType=INTEGER}, #{amendTime,jdbcType=TIMESTAMP}, 
@@ -241,7 +241,7 @@
         #{entrustDate,jdbcType=TIMESTAMP},
       </if>
       <if test="entrustPrice != null" >
-        #{entrustPrice,jdbcType=TIMESTAMP},
+        #{entrustPrice,jdbcType=DOUBLE},
       </if>
       <if test="entrustNum != null" >
         #{entrustNum,jdbcType=INTEGER},
@@ -307,7 +307,7 @@
         entrust_date = #{record.entrustDate,jdbcType=TIMESTAMP},
       </if>
       <if test="record.entrustPrice != null" >
-        entrust_price = #{record.entrustPrice,jdbcType=TIMESTAMP},
+        entrust_price = #{record.entrustPrice,jdbcType=DOUBLE},
       </if>
       <if test="record.entrustNum != null" >
         entrust_num = #{record.entrustNum,jdbcType=INTEGER},
@@ -355,7 +355,7 @@
       user_id = #{record.userId,jdbcType=INTEGER},
       stock_id = #{record.stockId,jdbcType=INTEGER},
       entrust_date = #{record.entrustDate,jdbcType=TIMESTAMP},
-      entrust_price = #{record.entrustPrice,jdbcType=TIMESTAMP},
+      entrust_price = #{record.entrustPrice,jdbcType=DOUBLE},
       entrust_num = #{record.entrustNum,jdbcType=INTEGER},
       deal_num = #{record.dealNum,jdbcType=INTEGER},
       deal_price = #{record.dealPrice,jdbcType=DOUBLE},
@@ -388,7 +388,7 @@
         entrust_date = #{entrustDate,jdbcType=TIMESTAMP},
       </if>
       <if test="entrustPrice != null" >
-        entrust_price = #{entrustPrice,jdbcType=TIMESTAMP},
+        entrust_price = #{entrustPrice,jdbcType=DOUBLE},
       </if>
       <if test="entrustNum != null" >
         entrust_num = #{entrustNum,jdbcType=INTEGER},
@@ -433,7 +433,7 @@
     set user_id = #{userId,jdbcType=INTEGER},
       stock_id = #{stockId,jdbcType=INTEGER},
       entrust_date = #{entrustDate,jdbcType=TIMESTAMP},
-      entrust_price = #{entrustPrice,jdbcType=TIMESTAMP},
+      entrust_price = #{entrustPrice,jdbcType=DOUBLE},
       entrust_num = #{entrustNum,jdbcType=INTEGER},
       deal_num = #{dealNum,jdbcType=INTEGER},
       deal_price = #{dealPrice,jdbcType=DOUBLE},

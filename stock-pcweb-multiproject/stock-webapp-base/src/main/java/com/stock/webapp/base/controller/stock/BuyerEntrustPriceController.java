@@ -29,6 +29,8 @@ import com.stock.service.sys.utils.HttpResponseConstants.Public;
 public class BuyerEntrustPriceController {
 
     @Autowired
+    private BuyerHistoryEntrustRecordService buyerHistoryEntrustRecordService;
+    @Autowired
     private BuyerEntrustPriceService buyerEntrustPriceService;
     @Autowired
     private SellerEntrustPriceService sellerEntrustPriceService;
@@ -127,9 +129,9 @@ public class BuyerEntrustPriceController {
                 @Override
                 public int compare(SellerEntrustPriceQueue o1, SellerEntrustPriceQueue o2) {
                     if(o1.getSellerEntrustPriceQueueId()<o2.getSellerEntrustPriceQueueId()){
-                        return 1;
+                        return -1;
                     }
-                    return -1;
+                    return 1;
                 }
             });
             for(int i=0;i<sellStockList.size();i++){
@@ -152,17 +154,32 @@ public class BuyerEntrustPriceController {
                         stockExistingService.update(stockExisting);
                     }else{
                         stockExisting = new StockExisting();
-                        stockExisting.setStockAvailableSellNum(stock_count);
-                        stockExisting.setStockOwnNum(stock_count);
+                        stockExisting.setStockAvailableSellNum(stock_count_copy);
+                        stockExisting.setStockOwnNum(stock_count_copy);
                         stockExisting.setCostPrice(stock_price);
                         stockExisting.setStockId(stock_id);
                         stockExisting.setStockAccountId(stockAccount.getStockAccountId());
                         stockExistingService.insert(stockExisting);
+
+                    }
+                    BuyerHistoryEntrustRecord buyerHistoryEntrustRecord = new BuyerHistoryEntrustRecord();
+                    buyerHistoryEntrustRecord.setDealDate(new Date());
+                    buyerHistoryEntrustRecord.setDealNum(stock_count_copy);
+                    buyerHistoryEntrustRecord.setDealPrice(stock_price);
+                    buyerHistoryEntrustRecord.setEntrustNum(stock_count_copy);
+                    buyerHistoryEntrustRecord.setEntrustDate(new Date());
+                    buyerHistoryEntrustRecord.setEntrustPrice(stock_price);
+                    buyerHistoryEntrustRecord.setStockId(stock_id);
+                    buyerHistoryEntrustRecord.setUserId(user_id);
+                    buyerHistoryEntrustRecordService.insert(buyerHistoryEntrustRecord);
+                    if(stock_count == 0){
+                        sellerEntrustPriceQueueService.mydelete(user_id,sellStockList.get(i));
                     }
                     return "success";
                 }
                 sellerEntrustPriceQueueService.mydelete(user_id,sellStockList.get(i));
             }
+            sellerEntrustPriceService.mydelete(sell_id);
             /**
              * 表示所有的等待队列都已经买完了，但是还有想买的股票，只能继续挂单
              */

@@ -44,10 +44,12 @@ public class StockController {
      */
     @RequestMapping(value = "find_key_by_name")
     public @ResponseBody Integer findKeyByName(String name){
+//        System.out.println(stockService.findKeyByName(name));
         return stockService.findKeyByName(name);
     }
     @RequestMapping(value = "find_key_by_id")
     public @ResponseBody Integer findKeyById(String code){
+//        System.out.println(stockService.findKeyByCode(code));
         return stockService.findKeyByCode(code);
     }
 
