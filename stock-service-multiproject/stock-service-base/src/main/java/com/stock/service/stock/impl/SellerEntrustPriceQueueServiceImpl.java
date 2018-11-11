@@ -52,17 +52,24 @@ public class SellerEntrustPriceQueueServiceImpl implements SellerEntrustPriceQue
 
     @Autowired
     private BuyerSellerHistoryEntrustRecordMapper buyerSellerHistoryEntrustRecordMapper;
+
+    @Autowired
+    private SellerHistoryEntrustRecordMapper historyEntrustRecordMapper;
+
     @Autowired
     private DataAuthorizeService dataAuthorizeService;
 
-    @Autowired
+
     private CommonService<SellerEntrustPriceQueue, SellerEntrustPriceQueueMapper, SellerEntrustPriceQueueExample> commonService;
 
     //注入commonService
+
+
     @Resource(name = "commonService")
     public void setCommonService(CommonService<SellerEntrustPriceQueue, SellerEntrustPriceQueueMapper, SellerEntrustPriceQueueExample> commonService) {
         this.commonService = commonService;
     }
+
 
     @Override
     public RequestResultVO insert(SellerEntrustPriceQueue sellerEntrustPriceQueue) {
@@ -188,7 +195,16 @@ public class SellerEntrustPriceQueueServiceImpl implements SellerEntrustPriceQue
         /**
          * 更新买家的整体信息
          */
-//        stockAccount
+        SellerHistoryEntrustRecord sellerHistoryEntrustRecord = new SellerHistoryEntrustRecord();
+        sellerHistoryEntrustRecord.setUserId(seller_id);
+        sellerHistoryEntrustRecord.setStockId(stock_id);
+        sellerHistoryEntrustRecord.setEntrustDate(new Date());
+        sellerHistoryEntrustRecord.setEntrustNum(sellerEntrustPriceQueue.getEntrustNum());
+        sellerHistoryEntrustRecord.setEntrustPrice(sellerEntrustPrice.getEntrustPrice());
+        sellerHistoryEntrustRecord.setDealDate(new Date());
+        sellerHistoryEntrustRecord.setDealNum(sellerEntrustPriceQueue.getEntrustNum()*1.0);
+        sellerHistoryEntrustRecord.setDealPrice(sellerEntrustPrice.getEntrustPrice());
+        historyEntrustRecordMapper.insert(sellerHistoryEntrustRecord);
         /**
          * 记录这一条的交易
          */
@@ -197,6 +213,7 @@ public class SellerEntrustPriceQueueServiceImpl implements SellerEntrustPriceQue
         buyerSellerHistoryEntrustRecord.setSellerId(seller_id);
         buyerSellerHistoryEntrustRecord.setDealDate(new Date());
         buyerSellerHistoryEntrustRecord.setDealNum(sellerEntrustPriceQueue.getEntrustNum());
+        buyerSellerHistoryEntrustRecord.setDealPrice(sellerEntrustPrice.getEntrustPrice());
         buyerSellerHistoryEntrustRecordMapper.insert(buyerSellerHistoryEntrustRecord);
         /**
          * 删除等待队列中的数据

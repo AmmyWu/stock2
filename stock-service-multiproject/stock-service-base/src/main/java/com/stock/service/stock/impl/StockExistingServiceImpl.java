@@ -144,7 +144,6 @@ public class StockExistingServiceImpl implements StockExistingService {
             return;
         JSONObject jKeys = JSONObject.fromObject(keys);
         StockExistingExample.Criteria criteria = stockExistingExample.createCriteria();
-
         StockAccount stockAccount = stockAccountService.findStockAccountByUser();
         criteria.andStockAccountIdEqualTo(stockAccount.getStockAccountId());
     }

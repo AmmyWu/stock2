@@ -255,6 +255,11 @@ public class SellerEntrustPriceServiceImpl implements SellerEntrustPriceService 
             return -1;
     }
 
+    @Override
+    public void mydelete(int sell_id) {
+        sellerEntrustPriceMapper.deleteByPrimaryKey(sell_id);
+    }
+
     private void setCriteria(String keys, SellerEntrustPriceExample sellerEntrustPriceExample) {
         if (keys == null || "{}".equals(keys))
             return;

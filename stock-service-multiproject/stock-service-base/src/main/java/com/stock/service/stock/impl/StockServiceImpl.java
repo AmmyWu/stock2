@@ -120,8 +120,10 @@ public class StockServiceImpl implements StockService {
         StockExample.Criteria criteria= example.createCriteria();
         criteria.andStockCodeEqualTo(id);
         criteria.andStockNameEqualTo(name);
-        return stockMapper.selectByExample(example).get(0).getStockId();
-//        return (stockMapper.countByExample(example) == 0? "wrong":"correct");
+        if(stockMapper.selectByExample(example).size()>0){
+            return stockMapper.selectByExample(example).get(0).getStockId();
+        }
+        return -1;
     }
 
     @Override
@@ -129,7 +131,10 @@ public class StockServiceImpl implements StockService {
         StockExample example = new StockExample();
         StockExample.Criteria criteria= example.createCriteria();
         criteria.andStockNameEqualTo(name);
-        return stockMapper.selectByExample(example).get(0).getStockId();
+        if(stockMapper.selectByExample(example).size()>0){
+            return stockMapper.selectByExample(example).get(0).getStockId();
+        }
+        return -1;
     }
 
     @Override
@@ -137,7 +142,22 @@ public class StockServiceImpl implements StockService {
         StockExample example = new StockExample();
         StockExample.Criteria criteria= example.createCriteria();
         criteria.andStockCodeEqualTo(code);
-        return stockMapper.selectByExample(example).get(0).getStockId();
+        List<Stock> stocks = stockMapper.selectByExample(example);
+        if(stockMapper.selectByExample(example).size()>0){
+            return stockMapper.selectByExample(example).get(0).getStockId();
+        }
+        return -1;
+    }
+
+    @Override
+    public Stock findByCode(String code) {
+        StockExample example = new StockExample();
+        StockExample.Criteria criteria= example.createCriteria();
+        criteria.andStockCodeEqualTo(code);
+        if(stockMapper.selectByExample(example).size()>0){
+            return stockMapper.selectByExample(example).get(0);
+        }
+        return null;
     }
 
 
