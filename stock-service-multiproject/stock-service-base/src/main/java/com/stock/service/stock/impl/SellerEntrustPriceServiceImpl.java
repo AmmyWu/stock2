@@ -242,6 +242,24 @@ public class SellerEntrustPriceServiceImpl implements SellerEntrustPriceService 
             return null;
     }
 
+    @Override
+    public Integer findPriceVaild(Integer stock_id, Double stock_price) {
+        SellerEntrustPriceExample sellerEntrustPriceExample = new SellerEntrustPriceExample();
+        SellerEntrustPriceExample.Criteria criteria = sellerEntrustPriceExample.createCriteria();
+        criteria.andEntrustPriceEqualTo(stock_price);
+        criteria.andStockIdEqualTo(stock_id);
+        List<SellerEntrustPrice> sellerEntrustPrices = sellerEntrustPriceMapper.selectByExample(sellerEntrustPriceExample);
+        if (sellerEntrustPrices.size() != 0)
+            return sellerEntrustPrices.get(0).getSellerEntrustPriceId();
+        else
+            return -1;
+    }
+
+    @Override
+    public void mydelete(int sell_id) {
+        sellerEntrustPriceMapper.deleteByPrimaryKey(sell_id);
+    }
+
     private void setCriteria(String keys, SellerEntrustPriceExample sellerEntrustPriceExample) {
         if (keys == null || "{}".equals(keys))
             return;
@@ -260,6 +278,7 @@ public class SellerEntrustPriceServiceImpl implements SellerEntrustPriceService 
         }
         return sellerEntrustPriceVOs;
     }
+
 
 }
 

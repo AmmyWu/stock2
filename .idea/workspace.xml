@@ -2,13 +2,45 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="stock-pcweb:war" />
-      <artifact name="stock-webapp-base:war" />
+      <artifact name="stock-pcweb:war exploded" />
+      <artifact name="stock-webapp-base:war exploded" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9b2ac399-e937-4f40-af24-5132edddd229" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="9b2ac399-e937-4f40-af24-5132edddd229" name="Default Changelist" comment="bg image">
+      <change afterPath="$PROJECT_DIR$/stock-pcweb-multiproject/stock-pcweb Maven Webapp/src/main/webapp/history/html/buyHistory.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stock-pcweb-multiproject/stock-pcweb Maven Webapp/src/main/webapp/history/js/buyHistory.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stock-pcweb-multiproject/stock-pcweb Maven Webapp/src/main/webapp/images/stockPicture.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stock-base-multiproject/stock-dao/src/main/java/com/stock/dao/model/stock/BuyerHistoryEntrustRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/stock-base-multiproject/stock-dao/src/main/java/com/stock/dao/model/stock/BuyerHistoryEntrustRecord.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stock-base-multiproject/stock-dao/src/main/resources/com/stock/dao/mapper/stock/BuyerHistoryEntrustRecordMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/stock-base-multiproject/stock-dao/src/main/resources/com/stock/dao/mapper/stock/BuyerHistoryEntrustRecordMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stock-base-multiproject/stock-pojo/src/main/java/com/stock/pojo/vo/stock/BuyerHistoryEntrustRecordVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/stock-base-multiproject/stock-pojo/src/main/java/com/stock/pojo/vo/stock/BuyerHistoryEntrustRecordVO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stock-pcweb-multiproject/stock-pcweb Maven Webapp/src/main/webapp/Market/js/stockTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/stock-pcweb-multiproject/stock-pcweb Maven Webapp/src/main/webapp/Market/js/stockTable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stock-pcweb-multiproject/stock-pcweb Maven Webapp/src/main/webapp/bussinessOperation/html/buyOperation.html" beforeDir="false" afterPath="$PROJECT_DIR$/stock-pcweb-multiproject/stock-pcweb Maven Webapp/src/main/webapp/bussinessOperation/html/buyOperation.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stock-pcweb-multiproject/stock-pcweb Maven Webapp/src/main/webapp/bussinessOperation/js/buy.js" beforeDir="false" afterPath="$PROJECT_DIR$/stock-pcweb-multiproject/stock-pcweb Maven Webapp/src/main/webapp/bussinessOperation/js/buy.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stock-pcweb-multiproject/stock-pcweb Maven Webapp/src/main/webapp/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/stock-pcweb-multiproject/stock-pcweb Maven Webapp/src/main/webapp/css/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stock-pcweb-multiproject/stock-pcweb Maven Webapp/src/main/webapp/images/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/stock-pcweb-multiproject/stock-pcweb Maven Webapp/src/main/webapp/images/logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stock-pcweb-multiproject/stock-pcweb Maven Webapp/src/main/webapp/images/showStep.png" beforeDir="false" afterPath="$PROJECT_DIR$/stock-pcweb-multiproject/stock-pcweb Maven Webapp/src/main/webapp/images/showStep.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stock-pcweb-multiproject/stock-pcweb Maven Webapp/src/main/webapp/images/whiteBg.png" beforeDir="false" afterPath="$PROJECT_DIR$/stock-pcweb-multiproject/stock-pcweb Maven Webapp/src/main/webapp/images/whiteBg.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stock-pcweb-multiproject/stock-pcweb Maven Webapp/src/main/webapp/index-for-login.html" beforeDir="false" afterPath="$PROJECT_DIR$/stock-pcweb-multiproject/stock-pcweb Maven Webapp/src/main/webapp/index-for-login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stock-pcweb-multiproject/stock-pcweb Maven Webapp/src/main/webapp/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/stock-pcweb-multiproject/stock-pcweb Maven Webapp/src/main/webapp/js/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stock-pcweb-multiproject/stock-pcweb Maven Webapp/src/main/webapp/myAccount/html/myAccount.html" beforeDir="false" afterPath="$PROJECT_DIR$/stock-pcweb-multiproject/stock-pcweb Maven Webapp/src/main/webapp/myAccount/html/myAccount.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stock-pcweb-multiproject/stock-pcweb Maven Webapp/src/main/webapp/myAccount/js/myAccount.js" beforeDir="false" afterPath="$PROJECT_DIR$/stock-pcweb-multiproject/stock-pcweb Maven Webapp/src/main/webapp/myAccount/js/myAccount.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stock-pcweb-multiproject/stock-pcweb Maven Webapp/src/main/webapp/plugins/ckeditor/CHANGES.md" beforeDir="false" afterPath="$PROJECT_DIR$/stock-pcweb-multiproject/stock-pcweb Maven Webapp/src/main/webapp/plugins/ckeditor/CHANGES.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stock-pcweb-multiproject/stock-webapp-base/src/main/java/com/stock/webapp/base/controller/stock/BuyerEntrustPriceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/stock-pcweb-multiproject/stock-webapp-base/src/main/java/com/stock/webapp/base/controller/stock/BuyerEntrustPriceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stock-pcweb-multiproject/stock-webapp-base/src/main/java/com/stock/webapp/base/controller/stock/BuyerHistoryEntrustRecordController.java" beforeDir="false" afterPath="$PROJECT_DIR$/stock-pcweb-multiproject/stock-webapp-base/src/main/java/com/stock/webapp/base/controller/stock/BuyerHistoryEntrustRecordController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stock-pcweb-multiproject/stock-webapp-base/src/main/java/com/stock/webapp/base/controller/stock/StockController.java" beforeDir="false" afterPath="$PROJECT_DIR$/stock-pcweb-multiproject/stock-webapp-base/src/main/java/com/stock/webapp/base/controller/stock/StockController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stock-service-multiproject/stock-service-base/src/main/java/com/stock/service/stock/BuyerEntrustPriceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/stock-service-multiproject/stock-service-base/src/main/java/com/stock/service/stock/BuyerEntrustPriceService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stock-service-multiproject/stock-service-base/src/main/java/com/stock/service/stock/SellerEntrustPriceQueueService.java" beforeDir="false" afterPath="$PROJECT_DIR$/stock-service-multiproject/stock-service-base/src/main/java/com/stock/service/stock/SellerEntrustPriceQueueService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stock-service-multiproject/stock-service-base/src/main/java/com/stock/service/stock/SellerEntrustPriceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/stock-service-multiproject/stock-service-base/src/main/java/com/stock/service/stock/SellerEntrustPriceService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stock-service-multiproject/stock-service-base/src/main/java/com/stock/service/stock/StockService.java" beforeDir="false" afterPath="$PROJECT_DIR$/stock-service-multiproject/stock-service-base/src/main/java/com/stock/service/stock/StockService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stock-service-multiproject/stock-service-base/src/main/java/com/stock/service/stock/impl/BuyerEntrustPriceServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/stock-service-multiproject/stock-service-base/src/main/java/com/stock/service/stock/impl/BuyerEntrustPriceServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stock-service-multiproject/stock-service-base/src/main/java/com/stock/service/stock/impl/BuyerHistoryEntrustRecordServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/stock-service-multiproject/stock-service-base/src/main/java/com/stock/service/stock/impl/BuyerHistoryEntrustRecordServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stock-service-multiproject/stock-service-base/src/main/java/com/stock/service/stock/impl/SellerEntrustPriceQueueServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/stock-service-multiproject/stock-service-base/src/main/java/com/stock/service/stock/impl/SellerEntrustPriceQueueServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stock-service-multiproject/stock-service-base/src/main/java/com/stock/service/stock/impl/SellerEntrustPriceServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/stock-service-multiproject/stock-service-base/src/main/java/com/stock/service/stock/impl/SellerEntrustPriceServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stock-service-multiproject/stock-service-base/src/main/java/com/stock/service/stock/impl/StockExistingServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/stock-service-multiproject/stock-service-base/src/main/java/com/stock/service/stock/impl/StockExistingServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stock-service-multiproject/stock-service-base/src/main/java/com/stock/service/stock/impl/StockServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/stock-service-multiproject/stock-service-base/src/main/java/com/stock/service/stock/impl/StockServiceImpl.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/blsb-base-multiproject/blsb-common/target/" />
@@ -141,85 +173,114 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="-949849480">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="9" />
+          <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.10" value="2" />
+          <entry key="project.open.time.2" value="2" />
+          <entry key="project.open.time.9" value="4" />
+          <entry key="project.opened" value="9" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="css" value="1" />
+          <entry key="html" value="13" />
+          <entry key="java" value="5" />
+          <entry key="js" value="32" />
+          <entry key="png" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="CSS" value="1" />
+          <entry key="HTML" value="13" />
+          <entry key="Image" value="1" />
+          <entry key="JAVA" value="5" />
+          <entry key="JavaScript" value="32" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="css" value="6" />
+          <entry key="html" value="516" />
+          <entry key="js" value="1374" />
+          <entry key="txt" value="31" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="CSS" value="6" />
+          <entry key="HTML" value="516" />
+          <entry key="JavaScript" value="1374" />
+          <entry key="PLAIN_TEXT" value="31" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.js.language.service.starts" />
+      <usages-collector id="statistics.spring.boot.run.usages" />
+      <usages-collector id="statistics.vcs.git.usages" />
+      <usages-collector id="statistics.spring.boot.mvc.usages" />
+    </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Generate.java">
+        <entry file="file://$PROJECT_DIR$/stock-pcweb-multiproject/stock-pcweb Maven Webapp/src/main/webapp/Market/html/kchart.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="143" column="30" selection-start-line="143" selection-start-column="30" selection-end-line="143" selection-end-column="30" />
+            <state relative-caret-position="76">
+              <caret line="4" selection-start-line="4" selection-end-line="4" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://$PROJECT_DIR$/src/lib/generateVSC.jar!/com/core/generate/GenerateService.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GenerateConf.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="4" lean-forward="true" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ftl/service.ftl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ftl/controller.ftl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="26" selection-start-line="26" selection-end-line="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/ftl/modelVO.ftl">
+        <entry file="file://$PROJECT_DIR$/stock-pcweb-multiproject/stock-pcweb Maven Webapp/src/main/webapp/css/login.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+            <state relative-caret-position="304">
+              <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GenerateConfStock.xml">
+        <entry file="file://$PROJECT_DIR$/stock-pcweb-multiproject/stock-pcweb Maven Webapp/src/main/webapp/Market/js/kchart.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="23" column="38" selection-start-line="23" selection-start-column="38" selection-end-line="23" selection-end-column="38" />
+            <state relative-caret-position="247">
+              <caret line="13" column="9" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
   <component name="FindInProjectRecents">
     <findStrings>
       <find>Sys</find>
       <find>SysRoleService</find>
       <find>\\</find>
+      <find>getContextPath</find>
+      <find>roleform</find>
+      <find>right</find>
+      <find>paral</find>
+      <find>2015</find>
+      <find>2015/</find>
     </findStrings>
     <replaceStrings>
       <replace>/</replace>
+      <replace>2018/</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/stock-base-multiproject/stock-dao/src/main/java</dir>
@@ -248,6 +309,17 @@
         <option value="$PROJECT_DIR$/stock-service-multiproject/stock-service-base/src/main/java/com/stock/service/sys/impl/TempletDataServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/GenerateConfStock.xml" />
         <option value="$PROJECT_DIR$/src/Generate.java" />
+        <option value="$PROJECT_DIR$/stock-pcweb-multiproject/stock-pcweb Maven Webapp/src/main/webapp/basicInfo/js.js" />
+        <option value="$PROJECT_DIR$/stock-pcweb-multiproject/stock-pcweb Maven Webapp/src/main/webapp/basicInfo/js/stock.js" />
+        <option value="$PROJECT_DIR$/stock-pcweb-multiproject/stock-pcweb Maven Webapp/src/main/webapp/basicInfo/html/stock.html" />
+        <option value="$PROJECT_DIR$/stock-pcweb-multiproject/stock-pcweb Maven Webapp/src/main/webapp/Market/js/stockTableInterface.js" />
+        <option value="$PROJECT_DIR$/stock-pcweb-multiproject/stock-pcweb Maven Webapp/src/main/webapp/Market/html/stockTable.html" />
+        <option value="$PROJECT_DIR$/stock-pcweb-multiproject/stock-pcweb Maven Webapp/src/main/webapp/Market/js/stock.js" />
+        <option value="$PROJECT_DIR$/stock-pcweb-multiproject/stock-pcweb Maven Webapp/src/main/webapp/Market/js/stockTable.js" />
+        <option value="$PROJECT_DIR$/stock-pcweb-multiproject/stock-pcweb Maven Webapp/src/main/webapp/Market/js/echarts.js" />
+        <option value="$PROJECT_DIR$/stock-pcweb-multiproject/stock-pcweb Maven Webapp/src/main/webapp/Market/js/kchart.js" />
+        <option value="$PROJECT_DIR$/stock-pcweb-multiproject/stock-pcweb Maven Webapp/src/main/webapp/Market/html/kchart.html" />
+        <option value="$PROJECT_DIR$/stock-pcweb-multiproject/stock-pcweb Maven Webapp/src/main/webapp/css/login.css" />
       </list>
     </option>
   </component>
@@ -287,10 +359,16 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
-    <option name="width" value="1680" />
-    <option name="height" value="1027" />
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths>
+      <path value="$PROJECT_DIR$/stock-pcweb-multiproject/stock-pcweb Maven Webapp/src/main/webapp/plugins/jquery-ui-1.12.1/package.json" />
+    </packageJsonPaths>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="815" />
+    <option name="y" value="20" />
+    <option name="width" value="1360" />
+    <option name="height" value="1010" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -298,94 +376,32 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
       <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="stock-framework" type="b2602c69:ProjectViewProjectNode" />
-              <item name="stock-framework" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="stock-framework" type="b2602c69:ProjectViewProjectNode" />
-              <item name="stock-framework" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="stock-framework" type="b2602c69:ProjectViewProjectNode" />
-              <item name="stock-framework" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="ftl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="stock-framework" type="b2602c69:ProjectViewProjectNode" />
-              <item name="stock-framework" type="462c0819:PsiDirectoryNode" />
-              <item name="stock-service-multiproject" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="stock-framework" type="b2602c69:ProjectViewProjectNode" />
-              <item name="stock-framework" type="462c0819:PsiDirectoryNode" />
-              <item name="stock-service-multiproject" type="462c0819:PsiDirectoryNode" />
-              <item name="stock-service-base" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="stock-framework" type="b2602c69:ProjectViewProjectNode" />
-              <item name="stock-framework" type="462c0819:PsiDirectoryNode" />
-              <item name="stock-service-multiproject" type="462c0819:PsiDirectoryNode" />
-              <item name="stock-service-base" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="stock-framework" type="b2602c69:ProjectViewProjectNode" />
-              <item name="stock-framework" type="462c0819:PsiDirectoryNode" />
-              <item name="stock-service-multiproject" type="462c0819:PsiDirectoryNode" />
-              <item name="stock-service-base" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="stock-framework" type="b2602c69:ProjectViewProjectNode" />
-              <item name="stock-framework" type="462c0819:PsiDirectoryNode" />
-              <item name="stock-service-multiproject" type="462c0819:PsiDirectoryNode" />
-              <item name="stock-service-base" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="stock-framework" type="b2602c69:ProjectViewProjectNode" />
-              <item name="stock-framework" type="462c0819:PsiDirectoryNode" />
-              <item name="stock-service-multiproject" type="462c0819:PsiDirectoryNode" />
-              <item name="stock-service-base" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="stock-framework" type="b2602c69:ProjectViewProjectNode" />
-              <item name="stock-framework" type="462c0819:PsiDirectoryNode" />
-              <item name="stock-service-multiproject" type="462c0819:PsiDirectoryNode" />
-              <item name="stock-service-base" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="stock" type="b2602c69:ProjectViewProjectNode" />
               <item name="stock" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="stock-framework" type="b2602c69:ProjectViewProjectNode" />
-              <item name="stock-framework" type="462c0819:PsiDirectoryNode" />
-              <item name="stock-service-multiproject" type="462c0819:PsiDirectoryNode" />
-              <item name="stock-service-base" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="stock" type="b2602c69:ProjectViewProjectNode" />
               <item name="stock" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="stock-pcweb-multiproject" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="stock" type="b2602c69:ProjectViewProjectNode" />
+              <item name="stock" type="462c0819:PsiDirectoryNode" />
+              <item name="stock-pcweb-multiproject" type="462c0819:PsiDirectoryNode" />
+              <item name="stock-pcweb Maven Webapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="stock" type="b2602c69:ProjectViewProjectNode" />
+              <item name="stock" type="462c0819:PsiDirectoryNode" />
+              <item name="stock-pcweb-multiproject" type="462c0819:PsiDirectoryNode" />
+              <item name="stock-pcweb Maven Webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -394,23 +410,164 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="SearchEverywhereHistoryKey" value="controllerftlName&#9;ACTION&#9;null&#10;implflag&#9;PSI&#9;JAVA://org.apache.lucene.analysis.hunspell.Dictionary.SimpleFlagParsingStrategy&#10;addbase&#9;PSI&#9;JAVA://com.blsb.service.sys.CommonService#addBaseModel" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="SearchEverywhereHistoryKey" value="bg.png&#9;FILE&#9;file://E:/stock/stock-pcweb-multiproject/stock-pcweb Maven Webapp/src/main/webapp/images/bg.png&#10;login.css&#9;FILE&#9;file://E:/stock/stock-pcweb-multiproject/stock-pcweb Maven Webapp/src/main/webapp/css/login.css&#10;controllerftlName&#9;ACTION&#9;null&#10;implflag&#9;PSI&#9;JAVA://org.apache.lucene.analysis.hunspell.Dictionary.SimpleFlagParsingStrategy&#10;addbase&#9;PSI&#9;JAVA://com.blsb.service.sys.CommonService#addBaseModel" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540881917025" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541932492108" />
+    <property name="last_opened_file_path" value="E:/stock2" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Facets" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.3151163" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.completion" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
     </key>
+  </component>
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/stock-base-multiproject/stock-dao/src/main/java/com/stock/dao/model/stock/BuyerHistoryEntrustRecord.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/stock-base-multiproject/stock-dao/src/main/resources/com/stock/dao/mapper/stock/BuyerHistoryEntrustRecordMapper.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/stock-base-multiproject/stock-pojo/src/main/java/com/stock/pojo/vo/stock/BuyerHistoryEntrustRecordVO.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/stock-pcweb-multiproject/stock-pcweb Maven Webapp/src/main/webapp/Market/html/kchart.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/stock-pcweb-multiproject/stock-pcweb Maven Webapp/src/main/webapp/Market/js/stockTable.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/stock-pcweb-multiproject/stock-pcweb Maven Webapp/src/main/webapp/bussinessOperation/html/buyOperation.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/stock-pcweb-multiproject/stock-pcweb Maven Webapp/src/main/webapp/bussinessOperation/js/buy.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/stock-pcweb-multiproject/stock-pcweb Maven Webapp/src/main/webapp/images/logo.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/stock-pcweb-multiproject/stock-pcweb Maven Webapp/src/main/webapp/images/showStep.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/stock-pcweb-multiproject/stock-pcweb Maven Webapp/src/main/webapp/images/whiteBg.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/stock-pcweb-multiproject/stock-pcweb Maven Webapp/src/main/webapp/index-for-login.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/stock-pcweb-multiproject/stock-pcweb Maven Webapp/src/main/webapp/js/index.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/stock-pcweb-multiproject/stock-pcweb Maven Webapp/src/main/webapp/myAccount/html/myAccount.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/stock-pcweb-multiproject/stock-pcweb Maven Webapp/src/main/webapp/myAccount/js/myAccount.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/stock-pcweb-multiproject/stock-webapp-base/src/main/java/com/stock/webapp/base/controller/stock/BuyerEntrustPriceController.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/stock-pcweb-multiproject/stock-webapp-base/src/main/java/com/stock/webapp/base/controller/stock/BuyerHistoryEntrustRecordController.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/stock-pcweb-multiproject/stock-webapp-base/src/main/java/com/stock/webapp/base/controller/stock/StockController.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/stock-service-multiproject/stock-service-base/src/main/java/com/stock/service/stock/BuyerEntrustPriceService.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/stock-service-multiproject/stock-service-base/src/main/java/com/stock/service/stock/SellerEntrustPriceQueueService.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/stock-service-multiproject/stock-service-base/src/main/java/com/stock/service/stock/SellerEntrustPriceService.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/stock-service-multiproject/stock-service-base/src/main/java/com/stock/service/stock/StockService.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/stock-service-multiproject/stock-service-base/src/main/java/com/stock/service/stock/impl/BuyerEntrustPriceServiceImpl.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/stock-service-multiproject/stock-service-base/src/main/java/com/stock/service/stock/impl/BuyerHistoryEntrustRecordServiceImpl.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/stock-service-multiproject/stock-service-base/src/main/java/com/stock/service/stock/impl/SellerEntrustPriceQueueServiceImpl.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/stock-service-multiproject/stock-service-base/src/main/java/com/stock/service/stock/impl/SellerEntrustPriceServiceImpl.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/stock-service-multiproject/stock-service-base/src/main/java/com/stock/service/stock/impl/StockExistingServiceImpl.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/stock-service-multiproject/stock-service-base/src/main/java/com/stock/service/stock/impl/StockServiceImpl.java</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/stock-pcweb-multiproject/stock-pcweb Maven Webapp/src/main/webapp/history/html/buyHistory.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/stock-pcweb-multiproject/stock-pcweb Maven Webapp/src/main/webapp/history/js/buyHistory.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/stock-pcweb-multiproject/stock-pcweb Maven Webapp/src/main/webapp/images/stockPicture.jpg</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+        <PATH vcs="Git" revision="">$PROJECT_DIR$/stock-pcweb-multiproject/stock-pcweb Maven Webapp/src/main/webapp/css/login.css</PATH>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -424,14 +581,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Generate">
-    <configuration name="Generate" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Generate" />
-      <module name="stock-framework" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Tomcat Server.Unnamed">
     <configuration name="MySQLPaginationPlugin_stock" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.stock.dao.page.MySQLPaginationPlugin_stock" />
       <module name="stock-dao" />
@@ -443,6 +593,84 @@
       </extension>
       <method v="2">
         <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Unnamed" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 7.0.90" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="stock-pcweb:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/stock" />
+          </settings>
+        </artifact>
+        <artifact name="stock-webapp-base:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/stockWebappBase" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="Unnamed_stock" />
+      </server-settings>
+      <predefined_log_file id="Tomcat" enabled="true" />
+      <predefined_log_file id="Tomcat Catalina" enabled="true" />
+      <predefined_log_file id="Tomcat Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Host Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="58138" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="stock-pcweb:war exploded" />
+          <artifact name="stock-webapp-base:war exploded" />
+        </option>
       </method>
     </configuration>
     <configuration name="tomcat9.0.111" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.111" ALTERNATIVE_JRE_ENABLED="false">
@@ -526,13 +754,12 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Tomcat Server.Unnamed" />
       <item itemvalue="Tomcat Server.tomcat9.0.111" />
       <item itemvalue="Application.MySQLPaginationPlugin_stock" />
-      <item itemvalue="Application.Generate" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Generate" />
         <item itemvalue="Application.MySQLPaginationPlugin_stock" />
       </list>
     </recent_temporary>
@@ -563,6 +790,15 @@
       <workItem from="1540687358545" duration="7603000" />
       <workItem from="1540782233349" duration="10740000" />
       <workItem from="1540864988845" duration="5672000" />
+      <workItem from="1541582863276" duration="20816000" />
+      <workItem from="1541640903220" duration="871000" />
+      <workItem from="1541646386536" duration="11187000" />
+      <workItem from="1541668471824" duration="1489000" />
+      <workItem from="1541765061170" duration="1393000" />
+      <workItem from="1541766575906" duration="354000" />
+      <workItem from="1541771313786" duration="332000" />
+      <workItem from="1541929716391" duration="2646000" />
+      <workItem from="1541941719124" duration="316000" />
     </task>
     <task id="LOCAL-00001">
       <created>1539855970032</created>
@@ -627,16 +863,72 @@
       <option name="project" value="LOCAL" />
       <updated>1540792608034</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="stockTable search">
+      <created>1541660687877</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1541660687878</updated>
+    </task>
+    <task id="LOCAL-00011" summary="stockTable search">
+      <created>1541660758326</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1541660758326</updated>
+    </task>
+    <task id="LOCAL-00012" summary="stockTable search">
+      <created>1541664545230</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1541664545230</updated>
+    </task>
+    <task id="LOCAL-00013" summary="stockTable search">
+      <created>1541664586622</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1541664586622</updated>
+    </task>
+    <task id="LOCAL-00014" summary="stockTable search">
+      <created>1541669917328</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1541669917329</updated>
+    </task>
+    <task id="LOCAL-00015" summary="stockTable search">
+      <created>1541766778819</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1541766778819</updated>
+    </task>
+    <task id="LOCAL-00016" summary="stockTable search">
+      <created>1541931888975</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1541931888975</updated>
+    </task>
+    <task id="LOCAL-00017" summary="stockTable search">
+      <created>1541932159304</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1541932159304</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="83181000" />
+    <option name="totallyTimeSpent" value="122585000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1680" height="1027" extended-state="0" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2954823" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18297587" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -645,8 +937,8 @@
       <window_info id="Capture Tool" order="6" />
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3614973" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32907802" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49932975" weight="0.35177305" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4673797" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -654,8 +946,8 @@
       <window_info anchor="bottom" id="Application Servers" order="7" weight="0.32941177" />
       <window_info anchor="bottom" id="Spring" order="8" />
       <window_info anchor="bottom" id="Terminal" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.14438502" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50067025" side_tool="true" weight="0.21276596" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.45815602" />
       <window_info anchor="bottom" id="Java Enterprise" order="12" />
       <window_info anchor="bottom" id="Database Changes" order="13" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="14" weight="0.32941177" />
@@ -685,88 +977,10 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <option name="LAST_COMMIT_MESSAGE" value="" />
+    <MESSAGE value="stockTable search" />
+    <option name="LAST_COMMIT_MESSAGE" value="stockTable search" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/blsb-pcweb-multiproject/blsb-webapp-base/src/main/resources/config/spring/spring-db.xml" />
-    <entry file="file://$PROJECT_DIR$/blsb-service-multiproject/blsb-service-base/src/main/java/com/blsb/service/sys/CommonService.java" />
-    <entry file="file://$PROJECT_DIR$/blsb-service-multiproject/blsb-service-base/src/main/java/com/blsb/service/sys/ssoClientService.java" />
-    <entry file="file://$PROJECT_DIR$/.idea/vcs.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="44" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blsb-service-multiproject/blsb-service-base/src/main/java/com/blsb/service/drugMonitor/DoctorBaseInfoService.java" />
-    <entry file="file://$PROJECT_DIR$/blsb-service-multiproject/blsb-service-base/src/main/java/com/blsb/service/drugMonitor/impl/DrugBaseInfoServiceImpl.java" />
-    <entry file="file://$PROJECT_DIR$/blsb-service-multiproject/blsb-service-base/src/main/resources/solr.properties" />
-    <entry file="file://$PROJECT_DIR$/blsb-service-multiproject/blsb-service-base/src/main/java/com/blsb/service/drugMonitor/ConsumeBaseInfoService.java" />
-    <entry file="file://$PROJECT_DIR$/blsb-service-multiproject/blsb-service-base/src/main/java/com/blsb/service/drugMonitor/impl/DoctorBaseInfoServiceImpl.java" />
-    <entry file="file://$PROJECT_DIR$/blsb-pcweb-multiproject/blsb-webapp-base/src/main/resources/config/beans.xml" />
-    <entry file="file://$PROJECT_DIR$/blsb-pcweb-multiproject/blsb-webapp-base/src/main/resources/config/spring/spring-common.xml" />
-    <entry file="file://$PROJECT_DIR$/blsb-pcweb-multiproject/blsb-webapp-base/src/main/resources/config/orm/mybatis/mybatis.xml" />
-    <entry file="file://$PROJECT_DIR$/blsb-pcweb-multiproject/blsb-webapp-base/src/main/resources/config/spring/spring-mvc.xml" />
-    <entry file="file://$PROJECT_DIR$/blsb-pcweb-multiproject/blsb-webapp-base/src/main/resources/config/spring/spring-redis.xml" />
-    <entry file="file://$PROJECT_DIR$/blsb-pcweb-multiproject/blsb-webapp-base/src/main/resources/config/spring/spring-quartz.xml" />
-    <entry file="file://$PROJECT_DIR$/blsb-pcweb-multiproject/blsb-webapp-base/src/main/resources/config/spring/spring-redis-cluster.xml" />
-    <entry file="file://$PROJECT_DIR$/stock-base-multiproject/stock-common/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="12" lean-forward="true" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stock-base-multiproject/stock-dao/src/main/java/com/stock/dao/mapper/sys/SysOrganizationStructureMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="20" column="57" lean-forward="true" selection-start-line="20" selection-start-column="57" selection-end-line="20" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stock-service-multiproject/stock-service-base/src/main/java/com/stock/service/sys/impl/SysRoleResourceServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="53">
-          <caret line="363" column="45" selection-start-line="363" selection-start-column="39" selection-end-line="363" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stock-service-multiproject/stock-service-base/src/main/java/com/stock/service/sys/impl/SysOrganizationStructureServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="45" column="10" selection-start-line="45" selection-start-column="10" selection-end-line="45" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stock-pcweb-multiproject/stock-webapp-base/src/main/resources/config/spring/spring-common.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stock-pcweb-multiproject/stock-webapp-base/src/main/resources/config/spring/spring-security4.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stock-pcweb-multiproject/stock-webapp-base/src/main/resources/config/spring/spring-redis-cluster.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stock-pcweb-multiproject/stock-webapp-base/src/main/resources/config/spring/spring-redis.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stock-pcweb-multiproject/stock-webapp-base/src/main/resources/config/spring/spring-mvc.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-363" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stock-pcweb-multiproject/stock-webapp-base/src/main/resources/config/beans.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-175" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/stock-pcweb-multiproject/stock-webapp-base/src/main/resources/config/spring/spring-quartz.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
@@ -774,18 +988,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/stock-base-multiproject/stock-dao/src/main/resources/com/stock/dao/mapper/file/BaseEmployeeInfoMapper.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/stock-base-multiproject/stock-dao/src/main/resources/com/stock/dao/mapper/file/BaseEmployeeInfoMapper.xml" />
     <entry file="file://$PROJECT_DIR$/stock-pcweb-multiproject/stock-webapp-base/src/main/resources/config/spring/spring-db.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="134">
           <caret line="48" column="124" selection-start-line="48" selection-start-column="124" selection-end-line="48" selection-end-column="124" />
-          <folding>
-            <element signature="e#1249#1274#0" expanded="true" />
-            <element signature="e#1312#1342#0" expanded="true" />
-            <element signature="e#1380#1410#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -796,34 +1003,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/stock-base-multiproject/stock-dao/src/main/java/com/stock/dao/model/stock/SysAttachmentExample.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/src/src/lib/generateVSC.jar!/com/core/generate/GenerateService.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="41" selection-start-line="41" selection-end-line="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stock-base-multiproject/stock-pojo/src/main/java/com/stock/pojo/vo/drugMonitor/DrugBaseInfoVO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="38" selection-start-line="2" selection-start-column="38" selection-end-line="2" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/stock-base-multiproject/stock-dao/src/main/java/com/stock/dao/model/stock/SysAttachmentExample.java" />
+    <entry file="jar://$PROJECT_DIR$/src/src/lib/generateVSC.jar!/com/core/generate/GenerateService.class" />
+    <entry file="file://$PROJECT_DIR$/stock-base-multiproject/stock-pojo/src/main/java/com/stock/pojo/vo/drugMonitor/DrugBaseInfoVO.java" />
     <entry file="file://$PROJECT_DIR$/stock-base-multiproject/stock-pojo/src/main/java/com/stock/pojo/vo/stock/BuyerEntrustPriceQueueVO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="15" column="1" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -837,13 +1023,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/stock-base-multiproject/stock-pojo/src/main/java/com/stock/pojo/vo/TempletVO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="33" selection-start-line="2" selection-start-column="33" selection-end-line="2" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/stock-base-multiproject/stock-pojo/src/main/java/com/stock/pojo/vo/TempletVO.java" />
     <entry file="file://$PROJECT_DIR$/stock-base-multiproject/stock-dao/src/main/java/com/stock/dao/page/MySQLPaginationPlugin_stock.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -851,13 +1031,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/stock-service-multiproject/stock-service-base/src/main/java/com/stock/service/sys/impl/TempletDataServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="23" column="34" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/stock-service-multiproject/stock-service-base/src/main/java/com/stock/service/sys/impl/TempletDataServiceImpl.java" />
     <entry file="file://$PROJECT_DIR$/stock-service-multiproject/stock-service-base/src/main/java/com/stock/service/sys/impl/CommonServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
@@ -865,9 +1039,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/stock-pcweb-multiproject/.classpath">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/stock-pcweb-multiproject/.classpath" />
     <entry file="jar://$MAVEN_REPOSITORY$/org/apache/lucene/lucene-analyzers-common/6.5.1/lucene-analyzers-common-6.5.1.jar!/org/apache/lucene/analysis/hunspell/Dictionary.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="16365">
@@ -882,55 +1054,212 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ftl/controller.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ftl/service.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://$PROJECT_DIR$/src/lib/generateVSC.jar!/com/core/generate/GenerateService.class" />
     <entry file="file://$PROJECT_DIR$/src/Generate.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
+        <state relative-caret-position="2413">
           <caret line="143" column="30" selection-start-line="143" selection-start-column="30" selection-end-line="143" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/src/lib/generateVSC.jar!/com/core/generate/GenerateService.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GenerateConf.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="4" lean-forward="true" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
+        <state relative-caret-position="190">
+          <caret line="10" column="4" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ftl/service.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ftl/controller.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GenerateConfStock.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
+        <state relative-caret-position="437">
           <caret line="23" column="38" selection-start-line="23" selection-start-column="38" selection-end-line="23" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stock-pcweb-multiproject/stock-pcweb Maven Webapp/src/main/webapp/myAccount/html/myAccount.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stock-pcweb-multiproject/stock-pcweb Maven Webapp/src/main/webapp/myAccount/js/myAccount.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stock-pcweb-multiproject/stock-pcweb Maven Webapp/src/main/webapp/basicInfo/js.js" />
+    <entry file="file://$PROJECT_DIR$/stock-pcweb-multiproject/stock-pcweb Maven Webapp/src/main/webapp/basicInfo/js/stock.js" />
+    <entry file="file://$PROJECT_DIR$/stock-pcweb-multiproject/stock-pcweb Maven Webapp/src/main/webapp/basicInfo/html/stock.html" />
+    <entry file="file://$PROJECT_DIR$/stock-pcweb-multiproject/stock-pcweb Maven Webapp/src/main/webapp/sys/html/role.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="110" column="65" lean-forward="true" selection-start-line="110" selection-start-column="65" selection-end-line="110" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stock-pcweb-multiproject/stock-pcweb Maven Webapp/src/main/webapp/sys/html/employee.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="33" column="51" selection-start-line="33" selection-start-column="51" selection-end-line="35" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stock-pcweb-multiproject/stock-pcweb Maven Webapp/src/main/webapp/sys/js/role.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-921">
+          <caret line="128" column="40" lean-forward="true" selection-start-line="128" selection-start-column="40" selection-end-line="128" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stock-pcweb-multiproject/stock-pcweb Maven Webapp/src/main/webapp/bussinessOperation/html/sellOperation.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-779">
+          <caret line="16" column="32" lean-forward="true" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ftl/modelVO.ftl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+        <state relative-caret-position="247">
+          <caret line="13" column="35" selection-start-line="13" selection-start-column="35" selection-end-line="13" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stock-pcweb-multiproject/stock-pcweb Maven Webapp/src/main/webapp/js/index-for-login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stock-service-multiproject/stock-service-base/src/main/java/com/stock/service/stock/impl/SellerEntrustPriceQueueServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-456">
+          <caret line="38" column="13" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stock-pcweb-multiproject/stock-pcweb Maven Webapp/src/main/webapp/js/login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-551">
+          <caret line="13" column="9" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stock-service-multiproject/stock-service-base/src/main/java/com/stock/service/stock/impl/SellerEntrustPriceServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1653">
+          <caret line="37" column="13" selection-start-line="37" selection-start-column="13" selection-end-line="37" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stock-service-multiproject/stock-service-base/src/main/java/com/stock/service/stock/SellerHistoryEntrustRecordService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stock-service-multiproject/stock-service-base/src/main/java/com/stock/service/stock/impl/SellerHistoryEntrustRecordServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="163" column="40" selection-start-line="163" selection-start-column="40" selection-end-line="163" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stock-base-multiproject/stock-pojo/src/main/java/com/stock/pojo/vo/stock/SellerHistoryEntrustRecordVO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="9" column="29" lean-forward="true" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stock-pcweb-multiproject/stock-pcweb Maven Webapp/src/main/webapp/bussinessOperation/js/sell.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="979">
+          <caret line="106" column="8" lean-forward="true" selection-start-line="106" selection-start-column="8" selection-end-line="106" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stock-pcweb-multiproject/stock-pcweb Maven Webapp/src/main/webapp/sys/js/employee.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="817">
+          <caret line="313" lean-forward="true" selection-start-line="313" selection-end-line="313" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stock-pcweb-multiproject/stock-pcweb Maven Webapp/src/main/webapp/Market/js/stock.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" column="1" lean-forward="true" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stock-pcweb-multiproject/stock-pcweb Maven Webapp/src/main/webapp/Market/js/stockTable.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="41" column="13" lean-forward="true" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stock-pcweb-multiproject/stock-pcweb Maven Webapp/src/main/webapp/Market/html/stockTable.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="1" column="59" lean-forward="true" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stock-pcweb-multiproject/stock-pcweb Maven Webapp/src/main/webapp/Market/js/echarts.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5945">
+          <caret line="186834" lean-forward="true" selection-start-line="186810" selection-start-column="11" selection-end-line="186834" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stock-pcweb-multiproject/stock-pcweb Maven Webapp/src/main/webapp/bussinessOperation/js/sellStockInterface.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-209">
+          <caret line="7" column="7" lean-forward="true" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stock-pcweb-multiproject/stock-pcweb Maven Webapp/src/main/webapp/images/bg.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stock-pcweb-multiproject/stock-pcweb Maven Webapp/src/main/webapp/Market/html/kchart.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stock-pcweb-multiproject/stock-pcweb Maven Webapp/src/main/webapp/Market/js/kchart.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="13" column="9" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stock-pcweb-multiproject/stock-pcweb Maven Webapp/src/main/webapp/css/login.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -988,11 +1317,12 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>stock-framework</last-edited>
+          <last-edited>stock</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.3151163" />
+                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>

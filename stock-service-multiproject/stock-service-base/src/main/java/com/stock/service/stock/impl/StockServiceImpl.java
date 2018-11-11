@@ -6,10 +6,12 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.logging.Logger;
 
 import javax.annotation.Resource;
 
 import com.stock.dao.model.stock.StockAccount;
+import com.stock.dao.model.sys.SysUser;
 import net.sf.json.JSONArray;
 import net.sf.json.JsonConfig;
 
@@ -113,13 +115,47 @@ public class StockServiceImpl implements StockService {
     }
 
     @Override
-    public Stock findByCode(String code) {
-        StockExample stockExample = new StockExample();
-        StockExample.Criteria criteria = stockExample.createCriteria();
+    public Integer check(String id, String name) {
+        StockExample example = new StockExample();
+        StockExample.Criteria criteria= example.createCriteria();
+        criteria.andStockCodeEqualTo(id);
+        criteria.andStockNameEqualTo(name);
+        if(stockMapper.selectByExample(example).size()>0){
+            return stockMapper.selectByExample(example).get(0).getStockId();
+        }
+        return -1;
+    }
+
+    @Override
+    public Integer findKeyByName(String name) {
+        StockExample example = new StockExample();
+        StockExample.Criteria criteria= example.createCriteria();
+        criteria.andStockNameEqualTo(name);
+        if(stockMapper.selectByExample(example).size()>0){
+            return stockMapper.selectByExample(example).get(0).getStockId();
+        }
+        return -1;
+    }
+
+    @Override
+    public Integer findKeyByCode(String code) {
+        StockExample example = new StockExample();
+        StockExample.Criteria criteria= example.createCriteria();
         criteria.andStockCodeEqualTo(code);
-        List<Stock> stocks = stockMapper.selectByExample(stockExample);
-        if (stocks.size() != 0) {
-            return stocks.get(0);
+        List<Stock> stocks = stockMapper.selectByExample(example);
+        if(stockMapper.selectByExample(example).size()>0){
+            return stockMapper.selectByExample(example).get(0).getStockId();
+        }
+        return -1;
+    }
+
+    @Override
+    public Stock findByCode(String code) {
+        StockExample example = new StockExample();
+        StockExample.Criteria criteria= example.createCriteria();
+        criteria.andStockCodeEqualTo(code);
+        if(stockMapper.selectByExample(example).size()>0){
+            return stockMapper.selectByExample(example).get(0);
         }
         return null;
     }

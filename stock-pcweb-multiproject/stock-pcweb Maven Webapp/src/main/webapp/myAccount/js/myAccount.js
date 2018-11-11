@@ -12,8 +12,9 @@ var Stock = (function () {
             //动态分页加载数据方式
             bProcessing: true,
             bServerSide: true,
+            bLengthChange: false,
+            bFilter: false,
             bLengthChange:false,
-            bFilter:false,
             aLengthMenu: [10, 20, 40, 60], // 动态指定分页后每页显示的记录数。
             //searching: false,// 禁用搜索
             //lengthChange: true, // 是否启用改变每页显示多少条数据的控件
@@ -32,7 +33,7 @@ var Stock = (function () {
                 "type": "POST",
                 "url": getContextPath() + 'stockAccount/getByPage.do',
             },
-            dom: '<"top">Brt<"bottom"flip><"clear">',
+            // dom: '<"top">Brt<"bottom"flip><"clear">',
             columns: [
                 { title: "总资产", data: "totalAsset" },
                 { title: "股票总资产", data: "stockAsset" },
@@ -66,19 +67,15 @@ var Stock = (function () {
     function InitStock() {
         stock = $("#stock").DataTable({
             //fnRowCallback: rightClick,//利用行回调函数，来实现右键事件
-            //fnDrawCallback: changePage, //重绘的回调函数，调用changePage方法用来初始化跳转到指定页面
+            fnDrawCallback: changePage, //重绘的回调函数，调用changePage方法用来初始化跳转到指定页面
             //动态分页加载数据方式
             bProcessing: true,
             bServerSide: true,
-            bLengthChange:false,
-            bFilter:false,
+            bLengthChange: false,
+            bFilter: false,
             aLengthMenu: [10, 20, 40, 60], // 动态指定分页后每页显示的记录数。
             searching: false,// 禁用搜索
-            //lengthChange: true, // 是否启用改变每页显示多少条数据的控件
-            /*
-             * sort : "position",
-             * //是否开启列排序，对单独列的设置在每一列的bSortable选项中指定
-             */
+            lengthChange: true, // 是否启用改变每页显示多少条数据的控件
             deferRender: true,// 延迟渲染
             //stateSave: true,//开启状态记录，datatabls会记录当前在第几页，可显示的列等datables参数信息
             //iDisplayLength: 20, // 默认每页显示多少条记录
@@ -96,7 +93,6 @@ var Stock = (function () {
                 "type": "POST",
                 "url": getContextPath() + 'stockExisting/getByPage.do',
             },
-            dom: '<"top">Brt<"bottom"flip><"clear">',
             columns: [
                 { title: "证券代码", data: "stockCode" },
                 { title: "证券名称", data: "stockName" },

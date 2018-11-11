@@ -1,7 +1,6 @@
 package com.stock.service.stock.impl;
 
 
-
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -38,78 +37,79 @@ import com.stock.service.stock.BuyerEntrustPriceService;
 @Service
 public class BuyerEntrustPriceServiceImpl implements BuyerEntrustPriceService {
 
-	@Autowired
-	private BuyerEntrustPriceMapper buyerEntrustPriceMapper;
+    @Autowired
+    private BuyerEntrustPriceMapper buyerEntrustPriceMapper;
 
-	@Autowired
-	private DataAuthorizeService dataAuthorizeService;
+    @Autowired
+    private DataAuthorizeService dataAuthorizeService;
 
-	private CommonService<BuyerEntrustPrice, BuyerEntrustPriceMapper, BuyerEntrustPriceExample> commonService;
-	//注入commonService
-	@Resource(name = "commonService")
-	public void setCommonService(CommonService<BuyerEntrustPrice, BuyerEntrustPriceMapper, BuyerEntrustPriceExample> commonService) {
-		this.commonService = commonService;
-	}
+    private CommonService<BuyerEntrustPrice, BuyerEntrustPriceMapper, BuyerEntrustPriceExample> commonService;
 
-	@Override
-	public RequestResultVO insert(BuyerEntrustPrice buyerEntrustPrice) {
-		if(buyerEntrustPrice == null){
-			throw new BizException(Public.ERROR_700);
-		}
-		dataAuthorizeService.addDataAuthorizeInfo(buyerEntrustPrice, "insert");
-    buyerEntrustPriceMapper.insert(buyerEntrustPrice);
-		return ResultBuilder.buildSuccessResult(Public.SUCCESS_200, "");
-	}
-
-	@Override
-	public RequestResultVO update(BuyerEntrustPrice buyerEntrustPrice) {
-		if(buyerEntrustPrice == null || buyerEntrustPrice.getBuyerEntrustPriceId() == null){
-			throw new BizException(Public.ERROR_700);
-		}
-		dataAuthorizeService.addDataAuthorizeInfo(buyerEntrustPrice, "update");
-    buyerEntrustPriceMapper.updateByPrimaryKeySelective(buyerEntrustPrice);
-		return ResultBuilder.buildSuccessResult(Public.SUCCESS_300, "");
-	}
-
-	@Override
-	public RequestResultVO delete(List<Integer> buyerEntrustPriceIds) {
-    if(buyerEntrustPriceIds == null || buyerEntrustPriceIds.size() == 0){
-    throw new BizException(Public.ERROR_700);
+    //注入commonService
+    @Resource(name = "commonService")
+    public void setCommonService(CommonService<BuyerEntrustPrice, BuyerEntrustPriceMapper, BuyerEntrustPriceExample> commonService) {
+        this.commonService = commonService;
     }
-    BuyerEntrustPriceExample buyerEntrustPriceExample = new BuyerEntrustPriceExample();
-    buyerEntrustPriceExample.createCriteria().andBuyerEntrustPriceIdIn(buyerEntrustPriceIds);
-    buyerEntrustPriceMapper.deleteByExample(buyerEntrustPriceExample);
-    return ResultBuilder.buildSuccessResult(Public.SUCCESS_400, "");
+
+    @Override
+    public RequestResultVO insert(BuyerEntrustPrice buyerEntrustPrice) {
+        if (buyerEntrustPrice == null) {
+            throw new BizException(Public.ERROR_700);
+        }
+        dataAuthorizeService.addDataAuthorizeInfo(buyerEntrustPrice, "insert");
+        buyerEntrustPriceMapper.insert(buyerEntrustPrice);
+        return ResultBuilder.buildSuccessResult(Public.SUCCESS_200, "");
+    }
+
+    @Override
+    public RequestResultVO update(BuyerEntrustPrice buyerEntrustPrice) {
+        if (buyerEntrustPrice == null || buyerEntrustPrice.getBuyerEntrustPriceId() == null) {
+            throw new BizException(Public.ERROR_700);
+        }
+        dataAuthorizeService.addDataAuthorizeInfo(buyerEntrustPrice, "update");
+        buyerEntrustPriceMapper.updateByPrimaryKeySelective(buyerEntrustPrice);
+        return ResultBuilder.buildSuccessResult(Public.SUCCESS_300, "");
+    }
+
+    @Override
+    public RequestResultVO delete(List<Integer> buyerEntrustPriceIds) {
+        if (buyerEntrustPriceIds == null || buyerEntrustPriceIds.size() == 0) {
+            throw new BizException(Public.ERROR_700);
+        }
+        BuyerEntrustPriceExample buyerEntrustPriceExample = new BuyerEntrustPriceExample();
+        buyerEntrustPriceExample.createCriteria().andBuyerEntrustPriceIdIn(buyerEntrustPriceIds);
+        buyerEntrustPriceMapper.deleteByExample(buyerEntrustPriceExample);
+        return ResultBuilder.buildSuccessResult(Public.SUCCESS_400, "");
     }
 
     @Override
     public Map<String, Object> getByPage(String keys, Integer pageSize,
-    Integer pageNow) {
-    BuyerEntrustPriceExample buyerEntrustPriceExample = new BuyerEntrustPriceExample();
-    this.setCriteria(keys, buyerEntrustPriceExample);
-    int totalrecords = buyerEntrustPriceMapper.countByExample(buyerEntrustPriceExample);
+                                         Integer pageNow) {
+        BuyerEntrustPriceExample buyerEntrustPriceExample = new BuyerEntrustPriceExample();
+        this.setCriteria(keys, buyerEntrustPriceExample);
+        int totalrecords = buyerEntrustPriceMapper.countByExample(buyerEntrustPriceExample);
 
-    Page page = new Page();
-    page.setBegin(pageNow);
-    page.setLength(pageSize);
-    buyerEntrustPriceExample.setOrderByClause("buyerEntrustPriceId desc");
-    buyerEntrustPriceExample.setPage(page);
-    List<BuyerEntrustPrice> buyerEntrustPrices = buyerEntrustPriceMapper.selectByExample(buyerEntrustPriceExample);
+        Page page = new Page();
+        page.setBegin(pageNow);
+        page.setLength(pageSize);
+        buyerEntrustPriceExample.setOrderByClause("buyerEntrustPriceId desc");
+        buyerEntrustPriceExample.setPage(page);
+        List<BuyerEntrustPrice> buyerEntrustPrices = buyerEntrustPriceMapper.selectByExample(buyerEntrustPriceExample);
 
-    Map<String, Object> map = new HashMap<String, Object>();
-    JsonConfig config = new JsonConfig();
-    config.setIgnoreDefaultExcludes(false);
-    config.registerJsonValueProcessor(Date.class,new DateJsonValueProcessor("yyyy-MM-dd"));
-    try {
-    map.put("aaData", JSONArray.fromObject(this.creatVos(buyerEntrustPrices), config));
-    } catch (Exception e) {
-    LogUtil.error(ErrorLoggers.ERROR_LOGGER, e.getMessage());
-    throw new BizException(Public.ERROR_100);
-    }
-    map.put("recordsTotal", totalrecords);
-    map.put("recordsFiltered", totalrecords);
+        Map<String, Object> map = new HashMap<String, Object>();
+        JsonConfig config = new JsonConfig();
+        config.setIgnoreDefaultExcludes(false);
+        config.registerJsonValueProcessor(Date.class, new DateJsonValueProcessor("yyyy-MM-dd"));
+        try {
+            map.put("aaData", JSONArray.fromObject(this.creatVos(buyerEntrustPrices), config));
+        } catch (Exception e) {
+            LogUtil.error(ErrorLoggers.ERROR_LOGGER, e.getMessage());
+            throw new BizException(Public.ERROR_100);
+        }
+        map.put("recordsTotal", totalrecords);
+        map.put("recordsFiltered", totalrecords);
 
-    return map;
+        return map;
     }
 
     @Override
@@ -120,33 +120,61 @@ public class BuyerEntrustPriceServiceImpl implements BuyerEntrustPriceService {
         criteria.andEntrustPriceEqualTo(Double.parseDouble(jKeys.getString("entrustPrice")));
         criteria.andStockIdEqualTo(Integer.parseInt(jKeys.getString("stockId")));
         List<BuyerEntrustPrice> buyerEntrustPrices = buyerEntrustPriceMapper.selectByExample(buyerEntrustPriceExample);
-        if(buyerEntrustPrices.size()!=0){
+        if (buyerEntrustPrices.size() != 0) {
             return buyerEntrustPrices.get(0);
-        }
-        else{
+        } else {
             return null;
         }
     }
 
+    public BuyerEntrustPrice findBuyerEntrustPriceByPriceAndStock(Integer stock_id, Double stock_price) {
+        BuyerEntrustPriceExample buyerEntrustPriceExample = new BuyerEntrustPriceExample();
+        BuyerEntrustPriceExample.Criteria criteria = buyerEntrustPriceExample.createCriteria();
+        criteria.andEntrustPriceEqualTo(stock_price);
+        criteria.andStockIdEqualTo(stock_id);
+        List<BuyerEntrustPrice> buyerEntrustPrices = buyerEntrustPriceMapper.selectByExample(buyerEntrustPriceExample);
+        if (buyerEntrustPrices.size() != 0) {
+            return buyerEntrustPrices.get(0);
+        } else {
+            return null;
+        }
+    }
+
+    @Override
+    public Integer myinsert(Integer stock_id, Integer stock_count, Double stock_price) {
+        BuyerEntrustPrice buyerEntrustPrice = new BuyerEntrustPrice();
+        buyerEntrustPrice.setStockId(stock_id);
+        buyerEntrustPrice.setTotalEntrustNum(stock_count);
+        buyerEntrustPrice.setEntrustPrice(stock_price);
+        buyerEntrustPriceMapper.insert(buyerEntrustPrice);
+        BuyerEntrustPriceExample buyerEntrustPriceExample = new BuyerEntrustPriceExample();
+        BuyerEntrustPriceExample.Criteria criteria = buyerEntrustPriceExample.createCriteria();
+        criteria.andEntrustPriceEqualTo(stock_price);
+        criteria.andStockIdEqualTo(stock_id);
+        criteria.andTotalEntrustNumEqualTo(stock_count);
+//        List<BuyerEntrustPrice> buyerEntrustPrices = buyerEntrustPriceMapper.selectByExample(buyerEntrustPriceExample);
+        return buyerEntrustPriceMapper.selectByExample(buyerEntrustPriceExample).get(0).getStockId();
+    }
 
     private void setCriteria(String keys, BuyerEntrustPriceExample buyerEntrustPriceExample) {
-    if (keys == null || "{}".equals(keys))
-    return;
-    //JSONObject jKeys = JSONObject.fromObject(keys);
-    //Criteria criteria = buyerEntrustPriceExample.createCriteria();
+        if (keys == null || "{}".equals(keys))
+            return;
+        //JSONObject jKeys = JSONObject.fromObject(keys);
+        //Criteria criteria = buyerEntrustPriceExample.createCriteria();
 
     }
-    private List<BuyerEntrustPriceVO> creatVos(List<BuyerEntrustPrice> buyerEntrustPrices) throws Exception{
+
+    private List<BuyerEntrustPriceVO> creatVos(List<BuyerEntrustPrice> buyerEntrustPrices) throws Exception {
         List<BuyerEntrustPriceVO> buyerEntrustPriceVOs = new ArrayList<BuyerEntrustPriceVO>();
-            for(BuyerEntrustPrice buyerEntrustPrice : buyerEntrustPrices){
+        for (BuyerEntrustPrice buyerEntrustPrice : buyerEntrustPrices) {
             BuyerEntrustPriceVO buyerEntrustPriceVO = new BuyerEntrustPriceVO();
             BeanUtils.copyProperties(buyerEntrustPrice, buyerEntrustPriceVO);
             commonService.addBaseModel(buyerEntrustPrice, buyerEntrustPriceVO);
             buyerEntrustPriceVOs.add(buyerEntrustPriceVO);
-            }
-            return buyerEntrustPriceVOs;
-            }
-            }
+        }
+        return buyerEntrustPriceVOs;
+    }
+}
 
 
 
